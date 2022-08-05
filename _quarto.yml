@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "Ben Welman"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+    right:
+      - icon: github
+        href: https://github.com/bwelman
+      - icon: twitter
+        href: https://twitter.com/benwem
+      - icon: linkedin
+        href: https://www.linkedin.com/in/benwelman/
+
+format:
+  html:
+    theme: theme.scss
+    link-external-icon: true
+    link-external-newwindow: true
+
+lang: nl
+
+editor: visual
