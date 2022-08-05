@@ -1,16 +1,23 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "quartowebsite",
+    "title": "Welkom",
     "section": "",
-    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Deze website is op dit moment niets meer dan een portaal naar mijn studieboeken en blogs."
+  },
+  {
+    "objectID": "index.html#studieboeken",
+    "href": "index.html#studieboeken",
+    "title": "Welkom",
+    "section": "Studieboeken",
+    "text": "Studieboeken\nGratis online versies van mijn studieboeken.\nLeer Access - cursusboek Microsoft Access (Engelstalige versie: Learn Access)\nLeer Excel - cursusboek Microsoft Excel (Engelstalige versie: Learn Excel)\nData-analyse met Excel - analyseren van gegevens voor gevorderde Excel gebruikers\nBrouw je bier - cursusboek voor beginners om te leren bier te brouwen"
+  },
+  {
+    "objectID": "index.html#blogs",
+    "href": "index.html#blogs",
+    "title": "Welkom",
+    "section": "Blogs",
+    "text": "Blogs\nSoftwijs - artikelen over Data-analyse, Excel, R en Python\nVlearmoesbier - artikelen die met het brouwen van bier te maken hebben"
   }
 ]
