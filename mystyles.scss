@@ -1,0 +1,38 @@
+/*-- scss:defaults --*/
+
+// color definition
+$light-sage-green: #D1D9CE;
+$dark-sage-green: #98A08D;
+$cream: #FDFBF7;
+$swblue: #000088;                // softwijs blue
+
+$floral-white: #FFFAF0;
+$tbGray:   #7E7E7E;              // textbook gray
+$tbLGray:  #7E7E7E1A;            // textbook light gray
+
+// Basis document kleuren
+$body-bg: $floral-white;         // page background
+$footer-bg: $light-sage-green;   // footer background
+$navbar-bg: $light-sage-green;   // navbar background
+$navbar-fg: $dark-sage-green;    // navbar foreground elements
+$navbar-hl: $swblue;             // highlight color when hovering over navbar links
+$link-color: $swblue;            // hyperlinks
+
+// Inline code
+$code-bg: $tbLGray; // inline code background color
+
+
+// Code blocks
+$code-block-bg: $tbLGray; // code block background color
+
+
+/* $font-family-sans-serif: "Source Sans Pro", Helvetica, Arial, sans-serif !default; */
+
+
+/*-- scss:rules --*/
+
+h1, h3 {
+  letter-spacing: 5px;    // increase spacing between letters
+  font-weight: bolder;
+  color: $tbGray;
+}

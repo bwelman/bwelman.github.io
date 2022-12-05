@@ -1,22 +1,47 @@
 ---
-title: "Welkom"
+title: "Ben Welman"
+image: images/benwem.jpg
+about: 
+  template: trestles
+  image-shape: rounded
+  image-width: 15em
+  links: 
+    - icon: github
+      text: GitHub
+      href: https://github.com/bwelman
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/benwelman/
+    - icon: envelope
+      text: Email
+      href: mailto:bwelman@gmail.com
 ---
 
-Deze website is op dit moment niets meer dan een portaal naar mijn studieboeken en blogs.
+### Hallo!
 
-## Studieboeken
+Dit is mijn persoonlijke website welke fungeert als een portaal naar de door mij gemaakte studieboeken en artikelen.
 
-*Gratis online versies van mijn studieboeken.*
+### Achtergrond
 
-[Leer Access](https://leeraccess.netlify.app) - cursusboek Microsoft Access (Engelstalige versie: [Learn Access](https://learnaccess.netlify.app))
+Studie:
 
-[Leer Excel](https://leerexcel.netlify.app) - cursusboek Microsoft Excel (Engelstalige versie: [Learn Excel](https://learnexcel.netlify.app))
+-   Chemische Technologie aan de THT (Universiteit Twente)
 
-[Data-analyse met Excel](https://excelanalyse.netlify.app) - analyseren van gegevens voor gevorderde Excel gebruikers
+Werkervaring:
 
-[Brouw je bier](https://brouwjebier.netlify.app) - cursusboek voor beginners om te leren bier te brouwen
+-   Docent scheikunde en wiskunde op middelbare scholen
 
-## Blogs
+-   Docent informatica en statistiek bij Saxion Hogescholen
+
+-   Ontwikkelen en ondersteunen van e-learning bij Saxion Hogescholen
+
+-   Auteur studieboeken
+
+-   Data analyse met [R](https://en.wikipedia.org/wiki/R_(programming_language)) en [Python](https://www.python.org/)
+
+Hobby's: biljarten, bridgen, bierbrouwen, broodbakken, camperen, fietsen, reizen
+
+### Blogs
 
 [Softwijs](https://bwelman.github.io/softwijs) - artikelen over Data-analyse, Excel, R en Python
 

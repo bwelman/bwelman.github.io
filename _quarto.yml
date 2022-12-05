@@ -3,24 +3,27 @@ project:
 
 website:
   title: "Ben Welman"
+  favicon: images/logo.png
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
+    title: softwijs
+    logo: images/logo-transparant.png
     right:
+      - icon: home
+        text: Home
+        href: index.qmd
+      - text: Studieboeken
+        href: studieboeken.qmd
       - icon: github
         href: https://github.com/bwelman
-      - icon: twitter
-        href: https://twitter.com/benwem
-      - icon: linkedin
-        href: https://www.linkedin.com/in/benwelman/
+  page-footer:
+    left:
+      - "copyright 2022, Ben Welman"
 
 format:
   html:
-    theme: theme.scss
-    link-external-icon: true
+    theme: mystyles.scss
+    mainfont: "Source Sans Pro"
+    toc: true
     link-external-newwindow: true
 
 lang: nl
-
-editor: visual
