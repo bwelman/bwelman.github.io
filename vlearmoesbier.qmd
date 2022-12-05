@@ -2,7 +2,7 @@
 title: "Vlearmoesbier"
 subtitle: "Blog over bierbrouwen"
 listing:
-  contents: vlearmoesbier
+  contents: bier
   sort: "date desc"
   type: grid
   categories: true
