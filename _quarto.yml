@@ -4,6 +4,9 @@ project:
 website:
   title: "Ben Welman"
   favicon: images/logo.png
+  site-url: "https://bwelman.github.io/"
+  repo-url: "https://github.com/bwelman/bwelman.github.io"
+  repo-actions: [issue]
   navbar:
     title: softwijs
     logo: images/logo-transparant.png
