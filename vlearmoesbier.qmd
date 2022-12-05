@@ -1,0 +1,14 @@
+---
+title: "Vlearmoesbier"
+subtitle: "Blog over bierbrouwen"
+listing:
+  contents: vlearmoesbier
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, categories, image]
+page-layout: full
+title-block-banner: false
+---

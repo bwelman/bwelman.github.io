@@ -13,11 +13,16 @@ website:
         href: index.qmd
       - text: Studieboeken
         href: studieboeken.qmd
+      - text: Vlearmoesbier
+        href: vlearmoesbier.qmd
       - icon: github
         href: https://github.com/bwelman
   page-footer:
     left:
       - "copyright 2022, Ben Welman"
+
+execute:
+  freeze: auto
 
 format:
   html:

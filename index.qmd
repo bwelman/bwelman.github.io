@@ -45,4 +45,3 @@ Hobby's: biljarten, bridgen, bierbrouwen, broodbakken, camperen, fietsen, reizen
 
 [Softwijs](https://bwelman.github.io/softwijs) - artikelen over Data-analyse, Excel, R en Python
 
-[Vlearmoesbier](https://bwelman.github.io/vlearmoesbier) - artikelen die met het brouwen van bier te maken hebben
