@@ -2,22 +2,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welkom",
+    "title": "Ben Welman",
     "section": "",
-    "text": "Deze website is op dit moment niets meer dan een portaal naar mijn studieboeken en blogs."
+    "text": "Hallo!\nDit is mijn persoonlijke website welke fungeert als een portaal naar de door mij gemaakte studieboeken en artikelen.\n\n\nAchtergrond\nStudie:\n\nChemische Technologie aan de THT (Universiteit Twente)\n\nWerkervaring:\n\nDocent scheikunde en wiskunde op middelbare scholen\nDocent informatica en statistiek bij Saxion Hogescholen\nOntwikkelen en ondersteunen van e-learning bij Saxion Hogescholen\nAuteur studieboeken\nData analyse met R en Python\n\nHobby’s: biljarten, bridgen, bierbrouwen, broodbakken, camperen, fietsen, reizen\n\n\nBlogs\nSoftwijs - artikelen over Data-analyse, Excel, R en Python\nVlearmoesbier - artikelen die met het brouwen van bier te maken hebben"
   },
   {
-    "objectID": "index.html#studieboeken",
-    "href": "index.html#studieboeken",
-    "title": "Welkom",
-    "section": "Studieboeken",
-    "text": "Studieboeken\nGratis online versies van mijn studieboeken.\nLeer Access - cursusboek Microsoft Access (Engelstalige versie: Learn Access)\nLeer Excel - cursusboek Microsoft Excel (Engelstalige versie: Learn Excel)\nData-analyse met Excel - analyseren van gegevens voor gevorderde Excel gebruikers\nBrouw je bier - cursusboek voor beginners om te leren bier te brouwen"
-  },
-  {
-    "objectID": "index.html#blogs",
-    "href": "index.html#blogs",
-    "title": "Welkom",
-    "section": "Blogs",
-    "text": "Blogs\nSoftwijs - artikelen over Data-analyse, Excel, R en Python\nVlearmoesbier - artikelen die met het brouwen van bier te maken hebben"
+    "objectID": "studieboeken.html",
+    "href": "studieboeken.html",
+    "title": "Studieboeken",
+    "section": "",
+    "text": "Gratis online versies van mijn studieboeken.\nLeer Access - cursusboek Microsoft Access (Engelstalige versie: Learn Access)\nLeer Excel - cursusboek Microsoft Excel (Engelstalige versie: Learn Excel)\nData-analyse met Excel - analyseren van gegevens voor gevorderde Excel gebruikers\nBrouw je bier - cursusboek voor beginners om te leren bier te brouwen"
   }
 ]
