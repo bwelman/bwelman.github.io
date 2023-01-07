@@ -4,10 +4,14 @@ title: "Studieboeken"
 
 *Gratis online versies van mijn studieboeken.*
 
-[Leer Access](https://leeraccess.netlify.app) - cursusboek Microsoft Access (Engelstalige versie: [Learn Access](https://learnaccess.netlify.app))
+[Leer Access](https://leeraccess.netlify.app) - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.
 
-[Leer Excel](https://leerexcel.netlify.app) - cursusboek Microsoft Excel (Engelstalige versie: [Learn Excel](https://learnexcel.netlify.app))
+[Learn Access](https://learnaccess.netlify.app) - Engelstalige versie van Leer Access
 
-[Data-analyse met Excel](https://excelanalyse.netlify.app) - analyseren van gegevens voor gevorderde Excel gebruikers
+[Leer Excel](https://leerexcel.netlify.app) - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.
 
-[Brouw je bier](https://brouwjebier.netlify.app) - cursusboek voor beginners om te leren bier te brouwen
+[Learn Excel](https://learnexcel.netlify.app) - Engelstalige versie van Leer Excel
+
+[Data-analyse met Excel](https://excelanalyse.netlify.app) - Analyseren van gegevens voor gevorderde Excel gebruikers
+
+[Brouw je bier](https://brouwjebier.netlify.app) - Cursusboek bierbrouwen voor beginners
