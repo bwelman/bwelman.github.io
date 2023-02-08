@@ -1,0 +1,99 @@
+---
+title: "Unieke waarden/records in Access Queries"
+abstract: |
+  Uitleg over het verschil tussen deze twee query opties in MS Access.
+date: "2021-02-02"
+image: "qry-uniekewaarden-ontwerp.png"
+categories: [databases]
+toc: true
+---
+
+# Inleiding
+
+In het eigenschappen venster van een query zijn twee opties, *Unieke Waarden* en *Unieke Records*. Standaard staat de waarde voor beiden op *Nee*. Deze leveren soms dezelfde waarden op, maar er zijn significante verschillen wanneer je een van beide op *Ja* zet. Verder kun je niet beide waarden op *Ja* zetten.
+
+::: callout-note
+Deze eigenschappen corresponderen met respectievelijk de SQL opdrachten
+
+*DISTINCT* en *DISTINCTROW*.
+:::
+
+-   **Standaard**, wanneer beide eigenschappen dus *Nee* zijn, worden alle records getoond die aan de queryvoorwaarden voldoen.
+
+-   **Unieke Waarden** (DISTINCT in SQL) controleert alleen de uitvoervelden van de query en verwijdert daarna de dubbele rijen. Bij meerdere uitvoervelden moet de combinatie van alle uitvoervelden uniek zijn.
+
+-   **Unieke Records** (DISTINCTROW in SQL) daarentegen controleert alle velden in de tabel die wordt opgevraagd en verwijdert duplicaten. De getoonde records moeten uniek zijn op basis van alle velden in de onderliggende tabellen en niet alleen de velden in de query.
+
+Verdere uitleg via een voorbeeld met een eenvoudige database `Voorbeeld_Uniek.accdb`. Deze bevat twee tabellen:
+
+::: {#fig-tabellen layout-ncol="2"}
+![Tabel Klanten](tabel-klanten.png){#fig-klanten}
+
+![Tabel Orders](tabel-orders.png){#fig-orders}
+
+Tabellen in de database
+:::
+
+Tussen de tabellen is een een-op-veel relatie van Klanten.Klantnr \> Orders.Klantnr.
+
+Zoals je ziet zijn er twee verschillende klanten met dezelfde naam voor Bedrijf. In de query's hierna wordt steeds deze naam getoond voor de drie verschillende mogelijkheden.
+
+# qry Klanten standaard
+
+**Ontwerp**
+
+Onder deze naam is een query gemaakt waar beide tabellen aan zijn toegevoegd. Het ontwerpvenster ziet er als volgt uit:
+
+![Standaard ontwerp query Klanten](qry-standaard-ontwerp.png){#fig-qry-standaard-ontwerp}
+
+![Standaard eigenschappen query Klanten](qry-standaard-eigenschappen.png){#fig-qry-standaard-eigenschappen}
+
+Wanneer je met SQL werkt, dan is de opdracht:
+
+    SELECT Klanten.Bedrijf
+    FROM Klanten
+    INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;
+
+**RESULTAAT**
+
+![Vier rijen, voor elke klantorder is er een rij, alle records worden getoond.](qry-standaard-resultaat.png){#fig-qry-standaard-resultaat}
+
+# qry Klanten unieke waarden
+
+**Ontwerp**
+
+In het Eigenschappenvenster wordt `Unieke waarden = Ja`.
+
+![Ontwerp qry Klanten unieke waarden.](qry-uniekewaarden-ontwerp.png){#fig-qry-uniekewaarden-ontwerp}
+
+Wanneer je met SQL werkt, dan is de opdracht:
+
+    SELECT DISTINCT Klanten.Bedrijf
+    FROM Klanten
+    INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;
+
+**Resultaat**
+
+![Twee unieke rijen, de resultaten worden beperkt tot unieke waarden in het uitvoerveld.](qry-uniekewaarden-resultaat.png){#fig-qry-uniekewaarden-resultaat}
+
+# qry Klanten unieke records
+
+**Ontwerp**
+
+In het Eigenschappenvenster wordt `Unieke records = Ja`.
+
+![Ontwerp qry Klanten unieke records.](qry-uniekerecords-ontwerp.png){#fig-qry-uniekerecords-ontwerp}
+
+Wanneer je met SQL werkt, dan is de opdracht:
+
+    SELECT DISTINCTROW Klanten.Bedrijf
+    FROM Klanten
+    INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;
+
+**Resultaat**
+
+![Drie rijen, want de resultaten in alle onderliggende tabellen moeten uniek zijn, dus niet de uitvoervelden.](qry-uniekerecords-resultaat.png){#fig-qry-uniekerecords-resultaat}
+
+Je ziet hier twee keer "Jansen BV". Weliswaar is dat niet uniek in het uitvoerveld, maar ze zijn uniek omdat de ene in Amsterdam zit en de andere in Londen.
+
+Wanneer je zelf met deze datase wilt werken dan kun je deze hier downloaden: [Database Voorbeeld_Uniek](Voorbeeld_Uniek.accdb)

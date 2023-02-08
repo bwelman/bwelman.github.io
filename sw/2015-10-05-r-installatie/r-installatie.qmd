@@ -1,0 +1,66 @@
+---
+title: "R installatie"
+abstract: "Hoe te beginnen met R."
+date: "2015-10-05"
+date-modified: "2023-02-09"
+image: "Rlogo.png"
+categories: [r]
+---
+
+R is een (gratis) programmeertaal voor statistische berekeningen en data-analyses en beschikbaar voor Windows, MacOS en Unix. Na installatie krijg je een eenvoudige GUI met daarbinnen een console. Via de console kun je R opdrachten intypen en direct laten uitvoeren. Via de Gui kun je een bestand met R opdrachten maken (R-script), opslaan en uitvoeren.
+
+Door de structuur van R is de software uitstekend te gebruiken voor het uitvoeren van (reproduceerbaar) statistisch onderzoek waarmee je ook nog eens de rapporten en presentaties kunt genereren.
+
+R heeft wel een behoorlijke drempel om er mee te beginnen. Veel opdrachten kun je op zoveel manieren uitvoeren dat je snel de weg kwijtraakt. Gelukkig is er een grote, actieve community waar je hulp kunt krijgen. Ook zijn er erg veel boeken, tutorials en blogs waar je veel informatie kunt vinden.
+
+## Installatie R
+
+De thuisbasis van het R project is https://www.r-project.org/. Downloaden van R kan op "Comprehensive R Archive Network" [CRAN](https://cran.r-project.org/). Daarna eenvoudig de installatie uitvoeren.
+
+::: callout-note
+Een andere optie het gebruik van Microsoft R Application Network [MRAN](https://mran.microsoft.com/)
+:::
+
+R biedt na installatie een console waar R commando's kunnen worden ingegeven en het resultaat op het scherm weergegeven. Dit is een werkbare methode, maar het is veel handiger en ook aan te raden om met een IDE als RStudio te gaan werken.
+
+### Eenvoudig voorbeeld
+
+Hieronder een eenvoudig voorbeeld met vier opdrachten. Eerst worden 1000 getallen random getrokken uit een normale verdeling met gemiddelde 6,5 en een standaarddeviatie 1,5. Het resultaat wordt toegekend aan variabele `z`. In R is dat een vector met in dit geval 1000 getallen. De opdracht `summary` geeft een 5-getallensamenvatting van de waarden, waarna een (default) histogram en een (default) boxplot wordt getekend.
+
+    z <- rnorm(n = 1000, mean = 6.5, sd = 1.5)
+    summary(z)
+    hist(z)
+    boxplot(z)
+
+```{r}
+#| echo: false
+
+set.seed(123)
+z <- rnorm(n = 1000, mean = 6.5, sd = 1.5)
+summary(z)
+```
+
+```{r}
+#| label: fig-grafieken
+#| echo: false
+#| layout-ncol: 2
+#| fig-cap: Grafieken
+#| fig-subcap: 
+#| - Histogram
+#| - Boxplot
+
+hist(z)
+
+boxplot(z)
+
+```
+
+## RStudio
+
+Je kunt met de standaard meegeleverde Gui werken, maar veel plezieriger en handiger is te werken met **RStudio Desktop**. RStudio is een geïntegreerde ontwikkelomgeving (IDE)voor R welke veel voordelen en extra's biedt. De open source editie van RStudio is gratis en ook hiervan zijn versies voor Windows, Mac en Linux. Wanneer je met R werkt kun je eigenlijk niet zonder. Download [RStudio Desktop Open Source Edition](https://rstudio.com/products/rstudio/download/). Let er op dat je eerst R installeert voordat je RStudio installeert.
+
+## R bestanden
+
+Een R script (extensie `.R`) is een plat tekstbestand met R-code, een script dus. Met de opdracht `source(bestand)` wordt het bestand ingelezen en uitgevoerd. De uitvoer wordt standaard in de console getoond.
+
+Je kunt ook R code opnemen in R Markdown en Quarto bestanden. Naast tekst in Markdown formaat kunnen deze ook R code (opgenomen in zogenaamde R code chunks) bevatten. Hieruit kun je documenten in verschillende uitvoerformaten (html, pdf, docx, epub, ...) produceren welke naast de opgemaakte markdown tekst ook de uitvoer van de R-code bevat. Hierdoor heb je de mogelijkheid om jouw analyses om te zetten in kwalitatief hoogwaardige rapporten, presentaties, dashboards, tijdschriftartikelen, ...

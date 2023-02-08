@@ -1,0 +1,60 @@
+---
+title: "IS functies"
+abstract: |
+  Met IS functies de waarde in een cel controleren.
+date: "2022-08-04"
+image: "isfout.png"
+categories: [excel]
+---
+
+Het komt geregeld voor dat je moet controleren of de inhoud van een cel aan een bepaalde voorwaarde voldoet. Bijvoorbeeld of de cel leeg is, of een getal, tekst of formule bevat. Excel heeft hiervoor een aantal formules die allemaal met `IS` beginnen en de waarde `WAAR` of `ONWAAR` retourneren.
+
+Dit zijn ze, in alfabetische volgorde:
+
+IS.EVEN(getal)
+
+:   Controleert of het getal even is.
+
+IS.ONEVEN(Getal)
+
+:   Controleert of het getal oneven is.
+
+ISFORMULE(Verwijzing)
+
+:   Controleert of er een verwijzing is naar een cel die een formule bevat.
+
+ISFOUT(Waarde)
+
+:   Controleert of de waarde een fout is (#N/B, #WAARDE!, #VERW!, #DEEL/0!, #GETAL!, #NAAM?, of #LEEG!).
+
+ISFOUT2(Waarde)
+
+:   Controleert of de waarde een fout is met uitzondering van #N/B.
+
+ISGEENTEKST(Waarde)
+
+:   Controleert of de waarde geen tekst is (Let op: lege cellen zijn geen tekst).
+
+ISGETAL(Waarde)
+
+:   Controleert of de waarde een getal is.
+
+ISLEEG(Verwijzing)
+
+:   Controleert of de verwijzing naar een lege cel is.
+
+ISLOGISCH(Waarde)
+
+:   Controleert of de waarde een logische (WAAR of ONWAAR) waarde is.
+
+ISNB(Waarde)
+
+:   Controleert of de waarde #N/B is.
+
+ISTEKST(Waarde)
+
+:   Controleert of de waarde tekst is.
+
+ISVERWIJZING(Waarde)
+
+:   controleert of de waarde een verwijzing is.

@@ -1,0 +1,103 @@
+---
+title: "Curve functie voor grafieken"
+abstract: |
+  Hoe je snel en eenvoudig grafieken kunt maken met de functie curve.
+date: "2020-04-04"
+image: "preview.png"
+categories: [r]
+---
+
+Een zeer handige functie in R is `curve()` waarmee je op een eenvoudige manier grafieken kunt tekenen. De syntax is
+
+    curve(expr, from = NULL, to = NULL, n = 101, add = FALSE,
+          type = "l", xname = "x", xlab = xname, ylab = NULL,
+          log = NULL, xlim = NULL, ...)
+
+-   `expr` - de naam van een functie of een expressie in termen van x.
+-   `from, to` - het domein waarop de grafiek getekend wordt.
+-   `n` - het aantal x-waarden dat geëvalueerd wordt
+-   `add` - logische waarde om aan te geven of de grafiek aan een bestaande grafiek moet worden toegevoegd.
+-   `xname` - karakter voor de variabele in het functievoorschrift (standaard `x`)
+
+Een zeer eenvoudige opdracht is de volgende
+
+```{r}
+#| label: fig-vb01
+#| fig-cap: "Grafiek van f(x) = x +1"
+
+curve(expr = x+1)
+```
+
+::: callout-warning
+Voor de functie f(x) = x kun je niet `expr = x` gebruiken. Je krijgt dan een foutmelding omdat dit niet als een expressie herkend wordt, waardoor gezocht wordt naar een object met de naam x. Je kunt de foutmelding vermijden door `expr = (x)` of `expr = x^1` te gebruiken.
+:::
+
+```{r}
+#| label: fig-vb02
+#| fig-cap: "Grafiek met gespecificeerd domein voor x en iets dikkere blauwe lijn."
+
+curve(expr = sin(x) + cos(x), from = 0, to = 2*pi, 
+      ylab = "y", main = "y = sin(x) + cos(x)", col = "blue", lwd=2)
+```
+
+### Grid toevoegen
+
+Erg handig is verder om tevens gebruik te maken van `grid()` die een rechthoekige grid van `nx` bij `ny` aan een bestaande grafiek toevoegt. Deze heeft als argumenten
+
+-   `nx, ny` - het aantal rasters in de x en en y richting (standaard de waarden van de assen)
+-   `col`: kleur gridlijn (standaard "lightgray")
+-   `lty`: type lijn (standaard "dotted")
+-   `lwd`: breedte lijn
+-   `equilogs`: alleen in gebruik bij logoaritmische schaal
+
+In het volgende voorbeeld wordt de grid gebruikt met daarnaast de schaal voor de y-as. Hierdoor kun je goed zien dat je de grafiek van $|x^2 -1|$ kunt krijgen uit de grafiek van $x^2 -1$ door bij deze laatste het deel dat onder de X-as ligt te spiegelen t.o.v. de x-as.
+
+```{r}
+#| label: fig-vb03
+#| fig-cap: "Twee grafieken met elkaar vergeleken."
+
+par(mfrow = c(1,2))
+curve(expr = x^2 - 1, from = -2, to = 2, 
+      ylim = c(-1,3), ylab = "y", main = "x² - 1")
+grid()
+curve(expr = abs(x^2 - 1), from = -2, to = 2, 
+      ylim = c(-1,3), ylab = "y", main = "|x² - 1|")
+grid()
+```
+
+### Meerdere grafieken in 1 figuur
+
+Nadat de eerste grafiek getekend is kun je meerdere grafieken toevoegen via het argument `add = TRUE`.
+
+```{r}
+#| label: fig-vb04
+#| fig-cap: "Meerdere grafieken in één figuur."
+#| preview: true
+
+curve(expr = x^2, from = -3, to = 3, ylab = "y", col = "green")
+curve(expr = -x + 2, add = TRUE, col = "red")
+curve(expr = 0*x + 3, add = TRUE, col = "blue")
+grid()
+```
+
+### Logaritmische schaal
+
+Met het argument `log` kun je een logaritmische schaal (natuurlijke logaritme) specificeren. Mogelijkheden: `log = "x"`, `log = "y"` en `log="xy"`. Zie hierna het voorbeeld voor $y = e^x$.
+
+```{r}
+#| label: fig-vb05
+#| fig-cap: "Logaritmische schaal voor de Y-as"
+
+curve(expr = exp(x), from = 0, to = 10, log = "y", ylab = "Ln(y)", main = "y = e^x")
+```
+
+### Naam variabele
+
+De naam van de variabele in het functievoorschrift is standaard x. Met het argument `xname` kun je deze wijzigen.
+
+```{r}
+#| label: fig-vb06
+#| fig-cap: "Logaritmische schaal voor zowel de Y-as als de X-as"
+
+curve(expr = sin, from = -2*pi, to = 2*pi, xname = "t")
+```

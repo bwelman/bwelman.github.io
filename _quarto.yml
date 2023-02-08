@@ -8,18 +8,15 @@ website:
   repo-url: "https://github.com/bwelman/bwelman.github.io"
   repo-actions: [issue]
   navbar:
-    title: softwijs
+    title: Home
     logo: images/logo-transparant.png
     right:
-      - icon: home
-        text: Home
-        href: index.qmd
       - text: Studieboeken
         href: studieboeken.qmd
+      - text: Softwijs
+        href: softwijs.qmd
       - text: Vlearmoesbier
         href: vlearmoesbier.qmd
-      - icon: github
-        href: https://github.com/bwelman
   page-footer:
     left:
       - "copyright 2022, Ben Welman"

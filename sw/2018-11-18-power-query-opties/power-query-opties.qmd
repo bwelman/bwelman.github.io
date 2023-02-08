@@ -1,0 +1,22 @@
+---
+title: "Power Query Opties"
+abstract: "Opties voor Power Query in Excel."
+date: "2018-11-18"
+image: "power-query-opties.png"
+categories: [excel]
+---
+
+Het *gegevensmodel* werd voor het eerst geïntroduceerd in Excel 2010 samen met de *Power Pivot* addin. Vanaf versie 2013 is het gegevensmodel volledig opgenomen in Excel. Een gegevensmodel is een abstract model dat gegevens in tabellen organiseert en relaties tussen tabellen mogelijk maakt.
+
+Via *Gegevens ophalen*, voorheen *Power Query* genoemd, kun je gegevens uit meerdere gegevensbronnen in Excel laden. Aan het einde van het importproces heb je de keuze om de gegevens naar een werkblad, het gegevensmodel of beide te laden.
+
+Niet altijd heb je deze keuze en dat wordt veroorzaakt door de standaardinstellingen voor het laden van query's. Deze standaardinstellingen zijn op twee manieren te bereiken:
+
+1.  In Excel: tab Gegevens \> Gegevens ophalen (groep gegevens ophalen en transformeren) \> Queryopties
+2.  In Power Query Editor: Bestand \> Opties en instellingen \> Queryopties
+
+In beide gevallen krijg je
+
+![Power Query Opties](power-query-opties.png)
+
+Met de standaardinstellingen voor het laden worden de gegevens naar een nieuw werkblad geladen als er één query wordt geladen. Wanneer je twee of meer tabellen importeert wordt automatisch een gegevensmodel gemaakt. Je kunt het dialoogvenster Laden naar gebruiken om deze instellingen voor een bepaalde query te overschrijven.

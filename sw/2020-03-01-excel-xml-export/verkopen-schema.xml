@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<verkopen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <record>
+       <Voornaam>Roger</Voornaam>
+       <Achternaam>Rood</Achternaam>
+       <Verkopen>13873</Verkopen>
+       <Land>Nederland</Land>
+       <Kwartaal>KW 3</Kwartaal>
+    </record>
+    <record>
+       <Voornaam>Berend</Voornaam>
+       <Achternaam>Blauw</Achternaam>
+       <Verkopen>12262</Verkopen>
+       <Land>Belgie</Land>
+       <Kwartaal>KW 4</Kwartaal>
+    </record>
+</verkopen>
