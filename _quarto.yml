@@ -7,6 +7,7 @@ website:
   site-url: "https://bwelman.github.io/"
   repo-url: "https://github.com/bwelman/bwelman.github.io"
   repo-actions: [issue]
+  google-analytics: "G-DZG4072LJ3"
   navbar:
     title: Home
     logo: images/logo-transparant.png
