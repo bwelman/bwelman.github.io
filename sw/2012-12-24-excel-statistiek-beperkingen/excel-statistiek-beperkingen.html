@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+<meta name="dcterms.date" content="2012-12-24">
+
+<title>Ben Welman - Beperkingen Excel voor statistisch gebruik</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#statistische-werbladfuncties" id="toc-statistische-werbladfuncties" class="nav-link active" data-scroll-target="#statistische-werbladfuncties">Statistische werbladfuncties</a></li>
+  <li><a href="#gegevensanalyse-analysis-toolpak" id="toc-gegevensanalyse-analysis-toolpak" class="nav-link" data-scroll-target="#gegevensanalyse-analysis-toolpak">Gegevensanalyse (Analysis Toolpak)</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bwelman/bwelman.github.io/issues/new" class="toc-action">Een probleem melden</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Beperkingen Excel voor statistisch gebruik</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+    <div class="quarto-category">statistiek</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">24 december 2012</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Gewijzigd</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">9 februari 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    <p>Statistische mogelijkheden in Excel en de beperkingen hierbij.</p>
+  </div>
+</div>
+
+</header>
+
+<p>Excel heeft een aantal beperkingen bij het uitvoeren van statistische berekeningen. Hierdoor leent Excel zich niet goed voor gebruik bij wetenschappelijk onderzoek. Excel kun je wel goed gebruiken voor data entry en daarnaast kun je met Excel vaak goed onderliggende principes van bijv. Machine Learning proberen te begrijpen via simpele voorbeelden, maar daarmee houd het ook op.</p>
+<p>Bedrijven en het hoger onderwijs maken om meerdere reden steeds meer gebruik van R en Python, zoals</p>
+<ol type="1">
+<li>De software is gratis.</li>
+<li>Uitgevoerde analyses zijn reproduceerbaar.</li>
+<li>Samenwerken aan analyses wordt eenvoudiger.</li>
+</ol>
+<p>Excel kan gegevens alleen maar verwerken wanneer ze in een Excel tabel staan. In een dergelijke tabel moeten de gegevens geen fouten bevatten, want met fouten in een lijst gaat Excel niet altijd goed om. Het maken van een goede tabel met betrouwbare gegevens is daarom belangrijk. Bij het invoeren van gegevens (de zogenaamde data entry) in een tabel is het raadzaam om gebruik te maken van</p>
+<ul>
+<li>invoerformulieren</li>
+<li>gegevensvalidatie</li>
+</ul>
+<section id="statistische-werbladfuncties" class="level3">
+<h3 class="anchored" data-anchor-id="statistische-werbladfuncties">Statistische werbladfuncties</h3>
+<p>Standaard zitten in de functiebibliotheek van Excel diverse functies die voor een statistische analyse van gegevens te gebruiken zijn. Deze zijn te vinden in de categorie Statistische functies. Enkele veel gebruikte:</p>
+<ul>
+<li><code>GEMIDDELDE</code>: Rekenkundige gemiddelde van een reeks getallen.</li>
+<li><code>MEDIAAN</code>: Mediaan van de waarden</li>
+<li><code>MODUS.ENKELV</code>: Modus van de waarden</li>
+<li><code>NORMALISEREN</code>: Berekent de z-waarde uit gemiddelde en standaarddeviatie</li>
+<li><code>NORM.S.VERD</code>: kansverdeling van de standaardnormale verdeling</li>
+<li><code>NORM.VERD.N</code>: Kansverdeling van de normale verdeling</li>
+<li><code>STDEV.P</code>: standaarddeviatie van een populatie</li>
+<li><code>STDEV.S</code>: standaarddeviatie van een steekproef</li>
+<li><code>VAR.P</code>: Variantie van een populatie</li>
+<li><code>VAR.S</code>: Variantie van een steekproef</li>
+<li><code>T.DIST</code>: T-verdeling</li>
+<li><code>CHIKW.VERD</code>: Chikwadraat verdeling</li>
+<li><code>TREND</code>: Berekent waarden volgens lineaire trend</li>
+<li><code>CORRELATIE</code>: Berekent correlatiecoëfficient</li>
+<li><code>COVARIANTIE.P</code>: Covariantie in populatie</li>
+<li><code>COVARIANTIE.S</code>: Covariantie in steekproef</li>
+<li><code>BINOM.VERD</code>: Binomiale verdeling</li>
+<li><code>POISSON.VERD</code>: Poisson verdeling</li>
+</ul>
+<p>Bij het gebruik van deze werkbladfuncties, bijvoorbeeld voor het maken van een betrouwbaarheidsinterval of de toetsing van een hypothese, moet je steeds zelf de formules en de bijbehorende argumenten in het werkblad invoeren. Dit vereist wel dat je goed weet wat je doet.</p>
+<p>En bij de chikwadraattoetsing wordt veelvuldig gebruik gemaakt van draaitabellen. Het goed kunnen werken daarmee is dan een vereiste.</p>
+</section>
+<section id="gegevensanalyse-analysis-toolpak" class="level3">
+<h3 class="anchored" data-anchor-id="gegevensanalyse-analysis-toolpak">Gegevensanalyse (Analysis Toolpak)</h3>
+<p>Naast het gebruik van werkbladfuncties heeft Excel standaard ook een invoegtoepassing Gegevensanalyse (Analysis ToolPak) beschikbaar welke een aantal functies biedt voor het uitvoeren van (gecompliceerdere) gegevensanalyses. Een paar mogelijkheden:</p>
+<ul>
+<li>Beschrijvende statistiek</li>
+<li>Correlatie</li>
+<li>Covariantie</li>
+<li>F-toets</li>
+<li>T-toets</li>
+<li>Z-toets</li>
+<li>Variantieanalyse</li>
+<li>Histogram</li>
+<li>Rang en percentiel</li>
+<li>Regressie</li>
+</ul>
+<p>Net als bij de werkbladfuncties geldt ook hier dat je voor het gebruik over de nodige statistische kennis moet beschikken.</p>
+<p><strong>Uitbreidingen</strong></p>
+<p>Vanwege de beperkte statistische mogelijkheden van Excel zijn er vele uitbreidingen in de vorm van invoegtoepassingen (add-ins) ontwikkeld. Deze add-ins hebben naast meer functies ook vaak een handiger interface waardoor het gebruik ervan eenvoudiger wordt in vergelijking met de werkbladfuncties. Er zijn zowel gratis als commerciële add-ins verkrijgbaar.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>

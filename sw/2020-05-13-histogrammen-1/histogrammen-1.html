@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>Ben Welman - Histogrammen (deel 1)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Histogrammen (deel 1)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+    <div class="quarto-category">statistiek</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13 mei 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    Hoe je frequentieverdelingen in Excel maakt.
+  </div>
+</div>
+
+</header>
+
+<p>Bracht het maken van een histogram in oudere versies van Excel veel handwerk met zich mee, in de nieuwere versies (Excel 365, Excel 2016) is dit een stuk gemakkelijker gemaakt. Een probleem is wel dat het histogram er vaak nooit zo uitziet als je graag zou willen. En dat het maken van bepaalde aanpassingen soms moeilijk tot zelfs onmogelijk is, waardoor je toch weer op het handwerk met formules terug moet grijpen.</p>
+<p>In een aantal artikelen wordt aandacht besteed aan wat je allemaal tegen kunt komen. In dit eerste deel gaat het over de basis voor een histogram, de frequentieverdeling.</p>
+<p><strong>Frequentieverdelingen</strong></p>
+<p>Om het gedrag van een variabele te bestuderen ga je waarden van die variabele verzamelen, bijvoorbeeld door metingen uit te voeren. De <em>frequentie</em> van een waarde is het aantal malen dat die waarde voorkomt. Deze frequenties worden dan geordend in een tabel waardoor er een <em>frequentieverdeling</em> ontstaat.</p>
+<p>Naast deze <em>absolute frequentie</em> kun je ook de <em>relatieve frequentie</em> bepalen. Dit is het aantal malen dat een meetwaarde voorkomt gedeeld door het totaal aantal waarnemingen. De relatieve frequentie wordt uitgedrukt als fractie of als een percentage. En tot slot kun je ook nog de <em>cumulatieve frequentie</em> bepalen. Dit is de som van alle frequenties tot en met de frequentie van de desbetreffende waarde. En de cumulatieve frequentie kun je zowel absoluut als relatief uitdrukken.</p>
+<p>Meestal zijn er van een variabele veel meetwaarden beschikbaar. Dan is het niet handig om van de afzonderlijke waarden een frequentieverdeling te maken omdat dit een lange lijst wordt welke niet meer inzicht in de variabele zal geven. In dat geval worden de frequenties samengevat in groepen, zogenaamde <em>klassen</em> of ook wel <em>bins</em> geheten.. Het samenbrengen in klassen heet ook wel <em>classificeren</em>.</p>
+<p>De grenzen van de klasse, de ondergrens en bovengrens, worden met een combinatie van ronde haken <code>()</code> en blokhaken <code>[]</code> aangeduid. Een ronde haak betekent dat de grenswaarde niet tot de klasse behoort. Een blokhaak betekent dat de grenswaarde wel tot de klasse behoort. Zo hoort bij een klasse aangeduid met <code>[25,40)</code> de waarde 25 wel tot de klasse, maar de waarde 40 niet.</p>
+<p>De <em>klassebreedte</em> is het verschil tussen de bovengrens en de ondergrens van een klasse. Zo heeft de klasse <code>[25,40)</code> een klassebreedte 15. Het bepalen van de klassebreedte wordt door de onderzoeker bepaald en hangt vaak van de onderzoeksvraag af. Ook voor het totaal aantal klassen gelden geen harde afspraken. Is de klassebreedte groot, dan heb je minder klassen, maar krijg je ook minder inzicht. Sommige onderzoekers hanteren als vuistregel voor het aantal klassen: maximaal de wortel uit het totaal aantal waarnemingen.</p>
+<p>Voor het maken van klassen gelden de volgende regels.</p>
+<p>Harde regels:</p>
+<ul>
+<li>De klassen mogen geen overlappingen vertonen. Een waarneming moet slechts in één klasse ondergebracht kunnen worden. Een klassindeling met hierin de klassen <code>[25,50]</code> en <code>[50,75]</code> kan dus niet. Want dit zou inhouden dat de waarde 50 tot 2 klassen kan behoren.</li>
+<li>Voor elke waarneming moet er een klasse beschikbaar zijn. Dus alle waarnemingen moeten in een klasse ondergebracht kunnen worden. Vaak worden daarom de eerste en laatste klasse extra groot gemaakt.</li>
+</ul>
+<p>Zachte regels (voor de klassebreedte):</p>
+<ul>
+<li>Als het kan maak dan de klassen even breed. Veel software (en vooral Excel) kan hier beter mee overweg dan wanneer de klassen niet even breed zijn. Voor de eerste en de laatste klasse lukt dat niet alijd omdat alle waarnemingen opgevangen moeten worden. Daarnaast kunnen er ook andere redenen zijn om de klassen niet even breed te maken. Ook worden soms klassen waarin weinig waarnemingen zitten samengevoegd waardoor een bredere klasse ontstaat.</li>
+<li>De klassen moeten wel voldoende differentieren, verschillen vertonen. Zo heeft het weinig zin om voor de inkomensverdeling in Nederland een klasse van €10.000 tot €60.000 te maken, omdat hierin bijna alle inkomens (&gt; 90%) vallen.</li>
+</ul>
+<p><strong>Een histogram is een grafische weergave van een frequentieverdeling van gegevens.</strong></p>
+<p><strong>Voorbeeld testscores</strong></p>
+<p>Aan een test wordt door 100 personen deelgenomen. De volgende tabel geeft een overzicht van de frequenties, relatieve frequenties en cumulatieve relatieve frequenties. De laatste twee als fracties. Alle klassen hebben hier dezelfde breedte 10.</p>
+<div id="tbl-testscores" class="anchored">
+<table class="table">
+<caption>Tabel&nbsp;1: Testscores</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">score</th>
+<th style="text-align: center;">freq.</th>
+<th style="text-align: center;">rel. freq.</th>
+<th style="text-align: center;">cum. rel. freq.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>[10,20)</code></td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">0,14</td>
+<td style="text-align: center;">0,14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>[20,30)</code></td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">0,40</td>
+<td style="text-align: center;">0,54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>[30,40)</code></td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">0,35</td>
+<td style="text-align: center;">0,89</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>[40,50)</code></td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">0,11</td>
+<td style="text-align: center;">1,00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="fig-testscores-histogram-grof" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="testscores-histogram-grof.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Histogram met klassebreedte 10</figcaption><p></p>
+</figure>
+</div>
+<p>In dit voorbeeld werd uitgegaan van een bestaande frequentieverdeling. De gegevens zelf zijn door het classificeren niet meer bekend, waardoor er veel informatie verdwenen is. Wanneer je wat dieper op de verdeling zou willen inzoomen, moet je de klassebreedte verkleinen naar bijvoorbeeld 5, zoals in de volgende afbeelding te zien is.</p>
+<div id="fig-testscores-histogram-fijn" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="testscores-histogram-fijn.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Histogram met klassebreedte 5</figcaption><p></p>
+</figure>
+</div>
+<p>Beide diagrammen zijn tot stand gekomen door een kolomdiagram in Excel te maken. Wie dit zelf na wil maken in Excel kan het bestand <a href="../../download/testscores.xlsx">testscores.xlsx</a> downloaden. Hierin zijn ook de benodigde aanwijzingen voor het maken van dit diagram te vinden. Zoals in het begin van dit artikel is aangegeven heeft Excel specifieke hulpmiddelen voor het maken van histogrammen. Deze zullen nog aan bod komen.</p>
+<p>In het volgende artikel zal het maken van een frequentieverdeling van een gegevensverzameling besproken worden.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>

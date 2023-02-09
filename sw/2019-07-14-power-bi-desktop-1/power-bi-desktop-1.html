@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>Ben Welman - Power BI Desktop (deel 1)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#gegevens-ophalen" id="toc-gegevens-ophalen" class="nav-link active" data-scroll-target="#gegevens-ophalen">Gegevens ophalen</a></li>
+  <li><a href="#visualisatie-verkochte-hoeveelheid-per-titel" id="toc-visualisatie-verkochte-hoeveelheid-per-titel" class="nav-link" data-scroll-target="#visualisatie-verkochte-hoeveelheid-per-titel">Visualisatie: Verkochte hoeveelheid per titel</a>
+  <ul class="collapse">
+  <li><a href="#opmaak-wijzigen" id="toc-opmaak-wijzigen" class="nav-link" data-scroll-target="#opmaak-wijzigen">Opmaak wijzigen</a></li>
+  </ul></li>
+  <li><a href="#opslaan" id="toc-opslaan" class="nav-link" data-scroll-target="#opslaan">Opslaan</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bwelman/bwelman.github.io/issues/new" class="toc-action">Een probleem melden</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Power BI Desktop (deel 1)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+    <div class="quarto-category">power-bi</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">14 juli 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    <p>Het eerste deel van een tutorial over het werken met Power BI Desktop. Het ophalen van gegevens en het maken van een visualisatie.</p>
+  </div>
+</div>
+
+</header>
+
+<p>Met de mogelijkheden van de laatste versies van Excel ben je goed in staat om gegevens te analyseren en te visualiseren. Maar daarnaast heeft Microsoft hiervoor nog een andere applicatie, namelijk <strong>Power BI</strong>. Er zijn overeenkomsten en verschillen tussen Excel en Power BI. Aan Excel is al veel aandacht besteed, zie de gratis online cursus <a href="https://leerexcel.netlify.app/">LeerExcel</a>. In een tweetal artikelen wil ik je bekend laten maken met Power BI.</p>
+<p>Microsoft Power BI bevat drie componenten, die je ook in Excel aantreft:</p>
+<ul>
+<li><strong>Power Query</strong>, waarmee je verbindingen maakt met gegevensbronnen en de gegevens kunt bewerken.</li>
+<li><strong>Power Pivot</strong>, waarmee je het gegevensmodel kunt instellen (relaties aanbrengen) en berekende kolommen en metingen (measures) kunt maken.</li>
+<li><strong>Power View</strong>, waarmee je de gegevens kunt visualiseren in de vorm van grafieken en andere elementen.</li>
+</ul>
+<div id="fig-powerbi-componenten" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-componenten.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Power BI componenten</figcaption><p></p>
+</figure>
+</div>
+<p>Wanneer je met Microsoft Power BI wilt werken heb je twee mogelijkheden.</p>
+<ul>
+<li>Power BI service: een cloud gebaseerde online service</li>
+<li>Power BI desktop: een applicatie op de lokale computer</li>
+</ul>
+<p>Met beide kun je gratis werken. In deze tutorial vind je een kennismaking met de laatste. Om de oefeningen uit te voeren moet je uiteraard Power BI geïnstalleerd hebben. Dat kan via de link https://powerbi.microsoft.com/desktop. Je hebt wel een Microsoft account nodig.</p>
+<p>Verder heb je het hulpbestand <em>boekenverkoop.xlsx</em> nodig dat je via deze website <a href="https://softwijs.nl/download/boekenverkoop.xlsx">hier</a> kunt downloaden. Dit is een klein bestand met gegevens over de verkoop van boeken.</p>
+<section id="gegevens-ophalen" class="level2">
+<h2 class="anchored" data-anchor-id="gegevens-ophalen">Gegevens ophalen</h2>
+<p>Start Power BI Desktop op. Je krijgt nu het volgende scherm:</p>
+<div id="fig-powerbi-opstartscherm" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-opstartscherm.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Power BI opstartscherm</figcaption><p></p>
+</figure>
+</div>
+<p>Kies aan de linkerkant van dit opstartscherm voor <em>Gegevens ophalen</em>. Kies daarna in het scherm dat verschijnt voor <em>Excel</em>. Klik daarna op de knop <em>Verbinding maken</em> en blader dan naar het bestand <em>boekenverkoop.xlsx</em>. Klik op <em>Openen</em>. Het venster Navigator verschijnt dan.</p>
+<div id="fig-boekenverkoop-navigator" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-navigator.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Navigator venster</figcaption><p></p>
+</figure>
+</div>
+<p>Het navigatievenster is een plaats waar je een voorbeeld van de gegevens van alle gegevensentiteiten in de gegevensbron kunt bekijken. Het excelbestand waar je nu verbinding mee maakt heeft drie werkbladen (Auteurs, Boeken, Verkopen). En elk van deze werkbladen bevat een tabel met gegevens (tblAuteurs, tblBoeken, tblVerkopen). Wanneer je een werkblad of tabel selecteert krijg je aan de rechterkant een voorbeeld van deze gegevens te zien. Omdat elk werkblad alleen maar één tabel bevat, maakt het niet uit of je een tabel of een werkblad selecteert.</p>
+<p>Selecteer de drie tabellen en klik dan op de knop <em>Laden</em>.</p>
+<p>Power BI laad nu de gegevens in het geheugen en probeert tevens relaties te leggen tussen de tabellen. Voordat je nu verder gaat moet je eerst controleren of er relaties aangebracht zijn en zoja of deze juist zijn. Zo niet dan zul je zelf de relaties moeten aanbrengen dan wel corrigeren.</p>
+<p>Aan de linkerkant van het scherm zitten drie knoppen waarmee je kunt schakelen tussen de weergaves.</p>
+<div id="fig-powerbi-views" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-views.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Power BI weergaves</figcaption><p></p>
+</figure>
+</div>
+<p>Klik op de knop <em>Model</em>.</p>
+<div id="fig-boekenverkoop-relaties" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-relaties.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Relaties tussen de drie tabellen</figcaption><p></p>
+</figure>
+</div>
+<p>De automatisch gelegde relaties zijn bij dit voorbeeld juist:</p>
+<ul>
+<li>Tussen <code>tblAuteurs</code> en <code>tblBoeken</code> zit een 1 op veel relatie via het veld <code>auteur-id</code>.</li>
+<li>Tussen <code>tblBoeken</code> en <code>tblVerkopen</code> zit een 1 op veel relatie via het veld <code>isbn</code>.</li>
+</ul>
+<p>Nu het gegevensmodel in orde is kun je verder gaan met het maken van visualisaties voor een rapport.</p>
+<p>Klik aan de linkerkant van het scherm op de knop <em>Rapport</em>.</p>
+<p>Na het laden van de gegevens zie je in de rapportweergave aan de rechterkant van het scherm in het deelvenster Velden een lijst met de tabellen. Met de pijltjes omlaag kun je een tabel openklappen waarna de velden zichtbaar worden. Je gaat nu de eerste grafiek te maken.</p>
+</section>
+<section id="visualisatie-verkochte-hoeveelheid-per-titel" class="level2">
+<h2 class="anchored" data-anchor-id="visualisatie-verkochte-hoeveelheid-per-titel">Visualisatie: Verkochte hoeveelheid per titel</h2>
+<p>Sleep het veld <code>hoeveelheid</code> uit de tabel <code>tblVerkopen</code> naar het grote lege canvas.</p>
+<div id="fig-tblverkopen-hoeveelheid" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="tblverkopen-hoeveelheid.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Veld hoeveelheid in canvas slepen</figcaption><p></p>
+</figure>
+</div>
+<p>Deze actie creeert één visualisatie. De default visualisatie is een gegroepeerd kolomdiagram. In dit geval wordt er maar 1 kolom getekend welke het totaal aantal verkochte boeken weergeeft. Wanneer je de muis op de kolom plaatst zie dat het totale aantal 3592 is.</p>
+<div id="fig-boekenverkoop-totale-hoeveelheid" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-totale-hoeveelheid.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Totaal aantal verkochte boeken</figcaption><p></p>
+</figure>
+</div>
+<p>Aan de handgrepen om de figuur kun je zien dat deze visualisatie nog steeds geselecteerd is.</p>
+<p>Om de verkochte aantallen per boek te zien moet je het veld <code>titel</code> uit de tabel <code>tblBoeken</code> in dezelfde visualisatie slepen.</p>
+<div id="fig-boekenverkoop-hoeveelheid-per-titel" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-hoeveelheid-per-titel.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Hoeveelheid per titel</figcaption><p></p>
+</figure>
+</div>
+<p>De titel van het boek is langs de X-as geplaatst en de verkochte hoeveelheid langs de Y-as. Desgewenst kun je via de handgrepen de afmetingen wijzigen.</p>
+<section id="opmaak-wijzigen" class="level3">
+<h3 class="anchored" data-anchor-id="opmaak-wijzigen">Opmaak wijzigen</h3>
+<p>In het deelvenster Visualisaties zitten drie tabs waarmee je diverse instellingen voor de geselecteerde visualisatie kunt wijzigen. Met de middelste die de vorm van een verfroller heeft, kun je allerlei opmaakkenmerken instellen.</p>
+<div id="fig-powerbi-visualisatie-tabs" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-visualisatie-tabs.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;9: Visualisatie tabs</figcaption><p></p>
+</figure>
+</div>
+<p>Zorg dat de grafiek geselecteerd is en selecteer daarna de tab <em>Indeling</em>.</p>
+<p>Allereerst ga je de kleuren van de kolommen wijzigen. Klap <em>Gegevenskleuren</em> uit en stel daarna de standaardkleur in op rood.</p>
+<div id="fig-powerbi-gegevenskleur-rood" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-gegevenskleur-rood.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;10: Gegevenskleur ingesteld op rood</figcaption><p></p>
+</figure>
+</div>
+<p>Om ook het aantal verkochte boeken als een getal bij de kolom te plaatsen moet je de optie <em>Gegevenslabels</em> inschakelen.</p>
+<div id="fig-powerbi-gegevenslabels-aan" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-gegevenslabels-aan.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;11: Gegevenslabels ingeschakeld</figcaption><p></p>
+</figure>
+</div>
+<p>Tot slot wordt de titel gewijzigd.</p>
+<p>Klap opmaak voor <em>Titel</em> open en breng de volgende wijzigingen aan:</p>
+<ul>
+<li>Titeltekst: Aantal verkocht per titel</li>
+<li>Tekenkleur: zwart</li>
+<li>Uitlijning: gecentreerd</li>
+<li>Achtergrondkleur: grijs</li>
+<li>Tekengrootte: 10 pt</li>
+</ul>
+<div id="fig-boekenverkoop-hoeveelheid-titel-opmaak" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-hoeveelheid-titel-opmaak.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;12: Opmaak titel</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="opslaan" class="level2">
+<h2 class="anchored" data-anchor-id="opslaan">Opslaan</h2>
+<p>Power BI bestanden hebben standaard de extensie <code>.pbix</code>. Kies voor <em>Bestand opslaan</em> en bewaar het bestand onder de naam <code>powerbi-desktop-1.pbix</code>.</p>
+<p>In een volgend artikel zal het maken van een paar andere visualisaties uitgelegd worden.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>

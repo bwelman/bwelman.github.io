@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>Ben Welman - Power BI Desktop (deel 2)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#visualisatie-verkochte-aantallen-per-plaats-per-categorie" id="toc-visualisatie-verkochte-aantallen-per-plaats-per-categorie" class="nav-link active" data-scroll-target="#visualisatie-verkochte-aantallen-per-plaats-per-categorie">Visualisatie: Verkochte aantallen per plaats per categorie</a>
+  <ul class="collapse">
+  <li><a href="#interactiviteit-tussen-grafieken" id="toc-interactiviteit-tussen-grafieken" class="nav-link" data-scroll-target="#interactiviteit-tussen-grafieken">Interactiviteit tussen grafieken</a></li>
+  </ul></li>
+  <li><a href="#visualisatie-omzet-per-boek" id="toc-visualisatie-omzet-per-boek" class="nav-link" data-scroll-target="#visualisatie-omzet-per-boek">Visualisatie: Omzet per boek</a></li>
+  <li><a href="#visualisatie-totale-omzet" id="toc-visualisatie-totale-omzet" class="nav-link" data-scroll-target="#visualisatie-totale-omzet">Visualisatie: Totale omzet</a></li>
+  <li><a href="#visualisatie-filter-op-prijsklasse" id="toc-visualisatie-filter-op-prijsklasse" class="nav-link" data-scroll-target="#visualisatie-filter-op-prijsklasse">Visualisatie: Filter op prijsklasse</a></li>
+  <li><a href="#titel-rapport" id="toc-titel-rapport" class="nav-link" data-scroll-target="#titel-rapport">Titel Rapport</a></li>
+  <li><a href="#eindrapport" id="toc-eindrapport" class="nav-link" data-scroll-target="#eindrapport">Eindrapport</a></li>
+  <li><a href="#opslaan" id="toc-opslaan" class="nav-link" data-scroll-target="#opslaan">Opslaan</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bwelman/bwelman.github.io/issues/new" class="toc-action">Een probleem melden</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Power BI Desktop (deel 2)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+    <div class="quarto-category">power-bi</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">15 juli 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    <p>Het tweede deel van de tutorial over Power BI Desktop. Meer visualisaties en eindrapportage.</p>
+  </div>
+</div>
+
+</header>
+
+<p>In het deel 1 van deze tutorial heb je kennis gemaakt met Power BI Desktop, een gegevensbestand ingeladen en een eerste visualisatie gemaakt. Het resulaat heb je als een Power BI bestand bewaard onder de naam <em>powerbi-desktop-1.pbix</em>. In dit artikel gaan we hiermee verder, maken een berekende kolom en voegen een paar meer visualisaties toe.</p>
+<p>Start Power BI Desktop op en laad het bestand powerbi-desktop-1.pbix in. Wanneer je niet meer de beschikking over dit bestand hebt kun je het ook <a href="https://softwijs.nl/download/powerbi-desktop-1.pbix">hier</a> downloaden.</p>
+<section id="visualisatie-verkochte-aantallen-per-plaats-per-categorie" class="level2">
+<h2 class="anchored" data-anchor-id="visualisatie-verkochte-aantallen-per-plaats-per-categorie">Visualisatie: Verkochte aantallen per plaats per categorie</h2>
+<p>In de tabel <code>tblVerkopen</code> zijn van elk boek de verkochte aantallen per plaats bijgehouden. En in de tabel <code>tblBoeken</code> kun je zien tot welke categorie een boek behoort. Interessant is nu om te weten welke categorie in welke plaats het meest populair is. Hiervoor is het grafiektype <strong>Treemap</strong> zeer geschikt, welke een hiërarchische weergave van de gegevens biedt, waardoor het relatief eenvoudig is om patronen te herkennen.</p>
+<p>Om een nieuwe visualisatie in het canvas op te nemen moet je allereerst er voor zorgen dat geen bestaande visualisatie geselecteerd is. Klik nu op visualisatie Treemap.</p>
+<div id="fig-powerbi-treemap" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-treemap.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;1: visualisatie Treemap</figcaption><p></p>
+</figure>
+</div>
+<p>Er wordt nu een treemap zonder inhoud in het canvas geplaatst. Sleep nu het veld <code>hoeveelheid</code> uit tabel <code>tblVerkopen</code> in de treemap. Er wordt nu 1 rechthoek gemaakt voor de totale hoeveelheid. Sleep vervolgens veld <code>plaats</code> uit tabel <code>tblVerkopen</code> in de treemap. Je krijgt nu via drie rechthoeken de hoeveelheid per plaats te zien.</p>
+<div id="fig-boekenverkoop-hoeveelheid-per-plaats" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-hoeveelheid-per-plaats.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Hoeveelheid per plaats.</figcaption><p></p>
+</figure>
+</div>
+<p>Sleep vervolgens veld <code>categorie</code> uit tabel <code>tblBoeken</code> in de treemap. De grote rechthoek voor een plaats wordt nu opgedeeld in kleinere rechthoeken, 1 voor elke categorie. Om de namen van alle categorieën goed te zien moet je de treemap wat breder maken door aan de handgrepen aan de zijkanten te slepen.</p>
+<div id="fig-boekenverkoop-hoeveelheid-per-plaats-categorie" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-hoeveelheid-per-plaats-categorie.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Hoeveelheid per plaats per categorie.</figcaption><p></p>
+</figure>
+</div>
+<p>Duidelijk is te zien dat in alledrie de plaatsen de categorie Reizen de meest verkochte boeken heeft</p>
+<p>In het deelvenster Visualisaties kun je ook zien welke velden gebruikt zijn voor Groep, Details en Waarden.</p>
+<div id="fig-boekenverkoop-treemap-velden" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-treemap-velden.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Gebruikte velden</figcaption><p></p>
+</figure>
+</div>
+<p>In plaats van de velden in de treemap te slepen kun je ze ook naar deze lokaties slepen.</p>
+<section id="interactiviteit-tussen-grafieken" class="level3">
+<h3 class="anchored" data-anchor-id="interactiviteit-tussen-grafieken">Interactiviteit tussen grafieken</h3>
+<p>De visualisaties in het rapport zijn interactief. Je kunt ze gebruiken om te filteren. Wanneer je bijvoorbeeld in de treemap binnen de plaats Enschede op de categorie Reizen klikt, dan zie je in de andere grafiek met de gegroepeerde kolommen de titels die in deze categorie vallen.</p>
+<div id="fig-boekenverkoop-enschede-reizen" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-enschede-reizen.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Verkochte titels in Enschede.</figcaption><p></p>
+</figure>
+</div>
+<p>En zo kun je ook in de kolomgrafiek op een boektitel klikken waardoor in de treemap een bijbehorend blokje getoond wordt.</p>
+<div id="fig-boekenverkoop-rinkeldekink" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-rinkeldekink.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Selecteren van een specifiek boek.</figcaption><p></p>
+</figure>
+</div>
+<p>Om de filtering ongedaan te maken klik je in de grafiek opnieuw op het item dat voor de filtering zorgt.</p>
+<p>Geef tot slot de titel van de treemap een gelijke opmaak als de eerste grafiek.</p>
+</section>
+</section>
+<section id="visualisatie-omzet-per-boek" class="level2">
+<h2 class="anchored" data-anchor-id="visualisatie-omzet-per-boek">Visualisatie: Omzet per boek</h2>
+<p>Om de omzet per boek in een grafiek weer te geven moet de omzet eerst berekend worden. Dat kan door een nieuwe kolom te maken waarin de velden <code>prijs</code> en <code>hoeveelheid</code> met elkaar vermenigvuldigd worden.</p>
+<p>Schakel via de knop in het linker zijpaneel over naar de <em>weergave Gegevens</em> en selecteer dan in het rechter deelvenster de tabel <code>tblVerkoop</code>.</p>
+<p>Kies dan in het menu <em>tab Model maken -&gt; Nieuwe kolom (groep Berekeningen)</em>.</p>
+<p>Er wordt nu een nieuwe kolom aan de tabel toegevoegd en ook wordt een formulebalk zichtbaar met daarin de tekst <code>Kolom =</code>. Deze formulebalk lijkt op die in Excel, maar je kunt echter geen Excel formules gebruiken.</p>
+<p>Power BI gebruikt een eigen formuletaal <strong>DAX</strong> geheten, wat staat voor Data Analysis eXpression. Je kunt een formule helemaal handmatig intypen, maar je kunt ook gebruik maken van <strong>Intellisense</strong>. Dit is een hulpmiddel dat bij het invoeren van een formule verschijnt. Tijdens het intypen wordt een lijst met namen van mogelijke functies, variabelen en eigenschappen getoond. Door op een onderdeel in de lijst te selecteren en dan op de TAB toets te drukken wordt het geselecteerde in de formule geplaatst. Je kunt ook dubbelklikken op de naam van het onderdeel.</p>
+<p>Begin de formule met <code>Omzet =</code></p>
+<p>Hierna moet de veldnaam <code>hoeveelheid</code> uit de tabel <code>tblVerkopen</code> komen. Begin met het intypen van de beginletter <code>h</code>. Zodra je dat gedaan hebt worden er voorstellen getoond:</p>
+<div id="fig-boekenverkoop-intellisense-1" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-intellisense-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Formules die met een h beginnen.</figcaption><p></p>
+</figure>
+</div>
+<p>Bij lange lijsten is het aan te raden wat meer van de naam in te typen. De lijst wordt dan steeds kleiner waardoor het selecteren van het juiste item steeds gemakkelijker wordt.</p>
+<p>In dit geval is de lijst klein en is het juiste onderdeel al zichtbaar. Dat is <code>tblVerkopen[hoeveelheid]</code>. Voeg deze aan de formule toe, zodat er komt te staan <code>Omzet = tblVerkopen[hoeveelheid]</code>.</p>
+<p>De syntax in DAX is steeds tabelnaam[veldnaam].</p>
+<p>Nu moet er nog vermenigvuldigd worden met het veld <code>prijs</code>.</p>
+<p>Begin met het intypen van <code>*pr</code>. Echter nu toont intellisense niet het onderdeel dat toegevoegd moet worden. In zijn algemeenheid betekent dit ook dat je een fout maakt, dat je het zo niet in kunt voeren. De reden dat het juiste veld niet getoond wordt is dat het veld <code>prijs</code> niet in de geselecteerde tabel <code>tblVerkopen</code> zit, maar in de tabel <code>tblBoeken</code>. Gelukkig is deze tabel gerelateerd aan de tabel <code>tblVerkopen</code>. Door gebruik te maken van de DAX functie <code>RELATED</code> kun je een veld uit een gerelateerde tabel toevoegen.</p>
+<p>Verwijder het ingetypte <code>pr</code> en hervat het intypen met <code>re</code>. Nu wordt de functie <code>RELATED</code> zichtbaar. Voeg deze aan de formule toe. Er wordt dan een lange lijst met functies uit de gerelateerde tabellen zichtbaar. Je kunt het gewenste veld in deze lijst opzoeken, maar het is handiger om de eerste letter(s) van de veldnaam in te typen.</p>
+<p>Typ een <code>p</code> in. Nu wordt maar één veld getoond en dat is de gezochte <code>tblBoeken[prijs]</code>. Voeg deze aan de formule toe.</p>
+<p>De formule is nu <code>Omzet = tblVerkopen[hoeveelheid]*tblBoeken[prijs]</code>. De formule is hiermee klaar. Sluit af met de <em>ENTER</em> toets.</p>
+<p>De berekende waarden verschijnen in de nieuwe kolom die ook gelijk de naam <code>Omzet</code> krijgt.</p>
+<div id="fig-boekenverkoop-formule-omzet" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-formule-omzet.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Nieuwe kolom Omzet</figcaption><p></p>
+</figure>
+</div>
+<p>Om het nog wat te verfraaien ga je de bedragen opmaken in de euro notatie.</p>
+<p>De opmaak van een geselecteerde kolom kun je via tab <em>Model maken</em> op het lint vinden. De huidige opmaak is de notatie <code>Algemeen</code>.</p>
+<div id="fig-boekenverkoop-omzet-decimaal" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-omzet-decimaal.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;9: Opmaak veld Omzet.</figcaption><p></p>
+</figure>
+</div>
+<p>Verander via de keuzelijst de notatie in <code>Euro</code>.</p>
+<p><img src="powerbi-notatie-euro.png" id="fig-powerbi-notatie-euro" class="img-fluid"></p>
+<p>Nu er een veld voor omzet is kan een grafiek voor de omzet per boek gemaakt worden.</p>
+<p>Schakel over naar de indeling <em>Rapport</em>. Zorg er voor dat geen visualisatie in het canvas geselecteerd is. Sleep nu het veld <code>Omzet</code> uit de tabel <code>tblVerkopen</code> naar een lege plek in het canvas. Sleep daarna het veld <code>Titel</code> uit de tabel <code>tblBoeken</code> in de nieuwe visualisatie. Pas de titel aan op overeenkomstige wijze als bij de twee andere grafieken.</p>
+<div id="fig-boekenverkoop-omzet-per-titel" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-omzet-per-titel.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;10: Omzet per titel</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="visualisatie-totale-omzet" class="level2">
+<h2 class="anchored" data-anchor-id="visualisatie-totale-omzet">Visualisatie: Totale omzet</h2>
+<p>Wanneer je slechts één waarde (getal, tekst) wilt weergeven dan is de visualisatie <strong>Kaart</strong> een goede keuze.</p>
+<div id="fig-powerbi-kaart" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-kaart.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;11: visualisatie Kaart</figcaption><p></p>
+</figure>
+</div>
+<p>Klik op de visualisatie Kaart zodat deze aan het canvas toegevoegd wordt. Sleep daarna het veld <code>Omzet</code> uit de <code>tblVerkopen</code> in de visualisatie.</p>
+<p>De totale omzet is € 74.748,95. Echter deze waarde wordt standaard weergegeven als duizendtallen, in dit geval dus als € 74,75K. De weergave-eenheid kun je als volgt wijzigen.</p>
+<p>Klik in het deelvenster <strong>Visualisatie</strong> op de tab <strong>Indeling</strong> (afgebeeld als een verfroller). Klap <em>Gegevenslabel</em> open. Kies dan bij * <em>weergave-eenheden</em> voor <code>Geen</code>. Schakel verder de weergave van het <em>categorielabel</em> uit.</p>
+<p>Maak een titel met de tekst “Totale omzet” en pas deze op overeenkomstige wijze als bij de andere grafieken.</p>
+</section>
+<section id="visualisatie-filter-op-prijsklasse" class="level2">
+<h2 class="anchored" data-anchor-id="visualisatie-filter-op-prijsklasse">Visualisatie: Filter op prijsklasse</h2>
+<p>Fiteren op basis van getallen (en ook datums) kan goed met een zogeheten <strong>Slicer</strong> (afbeelding met trechter).</p>
+<div id="fig-powerbi-slicer" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-slicer.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;12: visualisatie Slicer</figcaption><p></p>
+</figure>
+</div>
+<p>Voeg een slicer aan het canvas toe en sleep hierin het veld <code>prijs</code> uit de tabel <code>tblBoeken</code>. Geef deze visualisatie een titel met de tekst “Filter op prijsklasse” en geef deze dezelfde opmaak als de andere visualisaties.</p>
+<p>Experimenteer met de grenswaarden van de slicer en let op de interacties met de andere visualisaties. Om de selecties te wissen kun je op de daarvoor bestemde knop in de rechterbovenhoek van de slicer klikken:</p>
+<div id="fig-powerbi-slicer-knop-wissen" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-slicer-knop-wissen.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;13: Slicer selecties wissen</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="titel-rapport" class="level2">
+<h2 class="anchored" data-anchor-id="titel-rapport">Titel Rapport</h2>
+<p>Een mooi rapport hoort een titel met een logo te hebben. Maak aan de bovenkant van het canvas wat ruimte voor een logo en een titel door de andere visualisaties wat te verschuiven.</p>
+<p>Een afbeelding en een tekst kun je toevoegen via het menu <em>Startpagina -&gt; Afbeelding (respectievelijk Tekstvak)</em>.</p>
+<div id="fig-powerbi-menu-invoegen" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="powerbi-menu-invoegen.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;14: Invoegen van een afbeelding.</figcaption><p></p>
+</figure>
+</div>
+<p>Het door mij gebruikte logo kun je <a href="https://softwijs.nl/download/icon-boeken.png">hier</a> vinden.</p>
+<div id="fig-boekenverkoop-kopregel" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-kopregel.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;15: De afbeelding die voor het logo gebruikt wordt.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="eindrapport" class="level2">
+<h2 class="anchored" data-anchor-id="eindrapport">Eindrapport</h2>
+<p>Je kunt nu de visualisaties nog wat verschuiven of de afmetingen wat aanpassen zodat het er wat gelikter uitziet. Een voorbeeld:</p>
+<div id="fig-boekenverkoop-eindrapport" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="boekenverkoop-eindrapport.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;16: Eindrapport Verkoop Boeken</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="opslaan" class="level2">
+<h2 class="anchored" data-anchor-id="opslaan">Opslaan</h2>
+<p>Sla het bestand op onder de naam <code>powerbi-desktop-2.pbix</code>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>

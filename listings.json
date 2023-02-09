@@ -1,5 +1,49 @@
 [
   {
+    "listing": "/archief.html",
+    "items": [
+      "/archief/2019-11-03-online-studieboeken/online-studieboeken.html",
+      "/archief/2018-09-09-website-bouwstenen-1/website-bouwstenen-1.html",
+      "/archief/2012-12-24-eboek-lezen/eboek-lezen.html",
+      "/archief/2012-09-20-studieboek-formaat/studieboek-formaat.html"
+    ]
+  },
+  {
+    "listing": "/softwijs.html",
+    "items": [
+      "/sw/2022-10-24-kmeans-uitleg/kmeans-uitleg.html",
+      "/sw/2022-10-20-stapeldata-2/stapeldata-2.html",
+      "/sw/2022-10-18-stapeldata-1/stapeldata-1.html",
+      "/sw/2022-08-04-is-functies/isfuncties.html",
+      "/sw/2022-04-04-knn-uitleg/knn-uitleg.html",
+      "/sw/2022-03-27-statistische-procescontrole-met-excel/statistische-procescontrole-met-excel.html",
+      "/sw/2022-03-15-reeks-getallen-genereren/reeks-getallen-genereren.html",
+      "/sw/2022-03-14-powerquery-en-landinstellingen/powerquery-en-landinstellingen.html",
+      "/sw/2022-03-01-complexe-getallen-in-excel/complexe-getallen-in-excel.html",
+      "/sw/2022-02-22-converteren/converteren.html",
+      "/sw/2022-01-28-kwartaal-uit-datum/kwartaal-uit-datum.html",
+      "/sw/2021-05-21-matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html",
+      "/sw/2021-04-14-workflow-studieboeken/workflow-studieboeken.html",
+      "/sw/2021-02-02-unieke-records-access/unieke-records-access.html",
+      "/sw/2020-08-04-netlify-drop/netlify-drop.html",
+      "/sw/2020-05-24-latex-werkomgeving/latex-werkomgeving.html",
+      "/sw/2020-05-17-aselecte-getallen/aselecte-getallen.html",
+      "/sw/2020-05-13-histogrammen-1/histogrammen-1.html",
+      "/sw/2020-06-23-histogrammen-2/histogrammen-2.html",
+      "/sw/2020-04-04-curve-functie/curve-functie.html",
+      "/sw/2020-03-01-excel-xml-export/excel-xml-export.html",
+      "/sw/2020-01-02-latex-markdown/latex-markdown.html",
+      "/sw/2019-08-06-marktwaarde-voetbalclub/marktwaarde-voetbalclub.html",
+      "/sw/2019-07-31-excel-functienamen-vertalen/excel-functienamen-vertalen.html",
+      "/sw/2019-07-15-power-bi-desktop-2/power-bi-desktop-2.html",
+      "/sw/2019-07-14-power-bi-desktop-1/power-bi-desktop-1.html",
+      "/sw/2018-11-18-power-query-opties/power-query-opties.html",
+      "/sw/2018-10-19-power-pivot/power-pivot.html",
+      "/sw/2015-10-05-r-installatie/r-installatie.html",
+      "/sw/2012-12-24-excel-statistiek-beperkingen/excel-statistiek-beperkingen.html"
+    ]
+  },
+  {
     "listing": "/vlearmoesbier.html",
     "items": [
       "/bier/2020-08-04-hoprendement-kooktijd/hoprendement-kooktijd.html",

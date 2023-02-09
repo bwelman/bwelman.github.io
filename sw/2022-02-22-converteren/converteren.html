@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>Ben Welman - Converteren van eenheden</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#eenvoudige-conversies" id="toc-eenvoudige-conversies" class="nav-link active" data-scroll-target="#eenvoudige-conversies">Eenvoudige conversies</a></li>
+  <li><a href="#complexere-conversies" id="toc-complexere-conversies" class="nav-link" data-scroll-target="#complexere-conversies">Complexere conversies</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bwelman/bwelman.github.io/issues/new" class="toc-action">Een probleem melden</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Converteren van eenheden</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">22 februari 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    <p>Met de Excel formule CONVERTEREN kun je eenvoudig Engelstalige eenheden omrekenen naar andere eenheden.</p>
+  </div>
+</div>
+
+</header>
+
+<p>Bij mijn hobby bierbrouwen put ik regelmatig uit Amerikaanse boeken en artikelen. De daar gehanteerde eenheden als pounds, gallons, Fahrenheit moet ik dan omrekenen naar in dit geval kilogram, liter en Celsius. Erg handig daarbij is de Excel functie <code>CONVERTEREN()</code>. Met deze ingebouwde functie kun je een maateenheid omzetten naar een andere maateenheid van dezelfde soort. Dus eenheid van massa naar een andere eenheid van massa, of een eeheid van volume naar een andere eenheid van volume.</p>
+<p>Syntax: <code>CONVERTEREN(getal; van_eenheid; naar_eenheid)</code></p>
+<ul>
+<li><code>getal</code>: de waarde (of celverwijzing) die je wilt converteren.</li>
+<li><code>van_eenheid</code>: de huidige eenheid.</li>
+<li><code>naar_eenheid</code>: de gewenste eenheid.</li>
+</ul>
+<p>Voor de eenheden moet je specifieke tekstwaarden (dus tussen dubbele aanhalingstekens) gebruiken. Een overzicht van de toegestane tekstwaarden kun je vinden op <a href="https://support.microsoft.com/nl-nl/office/converteren-functie-d785bef1-808e-4aac-bdcd-666c810f9af2">Microsoft support</a>. let er op dat deze tekstwaarden hoofdlettergevoelig</p>
+<section id="eenvoudige-conversies" class="level2">
+<h2 class="anchored" data-anchor-id="eenvoudige-conversies">Eenvoudige conversies</h2>
+<p>In de volgende afbeelding zie je een voorbeeld van een paar eenvoudige conversies, waarbij steeds één eenheid wordt omgezet naar één andere eenheid.</p>
+<div id="fig-eenvoudig" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="eenvoudig.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Eenvoudige conversies</figcaption><p></p>
+</figure>
+</div>
+<p>De functie kun je ook tot een macht verheffen. Zo kun je 10 square feet omzetten naar vierkante meters met de formule <code>=CONVERTEREN(10; "ft"; "m")^2</code>.</p>
+<p>Metrische eenheden kunnen voorafgegaan worden door een <em>prefix</em> die de waarde met een macht van 10 vermenigvuldigt. In <a href="#tbl-prefix">Tabel&nbsp;1</a> zie je een aantal veel gebruikte waarden.</p>
+<div id="tbl-prefix" class="anchored">
+<table class="table">
+<caption>Tabel&nbsp;1: Prefixen voor machten van 10</caption>
+<thead>
+<tr class="header">
+<th>Prefix</th>
+<th style="text-align: center;">Waarde</th>
+<th style="text-align: center;">Afkorting</th>
+<th>Prefix</th>
+<th style="text-align: center;">Waarde</th>
+<th style="text-align: center;">Afkorting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tera</td>
+<td style="text-align: center;">10<sup>12</sup></td>
+<td style="text-align: center;">“T”</td>
+<td>deci</td>
+<td style="text-align: center;">10<sup>-1</sup></td>
+<td style="text-align: center;">“d”</td>
+</tr>
+<tr class="even">
+<td>giga</td>
+<td style="text-align: center;">10<sup>9</sup></td>
+<td style="text-align: center;">“G”</td>
+<td>centi</td>
+<td style="text-align: center;">10<sup>-2</sup></td>
+<td style="text-align: center;">“c”</td>
+</tr>
+<tr class="odd">
+<td>mega</td>
+<td style="text-align: center;">10<sup>6</sup></td>
+<td style="text-align: center;">“M”</td>
+<td>milli</td>
+<td style="text-align: center;">10<sup>-3</sup></td>
+<td style="text-align: center;">“m”</td>
+</tr>
+<tr class="even">
+<td>kilo</td>
+<td style="text-align: center;">10<sup>3</sup></td>
+<td style="text-align: center;">“k”</td>
+<td>micro</td>
+<td style="text-align: center;">10<sup>-6</sup></td>
+<td style="text-align: center;">“u”</td>
+</tr>
+<tr class="odd">
+<td>hecto</td>
+<td style="text-align: center;">10<sup>2</sup></td>
+<td style="text-align: center;">“h”</td>
+<td>nano</td>
+<td style="text-align: center;">10<sup>-9</sup></td>
+<td style="text-align: center;">“n”</td>
+</tr>
+<tr class="even">
+<td>deca</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">“e”</td>
+<td>pico</td>
+<td style="text-align: center;">10<sup>-12</sup></td>
+<td style="text-align: center;">“p”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>4000 meter omrekenen naar kilometer: <code>=CONVERTEREN(4000;"m";"km")</code></li>
+<li>0,5 liter omrekenen naar milliliter: <code>=CONVERTEREN(0,5;"l";"ml")</code></li>
+</ul>
+</section>
+<section id="complexere-conversies" class="level2">
+<h2 class="anchored" data-anchor-id="complexere-conversies">Complexere conversies</h2>
+<p>Een mooi voorbeeld van een wat complexere omzetting heb je bij eenheden voor druk, de kracht per oppervlakte. Deze wordt berekend met de formule <span class="math inline">\(p = \frac{F}{A}\)</span>, waarbij <span class="math inline">\(F\)</span> staat voor de kracht (Force) en <span class="math inline">\(A\)</span> voor de oppervlakte (Area). In het <a href="https://nl.wikipedia.org/wiki/SI-stelsel">SI stelsel</a> is de eenheid van druk de pascal, met <code>1 Pa = 1 N/m^2^</code>. In de VS is de <code>psi</code> (pounds per square inch) gebruikelijk.</p>
+<p>Om 1 psi om te zetten naar N/m<sup>2</sup> moet je dus de (kracht)pounds omzetten naar Newton en de square inch naar vierkante meter. Dat kan met de formule<br>
+<code>=CONVERTEREN(1;"lbf";"N")/CONVERTEREN(1;"in";"m")^2</code>.<br>
+In plaats van een deling kun je er ook een vermenigvuldiging van maken door in de laatste formule de eenheden te verwisselen. De formule wordt dan<br>
+<code>=CONVERTEREN(1;"lbf";"N")*CONVERTEREN(1;"m";"in")^2</code>.</p>
+<p>Gelukkig bestaat er ook een rechtstreekse omzetting van psi naar pascal met <code>=CONVERTEREN(1;"psi";"Pa")</code> of naar kilo Pascal met<br>
+<code>=CONVERTEREN(1;"psi";"kPa")</code>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>

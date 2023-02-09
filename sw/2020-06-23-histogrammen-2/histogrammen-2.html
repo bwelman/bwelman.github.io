@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>Ben Welman - Histogrammen (deel 2)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#interval-functie-eng-frequency" id="toc-interval-functie-eng-frequency" class="nav-link active" data-scroll-target="#interval-functie-eng-frequency">INTERVAL functie (Eng: FREQUENCY)</a></li>
+  <li><a href="#draaitabel" id="toc-draaitabel" class="nav-link" data-scroll-target="#draaitabel">Draaitabel</a></li>
+  <li><a href="#gegevensanalyse-analysis-toolpak" id="toc-gegevensanalyse-analysis-toolpak" class="nav-link" data-scroll-target="#gegevensanalyse-analysis-toolpak">Gegevensanalyse (Analysis Toolpak)</a></li>
+  <li><a href="#grafiek-histogram" id="toc-grafiek-histogram" class="nav-link" data-scroll-target="#grafiek-histogram">Grafiek Histogram</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bwelman/bwelman.github.io/issues/new" class="toc-action">Een probleem melden</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Histogrammen (deel 2)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+    <div class="quarto-category">statistiek</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13 mei 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    <p>Hoe je frequentieverdelingen en histogrammen in Excel maakt.</p>
+  </div>
+</div>
+
+</header>
+
+<p>In het eerste artikel over histogrammen werd van een gegeven frequentieverdeling gebruik gemaakt. Normaliter moet je van de gegevens eerst een frequentieverdeling maken. Er zijn meerdere manieren om een freqentieverdeling te maken, al dan niet met ook een histogram.</p>
+<ul>
+<li>Met de formule <code>INTERVAL</code></li>
+<li>Met een draaitabel en draaigrafiek</li>
+<li>Met de histogram optie in gegevensanalyse (Analysis Toolpak)</li>
+<li>Via Invoegen &gt; grafieken &gt; Histogram (alleen histogram, geen afzonderlijke frequenties)</li>
+</ul>
+<p>Welke manier je gebruikt hangt meestal af van de gewenste uitvoer en de mogelijkheden tot het maken van aanpassingen.</p>
+<section id="interval-functie-eng-frequency" class="level2">
+<h2 class="anchored" data-anchor-id="interval-functie-eng-frequency">INTERVAL functie (Eng: FREQUENCY)</h2>
+<p>Syntax: <em>INTERVAL(gegevensmatrix;interval_verw)</em></p>
+<ul>
+<li><em>gegevensmatrix</em> (Eng: data_array), een matrix met de waarden waarvan je de frequentie wilt bepalen</li>
+<li><em>interval_verw</em> (Eng: bins_array), een matrix met de bovengrenzen van de intervallen waarin je wilt verdelen</li>
+</ul>
+<p>Als voorbeeld zijn 25 willekeurige gehele getallen gegenereerd uit het interval [1,10]. Hoe je dat moet doen kun je lezen in het artikel <a href="https://softwijs.nl/excel/asecte-getallen/">Aselecte getallen</a>.</p>
+<p>Het bestand met deze getallen, alsmede alle uitwerkingen in dit artikel kun je downloaden via de link <a href="../../download/frequenties.xlsx">frequenties.xlsx</a>.</p>
+<p>Om hiervoor een frequentieverdeling te maken moet je eerst de intervallen vaststellen waarin je de waarden wilt laten vallen. Deze intervallen of groepen worden meestal <strong>bins</strong> genoemd. Hiervoor maak je een kolom met de bovengrenzen van de intervallen. In de afbeelding staan deze in de kolom “bin”.</p>
+<p>De frequenties staan in de kolom “freq” en zijn berekend met de formule <code>=INTERVAL(A2:A26;C2:C6)</code>. Deze formule is een zogenaamde <strong>matrixformule</strong>.</p>
+<p><strong>Excel 365</strong></p>
+<p>In Excel 365 kun je deze matrixformule gewoon in de begincel D2 invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. En Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze <em>dynamische matrix</em> in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.</p>
+<div id="fig-freq-interval" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-interval.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Frequenties bepaald met functie INTERVAL</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Andere Excel versies</strong></p>
+<p>Andere versies van Excel kunnen niet met deze nieuwe dynamische matrices overweg. Hier moet je de formule nog op de “oude” manier invoeren. Je moet dan zelf eerst het uitvoerbereik D2:D7 selecteren, dan de formule intypen en vervolgens op CTRL + SHIFT + ENTER drukken. Excel plaatst dan zelf accolades {} aan het begin en het einde van de formule.</p>
+<p><strong>Histogram maken</strong></p>
+<p>Wanneer je eenmaal de frequentieverdeling gemaakt hebt kun je een histogram maken op basis van een kolomdiagram. In <a href="../2020-05-13-histogrammen-1/histogrammen-1.html">deel 1</a> zie je daarvan een voorbeeld en in het bijbehorende bestand testscores wordt uitgelegd hoe je dat moet doen.</p>
+<div id="fig-freq-interval-histogram" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-interval-histogram.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Histogram</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="draaitabel" class="level2">
+<h2 class="anchored" data-anchor-id="draaitabel">Draaitabel</h2>
+<p>Ook met een draaitabel kun je een frequentieverdeling maken. Selecteer het gegevensgebied A1:A26 en dan tab <em>Invoegen &gt; Draaitabel</em>. Plaats het veld <code>getal</code> in zowel het rijengebied als het waardengebied. Wijzig de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.</p>
+<div id="fig-freq-draaitabel-velden" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-draaitabel-velden.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Velden voor de draaitabel</figcaption><p></p>
+</figure>
+</div>
+<p>Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, rechter muisklik en kies dan <em>Groeperen</em>. Specificeer in het dialoogscherm dat wordt begonnen bij 1, geëindigd bij 10 en dat de stapgrootte 2 is. Zie de volgende afbeelding.</p>
+<div id="fig-freq-draaitabel-groeperen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-draaitabel-groeperen.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Instelling voor het groeperen</figcaption><p></p>
+</figure>
+</div>
+<p>Na het groeperen verschijnt de frequentieverdeling.</p>
+<div id="fig-freq-draaitabel-resultaat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-draaitabel-resultaat.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Frequentieverdeling</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="gegevensanalyse-analysis-toolpak" class="level2">
+<h2 class="anchored" data-anchor-id="gegevensanalyse-analysis-toolpak">Gegevensanalyse (Analysis Toolpak)</h2>
+<p>Ook hier moet je net als bij de functie <code>INTERVAL</code> een bereik voor de grenzen van de intervallen maken.</p>
+<p>Kies <em>tab Ggegevens &gt; Gegevensanalyse &gt; Histogram</em>.</p>
+<p>Specificeer het invoerbereik en het verzamelbereik, alsmede een cel voor het begin van de uitvoer. Wanneer je een histogram wilt kun je in dit scherm ook aangeven dat er een grafiek gemaakt moet worden</p>
+<div id="fig-freq-gegevensanalyse-instelling" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-gegevensanalyse-instelling.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Dialoogscherm Histogram.</figcaption><p></p>
+</figure>
+</div>
+<p>De grafiek is een gegroepeerde kolomdiagram die je desgewenst nog kunt aanpassen. Voor een echt histogram moeten de kolommen aansluitend zijn zonder lege ruimte ertussen. En de labels op de X-as geven hier alleen de bovengrens en niet het interval.</p>
+<div id="fig-freq-gegevensanalyse-resultaat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-gegevensanalyse-resultaat.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Het standaard histogram.</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Waarschuwing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wees je ervan bewust dat wanneer de brondata wijzigt, er bij deze methode geen herbereking plaatsvindt. De frequentieverdeling (en histogram) is statisch.</p>
+</div>
+</div>
+</section>
+<section id="grafiek-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="grafiek-histogram">Grafiek Histogram</h2>
+<p>De nieuwere Excelversies hebben de mogelijkheid tot het invoegen van een <em>grafiektype Histogram</em>. Hiervoor heb je in principe alleen maar de brondata nodig. Bij de verdeling in intervallen (bins) bepaalt Excel zelf automatisch deze bins. Maar je kunt via het eigenschappenvenster ook de binbreedte of het aantal bins opgeven. De bijbehorende intervalgrenzen worden dan door Excel berekend. Wanneer je ook nog de grenswaarden zelf wilt bepalen, dan moet je daarvoor een aparte kolom in het werkblad opnemen.</p>
+<p>De werkwijze is als volgt. Selecteer een getal in het gegevensgebied. Kies dan <em>tab Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Histogram</em>.</p>
+<div id="fig-freq-grafiektype-histogram" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="freq-grafiektype-histogram.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Grafiektype histogram</figcaption><p></p>
+</figure>
+</div>
+<p>In Excel wordt een histogram gewoonlijk als een kolomdiagram weergegeven met labels onder het midden van de kolom. En de kolommen worden standaard aaneensluitend getekend.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wanneer je het aantal bins of de Bin-breedte wilt veranderen, selecteer dan de horizontale as, dan Rechter muisklik &gt; As opmaken. Maak het eigenschappen breed genoeg, anders zijn niet alle invulvelden zichtbaar.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>

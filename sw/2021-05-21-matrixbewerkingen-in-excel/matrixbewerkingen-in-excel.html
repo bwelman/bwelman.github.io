@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>Ben Welman - Matrixbewerkingen in Excel</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#wat-is-een-matrix-in-excel" id="toc-wat-is-een-matrix-in-excel" class="nav-link active" data-scroll-target="#wat-is-een-matrix-in-excel">Wat is een matrix in Excel?</a></li>
+  <li><a href="#wiskundige-bewerkingen" id="toc-wiskundige-bewerkingen" class="nav-link" data-scroll-target="#wiskundige-bewerkingen">Wiskundige bewerkingen</a>
+  <ul class="collapse">
+  <li><a href="#scalaire-bewerkingen" id="toc-scalaire-bewerkingen" class="nav-link" data-scroll-target="#scalaire-bewerkingen">Scalaire bewerkingen</a></li>
+  <li><a href="#optellen-en-aftrekken-van-matrices" id="toc-optellen-en-aftrekken-van-matrices" class="nav-link" data-scroll-target="#optellen-en-aftrekken-van-matrices">Optellen en aftrekken van matrices</a></li>
+  <li><a href="#vermenigvuldigen-van-matrices" id="toc-vermenigvuldigen-van-matrices" class="nav-link" data-scroll-target="#vermenigvuldigen-van-matrices">Vermenigvuldigen van matrices</a></li>
+  </ul></li>
+  <li><a href="#getransponeerde-matrix" id="toc-getransponeerde-matrix" class="nav-link" data-scroll-target="#getransponeerde-matrix">Getransponeerde matrix</a></li>
+  <li><a href="#eenheidsmatrix" id="toc-eenheidsmatrix" class="nav-link" data-scroll-target="#eenheidsmatrix">Eenheidsmatrix</a></li>
+  <li><a href="#determinant" id="toc-determinant" class="nav-link" data-scroll-target="#determinant">Determinant</a></li>
+  <li><a href="#inverse-matrix" id="toc-inverse-matrix" class="nav-link" data-scroll-target="#inverse-matrix">Inverse matrix</a></li>
+  <li><a href="#stelsel-vergelijkingen-oplossen" id="toc-stelsel-vergelijkingen-oplossen" class="nav-link" data-scroll-target="#stelsel-vergelijkingen-oplossen">Stelsel vergelijkingen oplossen</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bwelman/bwelman.github.io/issues/new" class="toc-action">Een probleem melden</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matrixbewerkingen in Excel</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">21 mei 2021</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    <p>Het werken met matrices (arrays) in Excel.</p>
+  </div>
+</div>
+
+</header>
+
+<section id="wat-is-een-matrix-in-excel" class="level1">
+<h1>Wat is een matrix in Excel?</h1>
+<p>Een vector is een lijstje met getallen die of in een rij of in een kolom staan. Je hebt dan respectievelijke een rijvector of een kolomvector. Excel gebruikt niet de term vector, maar matrix (Engelstalig: Array). Een matrix in Excel kan zijn:</p>
+<p><strong>1-dimensionaal horizontaal</strong></p>
+<p>Een rij met waarden (eigenlijk een rijvector).</p>
+<div id="fig-array-h" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="array-h.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Horizontale matrix</figcaption><p></p>
+</figure>
+</div>
+<p><strong>1-dimensionaal verticaal</strong></p>
+<p>Een kolom met waarden (eigenlijk een kolomvector).</p>
+<div id="fig-array-v" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="array-v.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Verticale matrix</figcaption><p></p>
+</figure>
+</div>
+<p><strong>2-dimensionaal</strong></p>
+<p>Een rechthoek van rijen en kolommen met waarden, een gebied dus.</p>
+<div id="fig-array-hv" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="array-hv.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Rechhoekige matrix</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Invoeren van een matrix</strong></p>
+<p>Een matrix met constante waarden zoals in de getoonde drie voorbeelden maak je door in een cel te beginnen met het <code>=</code> symbool en dan een rijtje waarden tussen accolades <code>{ }</code> te plaatsen. De waarden moeten van elkaar gescheiden worden door een speciaal symbool. Welke symbolen je moet gebruiken als scheidingssymbool hangt af van de taal- en landinstellingen op de computer.</p>
+<div id="tbl-symbolen" class="anchored">
+<table class="table">
+<caption>Tabel&nbsp;1: Symbolen voor scheiding van rijen en kolommen.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Taalinstelling</th>
+<th style="text-align: center;">Kolom</th>
+<th style="text-align: right;">Rij</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Nederlands</td>
+<td style="text-align: center;"><code>\</code></td>
+<td style="text-align: right;"><code>;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Engels</td>
+<td style="text-align: center;"><code>,</code></td>
+<td style="text-align: right;"><code>;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Verder moet een matrix invoeren in volgorde van rijen (dus rij voor rij) en alle rijen moeten evenveel kolommen hebben.</p>
+<p>De drie voorbeelden hiervoor zijn als volgt in Excel ingevoerd.</p>
+<ol type="1">
+<li><code>={1\2\3\4\5}</code> geeft 1 rij met 5 kolommen.</li>
+<li><code>={1;3;6}</code> geeft 3 rijen met 1 kolom.</li>
+<li><code>={1\2\3\4\5;3\5\7\9\11;6\9\12\15\18}</code> geeft 3 rijen met 5 kolommen.</li>
+</ol>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Belangrijk
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Voor alle voorbeelden geldt dat alleen de eerste cel bewerkbaar is. Dat is de cel waar de matrix is ingevoerd. Wanneer je een andere cel in het waardengebied selecteert, dan is de inhoud in de formulebalk grijs gekleurd en kun je de waarde niet wijzigen.</p>
+</div>
+</div>
+<p>In Excel 365 zijn de matrices dynamisch.</p>
+<p>Een matrixformule die in één cel op het werkblad wordt ingevoerd kan resultaten in meerdere cellen op het werkblad plaatsen. Dit gedrag wordt <strong>overlopen</strong> (Engels: <em>spilling</em>) genoemd en de resultaten verschijnen in een <strong>overloopgebied</strong> (<em>spill-range</em>). Welke en hoeveel cellen gebruikt worden hangt van het resultaat van de formule af. Als de broninhoud van de formule verandert worden de resultaten dynamisch bijgewerkt en kan het zijn dat het overloopgebied groeit of krimpt. Je krijgt een foutmelding <code>#OVERLOOP!</code> wanneer het overlopen geblokkeerd wordt doordat cellen van het overloopgebied al een inhoud hebben.</p>
+<p><strong>Verwijzing naar overloopgebied</strong></p>
+<p>Om een verwijzing naar een overloopgebied te maken zet je een hash symbool <code>#</code> achter het adres van de eerste cel van het overloopgebied. Is bijvoorbeeld het overloopgebied J2:N4, dan verwijs je hiernaar met <code>=J2#</code>.</p>
+<p>Je kunt deze verwijzing ook in een formule opnemen. Zo geeft bijvoorbeeld <code>=AANTAL(J2#)</code> als antwoord 15, het aantal cellen in dit gebied. Wanneer later de grootte van het overloopgebied verandert, dan verandert ook het resultaat van de formule.</p>
+<p><strong>Naamgeving matrix</strong></p>
+<p>Wanneer je met matrices gaat rekenen, is het erg handig om deze van een naam te voorzien. Dat kan op dezelfde manier als het toekennen van een naam aan een cel. In de formules kun je dan met de naam van de matrix werken.</p>
+</section>
+<section id="wiskundige-bewerkingen" class="level1 page-columns page-full">
+<h1>Wiskundige bewerkingen</h1>
+<section id="scalaire-bewerkingen" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="scalaire-bewerkingen">Scalaire bewerkingen</h2>
+<p>Bij een matrix kan een <em>scalair</em> (dit is één getal) opgeteld of afgetrokken worden. En ook kun je een matrix met een scalair vermenigvuldigen of daardoor delen. In alle gevallen wordt de bewerking op de afzonderlijke elementen van de matrix toegepast. Het resultaat is een matrix van dezelfde afmetingen.</p>
+<div id="fig-scalair" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="scalair.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Scalaire bewerkingen uitgevoerd op een matrix. Het scalaire getal staat steeds in kolom E.</figcaption><p></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A1: <code>={1\2\3;3\5\7;6\9\12}</code></p>
+<p>A7, A12, A17: <code>=A2#</code></p>
+<p>G2: <code>=A2# + E2</code></p>
+<p>G7: <code>=A7# - E7</code></p>
+<p>G12: <code>=A12# * E12</code></p>
+<p>G17: <code>=A17# / E17</code></p>
+</div></div></section>
+<section id="optellen-en-aftrekken-van-matrices" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="optellen-en-aftrekken-van-matrices">Optellen en aftrekken van matrices</h2>
+<p>Matrices met dezelfde afmetingen kunnen opgeteld of afgetrokken worden. De overeenkomstige elementen worden dan opgeteld of afgetrokken. Het resultaat is een matrix van dezelfde afmetingen.</p>
+<div id="fig-opt-aftr" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="opt-aftr.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Optellen en aftrekken van Twee matrices.</figcaption><p></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A1: <code>={5\7;8\4;3\2}</code></p>
+<p>D1: <code>={3\1;9\6;8\3}</code></p>
+<p>G1: <code>=A1# + D1#</code></p>
+<p>A6: <code>=A1#</code></p>
+<p>D6: <code>=D1#</code></p>
+<p>G6: <code>=A6# + D6#</code></p>
+</div></div><p>Opmerking: In plaats van eerst de matrices in afzonderlijke cellen in te voeren kun je deze ook in de formule opnemen, bijvoorbeeld <code>={5\7;8\4;3\2} + {3\1;9\6;8\3}</code>.</p>
+</section>
+<section id="vermenigvuldigen-van-matrices" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="vermenigvuldigen-van-matrices">Vermenigvuldigen van matrices</h2>
+<p>Twee matrices kunnen vermenigvuldigd worden wanneer ze passende afmetingen hebben. Dat is het geval wanneer het aantal kolommen in de eerste matrix gelijk is aan het aantal rijen van de tweede matrix. Het resultaat is een matrix met het aantal rijen van de eerste matrix en het aantal kolommen van de tweede matrix. Dus een <span class="math inline">\(m \times n\)</span> matrix kun je vermenigvuldigen met een <span class="math inline">\(n \times o\)</span> matrix en het resultaat is een <span class="math inline">\(m \times o\)</span> matrix.</p>
+<p>Er vindt een rij x kolom vermenigvuldiging plaats. Als demonstratie van hoe dit in zijn werk gaat wordt in het volgende voorbeeld een <span class="math inline">\(3 \times 2\)</span> matrix vermenigvuldigd met een <span class="math inline">\(2 \times 3\)</span> matrix met als resultaat een <span class="math inline">\(3 \times 3\)</span> matrix.</p>
+<p><span class="math display">\[
+\left[ {\begin{array}{*{20}{c}}
+1&amp;2\\
+3&amp;4\\
+5&amp;6
+\end{array}} \right] \times \left[ {\begin{array}{*{20}{c}}
+1&amp;2&amp;3\\
+4&amp;5&amp;6
+\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+{1 \times 1 + 2 \times 4}&amp;{1 \times 2 + 2 \times 5}&amp;{1 \times 3 + 2 \times 6}\\
+{3 \times 1 + 4 \times 4}&amp;{3 \times 2 + 4 \times 5}&amp;{3 \times 3 + 4 \times 6}\\
+{5 \times 1 + 6 \times 4}&amp;{5 \times 2 + 6 \times 5}&amp;{5 \times 3 + 6 \times 6}
+\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+9&amp;{12}&amp;{15}\\
+{19}&amp;{26}&amp;{33}\\
+{29}&amp;{40}&amp;{51}
+\end{array}} \right]
+\]</span></p>
+<p>Formule Excel: <code>PRODUCTMAT(matrix1;matrix2)</code></p>
+<div id="fig-vermenigvuldiging" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="vermenigvuldiging.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Vermenigvuldiging van twee matrices.</figcaption><p></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A2: <code>={1\2;3\4;5\6}</code></p>
+<p>D2: <code>={1\2\3;4\5\6}</code></p>
+<p>H2: <code>=PRODUCTMAT(A2#;D2#)</code></p>
+</div></div></section>
+</section>
+<section id="getransponeerde-matrix" class="level1 page-columns page-full">
+<h1>Getransponeerde matrix</h1>
+<p>De getransponeerde van matrix <span class="math inline">\(A\)</span> wordt meestal aangeduid met <span class="math inline">\(A^T\)</span>. Om een matrix te transponeren verwissel je de rijen en de kolommen. Dus de rijen van <span class="math inline">\(A\)</span> worden de kolommen van <span class="math inline">\(A^T\)</span>. Heeft <span class="math inline">\(A\)</span> de afmetingen <span class="math inline">\(m \times n\)</span>, dan heeft <span class="math inline">\(A^T\)</span> de afmetingen <span class="math inline">\(n \times m\)</span>. Een voorbeeld.</p>
+<p>Als <span class="math inline">\(A = \left[ \begin{matrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \end{matrix} \right]\)</span>, dan is <span class="math inline">\(A^T = \left[ \begin{matrix} 1 &amp; 3 &amp; 5 \\ 2 &amp; 4 &amp; 6 \end{matrix} \right]\)</span></p>
+<p>Formule Excel: <code>TRANSPONEREN()</code></p>
+<div id="fig-transponeren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="transponeren.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Transponeren van een matrix.</figcaption><p></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A2: <code>={1\2;3\4;5\6}</code></p>
+<p>D2: <code>=TRANSPONEREN(A2#)</code></p>
+</div></div></section>
+<section id="eenheidsmatrix" class="level1 page-columns page-full">
+<h1>Eenheidsmatrix</h1>
+<p>Een eenheidsmatrix, ook wel identiteitsmatrix genoemd, is een <em>vierkante</em> matrix, waarvan de hoofddiagonaal (van linksboven naar rechtsonder) uitsluitend uit enen bestaat en alle andere elementen nul zijn. Een eenheidsmatrix wordt meestal aangeduid met <span class="math inline">\(I\)</span>.</p>
+<p>Een eenheidsmatrix kun je in Excel genereren met de functie <code>EENHEIDMAT(n)</code> waarbij n de afmeting (dimensie) is.</p>
+<div id="fig-eenheidsmatrix" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="eenheidsmatrix.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Voorbeeld van een eenheidsmatrix 5x5.</figcaption><p></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A1: <code>=EENHEIDMAT(5)</code></p>
+</div></div><p>Ga na dat <span class="math inline">\(I^T = I\)</span></p>
+</section>
+<section id="determinant" class="level1 page-columns page-full">
+<h1>Determinant</h1>
+<p>De determinant van een <em>vierkante</em> matrix is een speciaal getal dat uit de elementen van die matrix berekend kan worden. De determinant van matrix <span class="math inline">\(A\)</span> wordt meestal aangeduid met <span class="math inline">\(|A|\)</span> en soms ook wel met <span class="math inline">\(det(A)\)</span>. De determinant wordt vaak gebruikt bij het oplossen van stelsels vergelijkingen met meerdere variabelen.</p>
+<p><strong>Berekening determinant voor een</strong> <span class="math inline">\(2 \times 2\)</span> matrix</p>
+<p><span class="math inline">\(\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix} = ad - bc\)</span></p>
+<p>Een voorbeeld met getallen:</p>
+<p><span class="math inline">\(\begin{vmatrix} 5 &amp; 8 \\ 7 &amp; 12 \end{vmatrix} = 5 \times 12 - 8 \times 7 = 60 -56 = 4\)</span></p>
+<p><strong>Berekening determinant voor een</strong> <span class="math inline">\(3 \times 3\)</span> matrix</p>
+<p><span class="math inline">\(\begin{vmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{vmatrix} = a\begin{vmatrix} e &amp; f \\ h &amp; i \end{vmatrix} - b\begin{vmatrix} d &amp; f \\ g &amp; i \end{vmatrix} + c\begin{vmatrix} d &amp; e \\ g &amp; h \end{vmatrix}\)</span></p>
+<p>Een voorbeeld met getallen:</p>
+<p><span class="math inline">\(\begin{vmatrix} 1 &amp; 4 &amp; 3 \\ 5 &amp; 2 &amp; 7 \\ 8 &amp; 6 &amp; 12 \end{vmatrix} = 1\begin{vmatrix} 2 &amp; 7 \\ 6 &amp; 12 \end{vmatrix} - 4\begin{vmatrix} 5 &amp; 7 \\ 8 &amp; 12 \end{vmatrix} + 3\begin{vmatrix} 5 &amp; 2 \\ 8 &amp; 6 \end{vmatrix} = \\ 1(24-42) -4(60-56) + 3(30-16) = 18 -16 + 42 = 8\)</span></p>
+<p><strong>Formule Excel</strong>: <code>DETERMINANTMAT()</code></p>
+<p><img src="determinant.png" class="img-fluid" alt="Voorbeelden van de berekening van de determinant.">{fig-determinant}</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>E1: <code>=DETERMINANTMAT(A1#)</code></p>
+<p>E5: <code>=DETERMINANTMAT(A5#)</code></p>
+</div></div><p>Ga na dat de determinant van een eenheidsmatrix gelijk is aan 1.</p>
+<p>Deze procedure kan recursief worden toegepast voor de determinant van een <span class="math inline">\(n \times n\)</span> matrix en staat bekend als de Laplace-expansie.</p>
+</section>
+<section id="inverse-matrix" class="level1 page-columns page-full">
+<h1>Inverse matrix</h1>
+<p>De inverse van een matrix <span class="math inline">\(A\)</span> wordt aangeduid met <span class="math inline">\(A^{-1}\)</span>. Bij vermenigvuldiging van een matrix met zijn inverse krijg je je de eenheidsmatrix <span class="math inline">\(I\)</span>:</p>
+<p><span class="math inline">\(A \cdot A^{-1} = I\)</span>.</p>
+<p><em>Alleen vierkante matrices, maar niet alle, kunnen geinverteerd worden</em>. Een vierkante matrix kan alleen geinverteerd worden wanneer de determinant ongelijk aan nul is. Als de inverse bestaat heet de matrix <em>inverteerbaar</em>. Het inverteren van een matrix is vaak zeer bewerkelijk. Net als de determinant wordt de inverse gebruikt bij het oplossen van stelsels vergelijkingen met meerdere variabelen.</p>
+<p><strong>Formule Excel</strong>: <code>INVERSEMAT()</code></p>
+<div id="fig-inverse" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="inverse.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;9: Het inverteren van een matrix.</figcaption><p></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>A2: <code>={1\-1;4\6}</code></p>
+<p>A6: <code>=DETERMINANTMAT(A2#)</code></p>
+<p>D2: <code>=INVERSEMAT(A2#)</code></p>
+<p>G2: <code>=PRODUCTMAT(A2#;D2#)</code></p>
+</div></div><p>In A2 is matrix <span class="math inline">\(A\)</span> ingevoerd. In A6 is met de formule <code>=DETERMINANTMAT(A2#)</code> de determinant van A, <span class="math inline">\(|A|\)</span>, berekend, welke gelijk aan 10 is. Dus niet nul, dus matrix A is inverteerbaar. In D2 is de <span class="math inline">\(A^{-1}\)</span> berekend met de formule <code>=INVERSEMAT(A2#)</code>. In G2 is matrixproduct <span class="math inline">\(A A^{-1}\)</span> berekend, welke gelijk is aan de eenheidsmatrix. De berekende waarde in H2 is zo goed als gelijk aan <span class="math inline">\(0\)</span>.</p>
+</section>
+<section id="stelsel-vergelijkingen-oplossen" class="level1 page-columns page-full">
+<h1>Stelsel vergelijkingen oplossen</h1>
+<p>Een stelsel van drie vergelijkingen met drie variabelen:</p>
+<p><span class="math display">\[\begin{array}{lclclcl}
+5x &amp;+&amp; 1y &amp;+&amp; 8z &amp;=&amp; 46 \\
+4x &amp;-&amp; 2y &amp;&amp;     &amp;=&amp; 12 \\
+6x &amp;+&amp; 7y &amp;+&amp; 4z &amp;=&amp; 50
+\end{array}\]</span></p>
+<p>In matrixnotatie kan dit geschreven worden als <span class="math inline">\(AX = B\)</span></p>
+<p>met <span class="math inline">\(A = \left[ \begin{matrix} 5 &amp; 1 &amp; 8 \\ 4 &amp; -2 &amp; 0 \\ 6 &amp; 7 &amp; 4 \end{matrix} \right]\)</span>, <span class="math inline">\(X = \left[ \begin{matrix} x \\ y \\ z \end{matrix} \right]\)</span> en <span class="math inline">\(B = \left[ \begin{matrix} 46 \\ 12 \\ 50 \end{matrix} \right]\)</span></p>
+<p>Eerst in het kort de wiskundige achtergrond. Wanneer de inverse <span class="math inline">\(A^{-1}\)</span> bestaat, dan kun je beide kanten van de vergelijking hiermee vermenigvuldigen:</p>
+<p><span class="math inline">\(A^{-1}AX = A^{-1}B\)</span></p>
+<p>Omdat <span class="math inline">\(A^{-1}A\)</span> gelijk is aan de eenheidsmatrix kan dit herschreven worden als <span class="math inline">\(X = A^{-1}B\)</span>. Je kunt dus <span class="math inline">\(X\)</span> bepalen door het matrix product van <span class="math inline">\(A^{-1}\)</span> en <span class="math inline">\(B\)</span> te berekenen.</p>
+<p><strong>Uitvoering in Excel</strong></p>
+<div id="fig-vergelijkingen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="vergelijkingen.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;10: Het oplossen van een stelsel van drie vergelijkingen met drie onbekende variabelen.</figcaption><p></p>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>B1: <code>={5\1\8;4\-2\0;6\7\4}</code></p>
+<p>G1: <code>={46;12;50}</code></p>
+<p>B5: <code>=DETERMINANTMAT(B1#)</code></p>
+<p>B7: <code>=INVERSEMAT(B1#)</code></p>
+<p>G7: <code>=PRODUCTMAT(B7#;G1#)</code></p>
+</div></div><p>De formule voor matrix <span class="math inline">\(A\)</span> en <span class="math inline">\(B\)</span> staan in respectievelijk cel B1 en cel G1. Om te controleren of de inverse van <span class="math inline">\(A\)</span> bestaat moet de determinant <span class="math inline">\(|A|\)</span> berekend worden. Dat is gedaan in cel B5 en deze is 264. De inverse bestaat dus en is vervolgens berekend in cel B7. Tot slot kan het matrixproduct <span class="math inline">\(A^{-1}B\)</span> in cel G7 bepaald worden.</p>
+<p>De oplossing van het stelsel vergelijkingen is dus <span class="math inline">\(x=4\)</span>, <span class="math inline">\(y=2\)</span> en <span class="math inline">\(z=3\)</span>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>

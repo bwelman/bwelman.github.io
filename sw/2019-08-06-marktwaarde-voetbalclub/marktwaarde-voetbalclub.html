@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>Ben Welman - Marktwaarde voetbalclub</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../studieboeken.html">
+ <span class="menu-text">Studieboeken</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../softwijs.html">
+ <span class="menu-text">Softwijs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../vlearmoesbier.html">
+ <span class="menu-text">Vlearmoesbier</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#gegevens-ophalen" id="toc-gegevens-ophalen" class="nav-link active" data-scroll-target="#gegevens-ophalen">Gegevens ophalen</a></li>
+  <li><a href="#geboortedatum" id="toc-geboortedatum" class="nav-link" data-scroll-target="#geboortedatum">Geboortedatum</a></li>
+  <li><a href="#marktwaarde" id="toc-marktwaarde" class="nav-link" data-scroll-target="#marktwaarde">Marktwaarde</a></li>
+  <li><a href="#laden-in-excel" id="toc-laden-in-excel" class="nav-link" data-scroll-target="#laden-in-excel">Laden in Excel</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/bwelman/bwelman.github.io/issues/new" class="toc-action">Een probleem melden</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Marktwaarde voetbalclub</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">6 augustus 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Samenvatting</div>
+    <p>Het bepalen van de marktwaarde van voetbalspelers met behulp van een webquery.</p>
+  </div>
+</div>
+
+</header>
+
+<p>Afgelopen zaterdag was ik bij de openingswedstrijd van FC Twente voor het seizoen 2019/2020. Veel nieuwe spelers gezien en op de terugweg naar huis was ik benieuwd naar de marktwaarde van de huidige selectie en toekomstige wijzigingen daarin. Het Duitse bedrijf Transfermarkt publiceert veel data over clubs en spelers, waaronder ook hun inschatting van de marktwaarde van de spelers. Naast een algemene url heeft het bedrijf ook landspecifieke urls’s:</p>
+<ul>
+<li>Algemeen: https://www.transfermarkt.com/</li>
+<li>Duitsland: https://www.transfermarkt.de/</li>
+<li>Nederland: https://www.transfermarkt.nl/</li>
+<li>…</li>
+</ul>
+<p>Om analyses met Excel uit te kunnen voeren moet je de gegevens eerst in een werkblad in een geschikt formaat beschikbaar hebben. Een leuke uitdaging met behulp van Power Query. In de stappen hierna zie je hoe ik dat voor FC Twente heb uitgevoerd, maar je kunt het natuurlijk ook voor jouw eigen favoriete club uitvoeren. De enige aanpassing is dan de url van de club.</p>
+<p>Wanneer je Nederlandse url van Transfermarkt gebruikt is het land <em>Nederland</em> al voor je geselecteerd. Daarna kies je als competitie de <em>Eredivisie</em> en vervolgens de <em>club</em>, in mijn voorbeeld dus FC Twente. Klikken op de knop <strong>&gt;&gt;</strong> achter de clubnaam brengt je naar de clubpagina. Het eerste tabblad <em>Compact</em> bevat de gezochte informatie: Spelersnaam, Geboortedatum, nationaliteit, Contractduur en Marktwaarde. Noteer de URL van deze pagina, in mijn geval https://www.transfermarkt.nl/jumplist/startseite/verein/317</p>
+<p>Nu je de URL gevonden hebt kun je de browser sluiten, Excel opstarten,een lege werkmap openen en een query maken om de informatie op te halen en te bewerken.</p>
+<section id="gegevens-ophalen" class="level3">
+<h3 class="anchored" data-anchor-id="gegevens-ophalen">Gegevens ophalen</h3>
+<p>Kies <strong>Gegevens &gt; Van het web</strong>. Voer de genoteerde URL in en klik OK. Na even wachten verschijnt het venster Navigator met in de linkerkant de mogelijke tabellen. Je moet nu uitzoeken in welke tabel de gezochte informatie zit. Wanneer je een tabel selecteert krijg je in het rechterdeel een voorbeeld van de gegevens te zien. Je hoeft niet lang te zoeken want de eerste tabel <em>Table 0</em> is al de goede tabel.</p>
+<div id="fig-club-01" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-01.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Selectie van de tabel met de gewenste gegevens.</figcaption><p></p>
+</figure>
+</div>
+<p>Klik op <strong>Gegevens transformeren</strong>. Power Query Editor wordt opgestart met daarin de gegevens.</p>
+<div id="fig-club-02" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-02.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Beginscherm Power Query Editor.</figcaption><p></p>
+</figure>
+</div>
+<p>Verwijder de eerste twee kolommen. Hernoem de kolom met de namen van de spelers in “Speler”. Wijzig de naam van de query in “Voetbalclub”.</p>
+<div id="fig-club-03" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-03.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Twee kolommen zijn verwijderd, namen van kolommen gewijzigd alsmede de naam van de query zelf.</figcaption><p></p>
+</figure>
+</div>
+<p>De inhoud van de kolommen <em>Geb./leeftijd</em> en <em>Marktwaarde</em> is niet zodanig dat je er in Excel goed mee kunt werken. Een geboortedatum willen we in de vorm “16-11-1996”. De leeftijd is geen vast kenmerk, maar een berekend gegeven en moet verwijderd worden. En voor de marktwaarde moet alleen een getal komen. Voor dit herstructureren van gegevens leent Power Query zich uitstekend.</p>
+</section>
+<section id="geboortedatum" class="level3">
+<h3 class="anchored" data-anchor-id="geboortedatum">Geboortedatum</h3>
+<p>Wanneer je de gegevens in de kolom <em>Geb./leeftijd</em> bekijkt dan zie dat dag, maand, jaartal en leeftijd steeds van elkaar gescheiden worden door een spatie. Dat betekent dat je de inhoud van deze kolom kunt splitsen en over vier nieuwe kolommen kunt verdelen.</p>
+<p>Selecteer kolom <em>Geb./leeftijd</em>. Kies <strong>tab Transformeren &gt; Kolom splitsen (groep Kolom Tekst) &gt; Op scheidingsteken</strong>. Selecteer de <strong>spatie</strong> als scheidingsteken en ook dat er op elke spatie gesplitst moet worden.</p>
+<div id="fig-club-04" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-04.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Dialoogscherm voor het splitsen van een kolom op basis van een scheidingsteken.</figcaption><p></p>
+</figure>
+</div>
+<p>Klik op <strong>OK</strong>. De oude kolom is nu verdwenen en er zijn vier nieuwe kolommen voor terug gekomen. Verwijder de laatste hiervan, die waarin de leeftijden als negatieve getallen staan. Wijzig de naam van de andere drie kolommen in resp. <em>dag</em>, <em>maand</em> en <em>jaar</em>.</p>
+<p>Achter de maandnaam staat een punt. Deze moet verwijderd worden anders kunnen de datumfuncties van Excel er niet mee overweg. Selecteer de kolom <em>maand</em>. Kies <strong>tab Transformeren &gt; Waarden vervangen (groep Alle kolommen)</strong>.Specificeer voor de te zoeken waarde een <em>punt</em> en laat het vakje voor de te vervangen waarde leeg. Klik <strong>OK</strong>.</p>
+<p>Nu moet er uit dag, maand en jaar een nieuwe kolom met de geboortedata gemaakt worden. Kies <strong>tab Kolom toevoegen &gt; Aangepaste kolom</strong>. Noem de nieuwe kolom “Geboortedatum” en voer de volgende formule in: <code>= Text.From([dag]) &amp; "-" &amp; [maand] &amp; "-" &amp; Text.From([jaar])</code></p>
+<div id="fig-club-05" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-05.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Nieuwe kolom voor de geboortedatum.</figcaption><p></p>
+</figure>
+</div>
+<p>Klik op <strong>OK</strong>. Het gegevenstype van deze kolom moet nog op Datum gezet worden. Met de kolom Geboortedatum nog geselecteerd kies je <strong>tab Startpagina &gt; Gegevenstype (groep Transformeren) &gt; Datum</strong>. Verwijder daarna de overbodige kolommen <em>dag</em>, <em>maand</em> en <em>jaar</em>.</p>
+<div id="fig-club-06" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-06.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Kolom Geboortedatum voorzien van de gewenste opmaak.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="marktwaarde" class="level3">
+<h3 class="anchored" data-anchor-id="marktwaarde">Marktwaarde</h3>
+<p>De gegevens in de kolom <em>Marktwaarde</em> eindigen allemaal met <code>. €</code>. Dit moet eerst verwijderd worden.</p>
+<p>Selecteer de kolom <em>Marktwaarde</em>. Kies <strong>tab Transformeren &gt; Waarden vervangen (groep Alle kolommen)</strong>.Specificeer voor de te zoeken waarde <code>. €</code> en laat het vakje voor de te vervangen waarde leeg. Klik <strong>OK</strong>.</p>
+<p>De inhoud van de kolom Marktwaarde bestaat nu uit een getal en een tekstaanduiding voor de eenheid, welke van elkaar gescheiden zijn door een spatie. Ga op dezelfde manier als bij geboortedatum te werk om deze kolom te splitsen op de spatie. De oude kolom wordt hierdoor vervangen door twee nieuwe kolommen: <em>Marktwaarde.1</em> met het getal en <em>Marktwaarde.2</em> met de eenheid.</p>
+<p>De tekst van deze eenheid ga je nu vervangen door het overeenkomstige getal. Selecteer kolom <em>Marktwaarde.2</em>. Vervang nu de waarde <code>dzd</code> door <code>1000</code> en daarna de waarde <code>mln</code> door <code>1000000</code>. Wijzig daarna het gegevenstype van deze kolom in <em>Geheel getal</em>.</p>
+<p>Nu kan er een nieuwe kolom <em>Marktwaarde</em> door de inhoud van de twee kolommen met elkaar te vermenigvuldigen. Kies <strong>tab Kolom toevoegen &gt; Aangepaste kolom</strong>. Noem de nieuwe kolom <em>Marktwaarde</em> en voer de volgende formule in: <code>= [Marktwaarde.1]*[Marktwaarde.2]</code></p>
+<div id="fig-club-07" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-07.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Nieuwe kolom Marktwaarde.</figcaption><p></p>
+</figure>
+</div>
+<p>Klik op <strong>OK</strong>. Wijzig het gegevenstype van deze kolom in <em>Valuta</em>. Verwijder vervolgens de overbodig geworden kolommen <em>Marktwaarde.1</em> en <em>Marktwaarde.2</em>.</p>
+</section>
+<section id="laden-in-excel" class="level3">
+<h3 class="anchored" data-anchor-id="laden-in-excel">Laden in Excel</h3>
+<p>De query is nu klaar en de gegevens kunnen in een Excel werkblad geladen worden. Kies <strong>tab Startpagina &gt; Sluiten en laden</strong>.</p>
+<p>Maak in het Excel werkblad de inhoud van Marktwaarde op als Valuta zonder decimalen.</p>
+<p>Voeg tot slot een totaalrij toe via <strong>tab Tabelontwerp &gt; aanvinken Totaalrij (groep Opties voor tabelstijlen)</strong>.</p>
+<div id="fig-club-08" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="club-08.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Totaalrij voor Marktwaarde toegevoegd.</figcaption><p></p>
+</figure>
+</div>
+<p>Wanneer de marktwaarde van een speler wijzigt, er spelers vertrekken of bijkomen, hoef je alleen maar de query te vernieuwen via <strong>tab Gegevens &gt; Alles vernieuwen (groep Query’s en verbindingen)</strong>.</p>
+<p>|Merk verder op dat bij twee spelers geen nationaliteit vermeld is. Onderzoek van de brondata laat zien dat deze twee spelers een dubbele nationaliteit hebben. Blijkbaar kan de query daar niet mee overweg.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/bwelman\.github\.io\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ copyright 2022, Ben Welman
+  </li>  
+</ul>
+    </div>   
+  </div>
+</footer>
+
+
+
+</body></html>
