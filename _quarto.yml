@@ -12,12 +12,8 @@ website:
     title: Home
     logo: images/logo-transparant.png
     right:
-      - text: Studieboeken
-        href: studieboeken.qmd
       - text: Softwijs
         href: softwijs.qmd
-      - text: Vlearmoesbier
-        href: vlearmoesbier.qmd
   page-footer:
     left:
       - "copyright 2022, Ben Welman"
