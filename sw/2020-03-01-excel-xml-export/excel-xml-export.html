@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.290">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "meer overeenkomsten in dit document",
     "search-clear-button-title": "Wissen",
     "search-detached-cancel-button-title": "Annuleren",
-    "search-submit-button-title": "Verzenden"
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
@@ -164,8 +165,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Download het bestand <a href="verkopen-data.xlsx">verkopen-data.xlsx</a> en open het vervolgens in Excel. In een Excel tabel staan de volgende gegevens:</p>
 <div id="fig-xml-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="xml-1.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Tabel met verkoopgegevens.</figcaption><p></p>
+<p><img src="xml-1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;1: Tabel met verkoopgegevens.</figcaption>
 </figure>
 </div>
 <p>Om deze naar XML te exporteren moet er eerst een XML schema gemaakt worden dat gebaseerd is op deze gegevens. In plaats van een officieel schema of DTD te maken kun je ook een eenvoudig XML bestand maken met daarin de eerste twee records. Open een kladblok programma en plaats daarin het de volgende tekst.</p>
@@ -191,7 +192,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-xml-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="xml-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;2: XML taak paneel.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;2: XML taak paneel.</figcaption>
 </figure>
 </div>
 <p>Klik op <em>XML-toewijzingen</em> om een XML bestand toe te voegen. Een dialoogvenster wordt nu geopend. Klik hierin op <em>Toevoegen</em> en selecteer daarna <em>verkopen-schema.xml</em>.</p>
@@ -199,21 +200,21 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-xml-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="xml-3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;3: XML toewijzingen.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;3: XML toewijzingen.</figcaption>
 </figure>
 </div>
 <p>Klik op <em>OK</em>.</p>
 <div id="fig-xml-4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="xml-4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;4: XML taak paneel met daarin de velden uit het XML schema.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;4: XML taak paneel met daarin de velden uit het XML schema.</figcaption>
 </figure>
 </div>
 <p>Sleep nu een voor een de vijf elementen (Voornaam, Achternaam, Verkopen, Land, Kwartaal) uit de XML-boom naar de juiste kolom in het werkblad.</p>
 <div id="fig-xml-5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="xml-5.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Alle velden uit het schema zijn nu aan een kolom gekoppeld.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;5: Alle velden uit het schema zijn nu aan een kolom gekoppeld.</figcaption>
 </figure>
 </div>
 <p>Je kunt controleren of de toewijzing goed uitgevoerd is, door de elementen in de XML-bron een voor een aan te klikken. De bijbehorende kolom uit de tabel moet dan geselecteerd worden.</p>

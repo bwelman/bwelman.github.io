@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.290">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "meer overeenkomsten in dit document",
     "search-clear-button-title": "Wissen",
     "search-detached-cancel-button-title": "Annuleren",
-    "search-submit-button-title": "Verzenden"
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
@@ -184,22 +185,22 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Kies <strong>Gegevens &gt; Van het web</strong>. Voer de genoteerde URL in en klik OK. Na even wachten verschijnt het venster Navigator met in de linkerkant de mogelijke tabellen. Je moet nu uitzoeken in welke tabel de gezochte informatie zit. Wanneer je een tabel selecteert krijg je in het rechterdeel een voorbeeld van de gegevens te zien. Je hoeft niet lang te zoeken want de eerste tabel <em>Table 0</em> is al de goede tabel.</p>
 <div id="fig-club-01" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="club-01.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Selectie van de tabel met de gewenste gegevens.</figcaption><p></p>
+<p><img src="club-01.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;1: Selectie van de tabel met de gewenste gegevens.</figcaption>
 </figure>
 </div>
 <p>Klik op <strong>Gegevens transformeren</strong>. Power Query Editor wordt opgestart met daarin de gegevens.</p>
 <div id="fig-club-02" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="club-02.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Beginscherm Power Query Editor.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;2: Beginscherm Power Query Editor.</figcaption>
 </figure>
 </div>
 <p>Verwijder de eerste twee kolommen. Hernoem de kolom met de namen van de spelers in “Speler”. Wijzig de naam van de query in “Voetbalclub”.</p>
 <div id="fig-club-03" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="club-03.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Twee kolommen zijn verwijderd, namen van kolommen gewijzigd alsmede de naam van de query zelf.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;3: Twee kolommen zijn verwijderd, namen van kolommen gewijzigd alsmede de naam van de query zelf.</figcaption>
 </figure>
 </div>
 <p>De inhoud van de kolommen <em>Geb./leeftijd</em> en <em>Marktwaarde</em> is niet zodanig dat je er in Excel goed mee kunt werken. Een geboortedatum willen we in de vorm “16-11-1996”. De leeftijd is geen vast kenmerk, maar een berekend gegeven en moet verwijderd worden. En voor de marktwaarde moet alleen een getal komen. Voor dit herstructureren van gegevens leent Power Query zich uitstekend.</p>
@@ -211,7 +212,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-club-04" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="club-04.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Dialoogscherm voor het splitsen van een kolom op basis van een scheidingsteken.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;4: Dialoogscherm voor het splitsen van een kolom op basis van een scheidingsteken.</figcaption>
 </figure>
 </div>
 <p>Klik op <strong>OK</strong>. De oude kolom is nu verdwenen en er zijn vier nieuwe kolommen voor terug gekomen. Verwijder de laatste hiervan, die waarin de leeftijden als negatieve getallen staan. Wijzig de naam van de andere drie kolommen in resp. <em>dag</em>, <em>maand</em> en <em>jaar</em>.</p>
@@ -220,14 +221,14 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-club-05" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="club-05.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Nieuwe kolom voor de geboortedatum.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;5: Nieuwe kolom voor de geboortedatum.</figcaption>
 </figure>
 </div>
 <p>Klik op <strong>OK</strong>. Het gegevenstype van deze kolom moet nog op Datum gezet worden. Met de kolom Geboortedatum nog geselecteerd kies je <strong>tab Startpagina &gt; Gegevenstype (groep Transformeren) &gt; Datum</strong>. Verwijder daarna de overbodige kolommen <em>dag</em>, <em>maand</em> en <em>jaar</em>.</p>
 <div id="fig-club-06" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="club-06.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Kolom Geboortedatum voorzien van de gewenste opmaak.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;6: Kolom Geboortedatum voorzien van de gewenste opmaak.</figcaption>
 </figure>
 </div>
 </section>
@@ -241,7 +242,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-club-07" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="club-07.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Nieuwe kolom Marktwaarde.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;7: Nieuwe kolom Marktwaarde.</figcaption>
 </figure>
 </div>
 <p>Klik op <strong>OK</strong>. Wijzig het gegevenstype van deze kolom in <em>Valuta</em>. Verwijder vervolgens de overbodig geworden kolommen <em>Marktwaarde.1</em> en <em>Marktwaarde.2</em>.</p>
@@ -254,7 +255,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-club-08" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="club-08.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Totaalrij voor Marktwaarde toegevoegd.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;8: Totaalrij voor Marktwaarde toegevoegd.</figcaption>
 </figure>
 </div>
 <p>Wanneer de marktwaarde van een speler wijzigt, er spelers vertrekken of bijkomen, hoef je alleen maar de query te vernieuwen via <strong>tab Gegevens &gt; Alles vernieuwen (groep Query’s en verbindingen)</strong>.</p>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.290">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -58,7 +58,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "meer overeenkomsten in dit document",
     "search-clear-button-title": "Wissen",
     "search-detached-cancel-button-title": "Annuleren",
-    "search-submit-button-title": "Verzenden"
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
@@ -170,15 +171,15 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Stel je hebt een groep van 8 personen, 4 mannen en 4 vrouwen, waarvan de lengte (cm) bekend is. Bij deze groep komt nu een nieuwe persoon waarvan je alleen de lengte weet, 176 cm. Kun je dan hiermee voorspellen of het een man of een vrouw is?</p>
 <div id="fig-knn-1dim-data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="knn-1dim-data.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Lengte van 8 personen.</figcaption><p></p>
+<p><img src="knn-1dim-data.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;1: Lengte van 8 personen.</figcaption>
 </figure>
 </div>
 <p>Voor een vergelijking zijn in figuur <a href="#fig-knn-1dim-grafiek">Figuur&nbsp;2</a> de lengtes van alle personen op een denkbeeldige meetlat afgebeeld.</p>
 <div id="fig-knn-1dim-grafiek" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-1dim-grafiek.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Afbeelding van de lengte van de personen op een denkbeeldige meetlat.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;2: Afbeelding van de lengte van de personen op een denkbeeldige meetlat.</figcaption>
 </figure>
 </div>
 <p>Het KNN algoritme berekent nu de afstanden van de nieuwe persoon tot alle gecategoriseerde personen, waarvan het geslacht dus bekend is. Onder afstand wordt hier dan het verschil in lengte verstaan. Deze afstanden zijn te zien in <a href="#fig-knn-1dim-data">Figuur&nbsp;1</a>.</p>
@@ -207,14 +208,14 @@ Tip
 <div id="fig-knn-2dim-data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-2dim-data.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Lengte en gewicht van de personen.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;3: Lengte en gewicht van de personen.</figcaption>
 </figure>
 </div>
 <p>In <a href="#fig-knn-2dim-grafiek">Figuur&nbsp;4</a> is een spreidingsdiagram van gewicht tegen lengte te zien.</p>
 <div id="fig-knn-2dim-grafiek" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-2dim-grafiek.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Spreidingsdiagram van gewicht tegen lengte van de personen.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;4: Spreidingsdiagram van gewicht tegen lengte van de personen.</figcaption>
 </figure>
 </div>
 <p>Ook nu wordt weer de afstand bepaald van de nieuwe persoon tot de andere personen. Bij twee variabelen wordt de Euclidische afstand bepaald. Voor twee punten <span class="math inline">\((x_1,y_1)\)</span> en <span class="math inline">\((x_2,y_2)\)</span> kun je deze via Pythagoras uitrekenen:</p>
@@ -232,13 +233,13 @@ Tip
 <div id="fig-knn-2dim-norm-data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-2dim-norm-data.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Lengte en gewicht van de personen.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;5: Lengte en gewicht van de personen.</figcaption>
 </figure>
 </div>
 <div id="fig-knn-2dim-norm-grafiek" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-2dim-norm-grafiek.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Spreidingsdiagram van gewicht tegen lengte van de personen.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;6: Spreidingsdiagram van gewicht tegen lengte van de personen.</figcaption>
 </figure>
 </div>
 <p>Wanneer nu naar de dichtstbijzijnde buren gekeken wordt zijn de resultaten iets anders.</p>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.290">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "meer overeenkomsten in dit document",
     "search-clear-button-title": "Wissen",
     "search-detached-cancel-button-title": "Annuleren",
-    "search-submit-button-title": "Verzenden"
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
@@ -184,22 +185,22 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Om een nieuwe visualisatie in het canvas op te nemen moet je allereerst er voor zorgen dat geen bestaande visualisatie geselecteerd is. Klik nu op visualisatie Treemap.</p>
 <div id="fig-powerbi-treemap" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
-<p><img src="powerbi-treemap.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;1: visualisatie Treemap</figcaption><p></p>
+<p><img src="powerbi-treemap.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;1: visualisatie Treemap</figcaption>
 </figure>
 </div>
 <p>Er wordt nu een treemap zonder inhoud in het canvas geplaatst. Sleep nu het veld <code>hoeveelheid</code> uit tabel <code>tblVerkopen</code> in de treemap. Er wordt nu 1 rechthoek gemaakt voor de totale hoeveelheid. Sleep vervolgens veld <code>plaats</code> uit tabel <code>tblVerkopen</code> in de treemap. Je krijgt nu via drie rechthoeken de hoeveelheid per plaats te zien.</p>
 <div id="fig-boekenverkoop-hoeveelheid-per-plaats" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-hoeveelheid-per-plaats.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Hoeveelheid per plaats.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;2: Hoeveelheid per plaats.</figcaption>
 </figure>
 </div>
 <p>Sleep vervolgens veld <code>categorie</code> uit tabel <code>tblBoeken</code> in de treemap. De grote rechthoek voor een plaats wordt nu opgedeeld in kleinere rechthoeken, 1 voor elke categorie. Om de namen van alle categorieën goed te zien moet je de treemap wat breder maken door aan de handgrepen aan de zijkanten te slepen.</p>
 <div id="fig-boekenverkoop-hoeveelheid-per-plaats-categorie" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-hoeveelheid-per-plaats-categorie.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Hoeveelheid per plaats per categorie.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;3: Hoeveelheid per plaats per categorie.</figcaption>
 </figure>
 </div>
 <p>Duidelijk is te zien dat in alledrie de plaatsen de categorie Reizen de meest verkochte boeken heeft</p>
@@ -207,7 +208,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-boekenverkoop-treemap-velden" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-treemap-velden.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Gebruikte velden</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;4: Gebruikte velden</figcaption>
 </figure>
 </div>
 <p>In plaats van de velden in de treemap te slepen kun je ze ook naar deze lokaties slepen.</p>
@@ -217,14 +218,14 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-boekenverkoop-enschede-reizen" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-enschede-reizen.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Verkochte titels in Enschede.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;5: Verkochte titels in Enschede.</figcaption>
 </figure>
 </div>
 <p>En zo kun je ook in de kolomgrafiek op een boektitel klikken waardoor in de treemap een bijbehorend blokje getoond wordt.</p>
 <div id="fig-boekenverkoop-rinkeldekink" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-rinkeldekink.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Selecteren van een specifiek boek.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;6: Selecteren van een specifiek boek.</figcaption>
 </figure>
 </div>
 <p>Om de filtering ongedaan te maken klik je in de grafiek opnieuw op het item dat voor de filtering zorgt.</p>
@@ -243,7 +244,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-boekenverkoop-intellisense-1" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-intellisense-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Formules die met een h beginnen.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;7: Formules die met een h beginnen.</figcaption>
 </figure>
 </div>
 <p>Bij lange lijsten is het aan te raden wat meer van de naam in te typen. De lijst wordt dan steeds kleiner waardoor het selecteren van het juiste item steeds gemakkelijker wordt.</p>
@@ -258,7 +259,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-boekenverkoop-formule-omzet" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-formule-omzet.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Nieuwe kolom Omzet</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;8: Nieuwe kolom Omzet</figcaption>
 </figure>
 </div>
 <p>Om het nog wat te verfraaien ga je de bedragen opmaken in de euro notatie.</p>
@@ -266,7 +267,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-boekenverkoop-omzet-decimaal" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-omzet-decimaal.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;9: Opmaak veld Omzet.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;9: Opmaak veld Omzet.</figcaption>
 </figure>
 </div>
 <p>Verander via de keuzelijst de notatie in <code>Euro</code>.</p>
@@ -276,7 +277,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-boekenverkoop-omzet-per-titel" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-omzet-per-titel.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;10: Omzet per titel</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;10: Omzet per titel</figcaption>
 </figure>
 </div>
 </section>
@@ -286,7 +287,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-powerbi-kaart" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="powerbi-kaart.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;11: visualisatie Kaart</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;11: visualisatie Kaart</figcaption>
 </figure>
 </div>
 <p>Klik op de visualisatie Kaart zodat deze aan het canvas toegevoegd wordt. Sleep daarna het veld <code>Omzet</code> uit de <code>tblVerkopen</code> in de visualisatie.</p>
@@ -300,7 +301,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-powerbi-slicer" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="powerbi-slicer.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;12: visualisatie Slicer</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;12: visualisatie Slicer</figcaption>
 </figure>
 </div>
 <p>Voeg een slicer aan het canvas toe en sleep hierin het veld <code>prijs</code> uit de tabel <code>tblBoeken</code>. Geef deze visualisatie een titel met de tekst “Filter op prijsklasse” en geef deze dezelfde opmaak als de andere visualisaties.</p>
@@ -308,7 +309,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-powerbi-slicer-knop-wissen" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="powerbi-slicer-knop-wissen.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;13: Slicer selecties wissen</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;13: Slicer selecties wissen</figcaption>
 </figure>
 </div>
 </section>
@@ -319,14 +320,14 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-powerbi-menu-invoegen" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="powerbi-menu-invoegen.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;14: Invoegen van een afbeelding.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;14: Invoegen van een afbeelding.</figcaption>
 </figure>
 </div>
 <p>Het door mij gebruikte logo kun je <a href="https://softwijs.nl/download/icon-boeken.png">hier</a> vinden.</p>
 <div id="fig-boekenverkoop-kopregel" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-kopregel.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;15: De afbeelding die voor het logo gebruikt wordt.</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;15: De afbeelding die voor het logo gebruikt wordt.</figcaption>
 </figure>
 </div>
 </section>
@@ -336,7 +337,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-boekenverkoop-eindrapport" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="boekenverkoop-eindrapport.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;16: Eindrapport Verkoop Boeken</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;16: Eindrapport Verkoop Boeken</figcaption>
 </figure>
 </div>
 </section>

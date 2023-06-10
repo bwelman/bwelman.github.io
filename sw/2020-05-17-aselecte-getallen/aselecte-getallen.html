@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.290">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "meer overeenkomsten in dit document",
     "search-clear-button-title": "Wissen",
     "search-detached-cancel-button-title": "Annuleren",
-    "search-submit-button-title": "Verzenden"
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
@@ -183,8 +184,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>In de volgende afbeelding zie je hoe willekeurige getallen in het interval <code>[10,50)</code> zijn gegenereerd.</p>
 <div id="fig-aselect" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="aselect.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Willekeurige getallen in het interval <code>[10,50)</code> met functie ASELECT</figcaption><p></p>
+<p><img src="aselect.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;1: Willekeurige getallen in het interval <code>[10,50)</code> met functie ASELECT</figcaption>
 </figure>
 </div>
 <p>Wanneer je gehele getallen wilt moet je voorgaande formule binnnen de functie <code>INTEGER()</code> plaatsen, die een getal naar beneden afrondt op het dichtstbijzijnde gehele getal.</p>
@@ -198,14 +199,14 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-aselecttussen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="aselecttussen.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;2: Willekeurige getallen uit het interval 10 t/m 50 met functie ASELECTTUSSEN</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;2: Willekeurige getallen uit het interval 10 t/m 50 met functie ASELECTTUSSEN</figcaption>
 </figure>
 </div>
 <p>Met wat trucs kun je ook andere getallen dan gehele getallen genereren. Zo zou je voor prijzen van artikelen die tussen €10,00 en €90,00 liggen gebruik kunnen maken van de formule in de volgende afbeelding:</p>
 <div id="fig-aselecttussen-euro" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="aselecttussen-euro.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;3: Willekeurige getallen uit het interval 10,00 t/m 90,00</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;3: Willekeurige getallen uit het interval 10,00 t/m 90,00</figcaption>
 </figure>
 </div>
 <p>Om twee decimalen te krijgen worden de grenswaarden 10 en 90 eerst met 100 vermenigvuldigd. Dan wordt er een getal gegenereerd uit het interval <code>[1000, 9000]</code> waarna dit getal door 100 gedeeld wordt en je precies twee decimalen krijgt. De cellen kun je vooraf of achteraf opmaken als geldbedragen.</p>
@@ -213,14 +214,14 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="fig-aselecttussen-5voud" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="aselecttussen-5voud.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;4: Willekeurige vijfvouden</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;4: Willekeurige vijfvouden</figcaption>
 </figure>
 </div>
 <p>Ook het genereren van datums (alsmede tijdstippen) is hiermee mogelijk, omdat intern in Excel een datum en tijd als een getal wordt opgeslagen. Zo staat het getal 1 voor “1-1-1900 00:00:00”. In het volgende voorbeeld worden willekeurige datums uit het jaar 2019 gegenereerd. Ook hier moet je de cellen waarin het resultaat komt, opmaken in het gewenste datumformaat.</p>
 <div id="fig-aselecttussen-datums" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="aselecttussen-datums.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;5: Willekeurige datums in 2019</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;5: Willekeurige datums in 2019</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -265,7 +266,7 @@ Opmerking
 <div id="fig-aselectmatrix" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="aselectmatrix.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;6: Een array van 3 rijen en 4 kolommen met willekeurige getallen van 10 t/m 50</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;6: Een array van 3 rijen en 4 kolommen met willekeurige getallen van 10 t/m 50</figcaption>
 </figure>
 </div>
 <p>Dit ziet er bij de eerste aanblik hetzelfde uit als bij <code>ASELECTTUSSEN()</code>, maar er zijn verschillen omdat het een array is. Allereerst zie je een lichtblauw kader om de array. En wanneer je een andere cel selecteert dan die waar de formule is ingevoerd, zie je in de formulebalk dat de formule grijs geworden is. Ook kun je in de andere cellen geen wijzigingen aanbrengen.</p>
@@ -279,7 +280,7 @@ Opmerking
 <div id="fig-atp-discreet" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="atp-discreet.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;7: Dialoogscherm Aselecte getallen</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;7: Dialoogscherm Aselecte getallen</figcaption>
 </figure>
 </div>
 <ul>
@@ -299,14 +300,14 @@ Opmerking
 <div id="fig-aselect-toolpak-uniform" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="aselect-toolpak-uniform.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;8: Invulling dialoogscherm voor het genereren van willekeurige getallen tussen 10 en 50</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;8: Invulling dialoogscherm voor het genereren van willekeurige getallen tussen 10 en 50</figcaption>
 </figure>
 </div>
 <p>Het resultaat ziet er ongeveer uit als volgt:</p>
 <div id="fig-aselect-toolpak-result" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="aselect-toolpak-result.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;9: Resultaat gegevensanalyse</figcaption><p></p>
+<figcaption class="figure-caption">Figuur&nbsp;9: Resultaat gegevensanalyse</figcaption>
 </figure>
 </div>
 <p>Er staat geen formule in een van de cellen. De getallen veranderen dan ook niet wanneer er een wijziging in het werkblad komt.</p>
