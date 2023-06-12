@@ -4,56 +4,25 @@ image: images/benwem.jpg
 about: 
   template: trestles
   image-shape: rounded
-  image-width: 15em
+  image-width: 14em
   links: 
     - icon: github
       text: GitHub
       href: https://github.com/bwelman
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/benwelman/
-    - icon: envelope
-      text: Email
-      href: mailto:bwelman@gmail.com
 ---
 
-### Hallo!
+Dit is mijn archief met artikelen over allerlei onderwerpen waarvan de meeste door mij zelf zijn geschreven. Sommige artikelen verdwijnen soms weer om dan in een van onderstaande studieboeken te worden opgenomen.
 
-Dit is mijn persoonlijke website welke fungeert als een portaal naar de door mij gemaakte studieboeken en artikelen.
-
-### Achtergrond
-
-Studie:
-
--   Chemische Technologie aan de THT (Universiteit Twente)
-
-Werkervaring:
-
--   Docent scheikunde en wiskunde op middelbare scholen
-
--   Docent informatica en statistiek bij Saxion Hogescholen
-
--   Ontwikkelen en ondersteunen van e-learning bij Saxion Hogescholen
-
--   Auteur studieboeken
-
--   Data analyse met [R](https://en.wikipedia.org/wiki/R_(programming_language)) en [Python](https://www.python.org/)
-
-Hobby's: biljarten, bridgen, bierbrouwen, broodbakken, camperen, fietsen, reizen
-
-### Studieboeken
-
-**Gratis online versies van mijn studieboeken.**
+**Online Studieboeken**
 
 [Leer Access](https://leeraccess.netlify.app) - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.
 
-[Learn Access](https://learnaccess.netlify.app) - Engelstalige versie van Leer Access
+[Learn Access](https://learnaccess.netlify.app) - Engelstalige versie van Leer Access.
 
 [Leer Excel](https://leerexcel.netlify.app) - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.
 
-[Learn Excel](https://learnexcel.netlify.app) - Engelstalige versie van Leer Excel
+[Learn Excel](https://learnexcel.netlify.app) - Engelstalige versie van Leer Excel.
 
-[Data-analyse met Excel](https://excelanalyse.netlify.app) - Analyseren van gegevens voor gevorderde Excel gebruikers
+[Data-analyse met Excel](https://excelanalyse.netlify.app) - Analyseren van gegevens voor gevorderde Excel gebruikers.
 
-[Brouw je bier](https://brouwjebier.netlify.app) - Cursusboek bierbrouwen voor beginners
-
+[Brouw je bier](https://brouwjebier.netlify.app) - Cursusboek bierbrouwen voor beginners.

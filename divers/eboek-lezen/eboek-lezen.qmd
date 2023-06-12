@@ -1,0 +1,48 @@
+---
+title: "Het lezen van e-boeken"
+abstract: |
+  De mogelijkheden die je hebt om een e-boek te lezen hangen af van het formaat waarin het e-boek is uitgebracht, de apparatuur waarover je beschikt en of het e-boek al dan niet met DRM beschermd is.
+date: "2012-12-24"
+image: "preview.png"
+categories: [eboek]
+---
+
+## E-boeken
+
+E-boeken die je moet kopen zijn vaak beveiligd met DRM (Digital Rights Management), een systeem van Adobe. De beveiliging zorgt er voor dat je de e-boeken maar een beperkt aantal keren (4-5) op verschillende apparaten kunt installeren.
+
+Ben je nog helemaal niet bekend met het fenomeen e-reader, e-boek en digitaal lezen? Kijk dan eens naar de beginnersgids op de site van ereaders. Deze gids richt zich voornamelijk op de Nederlandstalige markt en maakt je snel wegwijs. Hierbij een korte samenvatting van de belangrijkste bestandsformaten en apparaten.
+
+### Bestandsformaten
+
+**EPUB**
+
+EPUB is zeker in Europa het meest gebruikte formaat voor e-boeken. Het is een open standaard voor e-boeken. De tekst in een ePub boek is reflowable, waarmee bedoeld wordt dat er geen vaste regellengte is en dat de lengte van een regel zich aanpast aan het scherm waarop het gelezen wordt. Daarom kent ePub ook niet echt een vaste pagina, met paginanummers. Bij ePub is een pagina het gedeelte dat je op het scherm ziet en dat hangt o.a. af van de gekozen schermafmetingen en lettergrootte. De meeste leveranciers van e-boeken ondersteunen het ePub formaat. Om te lezen is het ePub formaat het beste formaat. En dit formaat ondersteunt DRM, je komt dus zowel beveiligde als onbeveiligde e-boeken tegen.
+
+**PDF**
+
+Veel e-boeken worden in het PDF formaat uitgebracht. Dit is eigenlijk geen special formaat voor e-boeken, maar de meeste apparaten ondersteunen het lezen van het pdf formaat. Meestal ligt de regellengte bij dit formaat vast en is dus de tekst niet reflowable. Wanneer je dan het lettertype vergroot moet je horizontaal scrollen om de tekst te kunnen lezen. Dat wordt door velen als niet prettig ervaren. Een voordeel van het PDF formaat is dat het vergelijkbaar is met een boek, vaste pagina's kent en ook goed uitgeprint kan worden. Veel oudere uitgave zijn alleen in PDF formaat beschikbaar.
+
+**Mobi**
+
+Dit formaat wordt gebruikt door de MobiPocket Reader. Behalve deze e-reader zijn er nog een paar andere merken die dit formaat ondersteunen. Je komt het echter steeds minder tegen.
+
+**AZW**
+
+Dit formaat is door Amazon gemaakt voor haar e-reader Kindle en lijkt erg veel op het mobi formaat. Op andere apparaten heb je hier niets aan. Op de Nederlandse markt kom je dit formaat ook nauwelijks tegen. Wel bij Amazon natuurlijk.
+
+### Apparaten
+
+**E-readers**
+
+Dit zijn apparaten die speciaal ontwikkeld zijn voor het digitaal lezen. Ze hebben schermen die gebaseerd zijn op eInk, elektronische inkt, waardoor de leesbaarheid groot is. Voor de bestandsformaten ben je volledig afhankelijk van de mogelijkheden die het betreffende apparaat heeft, je hebt geen eigen keuzes. Bij de aanschaf van een e-reader is het dus van belang om te controleren welke bestandsformaten ondersteund worden. Bij e-boeken op de Europese markt is het van belang dat ePub en pdf ondersteund worden. Verder kan het soms handig zijn dat ook MS Word bestanden en platte tekst bestanden gelezen kunnen worden, maar echt belangrijk is dit niet.
+
+**Computers / Laptops**
+
+Er is inmiddels veel gratis software beschikbaar waarmee je e-boeken op een computer of laptop kunt lezen. Adobe Digital Editions, een programma van Adobe voor het lezen en beheren e-boeken in epub en pdf formaat, zowel met als zonder DRM. Kan gratis gebruikt worden. Registratie bij Adobe is noodzakelijk om boeken te kunnen lezen die met DRM beschermd zijn. Calibre, een open source programma voor het beheer en het lezen van e-boeken. Kan geen met DRM beveiligde boeken lezen. Voor de browser Firefox is een EPub reader add-in beschikbaar waarmee het ePub formaat zonder DRM gelezen kan worden. Zowel Firefox als de add-in zijn gratis.
+
+**Smartphones / tablets**
+
+Er zijn veel merken smartphones, elk met een eigen besturingssysteem, zoals: iPhone OS van Apple, Android, Symbian, Blackberry en Windows Mobile. De mogelijkheden die je hebt om digitaal te kunnen verschillen per besturingssysteem en nemen ook voortdurend toe. Voor zowel de iPhone als Android is software beschikbaar om epub, met en zonder DRM, te kunnen lezen. IPAD
+
+Voor de iPad is software beschikbaar waarmee je beveiligde en onbeveiligde ePub boeken kunt lezen.

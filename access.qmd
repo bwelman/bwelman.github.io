@@ -1,0 +1,12 @@
+---
+title: "Access"
+subtitle: "Artikelen over Access databases."
+listing:
+  contents: access
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  fields: [date, title, description, categories, image]
+---

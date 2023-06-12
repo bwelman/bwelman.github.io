@@ -1,0 +1,249 @@
+---
+title: "Power BI Desktop"
+abstract: |
+  Een tutorial over het werken met Power BI Desktop. Het ophalen van gegevens, het maken van visualisaties en een eindrapportage.
+date: "2019-07-14"
+author: "Ben Welman"
+image: "boekenverkoop-eindrapport.png"
+fig-align: left
+---
+
+Met de mogelijkheden van de laatste versies van Excel ben je goed in staat om gegevens te analyseren en te visualiseren. Maar daarnaast heeft Microsoft hiervoor nog een andere applicatie, namelijk **Power BI**. Er zijn overeenkomsten en verschillen tussen Excel en Power BI. Aan Excel is al veel aandacht besteed, zie de gratis online cursus [LeerExcel](https://leerexcel.netlify.app/). In deze tutorial een kennismaking met Power BI.
+
+Microsoft Power BI bevat drie componenten, die je ook in Excel aantreft:
+
+-   **Power Query**, waarmee je verbindingen maakt met gegevensbronnen en de gegevens kunt bewerken.
+-   **Power Pivot**, waarmee je het gegevensmodel kunt instellen (relaties aanbrengen) en berekende kolommen en metingen (measures) kunt maken.
+-   **Power View**, waarmee je de gegevens kunt visualiseren in de vorm van grafieken en andere elementen.
+
+![Power BI componenten](powerbi-componenten.png){#fig-powerbi-componenten}
+
+Wanneer je met Microsoft Power BI wilt werken heb je twee mogelijkheden.
+
+-   Power BI service: een cloud gebaseerde online service
+-   Power BI desktop: een applicatie op de lokale computer
+
+Met beide kun je gratis werken. In deze tutorial vind je een kennismaking met de laatste. Om de oefeningen uit te voeren moet je uiteraard Power BI geïnstalleerd hebben. Dat kan via de link [Power BI Desktop](https://powerbi.microsoft.com/desktop). Je hebt hiervoor wel een Microsoft account nodig.
+
+Verder heb je het gegevensbestand *boekenverkoop.xlsx* nodig dat je [hier](boekenverkoop.xlsx) kunt downloaden. Dit is een klein bestand met gegevens over de verkoop van boeken.
+
+::: callout-important
+Power BI bestanden hebben standaard de extensie `.pbix`. Denk eraan om bij de oefeningen hierna regelmatig het gemaakte werk op te slaan, bijvoorbeeld onder de naam `boekenverkoop.pbix`.
+:::
+
+## Gegevens ophalen
+
+Start Power BI Desktop op. Je krijgt nu het volgende scherm:
+
+![Power BI opstartscherm](powerbi-opstartscherm.png){#fig-powerbi-opstartscherm}
+
+Kies aan de linkerkant van dit opstartscherm voor *Gegevens ophalen*. Kies daarna in het scherm dat verschijnt voor *Excel*. Klik daarna op de knop *Verbinding maken* en blader dan naar het bestand *boekenverkoop.xlsx*. Klik op *Openen*. Het venster Navigator verschijnt dan.
+
+![Navigator venster](boekenverkoop-navigator.png){#fig-boekenverkoop-navigator}
+
+Het navigatievenster is een plaats waar je een voorbeeld van de gegevens van alle gegevensentiteiten in de gegevensbron kunt bekijken. Het excelbestand waar je nu verbinding mee maakt heeft drie werkbladen (Auteurs, Boeken, Verkopen). En elk van deze werkbladen bevat een tabel met gegevens (tblAuteurs, tblBoeken, tblVerkopen). Wanneer je een werkblad of tabel selecteert krijg je aan de rechterkant een voorbeeld van deze gegevens te zien. Omdat elk werkblad alleen maar één tabel bevat, maakt het niet uit of je een tabel of een werkblad selecteert.
+
+Selecteer de drie tabellen en klik dan op de knop *Laden*.
+
+Power BI laad nu de gegevens in het geheugen en probeert tevens relaties te leggen tussen de tabellen. Voordat je nu verder gaat moet je eerst controleren of er relaties aangebracht zijn en zoja of deze juist zijn. Zo niet dan zul je zelf de relaties moeten aanbrengen dan wel corrigeren.
+
+Aan de linkerkant van het scherm zitten drie knoppen waarmee je kunt schakelen tussen de weergaves.
+
+![Power BI weergaves](powerbi-views.png){#fig-powerbi-views}
+
+Klik op de knop *Model*.
+
+![Relaties tussen de drie tabellen](boekenverkoop-relaties.png){#fig-boekenverkoop-relaties}
+
+De automatisch gelegde relaties zijn bij dit voorbeeld juist:
+
+-   Tussen `tblAuteurs` en `tblBoeken` zit een 1 op veel relatie via het veld `auteur-id`.
+-   Tussen `tblBoeken` en `tblVerkopen` zit een 1 op veel relatie via het veld `isbn`.
+
+Nu het gegevensmodel in orde is kun je verder gaan met het maken van visualisaties voor een rapport.
+
+Klik aan de linkerkant van het scherm op de knop *Rapport*.
+
+Na het laden van de gegevens zie je in de rapportweergave aan de rechterkant van het scherm in het deelvenster Velden een lijst met de tabellen. Met de pijltjes omlaag kun je een tabel openklappen waarna de velden zichtbaar worden. Je gaat nu de eerste grafiek te maken.
+
+## Visualisatie: Verkochte hoeveelheid per titel
+
+Sleep het veld `hoeveelheid` uit de tabel `tblVerkopen` naar het grote lege canvas.
+
+![Veld hoeveelheid in canvas slepen](tblverkopen-hoeveelheid.png){#fig-tblverkopen-hoeveelheid}
+
+Deze actie creeert één visualisatie. De default visualisatie is een gegroepeerd kolomdiagram. In dit geval wordt er maar 1 kolom getekend welke het totaal aantal verkochte boeken weergeeft. Wanneer je de muis op de kolom plaatst zie dat het totale aantal 3592 is.
+
+![Totaal aantal verkochte boeken](boekenverkoop-totale-hoeveelheid.png){#fig-boekenverkoop-totale-hoeveelheid}
+
+Aan de handgrepen om de figuur kun je zien dat deze visualisatie nog steeds geselecteerd is.
+
+Om de verkochte aantallen per boek te zien moet je het veld `titel` uit de tabel `tblBoeken` in dezelfde visualisatie slepen.
+
+![Hoeveelheid per titel](boekenverkoop-hoeveelheid-per-titel.png){#fig-boekenverkoop-hoeveelheid-per-titel}
+
+De titel van het boek is langs de X-as geplaatst en de verkochte hoeveelheid langs de Y-as. Desgewenst kun je via de handgrepen de afmetingen wijzigen.
+
+### Opmaak wijzigen
+
+In het deelvenster Visualisaties zitten drie tabs waarmee je diverse instellingen voor de geselecteerde visualisatie kunt wijzigen. Met de middelste die de vorm van een verfroller heeft, kun je allerlei opmaakkenmerken instellen.
+
+![Visualisatie tabs](powerbi-visualisatie-tabs.png){#fig-powerbi-visualisatie-tabs}
+
+Zorg dat de grafiek geselecteerd is en selecteer daarna de tab *Indeling*.
+
+Allereerst ga je de kleuren van de kolommen wijzigen. Klap *Gegevenskleuren* uit en stel daarna de standaardkleur in op rood.
+
+![Gegevenskleur ingesteld op rood](powerbi-gegevenskleur-rood.png){#fig-powerbi-gegevenskleur-rood}
+
+Om ook het aantal verkochte boeken als een getal bij de kolom te plaatsen moet je de optie *Gegevenslabels* inschakelen.
+
+![Gegevenslabels ingeschakeld](powerbi-gegevenslabels-aan.png){#fig-powerbi-gegevenslabels-aan}
+
+Tot slot wordt de titel gewijzigd.
+
+Klap opmaak voor *Titel* open en breng de volgende wijzigingen aan:
+
+-   Titeltekst: Aantal verkocht per titel
+-   Tekenkleur: zwart
+-   Uitlijning: gecentreerd
+-   Achtergrondkleur: grijs
+-   Tekengrootte: 10 pt
+
+![Opmaak titel](boekenverkoop-hoeveelheid-titel-opmaak.png){#fig-boekenverkoop-hoeveelheid-titel-opmaak}
+
+## Visualisatie: Verkochte aantallen per plaats per categorie
+
+In de tabel `tblVerkopen` zijn van elk boek de verkochte aantallen per plaats bijgehouden. En in de tabel `tblBoeken` kun je zien tot welke categorie een boek behoort. Interessant is nu om te weten welke categorie in welke plaats het meest populair is. Hiervoor is het grafiektype **Treemap** zeer geschikt, welke een hiërarchische weergave van de gegevens biedt, waardoor het relatief eenvoudig is om patronen te herkennen.
+
+Om een nieuwe visualisatie in het canvas op te nemen moet je allereerst er voor zorgen dat geen bestaande visualisatie geselecteerd is. Klik nu op visualisatie Treemap.
+
+![visualisatie Treemap](powerbi-treemap.png){#fig-powerbi-treemap}
+
+Er wordt nu een treemap zonder inhoud in het canvas geplaatst. Sleep nu het veld `hoeveelheid` uit tabel `tblVerkopen` in de treemap. Er wordt nu 1 rechthoek gemaakt voor de totale hoeveelheid. Sleep vervolgens veld `plaats` uit tabel `tblVerkopen` in de treemap. Je krijgt nu via drie rechthoeken de hoeveelheid per plaats te zien.
+
+![Hoeveelheid per plaats.](boekenverkoop-hoeveelheid-per-plaats.png){#fig-boekenverkoop-hoeveelheid-per-plaats}
+
+Sleep vervolgens veld `categorie` uit tabel `tblBoeken` in de treemap. De grote rechthoek voor een plaats wordt nu opgedeeld in kleinere rechthoeken, 1 voor elke categorie. Om de namen van alle categorieën goed te zien moet je de treemap wat breder maken door aan de handgrepen aan de zijkanten te slepen.
+
+![Hoeveelheid per plaats per categorie.](boekenverkoop-hoeveelheid-per-plaats-categorie.png){#fig-boekenverkoop-hoeveelheid-per-plaats-categorie}
+
+Duidelijk is te zien dat in alledrie de plaatsen de categorie Reizen de meest verkochte boeken heeft
+
+In het deelvenster Visualisaties kun je ook zien welke velden gebruikt zijn voor Groep, Details en Waarden.
+
+![Gebruikte velden](boekenverkoop-treemap-velden.png){#fig-boekenverkoop-treemap-velden}
+
+In plaats van de velden in de treemap te slepen kun je ze ook naar deze lokaties slepen.
+
+### Interactiviteit tussen grafieken
+
+De visualisaties in het rapport zijn interactief. Je kunt ze gebruiken om te filteren. Wanneer je bijvoorbeeld in de treemap binnen de plaats Enschede op de categorie Reizen klikt, dan zie je in de andere grafiek met de gegroepeerde kolommen de titels die in deze categorie vallen.
+
+![Verkochte titels in Enschede.](boekenverkoop-enschede-reizen.png){#fig-boekenverkoop-enschede-reizen}
+
+En zo kun je ook in de kolomgrafiek op een boektitel klikken waardoor in de treemap een bijbehorend blokje getoond wordt.
+
+![Selecteren van een specifiek boek.](boekenverkoop-rinkeldekink.png){#fig-boekenverkoop-rinkeldekink}
+
+Om de filtering ongedaan te maken klik je in de grafiek opnieuw op het item dat voor de filtering zorgt.
+
+Geef tot slot de titel van de treemap een gelijke opmaak als de eerste grafiek.
+
+## Visualisatie: Omzet per boek
+
+Om de omzet per boek in een grafiek weer te geven moet de omzet eerst berekend worden. Dat kan door een nieuwe kolom te maken waarin de velden `prijs` en `hoeveelheid` met elkaar vermenigvuldigd worden.
+
+Schakel via de knop in het linker zijpaneel over naar de *weergave Gegevens* en selecteer dan in het rechter deelvenster de tabel `tblVerkoop`.
+
+Kies dan in het menu *tab Model maken -\> Nieuwe kolom (groep Berekeningen)*.
+
+Er wordt nu een nieuwe kolom aan de tabel toegevoegd en ook wordt een formulebalk zichtbaar met daarin de tekst `Kolom =`. Deze formulebalk lijkt op die in Excel, maar je kunt echter geen Excel formules gebruiken.
+
+Power BI gebruikt een eigen formuletaal **DAX** geheten, wat staat voor Data Analysis eXpression. Je kunt een formule helemaal handmatig intypen, maar je kunt ook gebruik maken van **Intellisense**. Dit is een hulpmiddel dat bij het invoeren van een formule verschijnt. Tijdens het intypen wordt een lijst met namen van mogelijke functies, variabelen en eigenschappen getoond. Door op een onderdeel in de lijst te selecteren en dan op de TAB toets te drukken wordt het geselecteerde in de formule geplaatst. Je kunt ook dubbelklikken op de naam van het onderdeel.
+
+Begin de formule met `Omzet =`
+
+Hierna moet de veldnaam `hoeveelheid` uit de tabel `tblVerkopen` komen. Begin met het intypen van de beginletter `h`. Zodra je dat gedaan hebt worden er voorstellen getoond:
+
+![Formules die met een h beginnen.](boekenverkoop-intellisense-1.png){#fig-boekenverkoop-intellisense-1}
+
+Bij lange lijsten is het aan te raden wat meer van de naam in te typen. De lijst wordt dan steeds kleiner waardoor het selecteren van het juiste item steeds gemakkelijker wordt.
+
+In dit geval is de lijst klein en is het juiste onderdeel al zichtbaar. Dat is `tblVerkopen[hoeveelheid]`. Voeg deze aan de formule toe, zodat er komt te staan `Omzet = tblVerkopen[hoeveelheid]`.
+
+De syntax in DAX is steeds tabelnaam\[veldnaam\].
+
+Nu moet er nog vermenigvuldigd worden met het veld `prijs`.
+
+Begin met het intypen van `*pr`. Echter nu toont intellisense niet het onderdeel dat toegevoegd moet worden. In zijn algemeenheid betekent dit ook dat je een fout maakt, dat je het zo niet in kunt voeren. De reden dat het juiste veld niet getoond wordt is dat het veld `prijs` niet in de geselecteerde tabel `tblVerkopen` zit, maar in de tabel `tblBoeken`. Gelukkig is deze tabel gerelateerd aan de tabel `tblVerkopen`. Door gebruik te maken van de DAX functie `RELATED` kun je een veld uit een gerelateerde tabel toevoegen.
+
+Verwijder het ingetypte `pr` en hervat het intypen met `re`. Nu wordt de functie `RELATED` zichtbaar. Voeg deze aan de formule toe. Er wordt dan een lange lijst met functies uit de gerelateerde tabellen zichtbaar. Je kunt het gewenste veld in deze lijst opzoeken, maar het is handiger om de eerste letter(s) van de veldnaam in te typen.
+
+Typ een `p` in. Nu wordt maar één veld getoond en dat is de gezochte `tblBoeken[prijs]`. Voeg deze aan de formule toe.
+
+De formule is nu `Omzet = tblVerkopen[hoeveelheid]*tblBoeken[prijs]`. De formule is hiermee klaar. Sluit af met de *ENTER* toets.
+
+De berekende waarden verschijnen in de nieuwe kolom die ook gelijk de naam `Omzet` krijgt.
+
+![Nieuwe kolom Omzet](boekenverkoop-formule-omzet.png){#fig-boekenverkoop-formule-omzet}
+
+Om het nog wat te verfraaien ga je de bedragen opmaken in de euro notatie.
+
+De opmaak van een geselecteerde kolom kun je via tab *Model maken* op het lint vinden. De huidige opmaak is de notatie `Algemeen`.
+
+![Opmaak veld Omzet.](boekenverkoop-omzet-decimaal.png){#fig-boekenverkoop-omzet-decimaal}
+
+Verander via de keuzelijst de notatie in `Euro`.
+
+![](powerbi-notatie-euro.png){#fig-powerbi-notatie-euro}
+
+Nu er een veld voor omzet is kan een grafiek voor de omzet per boek gemaakt worden.
+
+Schakel over naar de indeling *Rapport*. Zorg er voor dat geen visualisatie in het canvas geselecteerd is. Sleep nu het veld `Omzet` uit de tabel `tblVerkopen` naar een lege plek in het canvas. Sleep daarna het veld `Titel` uit de tabel `tblBoeken` in de nieuwe visualisatie. Pas de titel aan op overeenkomstige wijze als bij de twee andere grafieken.
+
+![Omzet per titel](boekenverkoop-omzet-per-titel.png){#fig-boekenverkoop-omzet-per-titel}
+
+## Visualisatie: Totale omzet
+
+Wanneer je slechts één waarde (getal, tekst) wilt weergeven dan is de visualisatie **Kaart** een goede keuze.
+
+![visualisatie Kaart](powerbi-kaart.png){#fig-powerbi-kaart}
+
+Klik op de visualisatie Kaart zodat deze aan het canvas toegevoegd wordt. Sleep daarna het veld `Omzet` uit de `tblVerkopen` in de visualisatie.
+
+De totale omzet is € 74.748,95. Echter deze waarde wordt standaard weergegeven als duizendtallen, in dit geval dus als € 74,75K. De weergave-eenheid kun je als volgt wijzigen.
+
+Klik in het deelvenster **Visualisatie** op de tab **Indeling** (afgebeeld als een verfroller). Klap *Gegevenslabel* open. Kies dan bij \* *weergave-eenheden* voor `Geen`. Schakel verder de weergave van het *categorielabel* uit.
+
+Maak een titel met de tekst "Totale omzet" en pas deze op overeenkomstige wijze als bij de andere grafieken.
+
+## Visualisatie: Filter op prijsklasse
+
+Fiteren op basis van getallen (en ook datums) kan goed met een zogeheten **Slicer** (afbeelding met trechter).
+
+![visualisatie Slicer](powerbi-slicer.png){#fig-powerbi-slicer}
+
+Voeg een slicer aan het canvas toe en sleep hierin het veld `prijs` uit de tabel `tblBoeken`. Geef deze visualisatie een titel met de tekst "Filter op prijsklasse" en geef deze dezelfde opmaak als de andere visualisaties.
+
+Experimenteer met de grenswaarden van de slicer en let op de interacties met de andere visualisaties. Om de selecties te wissen kun je op de daarvoor bestemde knop in de rechterbovenhoek van de slicer klikken:
+
+![Slicer selecties wissen](powerbi-slicer-knop-wissen.png){#fig-powerbi-slicer-knop-wissen}
+
+## Titel Rapport
+
+Een mooi rapport hoort een titel met een logo te hebben. Maak aan de bovenkant van het canvas wat ruimte voor een logo en een titel door de andere visualisaties wat te verschuiven.
+
+Een afbeelding en een tekst kun je toevoegen via het menu *Startpagina -\> Afbeelding (respectievelijk Tekstvak)*.
+
+![Invoegen van een afbeelding.](powerbi-menu-invoegen.png){#fig-powerbi-menu-invoegen}
+
+Het door mij gebruikte logo kun je [hier](https://softwijs.nl/download/icon-boeken.png) vinden.
+
+![De afbeelding die voor het logo gebruikt wordt.](boekenverkoop-kopregel.png){#fig-boekenverkoop-kopregel}
+
+## Eindrapport
+
+Je kunt nu de visualisaties nog wat verschuiven of de afmetingen wat aanpassen zodat het er wat gelikter uitziet. Een voorbeeld:
+
+![Eindrapport Verkoop Boeken](boekenverkoop-eindrapport.png){#fig-boekenverkoop-eindrapport}

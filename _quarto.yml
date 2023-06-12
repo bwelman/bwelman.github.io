@@ -2,30 +2,47 @@ project:
   type: website
 
 website:
-  title: "Ben Welman"
+  title: "Archief Ben"
+  description: "Verzameling van documenten over allerlei onderwerpen."
   favicon: images/logo.png
   site-url: "https://bwelman.github.io/"
   repo-url: "https://github.com/bwelman/bwelman.github.io"
-  repo-actions: [issue]
   google-analytics: "G-DZG4072LJ3"
   navbar:
-    title: Home
     logo: images/logo-transparant.png
-    right:
-      - text: Softwijs
-        href: softwijs.qmd
-  page-footer:
     left:
-      - "copyright 2022, Ben Welman"
+      - text: Home
+        href: index.qmd
+      - text: Bier
+        href: bier.qmd
+      - text: Access
+        href: access.qmd
+      - text: Excel
+        href: excel.qmd
+      - text: Divers
+        href: divers.qmd
+      - text: Tutorials
+        menu:
+          - text: Power BI Desktop
+            url: tutorials/power-bi-desktop/power-bi-desktop.qmd
+  page-footer:
+    left: |
+      Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.
+format:
+  html:
+    theme: include/mystyles.scss
+    mainfont: "Source Sans Pro"
+    toc: true
+    toc-depth: 3
+    page-layout: article
+    title-block-banner: false
+    link-external-newwindow: true
+    smooth-scroll: true
 
 execute:
   freeze: auto
 
-format:
-  html:
-    theme: mystyles.scss
-    mainfont: "Source Sans Pro"
-    toc: true
-    link-external-newwindow: true
-
 lang: nl
+
+editor: visual
+

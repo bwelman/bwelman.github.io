@@ -1,0 +1,70 @@
+---
+title: "Beperkingen Excel voor statistisch gebruik"
+abstract: |
+  Statistische mogelijkheden in Excel en de beperkingen hierbij.
+date: "2012-12-24"
+date-modified: "2023-02-09"
+image: "preview.png"
+categories: [statistiek]
+---
+
+Excel heeft een aantal beperkingen bij het uitvoeren van statistische berekeningen. Hierdoor leent Excel zich niet goed voor gebruik bij wetenschappelijk onderzoek. Excel kun je wel goed gebruiken voor data entry en daarnaast kun je met Excel vaak goed onderliggende principes van bijv. Machine Learning proberen te begrijpen via simpele voorbeelden, maar daarmee houd het ook op.
+
+Bedrijven en het hoger onderwijs maken om meerdere reden steeds meer gebruik van R en Python, zoals
+
+1.  De software is gratis.
+2.  Uitgevoerde analyses zijn reproduceerbaar.
+3.  Samenwerken aan analyses wordt eenvoudiger.
+
+Excel kan gegevens alleen maar verwerken wanneer ze in een Excel tabel staan. In een dergelijke tabel moeten de gegevens geen fouten bevatten, want met fouten in een lijst gaat Excel niet altijd goed om. Het maken van een goede tabel met betrouwbare gegevens is daarom belangrijk. Bij het invoeren van gegevens (de zogenaamde data entry) in een tabel is het raadzaam om gebruik te maken van
+
+-   invoerformulieren
+-   gegevensvalidatie
+
+### Statistische werbladfuncties
+
+Standaard zitten in de functiebibliotheek van Excel diverse functies die voor een statistische analyse van gegevens te gebruiken zijn. Deze zijn te vinden in de categorie Statistische functies. Enkele veel gebruikte:
+
+-   `GEMIDDELDE`: Rekenkundige gemiddelde van een reeks getallen.
+-   `MEDIAAN`: Mediaan van de waarden
+-   `MODUS.ENKELV`: Modus van de waarden
+-   `NORMALISEREN`: Berekent de z-waarde uit gemiddelde en standaarddeviatie
+-   `NORM.S.VERD`: kansverdeling van de standaardnormale verdeling
+-   `NORM.VERD.N`: Kansverdeling van de normale verdeling
+-   `STDEV.P`: standaarddeviatie van een populatie
+-   `STDEV.S`: standaarddeviatie van een steekproef
+-   `VAR.P`: Variantie van een populatie
+-   `VAR.S`: Variantie van een steekproef
+-   `T.DIST`: T-verdeling
+-   `CHIKW.VERD`: Chikwadraat verdeling
+-   `TREND`: Berekent waarden volgens lineaire trend
+-   `CORRELATIE`: Berekent correlatiecoëfficient
+-   `COVARIANTIE.P`: Covariantie in populatie
+-   `COVARIANTIE.S`: Covariantie in steekproef
+-   `BINOM.VERD`: Binomiale verdeling
+-   `POISSON.VERD`: Poisson verdeling
+
+Bij het gebruik van deze werkbladfuncties, bijvoorbeeld voor het maken van een betrouwbaarheidsinterval of de toetsing van een hypothese, moet je steeds zelf de formules en de bijbehorende argumenten in het werkblad invoeren. Dit vereist wel dat je goed weet wat je doet.
+
+En bij de chikwadraattoetsing wordt veelvuldig gebruik gemaakt van draaitabellen. Het goed kunnen werken daarmee is dan een vereiste.
+
+### Gegevensanalyse (Analysis Toolpak)
+
+Naast het gebruik van werkbladfuncties heeft Excel standaard ook een invoegtoepassing Gegevensanalyse (Analysis ToolPak) beschikbaar welke een aantal functies biedt voor het uitvoeren van (gecompliceerdere) gegevensanalyses. Een paar mogelijkheden:
+
+-   Beschrijvende statistiek
+-   Correlatie
+-   Covariantie
+-   F-toets
+-   T-toets
+-   Z-toets
+-   Variantieanalyse
+-   Histogram
+-   Rang en percentiel
+-   Regressie
+
+Net als bij de werkbladfuncties geldt ook hier dat je voor het gebruik over de nodige statistische kennis moet beschikken.
+
+**Uitbreidingen**
+
+Vanwege de beperkte statistische mogelijkheden van Excel zijn er vele uitbreidingen in de vorm van invoegtoepassingen (add-ins) ontwikkeld. Deze add-ins hebben naast meer functies ook vaak een handiger interface waardoor het gebruik ervan eenvoudiger wordt in vergelijking met de werkbladfuncties. Er zijn zowel gratis als commerciële add-ins verkrijgbaar.

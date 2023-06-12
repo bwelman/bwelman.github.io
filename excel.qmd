@@ -1,0 +1,12 @@
+---
+title: "Excel"
+subtitle: "Artikelen over Excel."
+listing:
+  contents: excel
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  fields: [date, title, description, categories, image]
+---
