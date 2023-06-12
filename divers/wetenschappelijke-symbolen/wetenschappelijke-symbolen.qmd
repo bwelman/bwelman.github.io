@@ -1,0 +1,178 @@
+---
+title: "Wetenschappelijke symbolen"
+abstract: |
+  Uitleg over schrijfwijze en opname van wetenschappelijke symbolen in publicaties.
+date: "2023-05-16"
+image: "preview.png"
+categories: [latex, publiceren, quarto]
+---
+
+In publicaties die je maakt met (R)Markdown en Quarto worden wetenschappelijke symbolen meestal met LaTeX code geplaatst. Maar wat is de juiste opmaak bij het schrijven van chemische, fysische en wiskundige symbolen en vergelijkingen? En hoe doe je dat? Regelmatig terugkerende vragen zijn
+
+-   Moet je symbolen in romeinse (rechtopstaande) letters schrijven of cursief?
+-   Geef je een vermenigvuldiging weer met `\times`, zoals $2 \times 3$, of met `\cdot` zoals $2 \cdot 3$?
+
+Om met de laatste vraag te beginnen. In verreweg de meeste gevallen gebruik je `\cdot`, maar wanneer de punt als decimaalteken gebruikt wordt moet je het kruis en niet de halfhoge punt gebruiken.
+
+# Schrijfwijze symbolen
+
+Als vuistregel kun je hanteren:
+
+*Symbolen die fysieke hoeveelheden of wiskundige variabelen vertegenwoordigen, zijn de enige dingen die cursief worden geschreven.*
+
+**Rechtopstaande schrijfwijze**
+
+-   Eenheid symbolen, zoals $\mathrm{kg}$, $\mathrm{kJ}$, \mathrm{K}
+
+-   Chemische formules. Deze worden automatisch rechtopstaand geschreven wanneer je `mhchem` opdrachten gebruikt.
+
+-   Functienamen, zoals $\sin$, $\cos$, $\log$
+
+-   Wiskundige constanten, zoals $\mathrm{e} = 2.718\,218\,8\ldots$, $\mathrm {i}^2 = -1$
+
+-   Beschrijvende indexen, zoals $_\text{ox}$, $_\text{tot}$
+
+-   Beschrijvende tekst
+
+-   Symbolen voor wiskundige operatoren, zoals $\Delta$ in $\Delta x=x_2-x_1$ en elke $\mathrm d$ in $\mathrm df/\mathrm dx$. Let er op dat $x$ en $y$ in deze context variabelen zijn.
+
+-   Electronen configuraties, zoals $\mathrm{(1s)^2 (2s)^2 (2p)^4}$
+
+::: callout-note
+Er zijn twee algemene commando's die Romeinse uitvoer produceren, `\text{}` en `\mathrm{}`. Het belangrijkste verschil tussen de twee commando's is de manier waarop wiskundige commandokarakters zoals het dakje `^` of de onderstreping `_` worden geïnterpreteerd. In `\text{}` worden deze letterlijk weergegeven en in `\mathrm{}` worden ze volgens de bedoeling geïnterpreteerd. Het gebruik van `\mathrm{}` wordt daarom aanbevolen. (De opdracht `\rm` moet worden vermeden, aangezien deze is verouderd en alleen wordt onderhouden voor achterwaartse compatibiliteit.)
+:::
+
+**Cursieve schrijfwijze**
+
+-   Symbolen die fysieke grootheden vertegenwoordigen, b.v. $m$ voor massa of $V$ voor volume, inclusief fundamentele fysische constanten (grootheden die onder alle omstandigheden als constant worden beschouwd), b.v. Planckconstante $h$, Faradayconstante $F$
+
+-   Wiskundige variabelen zoals $x$ en $y$, inclusief uitdrukkingen zoals "de $x$ as".
+
+-   Iteratieve variabelen zoals $i$ in een som.
+
+-   Parameters, zoals $a$, $b$, enz., die in een bepaalde context als constant kunnen worden beschouwd.
+
+**Gemengde notaties**
+
+-   Chemische formules die variabelen bevatten, zoals $n$ in de algemene formule voor alkanen, $\ce{C_{n}H_{2n+2}}$
+
+-   Symbool $\mathrm pK_\mathrm a$ voor de logaritmische zuurdissociatieconstante.
+
+::: callout-note
+Wiskunde in doorlopende tekst (**inline**) staat tussen enkele dollartekens (`$..$`). LaTeX zet breuken automatisch in een kleiner lettergrootte, zodat de regelafstand bewaard kan blijven. Dit werkt goed zolang de formules niet te ingewikkeld zijn en niet te veel plaats innemen.
+
+Voor een **display** omgeving zet je de inhoud tussen dubbele dollartekens (`$$..$$`). De formule komt dan in een aparte alinea met automatische witruimte boven en onder de formule. De formule wordt automatisch horizontaal gecentreerd en iets groter gezet. Je kunt een regeleinde forceren met `\\`. Bij meer dan één vergelijking moet je een alignment environment gebruiken. Het uitlijnteken is `&`. Dit kan ook gebruikt worden in combinatie met `\ce{}` opdrachten.
+:::
+
+# Chemische symbolen
+
+Het is mogelijk om chemische formules en vergelijkingen weer te geven met behulp van de wiskundige modus, maar de uitvoer is niet altijd mooi. Zo beginnen de symbolen voor chemische elementen altijd met een hoofdletter, maar deze wordt in de wiskundmodus cursief weergegeven en niet rechtop. En ook is het niet gemakkelijk om bindingen, pijlen voor neerslag, gas en evenwichtsreactie weer te geven.
+
+LaTeX package **mhchem** van Martin Hensel zorgt voor een meer aanpasbare weergave en een meer natuurlijke invoer van chemische formules en vergelijkingen. Helaas biedt deze package geen ondersteuning voor struktuurformules van organische verbindingen.
+
+Wanneer je in een quarto document wiskunde hebt opgenomen, zoals $\sin^{2}\alpha + \cos^{2}\alpha = 1$, dan wordt automatisch een scriptopdracht opgenomen om de JavaScript bibliotheek `tex-chtml-full.js` te laden. Deze opdracht is
+
+`<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>`
+
+Deze JavaScript bibliotheek bevat tevens de [mhchem extensie voor Mathjax](http://docs.mathjax.org/en/latest/input/tex/extensions/mhchem.html), daar hoef je dus niets voor te doen. Hierdoor is het mogelijk dat je de volgende `mhchem` opdrachten kunt gebruiken:
+
+1.  `\ce{...}` gebruik je voor de opmaak van chemische formules en vergelijkingen.
+
+2.  `\pu{...}` gebruik je voor de opmaak van getallen met eenheden / dimensies.
+
+Deze twee opdrachten moet je plaatsen binnen een Mathjax expressie, dus binnen `$...$` of `$$...$$`. De inhoud tussen de accolades wordt automatisch door package `mhchem` verwerkt.
+
+::: callout-note
+-   Wanneer je gewone MathJax expressies gebruikt, dus zonder deze twee mhchem opdrachten, dan worden de chemische symbolen cursief weergegeven, zoals $H_2O$, wat dus niet correct is. Daarom moeten chemische vergelijkingen altijd worden gezet met behulp van `mhchem`, en niet gewoon in gewone MathJax.
+
+-   Voor gebruik in Latex/PDF moet je het gebruik van de mhchem package specificeren in de preamble.
+:::
+
+## Voorbeelden
+
+**Formules en vergelijkingen**
+
+| Formule                                     | Code                                          |
+|-----------------------------------|-------------------------------------|
+| $\ce{C6H12O6}$                              | `$\ce{C6H12O6}$`                              |
+| $\ce{SO4^{2-}}$                             | `$\ce{SO4^{2-}}$`                             |
+| $\ce{CuSO4*5H2O}$                           | `$\ce{CuSO4*5H2O}$`                           |
+| $\ce{A-B=C#D}$                              | `$\ce{A-B=C#D}$`                              |
+| $\ce{Ba^2+ + SO4^2- -> BaSO4 v}$            | `$\ce{Ba^2+ + SO4^2- -> BaSO4 v}$`            |
+| $\ce{CO2 ^}$                                | `$\ce{CO2 ^}$`                                |
+| $\ce{2 H2 (g) + O2 (g) -> 2 H2O (l)}$       | `$\ce{2 H2 (g) + O2 (g) -> 2 H2O (l)}$`       |
+| $\ce{2 NO2 (g) <=> N2O4 (g)}$               | `$\ce{2 NO2 (g) <=> N2O4 (g)}$`               |
+| $\ce{A ->[catalyst] B}$                     | `$\ce{A ->[catalyst] B}$`                     |
+| $\ce{2Hi <-->[k_1][k_2] H2 + I2}$           | `$\ce{2Hi <-->[k_1][k_2] H2 + I2}$`           |
+| $\ce{K\overset{+7}{Mn}O4}$                  | `$\ce{K\overset{+7}{Mn}O4}$`                  |
+| $\ce{Ca^2+(aq) + 2 OH-(aq) <=> Ca(OH)2(s)}$ | `$\ce{Ca^2+(aq) + 2 OH-(aq) <=> Ca(OH)2(s)}$` |
+| $\ce{H2O + HCl <--> H3O+ + Cl-}$            | `$\ce{H2O + HCl <--> H3O+ + Cl-}$`            |
+
+In evenwicht: $\frac{[\ce{H2}]\cdot [\ce{I2}]}{[\ce{HI2}]} = \frac{k_1}{k_2} = K_{diss}$
+
+`$\frac{[\ce{H2}]\cdot [\ce{I2}]}{[\ce{HI2}]} = \frac{k_1}{k_2} = K_{diss}$`
+
+**Getallen met eenheden / dimensies**
+
+| Formule                  | Code                       |
+|--------------------------|----------------------------|
+| $\pu{273.15 K}$          | `$\pu{273.15 K}$`          |
+| $\pu{3.4E-8}$            | `$\pu{3.4E-8}$`            |
+| $\pu{8.314 J K-1 mol-1}$ | `$\pu{8.314 J K-1 mol-1}$` |
+
+$\pu{1^o dH = 10 mg CaO per liter}$
+
+met `$\pu{1^o dH = 10 mg CaO per liter}$`
+
+**Divers**
+
+| Formule                             | Code                                |
+|------------------------------------|------------------------------------|
+| $K_\mathrm{eq}$                     | `$K_\mathrm{eq}$`                   |
+| $\mathrm{p}K_\mathrm{a}$            | `$\mathrm{p}K_\mathrm{a}$`          |
+| $\Delta_\mathrm{r} G^\circ$         | `$\Delta_\mathrm{r} G^\circ$`       |
+| $\pu{1.2E3 J//mol}$                 | `$\pu{1.2e3 J/mol}$`                |
+| $E = 33.4~\mathrm{kJ\, mol^{-1}}$   | `$E = 33.4~\mathrm{kJ\, mol^{-1}}$` |
+| $E = E^\circ - \frac{RT}{zF}\ln{Q}$ | `E = E^\circ - \frac{RT}{zF}\ln{Q}` |
+
+De tile `~` zorgt voor een vaste, harde spatie.
+
+**Pijlen**
+
+| Formula     | Code          | Explanation                                  |
+|-------------|---------------|----------------------------------------------|
+| $\ce{->}$   | `$\ce{->}$`   | voorwaartse reactie                          |
+| $\ce{<-}$   | `$\ce{<-}$`   | achterwaartse reactie                        |
+| $\ce{<->}$  | `$\ce{<->}$`  | resonantiestructuur (niet voor evenwicht)    |
+| $\ce{<=>}$  | `$\ce{<=>}$`  | evenwicht                                    |
+| $\ce{<=>>}$ | `$\ce{<=>>}$` | evenwicht, bevordering voorwaartse reactie   |
+| $\ce{<<=>}$ | `$\ce{<<=>}$` | evenwicht, bevordering achterwaartse reactie |
+
+## Struktuurformules
+
+Een LaTeX-pakket voor het tekenen van structurele organische formules is `chemfig`, maar dit pakket werkt niet voor HTML-uitvoer.
+
+Voor voorbeelden zie het Overleaf artikel [Chemistry Formulea](https://www.overleaf.com/learn/latex/Chemistry_formulae)
+
+## Referenties {.appendix}
+
+-   [Quarto laTeX includes](https://quarto.org/docs/output-formats/pdf-basics.html#latex-includes)
+
+-   [mhchem for MathJax / KaTeX](https://mhchem.github.io/MathJax-mhchem/)
+
+-   [MathJax and mhchem](http://docs.mathjax.org/en/latest/input/tex/extensions/mhchem.html)
+
+-   [Chemistry notation using mhchem in moodle](https://docs.moodle.org/400/en/Chemistry_notation_using_mhchem)
+
+-   [The MathJax Components](https://docs.mathjax.org/en/latest/web/components/index.html#web-components)
+
+-   [FAQ: How can I format math/chemistry expressions on Chemistry Stack Exchange?](https://chemistry.meta.stackexchange.com/questions/86/faq-how-can-i-format-math-chemistry-expressions-on-chemistry-stack-exchange)
+
+**Nog te bestuderen**
+
+-   [Kekule.js](http://partridgejiang.github.io/Kekule.js/) : open source JavaScript library for chemoinformatics
+-   [Avogadro](https://avogadro.cc/) : an advanced molecule editor and visualizer
+-   [ChemDoodle 2D](https://www.chemdoodle.com/) : chemical drawing
+-   [Chemaxon](https://chemaxon.com/) : with editor Marvin
+-   [Chemtool](http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html) : drawing chemical structures
+-   [PyMOL](https://pymol.org/2/) : molecular visualization system

@@ -18,6 +18,8 @@ Het juiste type grafiek kiezen is erg belangrijk. In deze gids worden een aantal
 **Toepassing**
 
 Weergave veranderingen van gegevens in de loop van de tijd.
+
+Vergelijkingen tussen categorieën onderling.
 :::
 
 In kolomdiagrammen worden de categorieën geplaatst langs de horizontale as (*categorieas*) en de waarden langs de verticale as (*waardeas*). Voor elke categorie wordt er een kolom geplaatst waarbij de hoogte van de kolom overeenkomt met de waarde.
@@ -34,6 +36,8 @@ De volgende afbeelding toont de marktaandelen van een aantal supermarktketens vo
 **Toepassing**
 
 Onderlinge vergelijking van gegevens en hun rangordes.
+
+Vergelijkingen tussen categorieën onderling.
 :::
 
 In staafdiagrammen worden de categorieën geplaatst langs de verticale as en de waarden langs de horizontale as. Voor elke categorie wordt er een staaf geplaatst waarbij de lengte van de staaf overeenkomt met de waarde.
@@ -231,7 +235,7 @@ In de volgende afbeelding is de wijziging in het aantal klanten bij een telecomb
 ::: callout
 **Toepassing**
 
-Voor het weergeven van de verdeling van de waarden in een gegevensverzameling.
+Voor het weergeven van de verdeling van de data in een gegevensverzameling.
 :::
 
 Een boxplot wordt in de statistiek veel gebruikt en is een diagram waarin de karakteristieke getallen van een verdeling worden weergegeven, zoals gemiddelde, mediaan, kwartielen en uitschieters. Daarbij zijn boxplots ook erg nuttig om de karakteristieken van verschillende datasets met elkaar te vergelijken.
@@ -250,4 +254,3 @@ Het gemiddelde wordt aangegeven met de markering "X".
 In de volgende afbeelding worden de prijzen van e-boeken (e-boek) via boxplots vergeleken met die van papieren boeken (p-boek).
 
 ![Boxplot: Vergelijking prijzen e-boeken en p-boeken](images/boxwhisker_result.png){#fig-type_boxwhisker-chart}
-
