@@ -23,6 +23,8 @@ website:
         href: divers.qmd
       - text: Tutorials
         menu:
+          - text: Grafieksoorten
+            url: tutorials/grafieken/grafieken.qmd
           - text: Power BI Desktop
             url: tutorials/power-bi-desktop/power-bi-desktop.qmd
   page-footer:

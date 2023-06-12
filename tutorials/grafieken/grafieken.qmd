@@ -1,0 +1,253 @@
+---
+title: "Grafieken"
+subtitle: "2e editie"
+abstract: |
+  Een tutorial over een aantal soorten grafieken en het gebruik ervan.
+date: "2018-09-02"
+author: "Ben Welman"
+image: "cover.png"
+---
+
+Grafieken zijn een belangrijk hulpmiddel bij het analyseren van cijfers. Grafieken kunnen informatie helder en duidelijk weergeven en de kracht ervan moet niet onderschat worden. Trends en overzichten kunnen in grafieken weergegeven worden en afwijkende waarden vallen er snel in op.
+
+Het juiste type grafiek kiezen is erg belangrijk. In deze gids worden een aantal grafieksoorten voorgesteld en uitgelegd. Veel mensen hebben moeite met het kiezen van een goede grafieksoort, deze gids helpt je daarbij. Je leert in deze gids niet hoe je een grafiek moet maken. Alle getoonde voorbeelden zijn met Microsoft Excel 2016 gemaakt.
+
+# Kolomdiagram {#sec-type_column}
+
+::: callout
+**Toepassing**
+
+Weergave veranderingen van gegevens in de loop van de tijd.
+:::
+
+In kolomdiagrammen worden de categorieën geplaatst langs de horizontale as (*categorieas*) en de waarden langs de verticale as (*waardeas*). Voor elke categorie wordt er een kolom geplaatst waarbij de hoogte van de kolom overeenkomt met de waarde.
+
+Kolomdiagrammen worden vooral gebruikt wanneer tijdseenheden als jaren, kwartalen, maanden, weken en dagen een rol spelen. Gebruik niet teveel categorieën. Vijf tot zes waarden zijn nog goed te overzien. Wanneer meer dan 6 waarden op de categorie-as uitgezet moeten worden kun je beter voor een lijndiagram kiezen.
+
+De volgende afbeelding toont de marktaandelen van een aantal supermarktketens voor de jaren 2012-2016 in Nederland .
+
+![Kolomdiagram: Marktaandelen supermarktketens voor de jaren 2012-2016](images/column_result.png){#fig-type_column}
+
+# Staafdiagram {#sec-type_bar}
+
+::: callout
+**Toepassing**
+
+Onderlinge vergelijking van gegevens en hun rangordes.
+:::
+
+In staafdiagrammen worden de categorieën geplaatst langs de verticale as en de waarden langs de horizontale as. Voor elke categorie wordt er een staaf geplaatst waarbij de lengte van de staaf overeenkomt met de waarde.
+
+Staafdiagrammen worden veel gebruikt om verschillen in rangorde duidelijk te maken. De waarden worden vaak gesorteerd van hoog naar laag, zodat het hoogste resultaat als eerste staaf wordt weergegeven. Het onderlinge verschil in belang (de prioriteit) van bepaalde zaken op eenzelfde moment wordt zo tot uitdrukking gebracht.
+
+De volgende afbeelding toont het percentage rokers per leeftijdscategorie in 2009.
+
+![Staafdiagram: Percentage rokers in 2009 per leeftijdscategorie](images/bar_result.png){#fig-type_bar}
+
+# Gestapeld kolom- en staafdiagram {#sec-type_stacked}
+
+::: callout
+**Toepassing**
+
+Weergave bij meerdere gegevensgroepen van de onderlinge verdeling en het totaal van de waarden weer te geven.
+:::
+
+Bij meerdere gegevensreeksen kun je de kolommen en staven naast elkaar zetten, maar je kunt er ook voor kiezen om ze boven op elkaar te zetten. Dit wordt een gestapeld kolomdiagram of gestapeld staafdiagram genoemd. Dit is vooral handig wanneer de onderlinge verdeling de waarden en het totaal hiervan gevisualiseerd moet worden.
+
+Marktaandelen van een aantal supermarktketens voor de jaren 2012-2016 in Nederland. Zowel de onderlinge verdeling als de wijziging in de jaren is te zien. Daarnaast is ook het verloop van het van de marktaandelen van deze 5 ketens samen zichtbaar, dit is immers de totale hoogte van de kolom.
+
+![Gestapeld kolomdiagram: marktaandelen supermarktketens voor de jaren 2012-2016](images/column_stacked_result.png){#fig-type_stacked}
+
+Een variant hierop is wanneer de totale lengte van de staaf steeds 100% is en dus steeds even lang is. In dit soort diagrammen worden de onderlinge verhoudingen nog beter zichtbaar.
+
+![Gestapeld staafdiagram 100%](images/column_stacked100pct_result.png){#fig-type_stacked100}
+
+# Cirkeldiagram {#sec-type_pie}
+
+::: callout
+**Toepassing**
+
+Weergave van de procentuele verdeling binnen één gegevensgroep.
+:::
+
+Cirkeldiagrammen worden vooral gebruikt voor het weergeven van de procentuele verdeling van gegevens binnen één groep, zoals bijvoorbeeld verkiezingsresultaten. Teveel aan informatie kan een cirkeldiagram onoverzichtelijk maken. Om het overzichtelijk te houden moet je hooguit 6 à 7 sectoren in een cirkeldiagram gebruiken.Bij meer sectoren kan beter voor een combinatiediagram gekozen worden.
+
+Bij een cirkeldiagram is de cirkel opgedeeld in een aantal sectoren (taartpunten). De grootte van elke sector geeft het deel van het geheel weer. De gehele cirkel is steeds 100%.
+
+In de volgende afbeelding is de uitslag van de 2e Kamerverkiezing 2010 met een cirkeldiagram weergegeven. Hieraan hebben 19 partijen deelgenomen. In het diagram zijn alleen die partijen weergegeven die meer dan 5% hebben behaald, dat zijn er zeven. Alle overige partijen zijn samengevat onder de naam Overig.
+
+![Cirkeldiagram: Uitslag 2e kamerverkiezing 2010](images/pie_result.png){#fig-type_pie}
+
+Om ook de onderverdeling in de categorie Overig zichtbaar te maken kan deze bijvoorbeeld uitgesplitst worden in een staafdiagram. In de volgende afbeelding zijn de resultaten voor de partijen uit de categorie Overig die 1% of meer behaald hebben weergegeven in een staafdiagram. De partijen die minder dan 1% behaald hebben zijn weer samengevat in de categorie Rest.
+
+![Combinatie: Cirkeldiagram met staafdiagram 2e Kamerverkiezing 2010](images/pie_bar_result.png){#fig-type_pie-bar}
+
+# Lijndiagram {#fsec-type_line}
+
+::: callout
+**Toepassing**
+
+Weergave van tijdreeksen.
+:::
+
+Bij lijndiagrammen wordt de tijdeenheid langs de horizontale as (categorieas) uitgezet en de gemeten variabele langs de verticale as. Tussen de punten in de grafiek kan desgewenst een lijn getrokken worden om het verloop van de variabele in de tijd goed zichtbaar te maken.
+
+Lijndiagrammen zijn goed voor het weergeven van het verloop van een gemeten waarde met een continu verloop over een bepaald tijdsinterval zichtbaar te maken. Trends en seizoensinvloeden worden zo goed zichtbaar.
+
+In een lijndiagram kunnen meerdere lijnen geplaatst worden. Beperk het aantal omwille van de leesbaarheid tot maximaal 4 à 5 lijnen. Kies ook passende schalen, want hoe het verloop van de lijn hangt eruit ziet hangt vaak sterk af van de gekozen schaal.
+
+::: callout-important
+Bij een lijndiagram is de horizontale as nooit metrisch. Dat is geen bezwaar wanneer je van elke periode gegevens hebt, maar je moet er mee oppassen wanneer voor sommige periodes de gegevens ontbreken. Vaak is dan een spreidingsdiagram een betere keuze.
+:::
+
+De volgende afbeelding toont de jaarlijkse temperaturen (gemiddelde, maximum en minimum) voor de luchthaven Schiphol.
+
+![Lijndiagram: Gemiddelde, maximum en minimum temperaturen op Schiplhol voor de jaren 2006-2016](images/line_result.png){#fig-type_line}
+
+# Spreidingsdiagram {#fsec-type_scatter}
+
+::: callout
+**Toepassing**
+
+Weergave van het verband tussen twee numerieke variabelen.
+:::
+
+Bij een spreidingsdiagram, ook wel XY diagram of scatterdiagram genoemd, worden de waarden van twee numerieke variabelen tegen elkaar uitgezet. Elk paar getallen levert een punt in het diagram op. Een spreidingsdiagram wordt vaak gebruikt om te onderzoeken of er een bepaald verband, een correlatie, tussen de twee variabelen is.
+
+In de volgende afbeelding zijn de lichaamslengte en het gewicht van 10 studenten tegen elkaar uitgezet. Tevens is een lineaire trendlijn getekend.
+
+![Spreidingsdiagram: Relatie lichaamslengte en gewicht, met lineaire trendlijn](images/scatter_trend_result.png){#fig-type_scatter}
+
+# Vlakdiagram {#fsec-type_area}
+
+::: callout
+**Toepassing**
+
+Weergave van het verloop van meerdere gegevensreeksen in de tijd waarbij ook het totaal van de waarden zichtbaar moet worden.
+:::
+
+Tevens wordt dan de verhouding van een gedeelte tot het totaal zichtbaar.
+
+Vlakdiagrammen zijn gebaseerd op lijndiagrammen. Het vlak tussen de as en de lijn wordt vaak gemarkeerd met kleuren of arceringen. Net als bij een lijndiagram wordt de grootte van een variabele over een bepaalde tijdsperiode weergegeven. In een gestapeld vlakdiagram zijn meerdere gegevensreeksen boven elkaar geplaatst, zodat tevens de som van de gegevens is af te lezen. Ook de verhouding van een deel tot het geheel kun je goed zien.
+
+In de volgende afbeelding zie je de verkochte aantallen van drie produkten van een bedrijf gedurende het eerste halfjaar. De totalen per maand zijn ook goed af te lezen.
+
+![Gestapeld vlakdiagram: Aantal verkochte artikelen per produkt per maand](images/area_result.png){#fig-type_area}
+
+# Ringdiagram {#fsec-type_doughnut}
+
+::: callout
+**Toepassing**
+
+Weergave van de procentuele verdeling binnen meerdere gegevensgroepen.
+:::
+
+Een ringdiagram, ook wel doughnut diagram genoemd, is een uitbreiding van het cirkeldiagram. Dit diagram kan één of meerdere ringen bevatten en elke ring vertegenwoordigt een gegevensreeks.
+
+Ringdiagrammen zijn niet altijd gemakkelijk te lezen, een gestapeld kolom- of staafdiagram is dan een goed alternatief.
+
+In de volgende afbeelding zijn de verkopen per kwartaal van een bedrijf in de jaren 2008 en 2009 te zien.
+
+![Ringdiagram: Omzet per kwartaal voor de jaren 2008-2009](images/doughnut_result.png){#fig-type_doughnut}
+
+# Radardiagram {#fsec-type_radar}
+
+::: callout
+**Toepassing**
+
+Weergave van meerdere categorieën langs afzonderlijke assen.
+:::
+
+In een radardiagram worden meerdere gegevensreeksen (categorieën) uitgezet langs afzonderlijke assen die steeds vanuit een punt in het midden, de oorsprong, vertrekken. Het diagram ziet er daardoor webvormig uit en wordt daarom ook wel spindiagram of sterdiagram genoemd. De hoeken tussen deze assen zijn gelijk. De gegevenspunten op de assen worden meestal met een lijn verbonden.
+
+Een radardiagram kan gebruikt worden om vragen te beantwoorden als: Welke categorie is dominant? Welke categorieën zijn het meest vergelijkbaar? Zijn er uitschieters? Radar diagrammen worden ook vaak gebruikt om verschillende aspecten van een bepaald onderwerp te onderzoeken en gevisualiseerd weer te geven.
+
+In de volgende afbeelding worden de beoordelingen op een 5-punts Likert schaal van een vaardigheidsanalyse van Roger en Mary met elkaar vergeleken.
+
+![Radardiagram: Vaardigheidsanalyse](images/radar_result.png){#fig-type_radar}
+
+# Bellendiagram {#fsec-type_bubble}
+
+::: callout
+**Toepassing**
+
+Weergave van de relatie tussen drie numerieke variabelen.
+:::
+
+Een bellendiagram is een uitbreiding op een spreidingsdiagram. Bij de laatste worden twee numerieke variabelen (X en Y) tegen elkaar uitgezet. Bij een bellendiagram wordt nog een derde variabele (Z) gebruikt. De plaats van de bel (cirkel) in het diagram wordt bepaald doorr de X- en Y-variabele. En de grootte van de bel door de Z-variabele.
+
+In de volgende afbeelding is voor een zevental Europese landen voor het jaar 2015 de levensverwachting van een pasgeborene tegen het het aantal geboren kinderen per vrouw (vruchtbaarheidscijfer). Voor de grootte van de bel is de bevolkingsomvang voor dat land in 2015 genomen.
+
+![Bellendiagram: Levensverwachting vs Vruchtbaarheidscijfer](images/bubble_result.png){#fig-type_bubble}
+
+# Controlediagram {#fsec-type_control}
+
+::: callout
+**Toepassing**
+
+Voor het controleren of meetwaarden buiten de toegestane grenzen komen.
+:::
+
+In een regeldiagram wordt het verloop in de tijd van een meetwaarde geregistreerd. Verder worden tevens de grenzen aangegeven waarbinnen de meetwaarde mag varieren. Regeldiagrammen worden veel gebruikt bij de Statistische Proces Controle (SPC) om vast te stellen of een productieproces of bedrijfsproces nog goed functioneert. Wanneer de meetwaarde buiten de toegestane grenzen komt moet er worden ingegrepen en het proces worden bijgesteld.
+
+Een regeldiagram is in feite een lijndiagram met twee extra horizontale lijnen.
+
+In de volgende afbeelding zijn de temperatuurmetingen van 25 monsters te zien. De twee horizontale lijnen geven de bovengrens en de ondergrens aan. Duidelijk is te zien dat twee keer de temperatuur buiten het toegestane gebied is gekomen.
+
+![Regeldiagram: Temperatuurmetingen met onder- en bovengrenzen (rode lijnen)](images/control_result.png){#fig-type_control}
+
+# Paretodiagram {#fsec-type_pareto}
+
+::: callout
+**Toepassing**
+
+Voor het het uitvoeren van een Pareto analyse.
+:::
+
+Een Paretodiagram is een combinatie van een kolomdiagram en een lijndiagram. Bij het kolomdiagram zijn de kolommen van groot naar klein gesorteerd. Het lijndiagram ligt bovenop de kolommen en geeft het cumulatieve totaal weer. Het kolomdiagram gebruikt de normale Y-as aan de linkerkant. Voor het lijndiagram is er aan de rechterkant een tweede Y-as met waarden van 0% tot 100%.
+
+Een Paretodiagram is een veel gebruikt hulpmiddel bij een Pareto analyse. Hierbij probeert men de meest belangrijke factoren op te sporen, zoals de meest voorkomende oorzaken, defecten, klachten, storingen, klanten, producten, ...
+
+In de volgende afbeelding zijn de doodsoorzaken in Nederland in het jaar 2009 te zien. De kolomdiagram geeft aan dat 42396 keer tumoren de oorzaak waren. En de oranje Paretolijn laat zien dat dit ongeveer 30% van het totaal is. En dat tumoren en hart- en vaatziekten samen 60% van het totaal aantal doodsoorzaken vormt.
+
+![Paretodiagram: Doodsoorzaken in Nederland in het jaar 2009](images/pareto_result.png){#fig-type_pareto}
+
+# Watervaldiagram {#fsec-type_waterfall}
+
+::: callout
+**Toepassing**
+
+Voor het schetsen van een beeld van de positieve en negatieve wijzigingen in een waarde over een bepaalde periode.
+:::
+
+In een watervaldiagram worden de begin- en eindwaarden weergegeven als kolommen. De afzonderlijke negatieve en positieve aanpassingen worden weergegeven als zwevende stappen. Het belangrijkste kenmerk van een watervaldiagram is dat deze niet alleen veranderingen in de loop van de tijd weergeeft, maar ook in relatie tot de vorige periode of andere meetwaarde. Elke stap in de waterval brengt je naar het eindresultaat en laat zien hoe je daar bent gekomen.
+
+In de volgende afbeelding is de wijziging in het aantal klanten bij een telecombedrijf te zien, alsmede de invloed hierop van een aantal gebeurtenissen. De grijs gekleurde kolommen geven de begin- en eindsituatie aan, de blauw gekleurde kolommen staan voor een toename en de oranje gekleurde kolommen voor een afname van het aantal klanten.
+
+![Watervaldiagram: Klantenverloop in 2009](images/waterfall_result.png){#fig-type_waterfall}
+
+# Boxplot {#fsec-type_boxwhisker}
+
+::: callout
+**Toepassing**
+
+Voor het weergeven van de verdeling van de waarden in een gegevensverzameling.
+:::
+
+Een boxplot wordt in de statistiek veel gebruikt en is een diagram waarin de karakteristieke getallen van een verdeling worden weergegeven, zoals gemiddelde, mediaan, kwartielen en uitschieters. Daarbij zijn boxplots ook erg nuttig om de karakteristieken van verschillende datasets met elkaar te vergelijken.
+
+![Onderdelen van een boxplot](images/boxwhisker.png){#fig-type_boxwhisker-parts}
+
+Een boxplot verdeelt de gegevensverzameling in vier gebieden:
+
+-   Minimum - Q1
+-   Q1 - Mediaan
+-   Mediaan - Q3
+-   Q3 - Maximum
+
+Het gemiddelde wordt aangegeven met de markering "X".
+
+In de volgende afbeelding worden de prijzen van e-boeken (e-boek) via boxplots vergeleken met die van papieren boeken (p-boek).
+
+![Boxplot: Vergelijking prijzen e-boeken en p-boeken](images/boxwhisker_result.png){#fig-type_boxwhisker-chart}
+
