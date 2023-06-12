@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Archief Ben - Ben Welman</title>
+<title>Archief Ben - Diversen</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,9 +31,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -59,6 +62,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Zoeken"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
 
 <script type="text/javascript">
@@ -70,10 +102,12 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +128,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -110,7 +144,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
  <span class="menu-text">Excel</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./divers.html" rel="" target="">
+    <a class="nav-link active" href="./divers.html" rel="" target="" aria-current="page">
  <span class="menu-text">Divers</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -135,40 +169,228 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categorieën</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Alle <span class="quarto-category-count">(6)</span></div><div class="category" data-category="eboek">eboek <span class="quarto-category-count">(4)</span></div><div class="category" data-category="latex">latex <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/benwem.jpg" class="about-image
-  rounded " style="width: 14em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ben Welman</h1>
+<h1 class="title">Diversen</h1>
+<p class="subtitle lead">Moet nog gecategoriseerd worden.</p>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/bwelman" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-</div>
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Sorteer op" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Sorteer op</option>
+       <option value="index" data-direction="asc">Standaard</option>
+         <option value="listing-title" data-direction="asc">
+          Titel
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Datum - Oudste
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Datum - Nieuwste
+        </option>
+     </select>
   </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Dit is mijn archief met artikelen over allerlei onderwerpen waarvan de meeste door mij zelf zijn geschreven. Sommige artikelen verdwijnen soms weer om dan in een van onderstaande studieboeken te worden opgenomen.</p>
-<p><strong>Online Studieboeken</strong></p>
-<p><a href="https://leeraccess.netlify.app">Leer Access</a> - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.</p>
-<p><a href="https://learnaccess.netlify.app">Learn Access</a> - Engelstalige versie van Leer Access.</p>
-<p><a href="https://leerexcel.netlify.app">Leer Excel</a> - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.</p>
-<p><a href="https://learnexcel.netlify.app">Learn Excel</a> - Engelstalige versie van Leer Excel.</p>
-<p><a href="https://excelanalyse.netlify.app">Data-analyse met Excel</a> - Analyseren van gegevens voor gevorderde Excel gebruikers.</p>
-<p><a href="https://brouwjebier.netlify.app">Brouw je bier</a> - Cursusboek bierbrouwen voor beginners.</p>
-
-
-</main></div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
- <!-- /main -->
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="eboek,quarto" data-listing-date-sort="1618351200000" data-listing-file-modified-sort="1686551741912" data-listing-date-modified-sort="1675897200000" data-listing-reading-time-sort="6">
+<a href="./divers/workflow-studieboeken/workflow-studieboeken.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./divers/workflow-studieboeken/quarto.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Workflow studieboeken
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('eboek'); return false;">
+eboek
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
+quarto
+</div>
+</div>
+<div class="card-text listing-description">
+<p>Uitleg over de workflow voor de productie van mijn studieboeken.</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+14 apr. 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="latex" data-listing-date-sort="1590271200000" data-listing-file-modified-sort="1675940460734" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<a href="./divers/latex-werkomgeving/latex-werkomgeving.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./divers/latex-werkomgeving/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Latex werkomgeving
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('latex'); return false;">
+latex
+</div>
+</div>
+<div class="card-text listing-description">
+<p>Hoe een werkomgeving voor Latex eruit kan zien.</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+24 mei 2020
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="eboek" data-listing-date-sort="1572735600000" data-listing-file-modified-sort="1686551658699" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<a href="./divers/online-studieboeken/online-studieboeken.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./divers/online-studieboeken/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Online studieboeken
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('eboek'); return false;">
+eboek
+</div>
+</div>
+<div class="card-text listing-description">
+De mogelijkheden om studieboeken online te publiceren.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+3 nov. 2019
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="website" data-listing-date-sort="1536444000000" data-listing-file-modified-sort="1675940460692" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<a href="./divers/website-bouwstenen-1/website-bouwstenen-1.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./divers/website-bouwstenen-1/hugo.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Website bouwstenen (1)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('website'); return false;">
+website
+</div>
+</div>
+<div class="card-text listing-description">
+<p>Opsomming hulpprogramma’s voor het maken van een statische website.</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+9 sep. 2018
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="eboek" data-listing-date-sort="1356303600000" data-listing-file-modified-sort="1675940460690" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<a href="./divers/eboek-lezen/eboek-lezen.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./divers/eboek-lezen/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Het lezen van e-boeken
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('eboek'); return false;">
+eboek
+</div>
+</div>
+<div class="card-text listing-description">
+De mogelijkheden die je hebt om een e-boek te lezen hangen af van het formaat waarin het e-boek is uitgebracht, de apparatuur waarover je beschikt en of het e-boek al dan…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+24 dec. 2012
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="eboek" data-listing-date-sort="1348092000000" data-listing-file-modified-sort="1686551693199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<a href="./divers/studieboek-formaat/studieboek-formaat.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./divers/studieboek-formaat/ebooks.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Studieboek formaten
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('eboek'); return false;">
+eboek
+</div>
+</div>
+<div class="card-text listing-description">
+Zijn de digitale formaten PDF en EPUB als vervangers voor het papieren boek.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+20 sep. 2012
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+Geen overeenkomsten
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -189,6 +411,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

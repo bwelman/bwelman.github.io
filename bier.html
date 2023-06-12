@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Archief Ben - Ben Welman</title>
+<title>Archief Ben - Bier</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,9 +31,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -59,6 +62,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Zoeken"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
 
 <script type="text/javascript">
@@ -70,10 +102,12 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,11 +128,11 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./bier.html" rel="" target="">
+    <a class="nav-link active" href="./bier.html" rel="" target="" aria-current="page">
  <span class="menu-text">Bier</span></a>
   </li>  
   <li class="nav-item">
@@ -135,40 +169,240 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categorieën</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Alle <span class="quarto-category-count">(6)</span></div><div class="category" data-category="biertype">biertype <span class="quarto-category-count">(2)</span></div><div class="category" data-category="excel">excel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="hop">hop <span class="quarto-category-count">(2)</span></div><div class="category" data-category="rekenen">rekenen <span class="quarto-category-count">(3)</span></div><div class="category" data-category="stijlen">stijlen <span class="quarto-category-count">(2)</span></div><div class="category" data-category="suikers">suikers <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/benwem.jpg" class="about-image
-  rounded " style="width: 14em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ben Welman</h1>
+<h1 class="title">Bier</h1>
+<p class="subtitle lead">Artikelen over bier en brouwen</p>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/bwelman" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-</div>
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Sorteer op" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Sorteer op</option>
+       <option value="index" data-direction="asc">Standaard</option>
+         <option value="listing-title" data-direction="asc">
+          Titel
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Datum - Oudste
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Datum - Nieuwste
+        </option>
+     </select>
   </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Dit is mijn archief met artikelen over allerlei onderwerpen waarvan de meeste door mij zelf zijn geschreven. Sommige artikelen verdwijnen soms weer om dan in een van onderstaande studieboeken te worden opgenomen.</p>
-<p><strong>Online Studieboeken</strong></p>
-<p><a href="https://leeraccess.netlify.app">Leer Access</a> - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.</p>
-<p><a href="https://learnaccess.netlify.app">Learn Access</a> - Engelstalige versie van Leer Access.</p>
-<p><a href="https://leerexcel.netlify.app">Leer Excel</a> - Taakgericht studieboek, ontwikkeld voor met namen studenten in het middelbaar en hoger onderwijs, met veel opgaven.</p>
-<p><a href="https://learnexcel.netlify.app">Learn Excel</a> - Engelstalige versie van Leer Excel.</p>
-<p><a href="https://excelanalyse.netlify.app">Data-analyse met Excel</a> - Analyseren van gegevens voor gevorderde Excel gebruikers.</p>
-<p><a href="https://brouwjebier.netlify.app">Brouw je bier</a> - Cursusboek bierbrouwen voor beginners.</p>
-
-
-</main></div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
- <!-- /main -->
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="rekenen,hop" data-listing-date-sort="1596492000000" data-listing-file-modified-sort="1670250673037" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./bier/hoprendement-kooktijd/hoprendement-kooktijd.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./bier/hoprendement-kooktijd/grafiek.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Hoprendement - Kooktijd
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rekenen'); return false;">
+rekenen
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('hop'); return false;">
+hop
+</div>
+</div>
+<div class="card-text listing-description">
+Relatie tussen de hopbitterheid en de kooktijd.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+4 aug. 2020
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="rekenen,hop" data-listing-date-sort="1591221600000" data-listing-file-modified-sort="1686551491935" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23">
+<a href="./bier/hopbitterheid/hopbitterheid.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./bier/hopbitterheid/hop.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Hopbitterheid en EBU (IBU)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rekenen'); return false;">
+rekenen
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('hop'); return false;">
+hop
+</div>
+</div>
+<div class="card-text listing-description">
+Manieren om de bitterheid van hoptoevoegingen in bier te bepalen.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+4 jun. 2020
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="biertype,stijlen" data-listing-date-sort="1574031600000" data-listing-file-modified-sort="1686551100510" data-listing-date-modified-sort="1651356000000" data-listing-reading-time-sort="4">
+<a href="./bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./bier/bjcp-biertypenlijst/bjcp.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+BJCP Biertypenlijst
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('biertype'); return false;">
+biertype
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('stijlen'); return false;">
+stijlen
+</div>
+</div>
+<div class="card-text listing-description">
+De Amerikaanse BJCP biertypenlijst in een Excel bestand.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+18 nov. 2019
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="suikers" data-listing-date-sort="1559340000000" data-listing-file-modified-sort="1686551216505" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<a href="./bier/invertsuiker/invertsuiker.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./bier/invertsuiker/invertsuiker.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+invertsuiker
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('suikers'); return false;">
+suikers
+</div>
+</div>
+<div class="card-text listing-description">
+Hoe je invertsuiker kunt maken.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+1 jun. 2019
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="rekenen" data-listing-date-sort="1546038000000" data-listing-file-modified-sort="1686551229865" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<a href="./bier/sg-brix-plato/sg-brix-plato.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./bier/sg-brix-plato/hydrometer.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SG-Brix-Plato
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rekenen'); return false;">
+rekenen
+</div>
+</div>
+<div class="card-text listing-description">
+Meeteenheden voor het stamwortgehalte.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+29 dec. 2018
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="biertype,stijlen,excel" data-listing-date-sort="1543186800000" data-listing-file-modified-sort="1686551140221" data-listing-date-modified-sort="1651356000000" data-listing-reading-time-sort="5">
+<a href="./bier/bkg-biertypenlijst/bkg-biertypenlijst.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./bier/bkg-biertypenlijst/bkg-biertypen.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+BKG Biertypenlijst
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('biertype'); return false;">
+biertype
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('stijlen'); return false;">
+stijlen
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('excel'); return false;">
+excel
+</div>
+</div>
+<div class="card-text listing-description">
+De BKG biertypenlijst in een Excel bestand.
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+26 nov. 2018
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+Geen overeenkomsten
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -189,6 +423,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
