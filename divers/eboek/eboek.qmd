@@ -1,0 +1,137 @@
+---
+title: "Eboek wetenswaardigheden"
+abstract: |
+  Wat is een eboek.
+date: "2014-03-31"
+date-modified: "2019-04-17"
+image: preview.jpg
+categories: [eboek]
+---
+
+# Wat is een eboek?
+
+Een eboek is een boek in digitale vorm. Je krijgt het in een bepaald bestandsformaat aangeleverd. Een dergelijk boek moet dan ook op digitale apparaten (computer, eReader, iPad, Smartphone, ...) gelezen worden.
+
+Een boek is anders dan een papieren boek en er horen ook andere spelregels bij. Zo kun je niet elke bestandsformaat op elk apparaat lezen. Je mag een eigen gekocht eboek meestal niet uitlenen of verkopen, laat staan dat er tweedehandse eboeken zijn. Verder kunnen eboeken beveiligd zijn zodat ze maar door één gebruiker te lezen zijn.
+
+Eboeken hebben ook voordelen. Ze hebben geen gewicht (het leesapparaat natuurlijk wel). Zo kun je de tekst vergroten en verkleinen en afhankelijk van het soort leesapparaat kun je dat met afbeeldingen ook. Erg handig is ook dat je naar tekst kunt zoeken.
+
+In de nieuwe generatie eboeken komen steeds meer mogelijkheden om de inhoud van het eboek te verrijken met zaken als geluid, video, animaties en interacties met de lezer. Met name voor reis- en studieboeken geeft dit spannende en nieuwe ervaringen.
+
+En net als bij een papieren boek.
+
+# Het lezen van een eboek
+
+De mogelijkheden die je hebt om een e-boek te lezen hangen af van het formaat waarin het e-boek is uitgebracht, de apparatuur waarover je beschikt en of het e-boek al dan niet met DRM beschermd is.
+
+E-boeken die je moet kopen zijn vaak beveiligd met DRM (Digital Rights Management), een systeem van Adobe. De beveiliging zorgt er voor dat je de e-boeken maar een beperkt aantal keren (4-5) op verschillende apparaten kunt installeren.
+
+Ben je nog helemaal niet bekend met het fenomeen e-reader, e-boek en digitaal lezen? Kijk dan eens naar de beginnersgids op de site van ereaders. Deze gids richt zich voornamelijk op de Nederlandstalige markt en maakt je snel wegwijs. Hierbij een korte samenvatting van de belangrijkste bestandsformaten en apparaten.
+
+# Indeling Boek
+
+Een eboek heeft vaak dezelfde indeling als een papieren boek. Een boek kan men grofweg indelen in het voorwerk, de hoofdtekst en het nawerk.
+
+## Voorwerk
+
+Dit zijn de pagina's in een boekwerk die voorafgaan aan het eigenlijke boekwerk. Tot het voorwerk worden onder andere gerekend de titelpagina, dankwoord, Franse titelpagina, inhoudsopgave en het voorwoord. Een volledig voorwerk ziet er als volgt uit:
+
+-   Franse titelpagina (rechterpagina). Dit is de allereerste (rechter) pagina van een boek waarop, meestal alleen, de titel van het boek staat en voorafgaand aan de volledige titelpagina, waarop naast de titel ook andere informatie staat, wordt ook 'voordehandse titel' genoemd.
+-   Ander werk van dezelfde auteur (linkerpagina)
+-   Titelpagina (rechterpagina). De bladzijde voorin een boek (de eerste, maar vaker de derde pagina) waarop de titel, schrijver, uitgever en soms ook andere informatie is vermeld.
+-   Copyright en (korte) drukgeschiedenis (linkerpagina). Over het algemeen de achterkant van de titelpagina in een boek, waarop alle copyrightinformatie staat vermeld.
+-   opdracht en/of citaat, het motto (rechterpagina)
+-   woord vooraf / ten geleide (rechter- of linkerpagina), soms ook na de inhoudsopgave
+-   inhoudsopgave (rechterpagina)
+-   lijst van illustraties (rechter- of linkerpagina)
+-   inleiding (rechterpagina), wordt ook wel als deel van de platte tekst beschouwd
+
+## Hoofdtekst
+
+De eigenlijke inhoud van het boek, verdeeld in hoofdstukken. In een ePub boek is elk hoofdstuk meestal een afzonderlijk XHTML bestand.
+
+## Nawerk
+
+De laatste pagina's van een boek, na het eigenlijke verhaal. Het nawerk heeft meestal de volgende onderdelen:
+
+-   Nawoord van de schrijver / epiloog
+-   Aanhangsel / appendix
+-   Noten (in plaats van voetnoten)
+-   Verklarende woordenlijst / glossarium
+-   Literatuurlijst / Bibliografie
+-   Register / Index
+-   Verantwoording van de gebruikte afbeeldingen
+-   Colofon
+
+# Bestandsformaten
+
+## EPUB
+
+EPUB is zeker in Europa het meest gebruikte formaat voor e-boeken. Het is een open standaard voor e-boeken. De tekst in een ePub boek is *reflowable*, waarmee bedoeld wordt dat er geen vaste regellengte is en dat de lengte van een regel zich aanpast aan het scherm waarop het gelezen wordt. Daarom kent ePub ook niet echt een vaste pagina, met paginanummers. Bij ePub is een pagina het gedeelte dat je op het scherm ziet en dat hangt o.a. af van de gekozen schermafmetingen en lettergrootte. De meeste leveranciers van e-boeken ondersteunen het ePub formaat. Om te lezen is het ePub formaat het beste formaat. En dit formaat ondersteunt DRM, je komt dus zowel beveiligde als onbeveiligde e-boeken tegen.
+
+## PDF
+
+Veel e-boeken worden in het PDF formaat uitgebracht. Dit is eigenlijk geen special formaat voor e-boeken, maar de meeste apparaten ondersteunen het lezen van het pdf formaat. Meestal ligt de regellengte bij dit formaat vast en is dus de tekst niet reflowable. Wanneer je dan het lettertype vergroot moet je horizontaal scrollen om de tekst te kunnen lezen. Dat wordt door velen als niet prettig ervaren. Een voordeel van het PDF formaat is dat het vergelijkbaar is met een boek, vaste pagina's kent en ook goed uitgeprint kan worden. Veel oudere uitgave zijn alleen in PDF formaat beschikbaar.
+
+## Mobi
+
+Dit formaat wordt gebruikt door de MobiPocket Reader. Behalve deze e-reader zijn er nog een paar andere merken die dit formaat ondersteunen. Je komt het echter steeds minder tegen.
+
+## AZW
+
+Dit formaat is door Amazon gemaakt voor haar e-reader Kindle en lijkt erg veel op het mobi formaat. Op andere apparaten heb je hier niets aan. Op de Nederlandse markt kom je dit formaat ook nauwelijks tegen. Wel bij Amazon natuurlijk.
+
+# Gratis eboeken
+
+Een aantal downloadsites met gratis eboeken.
+
+-   Amazon, heeft ook een groot aanbod van gratis eboeken.
+-   [Bol.com](https://www.bol.com/nl/nl/m/digitaal-gratis/?Referrer=ADVNLPPcef8e500c0fadbea00b1f29965000021695)
+-   [DBNL](https://www.dbnl.org/), Nederlandse klassiekers in ePub- of PDF-formaat vind je bij de Digitale Bibliotheek voor de Nederlandse Letteren. Alle bekende titels uit de Nederlandse geschiedenis vind je hier terug.
+-   [GratisEpub.nl](http://www.gratisepub.nl/)
+-   [Gutenberg](https://www.gutenberg.org), diverse talen, genres en formaten.
+-   [Kobo](https://www.kobo.com/nl/nl/p/free-ebooks)
+-   [ManyBooks.net](https://manybooks.net/), veelal klassiekers, engelstalig
+-   [Open Library](https://openlibrary.org/)
+-   [Planet eBook](https://www.planetebook.com/)
+-   [Smashwords](https://www.smashwords.com/)
+
+# Apparaten
+
+## E-Readers
+
+Dit zijn apparaten die speciaal ontwikkeld zijn voor het digitaal lezen. Ze hebben schermen die gebaseerd zijn op eInk, elektronische inkt, waardoor de leesbaarheid groot is.
+
+Voor de bestandsformaten ben je volledig afhankelijk van de mogelijkheden die het betreffende apparaat heeft, je hebt geen eigen keuzes. Bij de aanschaf van een e-reader is het dus van belang om te controleren welke bestandsformaten ondersteund worden. Bij e-boeken op de Europese markt is het van belang dat ePub en pdf ondersteund worden. Verder kan het soms handig zijn dat ook MS Word bestanden en platte tekst bestanden gelezen kunnen worden, maar echt belangrijk is dit niet.
+
+## Computers / Laptops
+
+Er is inmiddels veel gratis software beschikbaar waarmee je e-boeken op een computer of laptop kunt lezen.
+
+Adobe Digital Editions, een programma van Adobe voor het lezen en beheren e-boeken in epub en pdf formaat, zowel met als zonder DRM. Kan gratis gebruikt worden. Registratie bij Adobe is noodzakelijk om boeken te kunnen lezen die met DRM beschermd zijn.
+
+Calibre, een open source programma voor het beheer en het lezen van e-boeken. Kan geen met DRM beveiligde boeken lezen.
+
+Voor de browser Firefox is een EPub reader add-in beschikbaar waarmee het ePub formaat zonder DRM gelezen kan worden. Zowel Firefox als de add-in zijn gratis.
+
+## Tablets
+
+Voor de iPad is de app iBooks beschikbaar waarmee je beveiligde en onbeveiligde ePub boeken kunt lezen.
+
+Voor Android apparaten kun je Aldiko downloaden.
+
+## Smartphones
+
+Er zijn veel merken smartphones, elk met een eigen besturingssysteem, zoals: iPhone OS van Apple, Android, Symbian, Blackberry en Windows Mobile. De mogelijkheden die je hebt om digitaal te kunnen verschillen per besturingssysteem en nemen ook voortdurend toe. Voor zowel de iPhone als Android is software beschikbaar om epub, met en zonder DRM, te kunnen lezen.
+
+# AZW4 converteren naar PDF
+
+Een AZW4 bestand is specifiek ontworpen voor studieboeken (textbooks) en zit anders in elkaar dan Mobi, AZW of AZW3. Het bestand is in feite een PDF bestand met een AZW4 schil er omheen. Amazon noemt dit formaat ook wel *Print Replica*. De pagina layout is vast.
+
+Wanneer je met Calibre een AZW4 bestand gaat converteren naar EPUB of PDF na krijg je een chaotische layout. Er is een veel betere weg, je kunt namelijk het pdf bestand uit het AZW4 bestand halen met de *KindleUnpack* plugin.
+
+1.  Open Calibre en installeer de KindleUnpack plugin en herstart Calibre.
+2.  Voeg het AZW4 boek toe aan de Calibre bibliotheek.
+3.  Kies KindleUnpack \> AZW4 \> Extract PDF. Het pdf formaat wordt aan het boek in Calibre toegevoegd.
+
+[How to Convert AZW4 to a Perfect PDF](https://www.ereader-palace.com/convert-azw4-perfect-pdf/)

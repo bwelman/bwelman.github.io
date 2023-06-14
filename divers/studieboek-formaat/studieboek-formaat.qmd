@@ -2,7 +2,7 @@
 title: "Studieboek formaten"
 abstract: "Zijn de digitale formaten PDF en EPUB als vervangers voor het papieren boek."
 date: "2012-09-20"
-image: "ebooks.png"
+image: "preview.png"
 categories: [eboek]
 ---
 
