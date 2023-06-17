@@ -13,12 +13,14 @@ website:
     left:
       - text: Home
         href: index.qmd
-      - text: Bier
-        href: bier.qmd
       - text: Access
         href: access.qmd
       - text: Excel
         href: excel.qmd
+      - text: Bier
+        href: bier.qmd
+      - text: Chemie
+        href: chemie.qmd
       - text: Divers
         href: divers.qmd
       - text: Tutorials

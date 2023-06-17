@@ -1,0 +1,208 @@
+---
+title: "pH en Buffers"
+abstract: |
+  Het evenwicht in water en de invloed op pH en buffers.
+date: "2022-11-07"
+image: "preview.png"
+categories: [pH, buffers]
+---
+
+<!-- Bron: Feis -->
+
+Om te begrijpen wat de pH is en hoe buffers werken, zal er eerst naar het watermolekuul gekeken worden.
+
+# Watermolekuul
+
+Een watermolekuul bestaat uit 2 atomen waterstof (H) en 1 atoom zuurstof (O):
+
+$$\ce{H-O-H}$$
+
+Deze deeltjes blijven bij elkaar door een zogenaamde **atoombinding**. Hierbij worden de atomen aan elkaar gebonden door een gemeenschappelijk electronenpaar. Bij het watermolekuul is dat wel een speciale atoombinding, namelijk een **polaire atoombinding**. Hierbij trekt het zuurstofatoom wat sterker aan de gemeenschappelijke electronen dan de waterstofatomen. Het gemeenschappelijke electronenpaar zit dan niet meer precies in het midden tussen de twee atomen. Daardoor wordt het zuurstofatoom iets negatief geladen en de waterstofatomen iets positief. Dit wordt ook wel een **dipool** genoemd. In de figuur wordt dat aangegeven met $\delta ^+$ en $\delta ^-$.Het symbool $delta$ heeft hier de betekenis van ietsje.
+
+![Dipool watermolekuul.](water-dipool.png)
+
+# Waterevenwicht
+
+Zuiver water heeft een klein geleidingsvermogen voor electriciteit. Er moeten dus wat ionen in het water zitten. Dit komt doordat een klein gedeelte van de watermolekulen, ondanks de atoombindingen, in ionen gesplitst zijn.
+
+Omdat de electronen zich dichter bij het zuurstof atoom bevinden kan een waterstofatoom als het ware loskomen van de rest van het molekuul en combineren met een ander watermolekuul om $\ce{H3O+}$ te vormen
+
+![Animatie van de ionisatie van water (bron: Wikipedia).](water-ionisatie.gif)
+
+Je komt deze reactie In twee weergaven tegen:
+
+$$
+\ce{H2O + H2O <--> H3O+ + OH-}
+$$
+
+$$
+\ce{H2O <--> H+ + OH-}
+$$
+
+Je kunt beide notaties gebruiken, maar in de praktijk zie je meestal de laatste.
+
+Deze dissociatiereactie is omkeerbaar en bereikt een evenwicht dat afhankelijk is van de temperatuur. In de evenwichtstoestand veranderen de concentraties van de stoffen niet meer. De evenwichtsconstante $\ce{K}$ kan geschreven worden als
+
+$$
+\ce{K = \frac{[H+]\cdot[OH-]}{[H2O]}}
+$$
+
+Met blokhaken wordt de concentratie van een stof aangegeven, uitgedrukt in mol/liter (M, molair).
+
+In verdunde oplossingen is de concentratie van water nagenoeg constant en ongeveer gelijk aan 1. Je kunt dan de evenwichtsvergelijking herschrijven als
+
+$$
+\ce{[H+][OH-] = K \cdot [H2O]} = K_w
+$$
+
+Bij 22^o^C is $K_w = 1,0 \times 10^{-14}$ en bij 100^o^C is $K_w = 58 \times 10^{-14}$.
+
+In zuiver water of neutrale oplossing zijn de concentraties aan elkaar gelijk: $\ce{[H+] = [OH-]} = 10^{-7}$ M (bij gewone temperatuur).
+
+Maar oplossingen zijn niet altijd neutraal. Wanneer het ene ion toeneemt, moet het andere ion proportioneel afnemen, want $K_w$ is immers constant. Bij 22^o^C geldt
+
+-   **Neutrale** oplossing: $\ce{[H+]} = 10^{-7}$ M en $\ce{[OH-]} = 10^{-7}$ M
+-   **Zure** oplossing: $\ce{[H+]} > 10^{-7}$ M en $\ce{[OH-]} < 10^{-7}$ M
+-   **Basische** oplossing: $\ce{[H+]} < 10^{-7}$ M en $\ce{[OH-]} > 10^{-7}$ M
+
+# Zuren en Basen
+
+Een $\ce{H+}$ ion wordt ook wel een **proton** genoemd. Een **zuur** is een verbinding die een proton kan afstaan en een **base** is een verbinding die een proton kan opnemen.
+
+Als een zuur in water oplost en zich in ionen splitst, dan krijg je een positief $\ce{H+}$ ion en een negatief zuurrestion. Dit zuurrestion wordt ook wel een **geconjugeerde base** genoemd. En omgekeerd kan een geconjugeerde base een $\ce{H+}$ ion opnemen en vormt dan een **geconjugeerd zuur**.
+
+Zuren en basen kunnen sterk of zwak zijn. Dat heeft te maken hoe graag ze een proton willen afstaan of opnemen, wat afhangt van het verschil in elektronegativiteit van de twee delen. Sterke zuren zoals $\ce{HCl}$ (waterstofchloride) vallen in water volledig uiteen in twee ionen $\ce{H+}$ en $\ce{Cl-}$.
+
+$$\ce{HCl -> H+ + Cl-}$$
+
+Zwakke zuren zoals azijnzuur (gemakshalve voorgesteld door $\ce{HA}$) dissocieren gedeeltelijk en vormen een evenwicht:
+
+$$\ce{HA <--> H+ + A-}$$ Een analoge redenering geldt voor basen.
+
+# pH
+
+De concentratie van waterstofionen in een oplossing is voor tal van verschijnselen (o.a. de stofwisseling) van groot belang. In de praktijk wordt niet gewerkt met de concentratie zelf, maar met de $\ce{pH}$ welke gedefinieerd wordt als de negatieve logaritme van de $\ce{H+}$ concentratie.
+
+$$\ce{pH = - ^{10}log[H+]}$$
+
+Bij 22^o^C geldt
+
+-   **Neutrale** oplossing: $\ce{pH = - log(10^{-7}) = 7}$
+-   **Zure** oplossing: $\ce{pH < 7}$
+-   **Basische** oplossing: $\ce{pH > 7}$
+
+::: callout-note
+Bij 100^o^C is $K_w = 58 \cdot 10^{-14}$ en is dus $\ce{[H+] = [OH-]} = \sqrt{58 \cdot 10^{-14}} = 7,6 \cdot 10^{-7}$ M.
+
+Dan $\ce{pH} = -log(7,6 \cdot 10^{-7}) \approx {6,12}$
+:::
+
+::: callout-important
+Onthoud dat de pH-schaal logaritmisch is en dat een vloeistof met $\ce{pH=3}$, tien keer meer $\ce{H+}$ bevat dan een vloeistof met $\ce{pH= 4}$.
+
+En vergelijk je een wort met $\ce{pH=5,2}$ met een wort met $\ce{pH=5,8}$ dan bevat de eerste $10^{0,6} \approx 4$ keer meer $\ce{H+}$ ionen.
+:::
+
+# Buffers
+
+Wanneer je aan zuiver water geleidelijk wat druppels van een oplossing van een sterk zuur (bijv. zoutzuur) toevoegt, dan neemt de $\ce{pH}$ sterk af. En neem je in plaats hiervan een oplossing van een sterker base (bijv. natronloog), dan neemt de pH sterk toe.
+
+Zwakke zuren zoals azijnzuur daarentegen ioniseren slechts gedeeltelijk in water. Deze dissociatie is omkeerbaar waarbij dus weer associatie optreedt.
+
+Wanneer je aan een azijnzuuroplossing wat $\ce{OH-}$ ionen toevoegt, dan ontrekken deze de $\ce{H+}$ ionen uit de oplossing. Het evenwicht zal hierdoor naar rechts verschuiven om de oude situatie te herstellen. De pH verandert hierdoor niet.
+
+Wanneer je echter wat $\ce{H+}$ ionen aan de oplossing toevoegt, dan zou het evenwicht naar links moeten verschuiven om de oude situatie te herstellen. Echter daarvoor zijn ook $\ce{A-}$ ionen nodig. Vanwege de lage ionisatiegraad zullen er niet voldoende $\ce{A-}$ aanwezig zijn. Dit kun je oplossen door extra $\ce{A-}$ ionen aan de azijnzuuroplossing toe te voegen, bijvoorbeeld in de vorm van natriumacetaat.
+
+<!--# In de praktijk is een goede verhouding HAc : Ac- tussen 0,10 en 10 -->
+
+Met een mensel van een oplossing van natriumacetaat en azijnzuur heb je dan een bufferoplossing die zowel bestand is tegen het toevoegen van $\ce{OH-}$ ionen als $\ce{H+}$ ionen. In beide gevallen wordt de $\ce{pH}$ verandering tegengewerkt. De acetaationen gaan de vergroting van de $\ce{H+}$ concentratie tegen en het azijnzuur werkt de verkleining van de $\ce{H+}$ concentratie tegen.
+
+::: callout-note
+Weerstand tegen $\ce{pH}$-verandering is een belangrijke kwaliteit van biologische systemen en hangt af van de concentratie van de aanwezige bufferverbindingen. Bij het brouwen oefenen fosfaationen en aminozuren en zelfs eiwitten sterke bufferende effecten uit in de wort. Buffering verklaart waarom de $\ce{pH}$ van wort moeilijk te veranderen is door zuur toe te voegen en waarom de $\ce{pH}$ van brouwwater (in tegenstelling tot de samenstelling en concentratie van de daarin opgeloste zouten) op zichzelf niet van invloed is op de $\ce{pH}$ van de maisch.
+:::
+
+De evenwichtsvoorwaarde is
+
+$\ce{\frac{[H+]\cdot[A-]}{[HA]} = K_z}$ ofwel $\ce{[H+] = K_z \times \frac{[HA]}{[A-]}}$
+
+En via de negatieve logaritme: $\ce{pH = pK_z - \ce{log\frac{[HA]}{[A^-]}}}$
+
+$\ce{K_z}$ is de zuurconstante. De waarden hiervoor bij $\pu{298 K}$ kun je vinden in Binas tabel 49. Voor azijnzuur is deze $\pu{K_z = 1,7410E-5}$ en is $\mathrm{pK_z = 4,76}$.
+
+::: {#exm-vb1}
+**Effect verdunnen**
+
+Ook bij verdunning blijft de pH van dit buffermengsel nagenoeg hetzelfde. Door de aanwezigheid van het acetaat is de ionisatiegraad van het azijnzuur zo gering dat je de hoeveelheid azijnzuur dat geioniseerd is kunt verwaarlozen t.o.v. de ongesplitste hoeveelheid. Het komt er dan op neer dat
+
+-   $\ce{HA}$ = aantal mol/lit azijnzuur dat oorspronkelijk is toegevoegd.
+-   $\ce{A-}$ = aantal mol/lit natriumacetaat dat oorspronkelijk is toegevoegd.
+
+Bij het verdunnen blijft de verhouding van beide concentraties hetzelfde en dus ook de pH.
+:::
+
+::: {#exm-vb2}
+**Gelijke concentraties**
+
+Wat is de pH van een mengsel met even grote concentraties azijnzuur en natriumacetaat?
+
+In dat geval is $\ce{[HA] = [A-]}$ en dus is $\ce{log\frac{[HA]}{[A-]}} = log(1) = 0$ en wordt $pH = pK_z = 4,76$
+:::
+
+::: {#exm-vb3}
+**pH Sterk zuur**
+
+Bereken de pH van een 0,3M oplossing van salpeterzuur.
+
+Salpeterzuur is een sterk zuur en ioniseert volledig:
+
+$\ce{HNO3 -> H+ + NO3^-}$
+
+$[H^+] = 0,3 M$ dus $pH = -log\ce{[H+]} = -log(0,3) = 0,52$
+
+:::
+
+::: {#exm-vb4}
+**pH Zwak zuur**
+
+Bereken de pH van een 0,3M oplossing van methaanzuur $\ce{HCOOH}$, ook wel mierezuur genoemd.
+
+Methaanzuur is een zwak zuur en ioniseert gedeeltelijk:
+
+$\ce{\frac{[H^+]\cdot[COOH^-]}{[HCOOH]}} = K_z = 1,8 \cdot 10^{-4} \text{ (Binas 149)}$
+
+Stel na de ionisatie is $\ce{[H+] = x}$, dan is $\ce{[COOH-] = x}$ en $\ce{[HCOOH] = 0,30 - x}$
+
+Ingevuld in de evenwichtsvoorwaarde: $x^2 = 1,8 \cdot 10^{-4} \cdot (0,30-x)$
+
+$x^2 + 1,8 \cdot 10^{-4} -5,4 \cdot 10^{-5} =0$
+
+$x = \frac{-1,8 \cdot 10^{-4} + \sqrt{(1,8 \cdot 10^{-4})^2 + 4 \cdot 5,4 \cdot 10^{-5}}}{2} = 0,00726$
+
+$pH = -log(0,00726) = 2,14$
+
+ionisatiegraad $\alpha = \frac{[H^+]}{[HCOOH]} = \frac{0,00726}{0,3 - 0,00726} = 0,0248$
+:::
+
+::: {#exm-vb5}
+**Basische buffer**
+
+$\ce{ NH3 (aq) + H2O (l) <--> NH4+ (aq) + OH- (aq)}$
+
+$\ce{ \frac{[NH4+][OH-]}{[NH3]} = K_b }$ $\longrightarrow$ $\ce{ [OH-] = K_b \cdot \frac{[NH3]}{[NH4+]} }$
+
+$\ce{ pOH = pK_b - log\frac{[NH3]}{[NH4+]} }$ en $pK_b = 4,75$
+
+De pH kun je uitrekenen via $pH + pOH = 14$
+:::
+
+::: {#exm-vb6}
+**pH zure bufferoplossing**
+
+In 1,5 liter oplossing bevindt zich 0,25 mol azijnzuur en 0,75 mol natriumacetaat. Bereken de pH.
+
+$\ce{ \frac{[HAc]}{[Ac-]} = \frac{1}{3} }$ , een goede verhouding voor een bufferoplossing.
+
+$\ce{ [H+] = K_z \times \frac{[HAc]}{[Ac-]} = 1,7 \cdot 10^{-5} \times \frac{1}{3} = 5,6 \cdot 10^{-6} M }$
+
+$pH = -log(5,6 \cdot 10^{-6}) = 5,25$
+:::

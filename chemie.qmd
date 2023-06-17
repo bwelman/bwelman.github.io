@@ -1,0 +1,12 @@
+---
+title: "Bier"
+subtitle: "Artikelen over Chemie"
+listing:
+  contents: chemie
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  fields: [date, title, description, categories, image]
+---
