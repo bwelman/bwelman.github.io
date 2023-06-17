@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2022-11-07">
 
-<title>Archief Ben - Exceldata naar xml exporteren</title>
+<title>Archief Ben - Chemische binding en water</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,6 +72,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -152,10 +155,9 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exceldata naar xml exporteren</h1>
+<h1 class="title">Chemische binding en water</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">export</div>
-    <div class="quarto-category">xml</div>
+    <div class="quarto-category">binding</div>
   </div>
   </div>
 
@@ -167,80 +169,56 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Publicatiedatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1 maart 2020</p>
+      <p class="date">7 november 2022</p>
     </div>
   </div>
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Samenvatting</div>
-    <p>Gegevens in een Excel tabel exporteren naar een XML bestand.</p>
-  </div>
-</div>
 
 </header>
 
-<p>Het is niet moeilijk om de gegevens in een Excel tabel naar een XML bestand om te zetten.</p>
-<p>Download het bestand <a href="verkopen-data.xlsx">verkopen-data.xlsx</a> en open het vervolgens in Excel. In een Excel tabel staan de volgende gegevens:</p>
-<div id="fig-xml-1" class="quarto-figure quarto-figure-center anchored">
+<!-- Bron: Hfst 2 boek "Brewing", Michael J. Lewis -->
+<p>Al het leven in de natuur heeft water nodig omdat de chemische reacties die we leven noemen, plaats vinden in een waterige omgeving. Een korte studie van de chemie van deze opmerkelijke stof loont de moeite, niet alleen omdat bier een waterig product is, maar omdat degenen die water begrijpen veel van de basischemie begrijpen die brouwprocessen regelt.</p>
+<p>Het watermolecuul bestaat uit twee waterstofatomen die door covalente bindingen aan een zuurstofatoom zijn verbonden. Een covalente binding is het delen van elektronen tussen de atomen die bij de binding betrokken zijn om de meest stabiele toestand te bereiken. Hiervoor zijn namelijk acht elektronen nodig, een <strong>octet</strong> (behalve waterstof, dan zijn het twee elektronen). De meeste biologische stoffen bestaan uit slechts zes elementen: waterstof (<span class="math inline">\(\ce{H}\)</span>), stikstof (<span class="math inline">\(\ce{N}\)</span>)), zuurstof (<span class="math inline">\(\ce{O}\)</span>)), koolstof (<span class="math inline">\(\ce{C}\)</span>)), zwavel (<span class="math inline">\(\ce{S}\)</span>)) en fosfor (<span class="math inline">\(\ce{P}\)</span>)), voor het grootste deel covalent verbonden . De buitenste of valentie (bindingvormende) elektronen van deze atomen kunnen in de Lewis-structuur worden weergegeven met stippen (<a href="#fig-lewis-structuur">Figuur&nbsp;1</a> a). Zo creëert water zijn stabiele moleculaire vorm omdat de waterstofatomen elk een van de zuurstofvalentie-elektronen delen en de zuurstof de twee waterstofelektronen deelt om er acht in zijn baan te vangen (<a href="#fig-lewis-structuur">Figuur&nbsp;1</a> b). Zuurstof heeft een valentie van twee.</p>
+<p>Evenzo moet koolstof, met vier eigen valentie-elektronen, vier elektronen vinden om te delen om zijn stabiele complement van acht te vormen, zoals in methaan (<span class="math inline">\(\ce{CH4}\)</span>) (<a href="#fig-lewis-structuur">Figuur&nbsp;1</a> b). Koolstof heeft een valentie van vier. De vier valenties van koolstof kunnen worden vervuld door twee dubbele valenties, bijvoorbeeld met zuurstof om koolstofdioxide (<span class="math inline">\(\ce{CO2}\)</span>) te vormen (<a href="#fig-lewis-structuur">Figuur&nbsp;1</a> b). Deze opstelling creëert een dubbele binding. Deze ideeën kunnen worden uitgebreid tot bijvoorbeeld ethanol, de alcohol in gefermenteerde dranken (<a href="#fig-lewis-structuur">Figuur&nbsp;1</a> c).</p>
+<p>Kortom, covalente bindingen zijn <strong>gedeelde elektronenparen</strong> die voor elk atoom een stabiel octet bereiken. Dubbele bindingen (en drievoudige bindingen) treden op wanneer het molecuul zich vormt met twee (of drie) gedeelde elektronenparen om het octet te vormen. Bij dubbele of driedubbele bindingen wordt de flexibiliteit rond de binding verminderd en is een dubbele binding korter, sterker en energieker dan een enkele binding.</p>
+<div id="fig-lewis-structuur" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="xml-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Tabel met verkoopgegevens.</figcaption>
+<p><img src="lewis-structuur.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;1: De Lewis-structuur van sommige atomen en moleculen waarin de valentie-elektronen worden weergegeven als stippen.</figcaption>
 </figure>
 </div>
-<p>Om deze naar XML te exporteren moet er eerst een XML schema gemaakt worden dat gebaseerd is op deze gegevens. In plaats van een officieel schema of DTD te maken kun je ook een eenvoudig XML bestand maken met daarin de eerste twee records. Open een kladblok programma en plaats daarin het de volgende tekst.</p>
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;verkopen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-    &lt;record&gt;
-       &lt;Voornaam&gt;Roger&lt;/Voornaam&gt;
-       &lt;Achternaam&gt;Rood&lt;/Achternaam&gt;
-       &lt;Verkopen&gt;13873&lt;/Verkopen&gt;
-       &lt;Land&gt;Nederland&lt;/Land&gt;
-       &lt;Kwartaal&gt;KW 3&lt;/Kwartaal&gt;
-    &lt;/record&gt;
-    &lt;record&gt;
-       &lt;Voornaam&gt;Berend&lt;/Voornaam&gt;
-       &lt;Achternaam&gt;Blauw&lt;/Achternaam&gt;
-       &lt;Verkopen&gt;12262&lt;/Verkopen&gt;
-       &lt;Land&gt;Belgie&lt;/Land&gt;
-       &lt;Kwartaal&gt;KW 4&lt;/Kwartaal&gt;
-    &lt;/record&gt;
-&lt;/verkopen&gt;</code></pre>
-<p>Sla het bestand in dezelfde map als het Excel bestand op onder de naam <em>verkopen-schema.xml</em> en sluit het kladblok programma.</p>
-<p>Ga nu terug naar het geopende Excelbestand. Kies <em>tab Ontwikkelaars &gt; Bron (groep XML)</em>. Het XML taak paneel wordt nu geopend.</p>
-<div id="fig-xml-2" class="quarto-figure quarto-figure-center anchored">
+<p>De gedeelde elektronen, of covalente bindingen, tussen atomen in moleculen worden weergegeven als verbindingslijnen tussen de atomen. De meeste voorkomende structuren in organische moleculen die belangrijk zijn voor het brouwen zijn carbonzuren <span class="math inline">\(\ce{R-COOH}\)</span> (of <span class="math inline">\(\ce{R-COO^-}\)</span>), aldehyden <span class="math inline">\(\ce{R-CHO}\)</span> en alcoholen <span class="math inline">\(\ce{R-CH_2OH}\)</span>. De <span class="math inline">\(\ce{R}\)</span>-groep vertegenwoordigt de rest van het molecuul dat klein kan zijn (bijvoorbeeld <span class="math inline">\(\ce{H}\)</span> of <span class="math inline">\(\ce{CH3}\)</span> of progressief groter). Maar hoe groot het molecuul ook is, de eigenschappen ervan worden bepaald door of het een zuur, een aldehyde of een alcohol is. Deze reactieve groepen worden vrij gemakkelijk onderling omgezet, zoals blijkt uit veel biologische routes. Paden zijn gewoon wegenkaarten en zijn gemakkelijker te volgen als de lezer de koolstofatomen bijhoudt en de onderlinge omzetting van deze belangrijkste reactieve groepen herkent.</p>
+<p>De vier elektronenparen rond een atoom in een molecuul stoten elkaar af en dus zijn de bindingen die ze vormen het meest stabiel wanneer ze het verst van elkaar verwijderd zijn. Met andere woorden, wanneer alle vier de elektronenparen worden gedeeld, verspreiden ze zich uniform rond het atoom en wijzen daarom naar de vier hoeken van een tetraëder. Rond het koolstofatoom in methaan (bijvoorbeeld) wijzen de vier valenties of bindingen naar de hoeken van een tetraëder (<a href="#fig-koolstof-tetraeder">Figuur&nbsp;2</a> a) en de hoek tussen de bindingen is 109,5°. Dit geeft de omgeving rond een koolstofatoom een duidelijk driedimensionaal karakter (<a href="#fig-koolstof-chiraal">Figuur&nbsp;3</a>). Deze kwaliteit wordt cruciaal in sommige biologische structuren en komt bijvoorbeeld tot uiting in de L- en D-vormen van aminozuren en suikers.</p>
+<div id="fig-koolstof-tetraeder" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="xml-2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: XML taak paneel.</figcaption>
+<p><img src="koolstof-tetraeder.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;2: Koolstof met vier valenties bezet het centrum van een tetraëder: (a) zoals in methaan (CH<sub>4</sub>). De ammoniak NH<sub>3</sub> (b) en water H<sub>2</sub>0 (c) moleculen zijn bijna tetraëdrisch, waarbij het extra elektronenpaar kan worden gezien als gericht op een of twee hoeken van de tetraëder.</figcaption>
 </figure>
 </div>
-<p>Klik op <em>XML-toewijzingen</em> om een XML bestand toe te voegen. Een dialoogvenster wordt nu geopend. Klik hierin op <em>Toevoegen</em> en selecteer daarna <em>verkopen-schema.xml</em>.</p>
-<p>Je krijgt nu een waarschuwing dat de opgegeven XML-bron niet naar een schema verwijst en dat Excel op basis van dit bestand een schema maakt. Klik op <em>OK</em>.</p>
-<div id="fig-xml-3" class="quarto-figure quarto-figure-center anchored">
+<p>Andere structuren zijn lineair zoals in het <span class="math inline">\(\ce{CO2}\)</span>-molecuul omdat er twee groepen van twee elektronenparen (dubbele bindingen) rond het C-atoom zijn. In water en veel andere moleculen zijn er echter <strong>ongedeelde elektronenparen</strong> die de moleculaire geometrie of vorm beïnvloeden. Deze ongedeelde elektronenparen gedragen zich in de ruimte alsof ze valenties of bindingen zijn en dus neemt een watermolecuul (of een ammoniakmolecuul) een tetraëdervormige ruimte in, net zoals het methaanmolecuul dat doet. Maar aangezien zuurstof in een watermolecuul slechts twee H-atomen heeft (niet vier zoals in methaan, en stikstof in een ammoniakmolecuul drie H-atomen heeft, niet vier), zijn de water- en ammoniakmoleculen “gebogen” (<a href="#fig-koolstof-tetraeder">Figuur&nbsp;2</a> b, c). Dit betekent dat het ene deel van de tetraëder dat ze bezetten, verschilt van het andere. Dit verklaart het dipoolmoment.</p>
+<div id="fig-koolstof-chiraal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="xml-3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: XML toewijzingen.</figcaption>
+<p><img src="koolstof-chiraal.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;3: Doordat het koolstofatoom (C) in de tetraëder is gekoppeld aan vier verschillende groepen (1,2,3,4), kunnen twee verschillende verbindingen worden gevormd. Deze worden chirale moleculen genoemd en zijn structureel aan elkaar verwant zoals een linker- en rechterhand verwant zijn, d.w.z. als spiegelbeelden. Het zijn enatiomeren van elkaar of een enantiomeer paar. De natuur kiest voor specifieke chirale structuren.</figcaption>
 </figure>
 </div>
-<p>Klik op <em>OK</em>.</p>
-<div id="fig-xml-4" class="quarto-figure quarto-figure-center anchored">
+<p>Atomen variëren in hun <strong>elektronegativiteit</strong>, dat wil zeggen in hun vermogen om elektronen aan te trekken. Als het vermogen van een atoom om elektronen te vangen erg hoog is, zal het geen elektronen delen, maar elektronen volledig naar zichzelf overdragen van een ander, minder elektronegatief atoom. Dit vormt <strong>ionen</strong>. Het atoom dat de elektron(en) opvangt, zal een negatieve lading krijgen (een <strong>anion</strong>, zo genoemd omdat het wordt aangetrokken door de positieve elektrode (<strong>anode</strong>) in een elektrochemische cel) omdat elektronen negatief geladen zijn. Het atoom dat de elektronen loslaat, zal een positieve lading krijgen (een <strong>kation</strong>, aangetrokken door de negatief geladen <strong>kathode</strong>). In oplossing zijn deze ionen vrije soorten die door zuiver ionische (elektrische) krachten tot elkaar worden aangetrokken om bijvoorbeeld een <span class="math inline">\(\ce{Na+Cl-}\)</span> (natriumchloride of keukenzout) oplossing te vormen.</p>
+<p>Als daarentegen de deelnemers aan een binding vrij even elektronegatief zijn, zullen de elektronen worden gedeeld in een covalente binding en zal er weinig of geen elektrische lading of ionisch karakter zijn. In het geval van water is zuurstof echter iets meer elektronegatief dan waterstof en daarom hebben de gedeelde elektronen in een watermolecuul de neiging om iets dichter bij zuurstof te cirkelen dan bij de waterstofatomen. Het zuurstofatoom neemt daarom een ​​duidelijke, zij het kleine negatieve lading aan, en de waterstofatomen nemen in dezelfde mate een lichte positieve lading aan. Een dergelijke binding is dipolair en een molecuul dat dergelijke bindingen bevat is een <strong>dipool</strong> en het molecuul is <strong>polair</strong>. De richting van de lading bepaalt het dipoolmoment dat wordt beïnvloed door de ‘’gebogen’’ of V-vorm van het molecuul zoals hierboven besproken. Polaire moleculen zijn <strong>hydrofiel</strong> (waterminnend) en oplosbaar in water. Polaire moleculen hebben ook de neiging zichzelf op één lijn te brengen of te organiseren in kristallen en in oplossing met het positieve deel van het ene molecuul naast het negatieve deel van het andere. Deze elektrostatische aantrekking wordt een dipoolkracht genoemd en is even opmerkelijk en even effectief als de aantrekkingskracht van de noord- en zuidpool van magneten.</p>
+<p>Als twee atomen ongeveer even elektronegatief zijn, ontstaat er door de binding geen dipool. Van een dergelijke binding wordt gezegd dat deze <strong>niet-polair</strong> is. C-H-bindingen zijn bijvoorbeeld niet-polair, omdat koolstof en waterstof bijna even elektronegatief zijn. Niet-polaire moleculen zijn <strong>hydrofoob</strong> of in water onoplosbaar, zoals bijvoorbeeld oliën of koolwaterstoffen.</p>
+<p>De <strong>waterstofbinding</strong> is een ongewoon sterk type dipoolkracht die veel voorkomt en centraal staat in biologische systemen. Waterstofbindingen ontstaan in of tussen moleculen waarin een waterstofatoom is gekoppeld aan zuurstof of aan stikstof (zoals in water of ammoniak of organische moleculen). Omdat deze moleculen “gebogen” zijn en het verschil in elektronegativiteit van de atomen significant is, is het dipoolmoment (ladingsrichting) vrij sterk. Ook zorgt de kleine atoomstraal van waterstof, zuurstof en stikstof ervoor dat die delen van moleculen die deze atomen bevatten, dicht bij elkaar kunnen komen om de relatief sterke waterstofbinding te vormen.</p>
+<p>Hoewel veel andere factoren de vorming van waterstofbruggen in bepaalde omstandigheden beïnvloeden, is de aanwezigheid van waterstofbruggen binnen moleculen, tussen moleculen en tussen organische moleculen en water een cruciaal belangrijke voorwaarde in de biologie. Het vermogen om waterstofbruggen te vormen, wijzigt de eigenschappen en het gedrag van verbindingen aanzienlijk. In het water zelf domineert bijvoorbeeld een uitgebreid netwerk van waterstofbruggen tussen de watermoleculen de eigenschappen ervan (<a href="#fig-waterstofbrug">Figuur&nbsp;4</a>). Water kookt bijvoorbeeld bij <strong>plus</strong> 100 °C in plaats van bij <strong>min</strong> 150 °C of zo, zoals het molecuulgewicht voorspelt. Om water te verdampen (d.w.z. het in een gas te veranderen of stoom te creëren) is veel meer energie nodig dan voor welke andere vloeistof dan ook, omdat de sterkte van de H-bindingen die vloeibaar water vormen, overwonnen moet worden. In de praktijk verklaart dit waarom stoom zo’n handige manier is om warmte rond een brouwerij te verplaatsen. Evenzo kan veel warmte worden afgevoerd door verdamping van water, een belangrijke overweging bij bijvoorbeeld moutovens. De hoge soortelijke warmte, latente verdampingswarmte (verdamping) en smeltwarmte (smelten) van water hebben belangrijke biologische gevolgen en ontstaan ​​door waterstofbinding. Waterstofbindingen hebben een dramatische invloed op de eigenschappen van alle materialen waarin ze ontstaan, inclusief eiwitten en polysachariden. Natuurlijk is ammoniak ook een sterk waterstofgebonden materiaal met ongebruikelijke eigenschappen die vooral in de koeling worden toegepast.</p>
+<div id="fig-waterstofbrug" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="xml-4.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: XML taak paneel met daarin de velden uit het XML schema.</figcaption>
+<p><img src="waterstofbrug.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;4: Waterstofbinding (- - - -) tussen watermoleculen is bijna volledig in ijs, en korte ketens komen voor in water. De energie van deze bindingen verklaart de buitengewone eigenschappen van ijs, water en stoom, waaronder bijvoorbeeld hun hoge soortelijke warmte. <span class="math inline">\(\delta ^+\)</span> en <span class="math inline">\(\delta ^-\)</span> geven de lichte positieve en negatieve ladingen aan die aanwezig zijn in water en verantwoordelijk zijn voor de uitgebreide aanwezige H-binding.</figcaption>
 </figure>
 </div>
-<p>Sleep nu een voor een de vijf elementen (Voornaam, Achternaam, Verkopen, Land, Kwartaal) uit de XML-boom naar de juiste kolom in het werkblad.</p>
-<div id="fig-xml-5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Alle velden uit het schema zijn nu aan een kolom gekoppeld.</figcaption>
-</figure>
-</div>
-<p>Je kunt controleren of de toewijzing goed uitgevoerd is, door de elementen in de XML-bron een voor een aan te klikken. De bijbehorende kolom uit de tabel moet dan geselecteerd worden.</p>
-<p>Kies <em>tab Ontwikkelaars &gt; Exporteren (groep XML)</em>. Bewaar het bestand onder de naam <em>verkopen-xml.xml</em>.</p>
+<p>Naast waterstofbruggen helpt het idee van een elektrische dipool een andere zwakke kracht te verklaren die belangrijk is bij het bij elkaar houden van grote moleculen. Dit is de <strong>dispersiekracht</strong>, beter bekend als de van der Waals-kracht of interactie. Deze kracht werkt in polaire of niet-polaire moleculen of delen van moleculen. De waterstofbinding is afhankelijk van een permanente dipool, maar de krachten van Van der Waals zijn afhankelijk van tijdelijke dipolen die ontstaan wanneer de elektronenwolk rond atomen tijdelijk geconcentreerd wordt aan één uiteinde van het molecuul. Dit induceert tijdelijke dipolen elders en in andere moleculen die overeenkomen met de eerste en dus aantrekken. Deze krachten zijn effectiever in grote moleculen dan in kleine omdat elektronen gemakkelijker polariseren in dergelijke moleculen.</p>
+<p>Een derde zwakke kracht die grote moleculen stabiliseert, is de <strong>hydrofobe kracht</strong> of interactie. Dit is echt de afwezigheid van binding. Een polaire stof lost gemakkelijk op in water omdat het, door vorming van waterstofbruggen, zichzelf gemakkelijk invoegt in het uitgebreide waterstofgebonden netwerk van het water. Een niet-polaire stof zal niet oplossen omdat het zichzelf niet in dit netwerk kan dwingen. Als het echter in het waternetwerk zou worden gedragen door een molecuul dat anders in water oplosbaar is, zal het water een kooi bouwen rond het niet-polaire deel door elektrische afstoting. Bovendien, als verschillende niet-polaire delen op dezelfde of verschillende moleculen dicht bij elkaar komen, zullen ze de neiging hebben om in dezelfde kooi te worden gedreven of samengedrukt, in plaats van dat kleine oliedruppeltjes in de wateremulsie samensmelten tot grote. Dit is de aard van de hydrofobe binding.</p>
+<p>Een vierde kracht die organische moleculen bij elkaar houdt - ionische krachten - is al beschreven. Het hangt af van de eenvoudige elektrische aantrekking van positieve en negatieve ladingen. In biologische systemen worden deze voornamelijk geassocieerd met carbonzuren en aminogroepen. Deze ladingen ontstaan door een tekort of overschot van één elektron veroorzaakt door (gedeeltelijke) dissociatie om een proton te verliezen of associatie om er een te winnen.</p>
 
 
 

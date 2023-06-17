@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Archief Ben - Exceldata naar xml exporteren</title>
+<title>Archief Ben - Bier</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../images/logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,6 +62,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Zoeken"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
 
 <script type="text/javascript">
@@ -71,6 +102,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -81,10 +114,10 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo-transparant.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Archief Ben</span>
     </a>
   </div>
@@ -95,27 +128,27 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../access.html" rel="" target="">
+    <a class="nav-link" href="./access.html" rel="" target="">
  <span class="menu-text">Access</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../excel.html" rel="" target="">
+    <a class="nav-link" href="./excel.html" rel="" target="">
  <span class="menu-text">Excel</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../bier.html" rel="" target="">
+    <a class="nav-link" href="./bier.html" rel="" target="">
  <span class="menu-text">Bier</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chemie.html" rel="" target="">
+    <a class="nav-link active" href="./chemie.html" rel="" target="" aria-current="page">
  <span class="menu-text">Chemie</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../divers.html" rel="" target="">
+    <a class="nav-link" href="./divers.html" rel="" target="">
  <span class="menu-text">Divers</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -124,11 +157,11 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorials">    
         <li>
-    <a class="dropdown-item" href="../../tutorials/grafieken/grafieken.html" rel="" target="">
+    <a class="dropdown-item" href="./tutorials/grafieken/grafieken.html" rel="" target="">
  <span class="dropdown-text">Grafieksoorten</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../tutorials/power-bi-desktop/power-bi-desktop.html" rel="" target="">
+    <a class="dropdown-item" href="./tutorials/power-bi-desktop/power-bi-desktop.html" rel="" target="">
  <span class="dropdown-text">Power BI Desktop</span></a>
   </li>  
     </ul>
@@ -146,105 +179,91 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categorieën</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Alle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="buffers">buffers <span class="quarto-category-count">(1)</span></div><div class="category" data-category="pH">pH <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exceldata naar xml exporteren</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">export</div>
-    <div class="quarto-category">xml</div>
-  </div>
-  </div>
+<h1 class="title">Bier</h1>
+<p class="subtitle lead">Artikelen over Chemie</p>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Publicatiedatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">1 maart 2020</p>
-    </div>
-  </div>
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Samenvatting</div>
-    <p>Gegevens in een Excel tabel exporteren naar een XML bestand.</p>
-  </div>
-</div>
 
 </header>
 
-<p>Het is niet moeilijk om de gegevens in een Excel tabel naar een XML bestand om te zetten.</p>
-<p>Download het bestand <a href="verkopen-data.xlsx">verkopen-data.xlsx</a> en open het vervolgens in Excel. In een Excel tabel staan de volgende gegevens:</p>
-<div id="fig-xml-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Tabel met verkoopgegevens.</figcaption>
-</figure>
-</div>
-<p>Om deze naar XML te exporteren moet er eerst een XML schema gemaakt worden dat gebaseerd is op deze gegevens. In plaats van een officieel schema of DTD te maken kun je ook een eenvoudig XML bestand maken met daarin de eerste twee records. Open een kladblok programma en plaats daarin het de volgende tekst.</p>
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;verkopen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-    &lt;record&gt;
-       &lt;Voornaam&gt;Roger&lt;/Voornaam&gt;
-       &lt;Achternaam&gt;Rood&lt;/Achternaam&gt;
-       &lt;Verkopen&gt;13873&lt;/Verkopen&gt;
-       &lt;Land&gt;Nederland&lt;/Land&gt;
-       &lt;Kwartaal&gt;KW 3&lt;/Kwartaal&gt;
-    &lt;/record&gt;
-    &lt;record&gt;
-       &lt;Voornaam&gt;Berend&lt;/Voornaam&gt;
-       &lt;Achternaam&gt;Blauw&lt;/Achternaam&gt;
-       &lt;Verkopen&gt;12262&lt;/Verkopen&gt;
-       &lt;Land&gt;Belgie&lt;/Land&gt;
-       &lt;Kwartaal&gt;KW 4&lt;/Kwartaal&gt;
-    &lt;/record&gt;
-&lt;/verkopen&gt;</code></pre>
-<p>Sla het bestand in dezelfde map als het Excel bestand op onder de naam <em>verkopen-schema.xml</em> en sluit het kladblok programma.</p>
-<p>Ga nu terug naar het geopende Excelbestand. Kies <em>tab Ontwikkelaars &gt; Bron (groep XML)</em>. Het XML taak paneel wordt nu geopend.</p>
-<div id="fig-xml-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: XML taak paneel.</figcaption>
-</figure>
-</div>
-<p>Klik op <em>XML-toewijzingen</em> om een XML bestand toe te voegen. Een dialoogvenster wordt nu geopend. Klik hierin op <em>Toevoegen</em> en selecteer daarna <em>verkopen-schema.xml</em>.</p>
-<p>Je krijgt nu een waarschuwing dat de opgegeven XML-bron niet naar een schema verwijst en dat Excel op basis van dit bestand een schema maakt. Klik op <em>OK</em>.</p>
-<div id="fig-xml-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: XML toewijzingen.</figcaption>
-</figure>
-</div>
-<p>Klik op <em>OK</em>.</p>
-<div id="fig-xml-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-4.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: XML taak paneel met daarin de velden uit het XML schema.</figcaption>
-</figure>
-</div>
-<p>Sleep nu een voor een de vijf elementen (Voornaam, Achternaam, Verkopen, Land, Kwartaal) uit de XML-boom naar de juiste kolom in het werkblad.</p>
-<div id="fig-xml-5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Alle velden uit het schema zijn nu aan een kolom gekoppeld.</figcaption>
-</figure>
-</div>
-<p>Je kunt controleren of de toewijzing goed uitgevoerd is, door de elementen in de XML-bron een voor een aan te klikken. De bijbehorende kolom uit de tabel moet dan geselecteerd worden.</p>
-<p>Kies <em>tab Ontwikkelaars &gt; Exporteren (groep XML)</em>. Bewaar het bestand onder de naam <em>verkopen-xml.xml</em>.</p>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Sorteer op" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Sorteer op</option>
+       <option value="index" data-direction="asc">Standaard</option>
+         <option value="listing-title" data-direction="asc">
+          Titel
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Datum - Oudste
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Datum - Nieuwste
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="pH,buffers" data-listing-date-sort="1667775600000" data-listing-file-modified-sort="1687001494400" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<a href="./chemie/waterevenwicht/waterevenwicht.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./chemie/waterevenwicht/preview.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+pH en Buffers
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('pH'); return false;">
+pH
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('buffers'); return false;">
+buffers
+</div>
+</div>
+<div class="card-text listing-description">
+<p>Het evenwicht in water en de invloed op pH en buffers.</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+7 nov. 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+Geen overeenkomsten
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -507,5 +526,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
