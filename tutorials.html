@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2019-11-18">
-<meta name="description" content="De Amerikaanse BJCP biertypenlijst in een Excel bestand.">
 
-<title>Archief Ben - BJCP Biertypenlijst</title>
+<title>Archief Ben - Tutorials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,23 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../images/logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,6 +62,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Zoeken"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
 
 <script type="text/javascript">
@@ -73,6 +102,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -83,10 +114,10 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo-transparant.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Archief Ben</span>
     </a>
   </div>
@@ -97,31 +128,31 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../access.html" rel="" target="">
+    <a class="nav-link" href="./access.html" rel="" target="">
  <span class="menu-text">Access</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../excel.html" rel="" target="">
+    <a class="nav-link" href="./excel.html" rel="" target="">
  <span class="menu-text">Excel</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../bier.html" rel="" target="">
+    <a class="nav-link" href="./bier.html" rel="" target="">
  <span class="menu-text">Bier</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chemie.html" rel="" target="">
+    <a class="nav-link" href="./chemie.html" rel="" target="">
  <span class="menu-text">Chemie</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../divers.html" rel="" target="">
+    <a class="nav-link" href="./divers.html" rel="" target="">
  <span class="menu-text">Divers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../tutorials.html" rel="" target="">
+    <a class="nav-link active" href="./tutorials.html" rel="" target="" aria-current="page">
  <span class="menu-text">Tutorials</span></a>
   </li>  
 </ul>
@@ -143,147 +174,70 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BJCP Biertypenlijst</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">biertype</div>
-    <div class="quarto-category">stijlen</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    De Amerikaanse BJCP biertypenlijst in een Excel bestand.
-  </div>
+<h1 class="title">Tutorials</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Publicatiedatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">18 november 2019</p>
-    </div>
-  </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Gewijzigd</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">1 mei 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<p>De laatste versie van de BJCPbiertypenlijst is van december 2021. De wijzigingen zijn doorgevoerd in het hieronder vermelde csv bestand. De speciale bieren waarvoor geen technische kenmerken beschikbaar zijn (vanaf categorie 28) zijn hierin niet opgenomen.</p>
-<hr>
-<p>De Amerikaanse BJCP (Beer Judge Certification Program) gebruikt bij haar keuringen een uitgebreide lijst met biertypen, de zogenaamde BJCP Style Guidelines. De laatste versie kun je downloaden via <a href="https://www.bjcp.org/download/2021_Guidelines_Beer.pdf">BJCP Style Guidelines</a>.</p>
-<p>Evenals voor de BKG lijst van het Bier Keurmeesters Gilde heb ik ook voor deze BJCP lijst de technische kenmerken van de biertypen in een gestructureerd csv bestand geplaatst welke je weer in verschillende applicaties, waaronder Excel, kunt inladen. De gebruikte variabelen zijn:</p>
-<table class="table">
+
+
+
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+
+<table class="quarto-listing-table table">
 <thead>
-<tr class="header">
-<th style="text-align: left;">variabele</th>
-<th style="text-align: left;">gegevenstype</th>
-<th style="text-align: left;">toelichting</th>
+<tr>
+<th>
+Titel
+</th>
+<th>
+Beschrijving
+</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">CategoryNo</td>
-<td style="text-align: left;">geheel getal</td>
-<td style="text-align: left;">Categorie nummer</td>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1568584800000" data-listing-file-modified-sort="1687168937033" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-title-sort="Braumeister" data-listing-filename-sort="braumeister.qmd">
+<td>
+<a href="./tutorials/braumeister/braumeister.html" class="title listing-title">Braumeister</a>
+</td>
+<td>
+<span class="listing-description">Een handleiding over het gebruik van de Speidel Braumeister, alsmede practische instructies hoe je hiermee een bier brouwt. </span>
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">CategoryName</td>
-<td style="text-align: left;">tekst</td>
-<td style="text-align: left;">Categorie</td>
+<tr data-index="1" data-listing-date-sort="1535839200000" data-listing-file-modified-sort="1686604897712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="Grafieken" data-listing-filename-sort="grafieken.qmd">
+<td>
+<a href="./tutorials/grafieken/grafieken.html" class="title listing-title">Grafieken</a>
+</td>
+<td>
+<span class="listing-description">Een tutorial over een aantal soorten grafieken en het gebruik ervan. </span>
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Style_id</td>
-<td style="text-align: left;">tekst</td>
-<td style="text-align: left;">BJCP stijl nummer</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">BeerStyle</td>
-<td style="text-align: left;">tekst</td>
-<td style="text-align: left;">Bier stijl</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OGmin</td>
-<td style="text-align: left;">decimaal getal</td>
-<td style="text-align: left;">Begin SG, minimum</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">OGmax</td>
-<td style="text-align: left;">decimaal getal</td>
-<td style="text-align: left;">Begin SG, maximum</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">FGmin</td>
-<td style="text-align: left;">decimaal getal</td>
-<td style="text-align: left;">Eind SG, minimum</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">FGmax</td>
-<td style="text-align: left;">decimaal getal</td>
-<td style="text-align: left;">Eind SG, maximum</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ABVmin</td>
-<td style="text-align: left;">decimaal getal</td>
-<td style="text-align: left;">Alcohol volumepercentage, minimum</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ABVmax</td>
-<td style="text-align: left;">decimaal getal</td>
-<td style="text-align: left;">Alcohol volumepercentage, maximum</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">IBUmin</td>
-<td style="text-align: left;">geheel getal</td>
-<td style="text-align: left;">Bitterheid, minimum (IBU)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">IBUmax</td>
-<td style="text-align: left;">geheel getal</td>
-<td style="text-align: left;">Bitterheid, maximum (IBU)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">SRMmin</td>
-<td style="text-align: left;">geheel getal</td>
-<td style="text-align: left;">Kleur, minimum (SRM)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">SRMmax</td>
-<td style="text-align: left;">geheel getal</td>
-<td style="text-align: left;">Kleur, maximum (SRM)</td>
+<tr data-index="2" data-listing-date-sort="1563055200000" data-listing-file-modified-sort="1686604897718" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-title-sort="Power BI Desktop" data-listing-filename-sort="power-bi-desktop.qmd">
+<td>
+<a href="./tutorials/power-bi-desktop/power-bi-desktop.html" class="title listing-title">Power BI Desktop</a>
+</td>
+<td>
+<span class="listing-description">Een tutorial over het werken met Power BI Desktop. Het ophalen van gegevens, het maken van visualisaties en een eindrapportage. </span>
+</td>
 </tr>
 </tbody>
+
 </table>
-<p>Toelichting</p>
-<ul>
-<li>Voor het aangeven van de bitterheid wordt in Amerika de <strong>IBU</strong> (International Bitter Unit) gebruikt en in Europa de <strong>EBU</strong> (European Bitter Unit). Ze zijn in feite hetzelfde, maar verschillen in de analysemethode waardoor er toch kleine verschillen kunnen zijn.</li>
-<li>Voor het aangeven van de kleur van het bier wordt in Amerika de <strong>SRM</strong> (Standard Reference Method) gebruikt en in Europa de <strong>EBC</strong> (European Brewery Convention). De EBC waarde is ietsjes minder dan het dubbele van de SRM waarde. Voor de omrekening kun je de volgende formule gebruiken: EBC = 1,97 * SRM.</li>
-</ul>
-<p>Het gegevensbestand <a href="bjcp_biertypen.csv">bjcp_biertypen.csv</a> kun je downloaden en in Excel inlezen. Maar fraaier en beter is het om deze via Power Query als een tabel in een Excel werkblad te laden. Het voordeel hiervan is dat wanneer het gegevensbestand gewijzigd of uitgebreid wordt, je de tabel in Excel met 1 druk op een knop kunt vernieuwen.</p>
-<p>Voor Excel 2016 (365) werkt dit als volgt.</p>
-<ol type="1">
-<li>Open een (nieuw) Excel bestand.</li>
-<li>Kies <strong>tab Gegevens &gt; Van het web (groep Gegevens ophalen en transformeren)</strong></li>
-<li>Vul de URL van het bestand in.</li>
-<li>Klik op <strong>OK</strong>.</li>
-<li>Klik op <strong>Laden</strong>.</li>
-</ol>
-<p>De gegevens worden nu als een tabel in een nieuw Excel werkblad geplaatst. Hierna kun je de gegevens gebruiken voor analyses of voor een eigen brouwprogramma in Excel.</p>
-<p>Om de gegevens te vernieuwen kies je: <strong>tab Gegevens &gt; Alles vernieuwen (groep Query’s en verbindingen)</strong>.</p>
-
-
-
-</main> <!-- /main -->
+<div class="listing-no-matching d-none">
+Geen overeenkomsten
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -546,5 +500,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

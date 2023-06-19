@@ -60,5 +60,13 @@
       "/excel/power-query-opties/power-query-opties.html",
       "/excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html"
     ]
+  },
+  {
+    "listing": "/tutorials.html",
+    "items": [
+      "/tutorials/braumeister/braumeister.html",
+      "/tutorials/grafieken/grafieken.html",
+      "/tutorials/power-bi-desktop/power-bi-desktop.html"
+    ]
   }
 ]
