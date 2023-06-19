@@ -1,0 +1,11 @@
+---
+title: "Tutorials"
+listing:
+  contents: tutorials
+  sort: "title"
+  type: table
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [title, description]
+---

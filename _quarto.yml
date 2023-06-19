@@ -24,11 +24,8 @@ website:
       - text: Divers
         href: divers.qmd
       - text: Tutorials
-        menu:
-          - text: Grafieksoorten
-            url: tutorials/grafieken/grafieken.qmd
-          - text: Power BI Desktop
-            url: tutorials/power-bi-desktop/power-bi-desktop.qmd
+        href: tutorials.qmd
+
   page-footer:
     left: |
       Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.
