@@ -1,5 +1,33 @@
 [
   {
+    "listing": "/tutorials.html",
+    "items": [
+      "/tutorials/braumeister/braumeister.html",
+      "/tutorials/grafieken/grafieken.html",
+      "/tutorials/power-bi-desktop/power-bi-desktop.html"
+    ]
+  },
+  {
+    "listing": "/divers.html",
+    "items": [
+      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
+      "/divers/workflow-studieboeken/workflow-studieboeken.html",
+      "/divers/latex-werkomgeving/latex-werkomgeving.html",
+      "/divers/online-studieboeken/online-studieboeken.html",
+      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
+      "/divers/eboek/eboek.html",
+      "/divers/epub/epub.html",
+      "/divers/eboek-lezen/eboek-lezen.html",
+      "/divers/studieboek-formaat/studieboek-formaat.html"
+    ]
+  },
+  {
+    "listing": "/chemie.html",
+    "items": [
+      "/chemie/waterevenwicht/waterevenwicht.html"
+    ]
+  },
+  {
     "listing": "/access.html",
     "items": [
       "/access/unieke-records-access/unieke-records-access.html"
@@ -15,27 +43,9 @@
       "/bier/sg-brix-plato/sg-brix-plato.html",
       "/bier/bkg-biertypenlijst/bkg-biertypenlijst.html",
       "/bier/hops-ibu/hops-ibu.html",
+      "/bier/beer-color/beer-color.html",
+      "/bier/specific-gravity/specific-gravity.html",
       "/bier/calculating-hop-bitterness/hop-bitterness.html"
-    ]
-  },
-  {
-    "listing": "/chemie.html",
-    "items": [
-      "/chemie/waterevenwicht/waterevenwicht.html"
-    ]
-  },
-  {
-    "listing": "/divers.html",
-    "items": [
-      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
-      "/divers/workflow-studieboeken/workflow-studieboeken.html",
-      "/divers/latex-werkomgeving/latex-werkomgeving.html",
-      "/divers/online-studieboeken/online-studieboeken.html",
-      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
-      "/divers/eboek/eboek.html",
-      "/divers/epub/epub.html",
-      "/divers/eboek-lezen/eboek-lezen.html",
-      "/divers/studieboek-formaat/studieboek-formaat.html"
     ]
   },
   {
@@ -59,14 +69,6 @@
       "/excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html",
       "/excel/power-query-opties/power-query-opties.html",
       "/excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html"
-    ]
-  },
-  {
-    "listing": "/tutorials.html",
-    "items": [
-      "/tutorials/braumeister/braumeister.html",
-      "/tutorials/grafieken/grafieken.html",
-      "/tutorials/power-bi-desktop/power-bi-desktop.html"
     ]
   }
 ]

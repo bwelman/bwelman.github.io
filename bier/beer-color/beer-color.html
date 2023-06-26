@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.427">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Daniel Morey">
+<meta name="dcterms.date" content="2015-06-01">
 
-<title>Archief Ben - Unieke waarden/records in Access Queries</title>
+<title>Archief Ben - Approximating SRM Beer Color of Homebrew Based on Recipe Formulation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -48,16 +69,16 @@ ul.task-list li input[type="checkbox"] {
   "type": "overlay",
   "limit": 20,
   "language": {
-    "search-no-results-text": "Geen resultaten",
-    "search-matching-documents-text": "Gevonden documenten",
-    "search-copy-link-title": "Kopieer link om te zoeken",
-    "search-hide-matches-text": "Extra overeenkomsten verbergen",
-    "search-more-match-text": "meer overeenkomst in dit document",
-    "search-more-matches-text": "meer overeenkomsten in dit document",
-    "search-clear-button-title": "Wissen",
-    "search-detached-cancel-button-title": "Annuleren",
-    "search-submit-button-title": "Verzenden",
-    "search-label": "Zoeken"
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
@@ -71,6 +92,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -88,8 +111,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     <span class="navbar-title">Archief Ben</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Zoeken"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Schakel tussen navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -135,13 +158,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Op deze pagina</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#inleiding" id="toc-inleiding" class="nav-link active" data-scroll-target="#inleiding">Inleiding</a></li>
-  <li><a href="#qry-klanten-standaard" id="toc-qry-klanten-standaard" class="nav-link" data-scroll-target="#qry-klanten-standaard">qry Klanten standaard</a></li>
-  <li><a href="#qry-klanten-unieke-waarden" id="toc-qry-klanten-unieke-waarden" class="nav-link" data-scroll-target="#qry-klanten-unieke-waarden">qry Klanten unieke waarden</a></li>
-  <li><a href="#qry-klanten-unieke-records" id="toc-qry-klanten-unieke-records" class="nav-link" data-scroll-target="#qry-klanten-unieke-records">qry Klanten unieke records</a></li>
+  <li><a href="#linear-models" id="toc-linear-models" class="nav-link active" data-scroll-target="#linear-models">LINEAR MODELS</a></li>
+  <li><a href="#power-model" id="toc-power-model" class="nav-link" data-scroll-target="#power-model">POWER MODEL</a></li>
+  <li><a href="#malt-extracts" id="toc-malt-extracts" class="nav-link" data-scroll-target="#malt-extracts">MALT EXTRACTS</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">CONCLUSION</a></li>
   </ul>
 </nav>
     </div>
@@ -150,9 +173,10 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unieke waarden/records in Access Queries</h1>
+<h1 class="title">Approximating SRM Beer Color of Homebrew Based on Recipe Formulation</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">queries</div>
+    <div class="quarto-category">kleur</div>
+    <div class="quarto-category">rekenen</div>
   </div>
   </div>
 
@@ -160,153 +184,147 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Daniel Morey </p>
+          </div>
+  </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2 februari 2021</p>
+      <p class="date">June 1, 2015</p>
     </div>
   </div>
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="abstract-title">Samenvatting</div>
-    <p>Uitleg over het verschil tussen deze twee query opties in MS Access.</p>
-  </div>
-</div>
 
 </header>
 
-<section id="inleiding" class="level1">
-<h1>Inleiding</h1>
-<p>In het eigenschappen venster van een query zijn twee opties, <em>Unieke Waarden</em> en <em>Unieke Records</em>. Standaard staat de waarde voor beiden op <em>Nee</em>. Deze leveren soms dezelfde waarden op, maar er zijn significante verschillen wanneer je een van beide op <em>Ja</em> zet. Verder kun je niet beide waarden op <em>Ja</em> zetten.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Opmerking
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Deze eigenschappen corresponderen met respectievelijk de SQL opdrachten</p>
-<p><em>DISTINCT</em> en <em>DISTINCTROW</em>.</p>
-</div>
-</div>
-<ul>
-<li><p><strong>Standaard</strong>, wanneer beide eigenschappen dus <em>Nee</em> zijn, worden alle records getoond die aan de queryvoorwaarden voldoen.</p></li>
-<li><p><strong>Unieke Waarden</strong> (DISTINCT in SQL) controleert alleen de uitvoervelden van de query en verwijdert daarna de dubbele rijen. Bij meerdere uitvoervelden moet de combinatie van alle uitvoervelden uniek zijn.</p></li>
-<li><p><strong>Unieke Records</strong> (DISTINCTROW in SQL) daarentegen controleert alle velden in de tabel die wordt opgevraagd en verwijdert duplicaten. De getoonde records moeten uniek zijn op basis van alle velden in de onderliggende tabellen en niet alleen de velden in de query.</p></li>
-</ul>
-<p>Verdere uitleg via een voorbeeld met een eenvoudige database <code>Voorbeeld_Uniek.accdb</code>. Deze bevat twee tabellen:</p>
-<div id="fig-tabellen" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-klanten" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="tabel-klanten.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen"></p>
-<figcaption class="figure-caption">(a) Tabel Klanten</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-orders" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="tabel-orders.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen"></p>
-<figcaption class="figure-caption">(b) Tabel Orders</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Tabellen in de database</figcaption><p></p>
-</figure>
-</div>
-<p>Tussen de tabellen is een een-op-veel relatie van Klanten.Klantnr &gt; Orders.Klantnr.</p>
-<p>Zoals je ziet zijn er twee verschillende klanten met dezelfde naam voor Bedrijf. In de query’s hierna wordt steeds deze naam getoond voor de drie verschillende mogelijkheden.</p>
+<p>One of the most challenging aspects of “brewing to style” for home brewers is trying to achieve a color within the specified range for the particular class. Home brewers have usually been left to rely on experience or trial and error to design recipes that will fit the style.</p>
+<p>Color ranges for the recognized beer styles defined by the AHA and BJCP are given in terms of SRM (Standard Reference Method). Measurement of actual SRM is not practical for the amateur brewer. Thus, Malt Color Units (MCU) have been used to quantify color often. MCU is the Lovibond rating of the ingredient multiplied by its weight in pounds divided by the beer’s volume in US gallons. The dilemma is that apparent color in terms of SRM diverges from MCU.</p>
+<p><span class="math display">\[MCU = \frac{^o L(ovibond)}{gallons}\]</span></p>
+<p>Many factors impact beer color; therefore, making an exact prediction is impossible. Some factors that effect beer color are: Recipe (grains/malts), quality of crush, mash procedure (temperature(s)), mash time, mash pH, boil time, yeast, and many more. Of all the factors, the malt/grain bill has the greatest impact on color thus we can ignore the other contributors and still make a good approximation. Several individuals have studied beer color and developed models to help predict it.</p>
+<section id="linear-models" class="level2">
+<h2 class="anchored" data-anchor-id="linear-models">LINEAR MODELS</h2>
+<p>The most common method states that SRM is equivalent to MCU. This is probably the oldest approximation. The weakness of this model as documented by several authors is that color in SRM diverges from MCU for values greater than 10.</p>
+<p><span class="math display">\[SRM = MCU\]</span></p>
+<p>Randy Mosher developed a model based on commercial beers whose recipes and color were known. His model is expressed as:</p>
+<p><span class="math display">\[SRM = (0.3*MCU) + 4.7\]</span></p>
+<p>Using this approximation, minimum beer color is 4.7. This is not realistic and the model should only be used for beer with MCU greater than 7.</p>
+<p>Ray Daniels did some similar work based on homebrewed beers. Color of samples left over from home brew competitions were measured using SRM and the MCUs were calculated from the recipes submitted by the entrants. Daniels’ model differs from Mosher’s and suggests that homebrew is generally darker than commercial beers. His approximation is:</p>
+<p><span class="math display">\[SRM = (0.2*MCU) + 8.4\]</span></p>
+<p>Like Mosher’s model, the formula has a minimum color that is not reasonable. Consequently the formula should only be used for beers with MCU greater than 11.</p>
 </section>
-<section id="qry-klanten-standaard" class="level1">
-<h1>qry Klanten standaard</h1>
-<p><strong>Ontwerp</strong></p>
-<p>Onder deze naam is een query gemaakt waar beide tabellen aan zijn toegevoegd. Het ontwerpvenster ziet er als volgt uit:</p>
-<div id="fig-qry-standaard-ontwerp" class="quarto-figure quarto-figure-center anchored">
+<section id="power-model" class="level2">
+<h2 class="anchored" data-anchor-id="power-model">POWER MODEL</h2>
+<p>Inspired by Ray Daniels’ three part series printed Brewing Techniques in the SEP/OCT and NOV/DEC 1995 issues, I set out to develop a single model that could apply for the complete brewing spectrum and account for the non-linear behavior observed by so many.</p>
+<p>Since I did not have raw data to work with, I based my work on five assumptions:</p>
+<ol type="1">
+<li><p>SRM is approximately equal to MCU for values from 0 to 10.</p></li>
+<li><p>Homebrew is generally darker than commercial beer.</p></li>
+<li><p>Base on the previous qualitative postulate, I assumed that Ray Daniels’ predicted relationship exists for beers with color greater than 10.</p></li>
+<li><p>Since Mosher’s equation predicts darker color than Daniels’ model for values of MCU greater than 37, I assumed that Mosher’s approximation governed beer color for all values more than 37 MCUs.</p></li>
+<li><p>Difference in color for beers greater than 40 SRM are essentially impossible to detect visually; therefore, I limited the analysis to SRM of 50 and less.</p></li>
+</ol>
+<p>Using these assumptions, data was created for my analysis. I tried various curve fitting techniques to find the best approximation to the assumed relationship. In the end, the power model was found best to represent the assumed curve. The resulting model was:</p>
+<p><span class="math display">\[SRM = 1.49*MCU^{0.69}\]</span></p>
+<p>This model eliminates the two major limitations of linear models in my opinion. The minimum color is zero, so the model can be used for lighter color beers. The model accounts for decreased color contribution from malt as the beer gets darker or the “law of diminishing returns.”</p>
+<p>A graphical representation of my model along with Daniels’ and Mosher’s linear approximations can be found in <a href="#fig-mcu-srm">figure&nbsp;1</a>. Also plotted is tabular data that can be found in Ray Daniels’ <em>Designing Great Beers</em> <span class="citation" data-cites="danielsDesigningGreatBeers1998">(<a href="#ref-danielsDesigningGreatBeers1998" role="doc-biblioref">Daniels 1998</a>, pg 61)</span>, and Greg Noonan’s <em>New Brewing Lager Beer</em> <span class="citation" data-cites="noonanNewBrewingLager2003">(<a href="#ref-noonanNewBrewingLager2003" role="doc-biblioref">Noonan 2003</a>, pg 206)</span>.</p>
+<div id="fig-mcu-srm" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="qry-standaard-ontwerp.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Standaard ontwerp query Klanten</figcaption>
+<p><img src="mcu-srm.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Color Estimates Based on Recipe MCU.</figcaption>
 </figure>
 </div>
-<div id="fig-qry-standaard-eigenschappen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-standaard-eigenschappen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Standaard eigenschappen query Klanten</figcaption>
-</figure>
-</div>
-<p>Wanneer je met SQL werkt, dan is de opdracht:</p>
-<pre><code>SELECT Klanten.Bedrijf
-FROM Klanten
-INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
-<p><strong>RESULTAAT</strong></p>
-<div id="fig-qry-standaard-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-standaard-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: Vier rijen, voor elke klantorder is er een rij, alle records worden getoond.</figcaption>
-</figure>
+<p>Some interesting observations from the Home Brew Digest (HBD) based on work by Kyle Druey. Kyle fitted power curves to Daniels’ and Noonan’s data. These power curves along with my model all predict beer color of 40 SRM around 126 MCUs (Morey at 117 MCUs; Daniels at 136 MCUs; Noonan at 126 MCUs).</p>
+<p>The Druey power models fitted to Daniels’ and Noonan’s data are:</p>
+<p><span class="math display">\[
+SRM = 1.73*MCU^{0.64} - 0.27 \text{ (Daniels)}
+\]</span></p>
+<p><span class="math display">\[
+SRM = 15.03*MCU^{0.27} -15.53 \text{ (Noonan)}
+\]</span></p>
+</section>
+<section id="malt-extracts" class="level2">
+<h2 class="anchored" data-anchor-id="malt-extracts">MALT EXTRACTS</h2>
+<p>Predicting color for extract recipes provides an additional challenge. Where do you find Lovibond ratings for extracts? While this information is not always available, you may use the following as approximations in the <a href="#tbl-extractcolor">table&nbsp;1</a> below. The data was originally printed in Ray Daniels’ article in the NOV/DEC 1995 issue of Brewing Techniques:</p>
+<div id="tbl-extractcolor" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1: Extract color</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Color</th>
+<th style="text-align: center;">°L</th>
+<th style="text-align: left;">Extract Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Pale Golden</td>
+<td style="text-align: center;">3 - 4</td>
+<td style="text-align: left;">Munton &amp; Fison spray-dry malt extract (light)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Golden</td>
+<td style="text-align: center;">5 - 6</td>
+<td style="text-align: left;">Alexander pale extract syrup</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Light Amber</td>
+<td style="text-align: center;">6 - 7</td>
+<td style="text-align: left;">Munton &amp; Fison extract syrup (pale)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Light Amber</td>
+<td style="text-align: center;">6 - 7</td>
+<td style="text-align: left;">Laaglander dried malt extract</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Amber</td>
+<td style="text-align: center;">8 - 9</td>
+<td style="text-align: left;">John Bull unhopped light syrup</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Amber</td>
+<td style="text-align: center;">8 - 9</td>
+<td style="text-align: left;">Coopers unhopped light syrup</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Amber</td>
+<td style="text-align: center;">8 - 9</td>
+<td style="text-align: left;">Northwestern gold malt extract syrup</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Amber</td>
+<td style="text-align: center;">8 - 9</td>
+<td style="text-align: left;">Northwestern gold dry malt extract</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<section id="qry-klanten-unieke-waarden" class="level1">
-<h1>qry Klanten unieke waarden</h1>
-<p><strong>Ontwerp</strong></p>
-<p>In het Eigenschappenvenster wordt <code>Unieke waarden = Ja</code>.</p>
-<div id="fig-qry-uniekewaarden-ontwerp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekewaarden-ontwerp.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Ontwerp qry Klanten unieke waarden.</figcaption>
-</figure>
-</div>
-<p>Wanneer je met SQL werkt, dan is de opdracht:</p>
-<pre><code>SELECT DISTINCT Klanten.Bedrijf
-FROM Klanten
-INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
-<p><strong>Resultaat</strong></p>
-<div id="fig-qry-uniekewaarden-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekewaarden-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;6: Twee unieke rijen, de resultaten worden beperkt tot unieke waarden in het uitvoerveld.</figcaption>
-</figure>
-</div>
-</section>
-<section id="qry-klanten-unieke-records" class="level1">
-<h1>qry Klanten unieke records</h1>
-<p><strong>Ontwerp</strong></p>
-<p>In het Eigenschappenvenster wordt <code>Unieke records = Ja</code>.</p>
-<div id="fig-qry-uniekerecords-ontwerp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekerecords-ontwerp.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;7: Ontwerp qry Klanten unieke records.</figcaption>
-</figure>
-</div>
-<p>Wanneer je met SQL werkt, dan is de opdracht:</p>
-<pre><code>SELECT DISTINCTROW Klanten.Bedrijf
-FROM Klanten
-INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
-<p><strong>Resultaat</strong></p>
-<div id="fig-qry-uniekerecords-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekerecords-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;8: Drie rijen, want de resultaten in alle onderliggende tabellen moeten uniek zijn, dus niet de uitvoervelden.</figcaption>
-</figure>
-</div>
-<p>Je ziet hier twee keer “Jansen BV”. Weliswaar is dat niet uniek in het uitvoerveld, maar ze zijn uniek omdat de ene in Amsterdam zit en de andere in Londen.</p>
-<p>Wanneer je zelf met deze datase wilt werken dan kun je deze hier downloaden: <a href="Voorbeeld_Uniek.accdb">Database Voorbeeld_Uniek</a></p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">CONCLUSION</h2>
+<p>I have been using my power model since 1996 good results. I now find that my beers are within the range I would expect for the style I’m brewing. Sure, sometimes they are slightly darker or lighter than I envisioned but the days of gross color errors are gone.</p>
+<p>As previously stated, exact color predictions are not possible. Due to the many factors ignored by these simplified models, we should treat all color predictions as approximations. Actual color deviations of 20% or more from the prediction can be expected.</p>
+<p>What method is best for you? That is for you to decide. I suggest you try the models and find the one that gives results you expect for the style you are brewing. With these simple tools, you can tailor your recipes to achieve color within the desired range.</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-danielsDesigningGreatBeers1998" class="csl-entry" role="listitem">
+Daniels, Ray. 1998. <em>Designing <span>Great Beers</span>: <span>The Ultimate Guide</span> to <span>Brewing Classic Beer Styles</span></em>. <span>Boulder, CO</span>: <span>Brewers Publications</span>.
+</div>
+<div id="ref-noonanNewBrewingLager2003" class="csl-entry" role="listitem">
+Noonan, Gregory J. 2003. <em>New <span>Brewing Lager Beer</span>: <span>The Most Comprehensive Book</span> for <span>Home</span> and <span>Microbrewers</span></em>. Revised, Expanded edition. <span>Boulder, Colo.</span>: <span>Brewers Publications</span>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -361,12 +379,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Gekopieerd!");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Gekopieerd!");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
