@@ -1,0 +1,672 @@
+---
+title: "Water Knowledge"
+author: "Martin Brungard"
+abstract: |
+ This document provides basic knowledge that is useful for understanding brewing water chemistry.
+date: "2020-04-16"
+categories: [water]
+lang: en
+image: rachart.jpg
+---
+
+This document provides basic knowledge that is useful for understanding brewing water chemistry. Water is the most basic building block in brewing. Beer can contain up to 97 percent water, so it is by far the largest component in beer. A variety of ions and chemicals can be dissolved in water. Although water is seemingly simple, its ionic components can drastically affect a finished beer's quality and perception. Those effects may range from dramatic to barely perceptible. The following sections discuss how aspects of water affect the brewing process and the quality and perception of beer.
+
+::: column-margin
+[Source: Bru'n Water](https://www.brunwater.com/water-knowledge)
+:::
+
+# Water Sources
+
+The source of water has a direct affect on its suitability for brewing. Some brewers rely on municipal water supplies for their water while other brewers may have private wells, springs, rain barrels, or other local sources for their brewing water. The water source can also have substantial effect on its quality and variability.
+
+Municipal sources in the United States typically treat and verify that their water is safe to drink. Similar requirements often apply worldwide. Municipal water companies typically rely on surface water sources (rivers, lakes, and reservoirs) and/or groundwater sources (springs and wells) for their water source. A variety of processes can affect the quantity and quality of water from these sources through the year. For instance, large volumes of snow melt or rainfall can provide softer water to a surface water source while that surface water can become more mineralized from groundwater inflow at other times of the year. Additionally, the municipal water source might vary between a variety of surface and groundwater sources as they are consumed through any dry weather periods.
+
+Most municipalities are required to disinfect their drinking water and provide a disinfection residual in their distribution system (piping). Halogenated (typically chlorinated) compounds are frequently used to provide disinfection and a residual of disinfectant in the water lines. If the raw water is unfit for drinking due to hardness or other excessive mineralization, the municipality may treat the water to reduce hardness or mineralization prior to delivering it through their distribution piping.
+
+Differing ionic content of brewing water can affect mashing performance and flavor perceptions in the finished beer. Ions in water come primarily from the soil and rock minerals that the water contacts as it flows through the environment. In areas where the soil and rock are less soluble, the degree of mineralization of the water may be lower. However, when the soil and rock are more soluble, significant concentrations of ions may dissolve into the water. The effect of these dissolved ions on brewing is presented in the following sections.
+
+Wells draw groundwater from underground aquifers. Where these aquifers are isolated from lakes, rivers, marshes, and salt water, their groundwater quality tends to be more consistent (constant) throughout the year. Wells that are not isolated from lakes and rivers may be subject to the same water quality variability of the lake or river. Like surface water sources, the mineralization of groundwater is affected by the type of soil or rock that the groundwater flows through. Groundwater flowing through limestone and gypsum formations typically has more hardness ions than groundwater flowing through granite or sandstone.
+
+Springs provide another source of groundwater. As with the sources listed above, understanding the quality of spring water is still important. The taste and ion content of the water must be suitable for brewing and the water should be free of chemical and microbe contamination. Landfills, waste dumps, and wastewater facilities are examples of facilities that might impact a spring source. A spring water source is not a guarantee that the water is safe to drink or suitable for brewing.
+
+Rivers, lakes, and reservoirs may have additional variability in their water quality due to natural algae and microbes that may create strong taste and odor in water during warmer weather. These taste and odor components can make it past some municipal water treatment methods and leave the water with undesirable taste and aroma that may persist into the finished beer.
+
+When presented with a water source with poor brewing qualities, additional water treatment by the brewer may help correct the water's faults for brewing usage. Water treatment alternatives such as water distillation, reverse osmosis, carbon filtration, lime softening, water boiling, mineral addition, or acid addition may improve the brewing quality of a water source. Understanding the source of water and its limitations and variability can help maintain the quality and consistency of a brewer's product.
+
+# Minerals and Brewing Chemistry
+
+Minerals dissolved in brewing water produce important effects on the overall chemistry of the brewing process. The ions from these minerals alter the water's **pH, Hardness, Alkalinity, Residual Alkalinity,** and **Mineral Content**. These interrelated components are the most important factors in defining the suitability of water for brewing. Adjustments to any one factor can have an effect on the others. Discussion of each factor is presented below.
+
+## pH
+
+**pH** is a measure of the acidity or basicity of an aqueous solution and is related to the concentration of hydrogen (H^+^) ions in a solution. A very small percentage of water molecules (H~2~O) naturally split into hydrogen (H^+^) protons and hydroxyl (OH^-^) ions. A neutral pH of 7.0 indicates a balanced population of those ions in pure water (at 25°C). Acidic solutions have a pH of between 0 and 7 while Basic solutions have a pH between 7 and 14. The pH of typical municipal water supplies generally lies between 6.5 and 8.5, but may exceed those bounds since pH is not regulated by the Safe Drinking Water Act that governs drinking water quality in the U.S. The graphic below (@fig-ph-scale) illustrates typical water supply and mashing pH ranges.
+
+![pH scale](ph-scale.jpg){#fig-ph-scale}
+
+The pH of the raw water used in brewing has only modest impact on the brewing process. The primary interest to brewing is the pH of the wort during mashing. Factors such as water alkalinity and mash grist composition have greater effect on mashing pH than the starting pH of the raw water.
+
+The pH of the mash influences a number of factors in brewing including; fermentability, color, clarity, and taste of the wort and beer. A slightly acidic mash pH of between 5.2 and 5.8 (measured at room-temperature) improves the enzymatic processes during mashing. The lower end of that range produces more fermentable wort and thinner body. The lower end of that range also produces better extraction efficiency, lighter color, better hot break formation, and the beer is less prone to form haze. Allowing the mash pH to fall below this lower boundary increases the potential to solubilize excess protein into the wort (De Clerck, 1957). The upper end of that range produces less fermentable wort and more body (Briggs et. al., 1981). Tailoring the mash pH helps a brewer create the wort character desired for the finished beer. In most cases, narrowing the target mash pH range to between 5.3 and 5.5 is recommended.
+
+Minor increases in wort or beer pH can create problems in the finished beer. Increased wort and beer pH makes the beer's bittering perception more 'coarse' and less pleasing. The isomerization of alpha acids during the boil increases slightly as wort pH increases, which may add to the coarseness. Another problem is that increased pH in wort and the finished beer slows the reduction and removal of diacetyl from beer during maturation. During mashing, a pH greater than 6.0 can leach harsh-tasting silicates, tannins, and polyphenols from the grain into the wort (Briggs et. al., 1981). Reducing sparging water pH to between 5.5 and 6.0 can help avoid a rise in mashing pH during sparging.
+
+Mash pH measurements vary with the temperature of the mash. There are two components to this pH measurement variation. The first component is a chemical change caused by the change in the energy in the water that makes it easier to split hydrogen protons from acidic molecules in the mash. A hotter mash is therefore a bit more acidic. The second component is due to the change in electrical response of the pH meter probe electrodes with temperature. These two factors produce a mash pH measurement (when using a pH meter) that measures about 0.2 to 0.3 units lower at 150°F than at room temperature. Therefore, it is important to standardize the temperature at which mash pH is measured. All pH readings presented on this page assume measurement at room-temperature \[between 20°C and 25°C (68°F to 77°F)\].
+
+Brewers should note that Automatic Temperature Compensating (ATC) pH meters only compensate for the response of the pH meter's electrode at varying temperature. That feature **does not compensate for the actual pH shift produced chemically in the mash** as mentioned above. **All mash pH measurement should be performed at room-temperature**. Another consideration is that most pH probes use a thin glass bulb that will be subjected to more thermal stress when inserted into a hot mash and the probe is more likely to fail prematurely. Therefore, ATC-equipped pH meters are not necessary for brewing use since it is important to cool the sample to room temperature to avoid the chemical mash pH variation and damage to the pH probe.
+
+**SPECIAL NOTE**: pH meters require calibration between uses or at regular intervals to verify their measurement accuracy. Meter calibration using pH 4 and pH 7 reference solutions is recommended. Those solutions have limited shelf life and should be replaced within a year after opening. Refrigerating the reference solutions may improve their shelf life, but the solutions should be warmed to their reference temperature (typically 20°C to 25°C) prior to calibration use. The glass electrode used in many pH probes is often filled with a potassium chloride solution. The pH probe should be stored in a similar potassium solution (storage solution) to improve the probe's lifespan. Do not allow the probe bulb to 'dry out' since this can shorten its lifespan. Some probe's include a air-tight cap that is fitted over the probe end to help keep the bulb moist. A drop or two of water in the cap can help avoid dry out. A pH meter with a resolution of 0.05 standard units or better is helpful in assessing when a pH reading has stabilized and that reading can be recorded. Avoid meters that can only report to 0.1 units.
+
+**SPECIAL NOTE**: Plastic pH strips (ColorpHast-trade name) typically used by brewers are reported to miss-report mash pH by about 0.2 to 0.3 units lower than actual. Brewers should use caution when using pH strips to measure mash pH. Without another means of pH verification, brewers are advised to accept a pH strip reading that is about 0.2 units below their targeted mash pH to avoid overshooting the pH. A pH strip reading of about 5.0 to 5.2 should indicate an appropriate room-temperature mash pH of around 5.3 to 5.5. pH measurement by a calibrated pH meter is recommended. Since pH strips function based on their interaction with the ionic content of the solution, the relatively low ionic strength of typical brewing water does not produce a rapid response by pH strips. Leaving the strip submerged for at least a minute in the cooled wort is recommended by the manufacturer of the ColorpHast strips. **Common paper pH strips are not recommended for brewery use since they are reported to have less reliability and accuracy than plastic pH strips**.
+
+**SPECIAL NOTE**: Five Star 5.2 Stabilizer is indicated by its manufacturer to "lock in your mash and kettle water at a pH of 5.2 regardless of the starting pH of your water". Evidence by homebrewers indicates that this product does not produce a mash pH in the preferred room-temperature range of 5.3 to 5.5. That evidence shows this product does produce some pH moderation in waters with high Residual Alkalinity. However, the mash pH tends to center around 5.8 (room-temperature measurement). While 5.8 pH is acceptable, it is at the upper end of the desirable mashing range. The evidence also shows that in waters with low Residual Alkalinity, this product shows little effect on mash pH. Since Five Star 5.2 Stabilizer is a compound with high sodium content, its use will elevate the sodium concentration in the brewing water. High sodium content can be undesirable from a taste standpoint in beer. Proper alkalinity control of mashing and sparging water may produce more acceptable brewing results for most brewers than with the use of 5.2 Stabilizer. To add emphasis to difficulty in using this product, the following conversation posted on Homebrew Talk between noted brewing water expert, AJ DeLange and the chemist from Five Star Chemical regarding their 5.2 Stabilizer product. *"Tipped a few last night with the chemist who designed this product and was able to confirm that it is indeed a mix of phosphates (mono and di basic) that accounts for the presence of the malt phosphate. This is something I have long suspected and am pleased to have finally confirmed. Good manners prevented me from pressing him on it's efficacy and suitability relative to the statement on the label. But his comments on it were basically that most brewers shouldn't use it/need it and that it was put together for a particular brewery that had variable source water and no desire to make any effort to track that variability."*
+
+## Hardness
+
+**Hardness** in drinking water is primarily due to its calcium and magnesium content. High concentration of calcium or magnesium ions produces hard water and low concentration of those ions provides soft water.
+
+A common misperception among brewers is that hardness in brewing water is not desirable. That is not true. A more valid way to consider brewing water suitability is summarized below.
+
+**Hardness is Good**
+
+**Alkalinity is Bad**
+
+The hardness or softness of water does not indicate its suitability for brewing. As illustrated in the sections below, both very soft water and very hard water can be utilized for brewing as long as the appropriate alkalinity is provided for mashing. Since there is often a minimum calcium content desired in brewing water, **moderately hard to hard water may be desirable for brewing**. In some cases, soft water may be desirable for brewing some beer styles. Although the statement above indicates alkalinity is bad, an **appropriate level of alkalinity** is desirable in brewing water. The problem is that water supplies often have higher alkalinity than desirable for brewing. High alkalinity may lead to higher than desired mashing pH.
+
+Water hardness varies regionally and by source. The map below (@fig-hardness-map) illustrates how hardness varies in surface waters across the United States (Briggs, 1977). Much of the Western and Midwestern U.S. often has high hardness while coastal or mountainous regions may have lower hardness. Groundwater hardness may or may not mimic the surface water hardness shown below, but drinking water aquifers tend to cover regional areas and can have more consistent water quality.
+
+![Hardness in surface waters across the United States](hardness_map.jpg){#fig-hardness-map}
+
+Water Hardness can be either **Temporary** or **Permanent**. These forms of hardness are discussed below.
+
+**Temporary Hardness** results when calcium or magnesium are paired with carbonate and bicarbonate in the water. Temporary Hardness can be reduced by boiling treatment and by treatment through lime softening.
+
+**Permanent Hardness** results when calcium or magnesium are paired with anions such as chloride and sulfate that cannot be driven off by boiling the water. Enhanced softening processes are required to reduce permanent hardness in water. Distillation, deionization, and reverse osmosis (RO) processes are examples of enhanced softening processes.
+
+**Total Hardness** is the sum of Temporary Hardness and Permanent Hardness in the water.
+
+Hardness is often reported in terms such as "as CaCO~3~". The "as CaCO~3~" term is also used to report water alkalinity and it is important to differentiate those water characteristics even though they use similar reporting terms.
+
+## Alkalinity
+
+Alkalinity is a measure of the "buffering" capacity of a aqueous solution and its ability to neutralize strong acid and resist pH change. Alkalinity is defined as the amount of strong acid required to lower the pH of a sample of the water to a specified pH (typically 4.3 to 4.5). Alkalinity is generally due to the concentration of carbonate (CO~3~), bicarbonate (HCO~3~), and hydroxyl (OH^-^) ions in water. Higher alkalinity water requires more acid to change the water's pH. In typical drinking water, alkalinity is directly related to the concentration of bicarbonate in the water. Alkalinity is often reported using terms such as "as CaCO~3~" and care must be used to avoid confusing it with similar hardness results.
+
+Like hardness, alkalinity tends to vary on a regional basis. The map below (@fig-alkalinity-map) illustrates how alkalinity varies across the United States (Omernik & Powers, 1983). As indicated by the map, much of the U.S. has relatively high alkalinity in surface waters. Of the regions with reduced alkalinity, many are mountainous or are regions without carbonate rock near surface. Carbonate rock and soils impart alkalinity to water.
+
+![Alkalinity across the United States](alkalinity-map.jpg){#fig-alkalinity-map}
+
+Alkalinity has a significant effect on beer flavor. Excessive alkalinity can cause wort and beer pH to be higher than desired and beer flavor can suffer. High wort and beer pH can create 'dull' flavors, harsh bitterness, and darker beer color. Conversely, when alkalinity is too low, wort and beer pH can be too low, which can reduce beer body and affect beer flavor.
+
+Beer perception differs significantly from wine in large part due to the difference in alkalinity between beer wort and grape must. The flavor of wine can be characterized as a balance of sweet and sour while most beers can be characterized as a balance of bitter and sweet. The acidity of wine provides most of the balance to the wine sweetness while the bittering from hops provides most of the balance to the beer sweetness. The alkalinity of grape must (juice) is typically negative due to its pH being under 4.3. After fermentation, wine pH typically falls into the 3 to 3.5 range. The alkalinity of beer wort helps keep the pH of beer in the 4 to 4.5 range and helps avoid the wine-like reliance on acidity for flavor balance.
+
+Even when brewed with very low alkalinity water, beer wort is typically buffered by compounds in the malt grist to produce a wort pH in the mid to low 5 range. Brewers should avoid over acidifying wort which can create tart or wine-like character in their beer. The effect of alkalinity on brewing can be aided through the concept of Residual Alkalinity.
+
+## Residual Alkalinity
+
+**Residual Alkalinity (RA)** is brewing-specific value that is derived from both the water's Hardness and Alkalinity to help evaluate potential mashing pH conditions. RA was described in the 1940's by Paul Kohlbach. He showed that during mashing, calcium and magnesium in the brewing water react with phosphatic compounds (phytins) in the malt to produce acids that neutralize the brewing water's alkalinity. The water's alkalinity is effectively reduced by its hardness. This interaction between the brewing water's hardness and alkalinity is expressed by RA.
+
+RA is an indicator that is specific to brewing and is a factor in defining the suitability of water for brewing. RA is estimated with the following equation when calcium, magnesium, and alkalinity are input as (meq/L) or (ppm as CaCO~3~). The equation below assumes the use of ppm "as CaCO~3~".
+
+$$
+RA_{(ppm)} = Alkalinity_{(ppm)} - \left[  \frac{Calcium_{(ppm)} }{3.5}  + \frac{Magnesium_{(ppm)} }{7} \right]
+$$
+
+With RA, a brewer can better understand the interplay of alkalinity and water hardness and its effect on mashing chemistry and performance. A simplified chart depicting Alkalinity, Hardness, and RA is presented below. Lines of constant RA cross the chart diagonally. This chart is based on work by A.J. Delange.
+
+![Alkalinity, Hardness, and RA](rachart.jpg){#fig-rachart}
+
+RA can be adjusted by either hardness adjustment or alkalinity adjustment as illustrated in the chart above. For instance, Burtonizing the brewing water by adding Gypsum and/or Epsom Salt is an example of reducing RA by increasing the water hardness. Adding acid to the water is an example of reducing RA by reducing alkalinity. Decarbonating water by boiling can be used to reduce RA in water with high Temporary Hardness since that process reduces alkalinity. Adding Chalk, Pickling Lime, or Baking Soda are examples of increasing RA by increasing alkalinity. Diluting water with distilled or RO water brings the RA of the diluted water closer to zero.
+
+RA provides a rough indicator of where the mash pH will end up and if there is a need for water chemistry adjustment. Although the RA Chart suggests that beer color influences what RA value is appropriate for a beer, the relationship is more complicated than that. The acidity provided by various grain types is not proportional to the color they impart to the beer. Therefore, a direct relationship between beer color and RA is not possible. However, correlations with grain acidity do help assess the RA needed in mashing liquor to produce desirable wort pH. A discussion of grain acidity and its variation, is presented below.
+
+#### Grain Acidity
+
+The various grains used in brewing can be generally divided into four categories: **Base malt**, **Crystal malt**, **Roast malt**, and **Acid malt**. Each category has different acid content characteristics.
+
+-   **Base malts** are malts and grains that have not been stewed to produce sugars in the malt or grain kernel and have relatively low color rating (\<20 Lovibond (\<52 EBC)). Flaked malt and grain should be considered base malts.
+
+-   **Crystal malts** have been stewed in the kernel to produce sugars in the malt and can have color ratings from about 1 to less than 200 Lovibond (\~530 EBC).
+
+-   **Roast grains** are malts or grains that are roasted to a color rating of greater than 200 Lovibond (\~530 EBC).
+
+-   **Acid malts** are low color malts that are infused with 2 to 3 percent lactic acid for mash pH reduction purposes.
+
+The acid content for the Roast and Acid malts is somewhat consistent within those categories and their acid content does not vary significantly with malt color variation. However, the acidity of either Roast or Acid malts can vary due to manufacturer or production methods. For Base and Crystal malts, their acid content does tend to vary with their color rating (Lovibond or EBC). The table below describes the general variation of acid content for the grain categories. The grain acid content information was taken from research performed by Kai Troester, 2009. Be aware that there are grains and malts that do not conform well with the acid content relationships presented below. Predicting mashing pH with these relationships is still not precise for that reason.
+
+| Grain Category | Grain Acidity (mEq / lb of grain) |
+|:--------------:|:---------------------------------:|
+|      Base      |     (0.28 x Lovibond rating)      |
+|    Crystal     |  (0.21 x Lovibond rating) + 2.5   |
+|     Roast      |                38                 |
+|      Acid      |                95                 |
+
+: Grain Acidity Relationships {#tbl-grainacidity}
+
+Even though a direct and accurate relationship cannot be made between beer color and RA, a general relationship is apparent. Lighter color beers benefit from lower RA and darker color beers benefit from higher RA. As the acid content of the mash's grain bill increases, the mashing water RA must also rise proportionally to maintain the mash pH.
+
+The success in brewing pale beer in Pilsen is due to the soft and low alkalinity water found there (RA is near 0). Likewise, the success of brewing pale beer in Burton-on-Trent is due to the very high hardness and high alkalinity that still produce low RA. Low RA waters are well-suited to brewing pale beers since the mash pH is more likely to fall into the desired pH range. Low RA waters are less suitable for brewing dark beers since the acidic dark grains can drive the wort pH lower than desirable, which reduces the effectiveness of mash enzymes and possibly produces a sharp, acidic, or tart beer.
+
+The success in brewing dark beers in places such as Dublin, Edinburgh, Munich, and London that have higher Residual Alkalinity water (RA greater than 50), is due to the more acidic dark grain used in their grist. The elevated water alkalinity and resulting RA, moderates the increased acid content of the dark grain to produce smoother dark beers brewed in those locations. That raised the reputation of those locations for brewing fine dark beer styles. Without the additional dark grain acid content to neutralize the high alkalinity, the mash pH of a pale grist would not drop into the desired range for good enzyme performance and the resulting beer might present a harsh character because of the leaching of silicates, tannins, and polyphenols into the wort during mashing. High quality, light-colored beers are more difficult to produce in these locations if the alkalinity of the brewing water is not reduced. To brew light-colored beers using water with elevated alkalinity, an external acid addition is required. Either an acid rest, acid malt, or liquid acid is required to neutralize elevated water alkalinity when brewing lighter-colored beers.
+
+Coordinating the acid content of the malt bill and the alkalinity of the water is important for conducting a mash that produces a pH in the optimum range between 5.2 and 5.8. The enzymatic processes in the mash are hindered when the mash pH falls outside that range. Enzymatic activity varies with pH and temperature as illustrated in the following graphic by Palmer (1999).
+
+![Variation of enzymatic activity with pH and temperature](mash-enzyme-chart.png){#fig-mash-enzyme-chart}
+
+It's notable from the graphic that the various enzymes work well across a range of pH. Therefore, targeting an exact mash pH is not critical to success. Achieving a mash pH that is within a tenth or two of the desired target can produce acceptable results. General suggestions for mashing pH targets are provided in the table below. As can be seen in the table, mashing pH has multiple impacts and the brewer can tailor the pH to enhance certain goals. Be aware that other factors beyond pH can affect character. The pH only helps achieve that character.
+
+|            Beer Character            | Suggested Mash pH Range |
+|:------------------------------------:|:-----------------------:|
+| More fermentable wort with less body |       5.3 to 5.4        |
+| Lessfermentable wort with more body  |       5.4 to 5.5        |
+|  More sharpness or tartness in beer  |       5.1 to 5.2        |
+|        Lighter-colored beers         |       5.3 to 5.4        |
+|         Darker-colored beers         |       5.4 to 5.6        |
+|          Hop-focused beers           |       5.3 to 5.5        |
+|          Malt-focused beers          |       5.2 to 5.4        |
+
+: Suggested Mashing pH Targets (room-temperature measurement) {#tbl-mashtemp}
+
+## Mineral Content
+
+Dissolved minerals (ions) are typically present in all natural waters, although rainwater may have very low ion concentrations. The type and concentration of those dissolved minerals can have a profound effect on the suitability of water for brewing use, its mashing performance, and the flavor perception of beer. A discussion of dissolved minerals that are a concern to brewers is presented below. Mineral salts create ions when they dissolve in water. These ions are either positively-charged (Cations) or negatively-charged (Anions).
+
+### Undesirable Ions
+
+The first consideration is that brewing water should have high quality and be safe to drink. This requires that the water have no pollutants and have little or no iron, manganese, nitrites, nitrates, or sulfides. Organic pollutants and chemical contamination have no place in beer. The following ions are commonly found in water supplies, but their concentrations must be low in order to not affect the finished beer.
+
+-   **Iron** may be tasted in water at concentrations of greater than 0.3 parts per million (ppm or mg/L) which may also be reported as 300 parts per billion (ppb or µg/L). Iron has a very metallic taste that is easily conveyed into the finished beer. Popular guidance says that the iron content of brewing water should be below 0.1 ppm to avoid tasting it in beer. Rust-colored deposits on plumbing fixtures may be an indicator of elevated iron content in water. Even in the absence of metallic flavor, iron in brewing water can produce a Fenton reaction that can oxidize beer and reduce its life.
+
+-   **Manganese** may be tasted at concentrations of greater than 0.05 ppm or 50 ppb. Manganese has a very metallic taste that is easily conveyed into the finished beer. Black-colored deposits on plumbing fixtures may be an indicator of elevated manganese content in water.
+
+-   **Nitrate** is not a great concern in brewing, but should generally be less than 44 ppm in the water source to protect infants that may drink the water. Nitrate concentrations may also be reported in the form, Nitrate as Nitrogen (NO3-N). 44 ppm nitrate is equivalent to 10 ppm nitrate as nitrogen. Children and adults can tolerate higher nitrate concentration and the 44 ppm limit may not be a concern in brewing. However, nitrate in brewing water should reportedly be less than 25 ppm (De Clerck, 1957). High nitrate concentration in the water may be converted to nitrite in the mash and nitrite becomes poisonous to yeast at levels above 0.1 ppm. If elevated nitrate levels are found in water, associated ions such as nitrite and ammonia should also be tested for.
+
+-   **Sulfide** compounds that might be exhibited as sulfur or rotten-egg aromas should not be perceptible in the water.
+
+### Major Ions in brewing
+
+The major ions of interest to brewers are shown in the table below (@tbl-majorions). These ions have the greatest effect on the quality and perception of finished beer.
+
+|  Cations  |   Anions    |
+|:---------:|:-----------:|
+|  Calcium  |  Chloride   |
+| Magnesium |   Sulfate   |
+|  Sodium   | Bicarbonate |
+
+: Major ions Affecting Brewing {#tbl-majorions}
+
+These ions can also be grouped in another way. Calcium, magnesium, and bicarbonate produce hardness and alkalinity that affect the mash pH. Sodium, chloride, sulfate, and magnesium ions affect flavor, which adds important nuances to beer perception.
+
+| Affects Hardness or Alkalinity | Affects Flavor |
+|:------------------------------:|:--------------:|
+|            Calcium             |     Sodium     |
+|           Magnesium            |    Chloride    |
+|          Bicarbonate           |    Sulfate     |
+|                                |   Magnesium    |
+
+: Ion Effects in Brewing {#tbl-ioneffects}
+
+A discussion of the effect of each of the ions is presented below.
+
+**Calcium** is typically the principal ion creating hardness in water. It is beneficial for mashing and enzyme action and is essential for yeast cell composition. Typical wort produced with wheat or barley contains more than enough calcium for yeast health. In the mash, calcium reacts with the malt phosphates (phytins) to lower the mash pH by precipitating calcium phosphate and liberating protons (H+). Calcium improves the flocculation of trub and yeast and limits the extraction of grain husk astringency. It also reduces haze and gushing potential, improves wort runoff from the lauter tun, and improves hop flavors. The ideal range for calcium ion concentration in ales may be 50 to 100 ppm although exceeding this range may cause phosphorus (an essential yeast nutrient) to precipitate excessively out of solution.
+
+Oxalates are natural component of brewing grains. Since oxalates are precipitated through complexing with ionic calcium, insufficient calcium in brewing water may leave excess oxalate in the wort which can contribute to beerstone (calcium oxalate) formation. A minimum concentration of 40 ppm calcium is recommended to reduce beerstone formation potential. Calcium concentration of less than 40 ppm can be tolerated in brewing water for beers that benefit from less mineralization (ie. pilsners and light lagers) with the understanding that additional measures may be needed to ensure adequate beer clarification, and beerstone removal.
+
+Brewing with very low calcium content water does not impair fermentation since barley and wheat provide sufficient calcium for yeast health. The primary difficulties with brewing with very low calcium water is that yeast flocculation may be impaired and beerstone formation may affect equipment. Both of these problems can be alleviated through practices such as lagering, filtering, and active maintenance for beerstone removal. The calcium content of brewing water should generally conform to the calcium content that the original yeast evolved to. Therefore, an English ale yeast might expect high calcium content water while a Czech lager yeast might expect very low calcium content. (Brungard, 2015)
+
+Another consideration is that the calcium content for brewing water may be tailored to increase or decrease yeast flocculation. For example, if a yeast is known to drop out prematurely, then reducing calcium content could be employed to reduce that tendency. For most lager brewing, low calcium content water is more likely to produce better results. **Brewing water with low or no calcium content can be OK for Lagers**.
+
+Increasing the calcium content of mash water is a useful tool for reducing the pH of the mash water. Calcium content has little effect on beer flavor but it is paired with anions that may increase the minerally flavor of the water when present at elevated concentrations. A problem with high calcium content brewing water is that the calcium displaces magnesium from yeast and that can have a negative effect on yeast performance. Avoid excessive calcium content when yeast performance is below expectations. (Note: adding calcium to sparging water does not reduce the water's pH or alkalinity since there are few malt phytins present to complete that reaction. An acid must be used to reduce the alkalinity and pH of sparging water.)
+
+**Magnesium** is typically the secondary ion creating hardness in water. It accentuates flavor with a sour bitterness when present at low concentration, but it is astringent at high concentration. Magnesium is a yeast nutrient and an important co-factor for certain enzymes. Like calcium, magnesium reacts with the malt to lower the mash pH, but with a reduced effect compared to calcium. The preferred range for magnesium concentration is 0 to 30 ppm. Exceeding 40 ppm is not recommended. A minimum of 5 ppm magnesium is known to be desirable for good yeast flocculation, however a typical barley or wheat mash grist will contribute more than 5 ppm magnesium to the wort for proper yeast flocculation and it is not necessary to add magnesium to brewing water unless it is desired for its flavor effects. Increasing the magnesium content of mash water is not a useful tool for reducing the pH of the mash water since the allowable concentration range for magnesium is small.
+
+**Sodium** -- The sour, salty taste of sodium accentuates beer's flavor when present at modest concentration. It is poisonous to yeast and harsh tasting at excessive concentrations. It accentuates flavor when used with chloride and imparts roundness to the beer flavor. The preferred sodium concentration range is 0 to 150 ppm, but the upper limit should be reduced in water with high sulfate concentration to avoid harshness. A practical maximum concentration of 100 ppm is recommended for brewing, but brewers should recognize that waters from the historic world brewing centers have less than 60 ppm sodium. Keeping sodium concentration below 60 ppm is therefore recommended in practice. Most tasters find that "salty" flavor becomes apparent in drinking water when its sodium content exceeds 250 ppm. While low sodium is desirable, some beer styles such as Gose may have much higher sodium concentration (\~250 ppm) as part of their desired flavor profile, but that sodium is typically added to the post-fermented beer.
+
+**Chloride** -- Chloride accentuates fullness and sweetness and improves beer stability and clarity. The ideal range is 10 to 100 ppm, but the upper limit should be reduced in water with high sulfate concentration to avoid harshness or minerally flavor. When brewing with sulfate concentration of over 100 ppm, limiting the chloride content to around 50 ppm is recommended. The minerally flavor of Dortmunder Export may be due to the typical 130 ppm chloride concentration along with the 300+ ppm sulfate content in Dortmund's water. Brewers of juicy IPAs have reported that brewing liquor with around 150 ppm chloride and 75 ppm sulfate provides fullness without lingering too long on the palate. Chloride does not make beer maltier, it helps any malt in the beer to be perceived more readily.
+
+Be aware that the chloride ion is not the same as the disinfectant, chlorine and should not be confused with it.
+
+**Sulfate** -- Sulfate provides a sharper, dryer edge to highly hopped beers. The ideal concentration range is 0 to 350 ppm, although the concentration should typically not exceed 150 ppm unless the beer is highly hopped. Sulfate concentration above 350 ppm has been reported to produce sulfury aroma in finished beer. The use of the historic Burton water profile (sulfate greater than 600 ppm) may not produce ideal ales for that reason.
+
+Including some sulfate in brewing water can help dry the finish and avoid an overly full or cloying finish, even in malty beer styles. Sulfate does not make beer bitter, it helps any bittering in the beer to be perceived more readily. Brewers should recognize that high sulfate level in brewing water along with either high sodium or chloride levels can produce harsh or minerally flavor in beer.
+
+**Bicarbonate** -- Bicarbonate is a strongly alkaline buffer that is typically responsible for the alkalinity in most drinking water. Malt acids produced during mashing do consume some of the bicarbonate in the brewing water. When there aren't enough malt acids to neutralize the brewing water's bicarbonate content, the mash pH may not fall into a desirable range, which may reduce enzyme action and make hop flavors more harsh. When brewing lighter colored beers, bicarbonate is generally undesirable in brewing water and is best kept below 50 ppm or should be balanced with additional calcium to reduce the Residual Alkalinity of the brewing water. When brewing darker colored beers, some bicarbonate may be needed in the mash water to balance the higher acidity provided by the dark-colored grains. High bicarbonate concentration and its resulting alkalinity is not desirable in sparging water due to the increased potential to leach harsh-tasting silicates, tannins, and polyphenols into the wort. The potential to leach these compounds from the grain increases as the remaining wort's specific gravity falls during sparging. Control and adjustment of bicarbonate in brewing liquor is an important factor in producing a desirable mash pH and subsequent wort pH in the kettle.
+
+Alkalinity can be approximated from bicarbonate concentration (or vice versa) if the water pH is less than 8.5. That assumption is valid for many natural water supplies. The equation below provides that approximation.
+
+$$
+Alkalinity_{(ppm \;as \; CaCO_3)} = Bicarbonate_{(ppm)} \times 0.82
+$$
+
+### Acids
+
+Acids can be an important component in brewing water adjustment. Acids come in solid and liquid forms and all add hydrogen protons (H^+^) to the water and move the pH of a solution lower. Acids also add their unique anion to the water. Frequently, the anions have distinctive flavor that may compliment or degrade beer flavor when they are present in beer at levels above their taste threshold. Some acids are more perceptible in beer than others.
+
+-   **Phosphoric acid** is more difficult to perceive in beer since beer contains similar phosphatic compounds. It is typically the most flavor-neutral acid used in brewing and the various phosphate anions remain relatively undetected to most tasters at under 1,000 ppm.
+
+-   **Hydrochloric** and **Sulfuric** acids can add chloride or sulfate ions that may be desirable in the flavor profile. The contributions and limits for those ions are discussed in the section above.
+
+-   **Citric**, **Malic**, and **Tartaric** acids can add fruity or estery perceptions to the beer. The typical anion taste thresholds for most tasters are: (Citrate = 150)(Malate = 100)(Tartarate = 600) ppm.
+
+-   **Lactic** and **Acetic** acids can impart their unique flavor to beer. Lactic is smooth while Acetic is pungent. The typical anion taste thresholds for most tasters are: (Lactate = 400)(Acetate = 175) ppm.
+
+### Minor Ions
+
+There are minor ions in water and wort that can effect fermentation and flavor. Undesirable ions were highlighted at the beginning of this section. Minor ions can have a beneficial or detrimental effect depending on their concentration.
+
+-   **Potassium** -- Potassium is a component of malt and it is contributed to wort. The ionic potassium content of water has some effect on flavor, adding a 'saltiness' to the beer at elevated concentration (typical taste threshold around 100 ppm). Potassium in the water at levels above 10 ppm are reported to inhibit certain enzymes. Since potassium is contributed by the malt, there is little need to add more to brewing water. Potassium carbonate is popular in winemaking due to its ability to precipitate tartaric acid and neutralize excess acidity. However, typical beer wort does not have significant tartaric acid and its use in brewing is less appealing.
+
+-   **Zinc** -- Zinc is a yeast nutrient when present at very low concentrations of 0.1 to 0.2 ppm and that level should not exceed 0.5 ppm in wort. Zinc is present in malt and zinc extraction is improved with lower mash pH. When present at higher levels (\>1 ppm), zinc becomes toxic to yeast and produces a metallic flavor. Commercial yeast nutrient preparations typically provide zinc in their formulation. Zinc chloride or zinc sulfate may be used to produce the desired zinc concentration in wort. However, the dosing of those zinc salts is very low. For example, the dose of solid zinc sulfate heptahydrate is 1 gram per 10 barrels of ale or 1 gram per 20 barrels of lager.\
+    \
+    Reverse Osmosis water treatment reduces zinc content in RO water to extremely low concentrations. Brewing with either RO or distilled water (or any natural water with less than 0.1 ppm zinc) should include zinc supplementation.
+
+-   **Copper** -- Copper is a beneficial complexing agent at low concentration (\~0.1 ppm) in wort. Sulfides and other sulfurous compounds can be complexed out of the wort by copper. The copper concentration should be kept below 1 ppm to avoid mutagenic effects to yeast and metallic flavor. Historic brewing practices often used all copper boil kettles, so it appears unlikely that overdosing wort from copper contact will occur. A modest area of exposed copper metal in contact with the wort during the brewing process is typically sufficient to provide beneficial copper contribution. For instance, a couple of inches of copper tubing in a 5-gallon (19L) batch may be sufficient to produce a beneficial copper concentration in wort. The tubing is placed in the kettle during the boil and reused repeatedly. If the brewing equipment or water supply piping already includes copper tubing or surface area within the system, then adding the piece of copper to the boil kettle may be unnecessary. Brewers should be aware that excessive copper ion in brewing water does increase the possibility of oxidizing (Fenton) reactions that can accelerate the oxidation and staling of finished beer. Keeping copper content low (but not too low) in brewing water and wort should improve the longevity of beer.
+
+# Minerals and Beer Styles
+
+The historic beer styles that have developed around the world were sometimes the result of the water conditions present in that area. Prior to the understanding, measurement, and ability to adjust water chemistry, beer styles evolved to suit the local water. Typically, dark-colored beer styles developed in areas with high RA water and light-colored beer styles developed in areas with low RA water.
+
+Additionally, ions affecting beer flavor perception in the local water also influenced beer styles. For instance, malty styles may be enhanced in areas with low sulfate concentrations while hoppy styles were enhanced in areas with elevated sulfate concentrations.
+
+Examples of the ionic concentrations of water from various major brewing centers are shown in the table below. There are a variety of literary sources that provide differing estimates of the appropriate ionic concentrations for these brewing waters. For some of those literary sources, the quoted ionic concentrations are known to be incorrect since the indicated ionic balance could not exist at reasonable pH levels and the water profiles are not supported with factual laboratory data. The concentrations shown in the table below have been researched and verified with historic and current references. The profiles are also corrected where necessary to provide an appropriate ionic balance. The RA calculated for each of water profile is provided in the table for reference.
+
+| Brewing Center | Calcium | Magnesium | Sodium | Sulfate | Chloride | Bicarbonate | Residual Alkalinity |
+|---------|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| Burton         |   275   |    40     |   25   |   610   |    35    |     270     |          5          |
+| Dortmund       |   230   |    15     |   40   |   330   |   130    |     235     |         20          |
+| Dublin         |   120   |     4     |   12   |   55    |    19    |     315     |         170         |
+| Dublin-Wicklow |   18    |     2     |   13   |   22    |    20    |     35      |         15          |
+| Edinburgh      |   100   |    20     |   55   |   140   |    50    |     285     |         150         |
+| London-Wells   |   20    |     5     |  175   |   65    |   125    |     260     |         196         |
+| London-Thames  |   40    |     5     |   30   |   70    |    40    |     60      |         18          |
+| Munich         |   77    |    17     |   4    |   18    |    8     |     295     |         180         |
+| Pilsen         |    7    |     2     |   2    |    8    |    6     |      5      |          5          |
+| Vienna         |   75    |    15     |   10   |   60    |    15    |     225     |         125         |
+
+: Ion Profiles for Major Brewing Centers. Ion concentrations in mg/L. {#tbl-brewingcenters}
+
+Although the historic water profiles presented above are reasonably accurate representations, it does not mean that the brewers from those areas used these waters without treatment prior to brewing.
+
+**Burton** The groundwater in Burton-on-Trent is the result of upwelling from the Mercia Mudstone (a gypsum-bearing formation) into the surficial Sand and Gravel aquifer where it mixes with groundwater supplied by rainfall infiltration and the nearby Trent River. The more the brewers of the region utilized the shallow water source, the more the sulfate-laden upwelling was diluted by the rainwater and river water. The amount of rainfall and the river level affected their local groundwater quality.
+
+The location of the water supply well also has an influence in Burton. At Marston Brewery, the sulfate content of their groundwater is up to 800 ppm. While at Coors Brewery, the sulfate content of their groundwater was only about 200 ppm. These were sampled at the same time and the samples come from the same Sand and Gravel aquifer (Pearson, 2010). Therefore, defining a "true" Burton water profile is not possible. Research on the physical setting in Burton suggest that the high sulfate groundwater was diluted by inflow from the nearby River Trent and breweries did not brew with the high sulfate concentration shown in the table above. (Brungard, 2014).
+
+The balanced Burton water profile shown above was estimated based on the relative concentrations of ions observed from the Sand and Gravel aquifer, but those concentrations could be higher or lower depending upon time of year and location. At over 600 ppm sulfate, the profile provided is not as mineralized as that groundwater resource gets, but it is highly mineralized. Brewing with the Burton profile may be extreme and may produce sulfury notes in the finished beer. An alternative would be to brew with the Pale Ale profile that is included in Bru'n Water as a first try for brewing a hoppy beer (300 ppm sulfate).
+
+**Dortmund** The local groundwater in Dortmund is very hard and mineralized. The high hardness reduces RA and made it possible to brew pale beers with a minerally edge. Due to the mineralization, water is now piped in far from Dortmund. The profile presented for Dortmund does produce a substantially minerally-tasting beer and brewers may want to moderate the sulfate and chloride content in practice.
+
+**Dublin** Water quality in Dublin is highly dependent upon location within the city. In the north and west parts of the city, drinking water is hard and alkaline from the River Liffey. But south of Dublin, water comes from the Wicklow Mountains where the water is only lightly mineralized. Interestingly, Guinness' St James Gate brewery was traditionally fed from the Wicklow Mountains and the tart character of their dry stout was developed with that water and not the hard, alkaline water found in the rest of Dublin. While more alkaline water is typically used in stout and porter brewing, dry stouts are more authentic when brewed with Wicklow water which can be similar to RO water. (Brungard, 2013)
+
+**Edinburgh** As with many breweries, their water source was taken from the area immediately around the brewery. In the case of many Edinburgh breweries, the groundwater was somewhat hard and mineralized. Somewhat elevated sulfate content was typical and that helped malty beers from the area to present a pleasingly dry finish to that maltiness. Modern Edinburgh has outgrown the local water supply and water is now piped in from miles away.
+
+**London** This is actually a tale of two cities, or more accurately, two water sources. The original water source for London was River Thames. It's moderate hardness and alkalinity made it feasible to brew pale beers with it. Some say the original pale ales and IPAs were developed with that water. London's real fame came from Porter brewing and that had to due to the advent of well drilling and the presence of soft, slightly salty, and alkaline groundwater below the city. The water has significant sodium, sulfate, and chloride. That water was suited for Porter brewing. While the Thames is still a source of London water, the groundwater below the city is now rarely used for brewing use due to pollution. (Brungard, 2014)
+
+**Munich** All of southern Bavaria has similar geology and water quality. The limestone beneath Bavaria provides a hard and alkaline groundwater that is otherwise low in flavor ions such as sodium, sulfate, and chloride. The high alkalinity and hardness of that raw water are somewhat suited to brewing the dark styles originally produced in the city, but it was difficult to produce the lighter colored beers that the city became known for. Brewers developed forms of alkalinity reduction to make their water suitable for pale beers. (Brungard, 2014)
+
+**Vienna** Groundwater from wells along the Danube River supply the city. With Vienna being downstream of Bavaria, the water quality somewhat mirrors the quality of Munich and that region.
+
+**Pilsen** Located in an area with little limestone or dolomite contact, the surface water and groundwater tends to have little mineralization. While the raw water has low mineralization, its reported that breweries such as Pilsner Urquell add a small amount of gypsum to their brewing liquor.
+
+As mentioned above, the brewers in those historic locations may have further treated their local water to make it more suited to their brewing. Of particular interest is the use of decarbonation to soften the water by boiling. Another treatment option was to use saurermalt (acidified malt) or saurergut (soured wort) to reduce water alkalinity. **Decarbonation by Boiling** and **Lime Softening** are discussed in the **Alkalinity** section below. A selection of estimated "boiled" water profiles is provided in that section to illustrate the difference that boiling can create in the water profiles.
+
+# Water Treatment
+
+**No single water resource can provide ideal conditions or results for brewing all beer styles**. At best, a water source may be suited to brewing a limited range of beers without additional treatment. Water treatment may be needed for a number of reasons including:
+
+-   Chlorine Removal
+
+-   Hardness Adjustment
+
+-   Alkalinity Adjustment
+
+-   Mineral Profile Adjustment
+
+## Chlorine Removal
+
+Chlorine is typically found in municipal water supplies to assure the water's disinfection from disease-causing organisms. The typical chlorine residual in drinking water is around 2 to 3 milligrams per liter (or ppm). However, higher dosing may be present when problems with the water piping system occur. Chlorine removal from brewing water is critical for good brewing results. Although the term chlorine is used generically here, hypochlorite, chloramines, chlorine dioxide, and bromine are other disinfection agents used in municipal water disinfection. In water, chlorine gas dissociates to form hypochlorite ion (OCl^-^). If ammonia is added to that chlorinated water, chloramines are formed. That process can produce mono-, di-, or tri-chloramine depending upon the ratio of chemicals used. Municipalities increasingly use chloramines for disinfection since that compound is more stable than hypochlorite and can form fewer undesirable by-products in the water.
+
+If chlorine compounds are not removed from brewing water, they combine with the organic compounds naturally found in wort to form chlorophenols. Chlorophenols can be detected in beer at concentrations as low as 10 parts per billion (ppb) and they have a distinctive medicinal, band-aid flavor that is objectionable in both flavor and aroma. They are plainly detectable in beer at over 30 ppb. Unfortunately, not all tasters can detect chlorophenols at low level and some tasters may regard them as non-objectionable as found in some Scotch Whiskys. As noted above, typical tap water has about 100 times the concentration of chlorine compounds needed to produce chlorophenols. Untreated municipal tap water can be expected to produce those objectionable effects if not thoroughly removed from brewing water.
+
+The use of bleach as a sanitizing agent in the brewery can leave chlorine compounds on brewing equipment and in brewing water. Other sanitizers such as iodophor and acid-based cleaners can be more effective, produce fewer off flavors, and require no rinsing. Switching from bleach to these sanitizers can produce a substantial improvement in the quality of a finished beer by avoiding chlorophenol production. If bleach is used as a brewery sanitizer, all equipment that touches water, wort, or beer should be thoroughly dried prior to contact. Be aware that iodophor can also produce a minor phenolic off-flavor if that sanitizer is not removed from equipment.
+
+Several options are available for removing chlorine from brewing water:
+
+-   Boiling
+
+-   Aeration
+
+-   Metabisulfite addition
+
+-   Ascorbic Acid addition
+
+-   Activated Carbon filtration
+
+### Boiling
+
+Boiling is effective for hypochlorite removal, but requires time and energy to perform the boil. While hypochlorite is volatile and can be boiled off, boiling is less effective for chloramines removal. Hours of boiling time are required to remove chloramines and the cost effectiveness of that treatment method is poor. Boiling could be a good choice when the water supply has high temporary hardness and hypochlorite disinfection since it can help both problems. Review the section below on Decarbonation by Boiling.
+
+### Aeration
+
+Aerating tap water can be used to remove hypochlorite, but its removal rate is slow. This process involves leaving water in an open container or bubbling air through it. A large, exposed water surface area is desirable for quicker dechlorination. As with boiling, hypochlorite is removed more quickly than chloramines. A day of aeration may be sufficient for hypochlorite removal whereas it may take days to remove chloramine from tap water with this method.
+
+### Metabisulfite
+
+Metabisulfite (Campden Tablet) addition is effective for hypochlorite and chloramine removal. The tablets are either potassium metabisulfite or sodium metabisulfite. Both are effective in disinfectant removal. When sodium content in the brewing water is a concern, potassium metabisulfite may be preferred. Low potassium content in brewing water generally has less effect on brewing performance or taste. Adding these compounds at a rate of about 9 milligrams per liter (\~35 milligrams per gallon or \~1 tablet per 20 gallons) or (\~1 tablet per 75 liters) will dechlorinate typical municipal water and leave residual concentrations of about 3 ppm potassium or 2 ppm sodium (depending on the chemical used) and 8 ppm sulfate and 3 ppm chloride. These ion contributions are relatively insignificant and can be ignored in practice. The reaction equations for hypochlorite or chloramine with metabisulfite are shown below. Note that extra H+ protons are produced by the reactions (acidity) and the water alkalinity will be reduced.
+
+$\ce{S2O5^2- (Metabisulfite) + 2NH2Cl (Monochloramine) + 3H2O -> 2NH4^+ + 2Cl^- + 2SO4^2- + 2H^+}$
+
+$\ce{S2O5^2- (Metabisulfite) + 2OCl^- (Hypochlorite) + H2O -> 2Cl^- + 2SO4^2- + 2H^+}$
+
+### Ascorbic Acid
+
+Ascorbic acid (Vitamin C) addition is effective for hypochlorite and chloramine removal. As indicated in the compound's name, this is an acid and it does reduce water pH if unreacted with a chlorine compound. In distilled water, it can produce a pH as low as 3.0. It is sometimes used in municipal water treatment, however it's pH reduction effect and higher cost can make it less desirable than metabisulfite addition. Ascorbic acid is added at a rate of about 7.5 milligrams per liter (\~28.4 milligrams per gallon) to remove up to 3 milligrams per liter of chloramine. The reaction equation for ascorbic acid and chloramine produces ammonium (NH4^+^), chloride, and dehydroascorbic acid. Since the dosing is very low, the resulting concentrations are not a concern. Be aware that ammonium is a yeast nutrient and is not a problem in brewing water. The reaction is shown below:
+
+$\ce{C6H8O6 (Ascorbic Acid) + NH2Cl (Monochloramine) -> NH4^+ + Cl^- + C6H6O6}$
+
+A similar dosage will also remove hypochlorite (OCl^-^) from water. The reaction produces water, chloride, and dehydroascorbic acid.
+
+$\ce{C6H8O6 (Ascorbic Acid) + OCl^- (Hypochlorite) -> H2O + Cl^- + C6H6O6}$
+
+### Activated Carbon Filtration
+
+Activated Carbon Filtration of brewing water can be an effective disinfectant removal alternative. Activated Carbon is also known as: carbon, carbon block, granular carbon, or GAC. Both hypochlorite and chloramine are removed from the water by activated carbon while leaving most other water ion concentrations unchanged. While hypochlorite is easily removed with activated carbon, brewers should be aware that chloramine is removed from water VERY slowly and the use of activated carbon is not well suited to chloramine removal. Filtering with activated carbon can also remove water contaminants such as organic compounds that include taste and odor compounds.
+
+Chlorine compounds are removed by activated carbon through an oxidation reaction with the carbon surface. The reactions for hypochlorite and chloramine removal are shown below.
+
+$\ce{C^* (Activated Carbon) + OCl^- (Hypochlorite) -> OC^* (Oxidized Carbon) + Cl^- (Chloride)}$
+
+$\ce{C^* (Activated Carbon) + NH2Cl (Monochloramine) + H2O -> OC^* (Oxidized Carbon) + Cl^- (Chloride) + NH4^+ (Ammonium)}$
+
+The chlorine and contaminant removal performance of activated carbon filtration is proportional to the amount of time the water is in contact with the activated carbon. In addition, the volume of water that can be treated for chlorine compounds increases when the flow rate is low. Therefore, a low flow rate through an activated carbon filter is **highly recommended** to provide acceptable chlorine compound and contaminant removal performance and extend the life of the activated carbon media.
+
+The design of an activated carbon filter system for chlorine compound removal is relatively simple. The residence time for water passing through the carbon media must meet certain minimum durations. For hypochlorite removal, the residence time should be at least 40 seconds. For chloramine removal, the residence time should be at least 6 minutes. Increasing these durations will improve the life of the media and increase the total volume of water that can be treated with the filter unit. (To provide an example of design recommendations for chloramine removal, kidney dialysis machine manufacturers typically recommend an 8-minute residence time for activated carbon, water pretreatment units) The residence time (also known as Empty Bed Contact Time) is calculated by dividing the volume of carbon media (say gallons or liters) by the flow rate (gal/min or L/min).
+
+The flow rate through a standard under-sink (10-inch) activated carbon filter unit should be no greater than 1 gallon per minute to achieve good hypochlorite removal. Inserting a restrictor plate in the filter's water supply line with a 1/16-inch diameter hole should reduce the flow rate through a filter to about 1 gallon per minute. The flow rate through smaller filters should be further reduced to provide adequate removal. The flow rate recommendation of 1 gallon per minute only applies for hypochlorite removal. Because of the reduced reactivity of chloramine with the carbon surface, the flow rate through a filter must be substantially reduced to provide adequate chloramine removal. A rate of less than 0.1 gallon per minute is likely needed when using a 10-inch filter unit. Since this very low flow rate may be impractical to most brewers, metabisulfite is recommended for chloramine removal instead of activated carbon filtration.
+
+### Testing
+
+Hypochlorite and Chloramine removal can be verified through testing with swimming pool or aquarium test kits. If the water system does not use chloramine, then a readily-available "Free Chlorine" test kit will work well. If chloramine is used as the water's disinfectant, then a slightly more expensive "Total Chlorine" or "Combined Chlorine" test kit is needed. Liquid test kits are recommended over test strips since they tend to be more sensitive at the low concentrations a brewer is interested in. Complete hypochlorite and chloramine removal is required since chlorophenols can be tasted at very low levels (\~10 ppb).
+
+## Hardness Adjustment
+
+Increasing water hardness is fairly easy. **Gypsum** (calcium sulfate), **Calcium Chloride**, **Epsom Salt** (magnesium sulfate), **Magnesium Chloride**, **Chalk** (calcium carbonate), or **Pickling Lime** (calcium hydroxide) additions can be used to increase the hardness. Reducing hardness is much more difficult. Options for reducing hardness are presented below:
+
+### Dilution
+
+Dilution with distilled water or Reverse Osmosis (RO) water is a quick, yet more costly option. Distilled water is free of all ions while RO water is nearly free of ions. Both sources are very soft water that reduce the hardness and alkalinity of the brewing water in proportion to the amount of RO or distilled water added to tap water. The ion concentrations of these purified waters are typically lower than desired to promote good mashing, fermentation, and flavor results. Therefore, minerals should be added to these purified waters or the purified water should be blended with the original source water to provide an adequate ionic content for brewing use.
+
+RO water is not pure water and it still contains low concentrations of ions. The concentration of ions in the RO water vary based on the ions and concentrations in the raw water entering the RO unit and the type of membrane used in the unit. To provide an indication of typical RO water quality, the following profile from a RO unit is presented as an example. The raw water feeding this RO unit came from an ion-exchange softener and that raw water had little calcium or magnesium, but relatively high sodium content. The sodium concentration in the treated RO water is slightly higher than if the raw water had not been previously softened.
+
+| Ion         | Concentration (mg/L) | Typical % passing membrane |
+|-------------|:--------------------:|:--------------------------:|
+| Calcium     |          1           |             3              |
+| Magnesium   |          0           |             3              |
+| Sodium      |          8           |             4              |
+| Sulfate     |          1           |             1              |
+| Chloride    |          4           |             4              |
+| Bicarbonate |          16          |             4              |
+
+: Typical RO Water Profile & Membrane Passage {#tbl-rochar}
+
+The ion removal efficiency of RO units varies for each of the ions. The table above also includes the typical percentage of the raw water's ion content that makes it through the membrane into the finished water (source: GE Water & Process Technologies). If the raw water quality is known, a rough estimate of the resulting RO water quality can be estimated using those membrane passage percentages.
+
+Quality assurance of RO-treated water is an important component in maintaining brewing water quality. Since the RO process relies on a very thin membrane to purify water, any physical or chemical damage to the membrane could permit untreated raw water to pass the membrane into the treated water stream. A relatively simple and rapid test is to evaluate the Total Dissolved Solids (TDS) of the RO-treated water. Inexpensive, portable TDS testing meters are available for this use. A TDS reading of about 20 ppm or less is typical for a properly operating RO system. If the TDS exceeds about 50 ppm, membrane replacement may be needed. This method of quality assurance testing is highly recommended when purchasing RO water from vending machines.
+
+### Decarbonation by Boiling
+
+Decarbonation by Boiling is a practice that was employed historically and it does reduce alkalinity and calcium (hardness) in water with high **Temporary Hardness**. The boiling process drives off carbon dioxide (CO~2~) that helps keep chalk (CaCO~3~) soluble in water. When the CO~2~ is driven off, the chalk will precipitate out of the water. The process reduces only calcium and bicarbonate concentrations while leaving the water's other ion concentrations unchanged. Water with high **Permanent Hardness** cannot be treated effectively by this method.
+
+The water is heated to boiling or near-boiling and stirred, splashed, or aerated to help get the CO~2~ out of the water. As CO~2~ leaves the water, chalk precipitates and causes the water to become cloudy. The heating is ended after about 15 minutes and the precipitate is allowed to settle quietly to the bottom of the vessel. When clear, the water is then immediately decanted off the sediment and used for brewing. The water cannot be allowed to sit too long on the sediment or CO~2~ will again diffuse from the atmosphere into the cooled water and redissolve the sedimented chalk.
+
+This process does not reduce the magnesium content since magnesium hydroxide (Mg(OH)~2~) is much more soluble than chalk in water and the chalk precipitates first, leaving the magnesium with the remaining bicarbonate in the water.
+
+Boiling reduces both bicarbonate (HCO~3~) and calcium content of the water when performed properly. The practical limit for the process reduces the bicarbonate content to between 60 and 80 ppm, although very good practices can reduce that to as little as 50 ppm. Therefore, the quantity of chalk that can be precipitated will be based on the difference between the starting and ending bicarbonate content. A reasonable assumption is to use an 80 ppm ending bicarbonate concentration since that allows for more error in the process. Alkalinity test kits can be used to assess the alkalinity reduction and the ending calcium content for the decarbonated water can be calculated using the following formula:
+
+$$
+Calcium_{end(ppm)} = Calcium_{start(ppm)} - \left[ \frac{HCO_{3start(ppm)} - HCO_{3end(ppm)}}{3.05} \right]
+$$
+
+The equation above assumes that the water has a high enough calcium concentration to execute the reaction to volatilize the CO~2~ and precipitate the chalk. The practical lowest calcium concentration achievable through decarbonation is about 12 ppm. If the calculated calcium concentration is lower than 12 ppm when using the ending 80 ppm bicarbonate assumption, the ending bicarbonate concentration assumed in the equation must be increased until a 12 ppm calcium concentration is calculated. The Munich water profile is a case in point. Decarbonating that water to 80 ppm bicarbonate would leave only 7 ppm calcium in the water, which is below the practical limit. Therefore, the practical ending bicarbonate concentration must be increased to 95 ppm to leave the treated water with 12 ppm calcium.
+
+A technique to help encourage and speed the precipitation of chalk from the boiled water is to add powdered chalk to the water. The undissolved chalk provides nucleation sites for the precipitating chalk to agglomerate with and form larger flocs that settle faster. A teaspoon of powdered chalk per 5 gallons (19L) mixed into the water should be sufficient to improve the settling. The added chalk does not dissolve and add to the water's calcium concentration since it is not soluble in water without CO~2~. Use of gypsum to provide nucleation sites is less effective than using chalk.
+
+Examples of the effect of **Decarbonation by Boiling** are presented in the water profiles below. The bicarbonate content was assumed to be reduced to 80 ppm for all the profiles (excepting Munich) and the precipitated calcium content was subtracted from the original calcium concentration. All other ion concentrations remain as for the original water. In the case of the Burton and Dortmund profiles, the low original RA and significant reduction in RA with boiling, indicates that those profiles do not need to be treated in this way for brewing. Typically, water profiles such as Dublin, Edinburgh, London, Munich, and Vienna are well suited to boiling treatment.
+
+| Brewing Center   | Calcium | Magnesium | Sodium | Sulfate | Chloride | Bicarbonate | Residual Alkalinity |
+|---------|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| Burton-boiled    |   213   |    40     |   25   |   610   |    35    |     80      |        -109         |
+| Dortmund-boiled  |   179   |    15     |   40   |   330   |   130    |     80      |         -70         |
+| Dublin-boiled    |   43    |     4     |   12   |   55    |    19    |     80      |         33          |
+| Edinburgh-boiled |   33    |    20     |   55   |   140   |    50    |     80      |         30          |
+| London-boiled    |   42    |     6     |   15   |   40    |    38    |     80      |         32          |
+| Munich-boiled    |   12    |    17     |   4    |   18    |    8     |     100     |         63          |
+| Vienna-boiled    |   27    |    15     |   10   |   60    |    15    |     80      |         37          |
+
+: Estimated ion Profiles for Major Brewing Centers after Boiling. Ion concentrations in mg/L. {#tbl-boiledprofiles}
+
+### Lime Softening
+
+Lime softening is another option for hardness reduction in water with high **Temporary Hardness**. This softening is typically conducted using either an Excess Lime or Split-Treatment process. These processes affect only the calcium, magnesium, and bicarbonate concentrations while leaving the water's other ion concentrations unchanged.
+
+When both calcium and magnesium concentration in tap water are excessive, the Excess Lime process is recommended. The Excess Lime procedure is recommended when the water's magnesium content is greater than about 15 ppm. In the Excess Lime process, pickling lime (calcium hydroxide) is added to the raw water to elevate its pH above 11. The high pH causes both calcium and magnesium compounds to precipitate out of the water. After the water clears, the water is immediately decanted off the sediment. When properly performed, Excess Lime softened water provides moderately-hard water with typical concentrations as low as 12 ppm calcium and 3 ppm magnesium in water with a **high Temporary Hardness** (low chloride and sulfate concentrations). When the water also contains significant **Permanent Hardness** (hardness associated with chloride and sulfate), lime softening is not as effective and the final calcium and magnesium concentrations will be higher than indicated here.
+
+When the starting water has **high Temporary Hardness** and **low** magnesium concentration, the Excess Lime softening procedure above is modified to a Split-Treatment process that requires the pH be raised to only 10 instead of 11. This lower pH target still causes calcium to precipitate without affecting the magnesium content. The lower pH of the decanted water is easier to neutralize through aeration or acidification with this approach. When properly performed in water with a **high Temporary Hardness** (low chloride and sulfate concentrations), this process reduces calcium concentration to as low as 12 ppm calcium. The magnesium concentration is unchanged. When the water also contains significant **Permanent Hardness** (hardness associated with chloride and sulfate), lime softening is not as effective and the final calcium concentration will be higher than indicated here. Immediately after the water clears and the sediment has dropped, the water is decanted off the sediment. Since good brewing practice is to use brewing water with calcium concentration of at least 40 to 50 ppm, the Split-Treatment process includes blending a portion of the raw water with the decanted, lime-treated water to bring the calcium concentration back up to desirable level. This blending also reduces the high pH of the lime-treated water which makes it easier to bring the pH of the blended water down.
+
+Since the water pH and alkalinity are high after treatment in either of the processes above, the pH and alkalinity must be reduced prior to brewing usage. Aeration (to dissolve CO~2~ in the water) and/or the addition of acid are suitable for reducing the pH and alkalinity of the decanted, lime-treated water. Reducing the pH of the lime-softened water to under 8.6 through aeration or acid addition is desirable. The lime-softening methods above require time, special chemicals, and a pH meter to perform successfully.
+
+### Ion-Exchange Softening
+
+Ion-Exchange Softening is a common household water softening method that uses salt (sodium chloride or potassium chloride) to soften water. Water softened with this process should not typically be used for brewing water since the hardness ions (Ca and Mg) are replaced with elevated levels of sodium or potassium that may impart undesirable flavor and potentially harm the yeast. Since calcium and magnesium ions are beneficial to brewing, removing them from the water and replacing them with sodium or potassium is not desirable. Additionally, ion-exchange water softeners do not reduce the alkalinity of the softened water. Since the alkalinity remains high and hardness is reduced in softened water, the RA of the water is raised significantly, making it less suitable for brewing.
+
+While the previous paragraph says not to use ion-exchange softened water for brewing, there are waters that may be ion-exchange softened and still be suitable for brewing. If the water has low hardness and suffers from elevated iron or manganese content, then that water may be acceptably treated with ion-exchange softening to help reduce the iron and manganese while avoiding excessive sodium or potassium content. The metallic perceptions from iron or manganese make the raw water unsuited for brewing. In general, if the sodium or potassium content of the softened water is below 50 ppm, it might be usable for brewing. Calcium can be added to the softened water to improve its brewing performance.
+
+## Alkalinity Adjustment
+
+Alkalinity is the primary factor affecting the performance of the mash. Alkalinity is produced by bicarbonate, carbonate, and hydroxyl in the water. Bicarbonate is the predominant species in the typical municipal water system pH range of 6.5 to 8.5. There are several reasons why bicarbonate is the predominant species in tap water. Carbonate does not exist in significant concentration in that typical water pH range since it is preferentially transformed to bicarbonate. Hydroxyl is a strong base that reacts easily with impurities in the water. Since there are typically impurities in the water, hydroxyl does not exist in significant concentration in drinking water supplies.
+
+Excessive alkalinity can reduce the quality and perception of pale colored beers. Alkalinity can also have a detrimental effect on beers made with Malt Extract since excessive alkalinity can drive up the pH of the reconstituted wort and finished beer. Water used for beers made with Malt Extract should have alkalinity under 50 ppm as CaCO~3~. The alkalinity of mashing water should be adjusted based on the acidity of the mash grist.
+
+Most brewing requires that mashing water use low alkalinity water and all sparging water should have low alkalinity. Alkalinity can be reduced in a number of ways. Dilution with distilled water or RO water is effective in reducing alkalinity. Acid addition is also a simple way to neutralize alkalinity.
+
+Brewing with acidic grists (significant roast and/or crystal malt content) can require that the **mashing water** have alkalinity. Alkalinity helps buffer the drop pH created by the acidic grist and helps keep the mash pH in the proper range. Chalk (calcium carbonate), Pickling Lime (calcium hydroxide), or Baking Soda (sodium bicarbonate) can be used to increase alkalinity. As mentioned above, **sparging water** should have low alkalinity and alkalinity-increasing minerals should not be added to sparging water.
+
+A summary of alkalinity adjustment options are presented in the sections below.
+
+### Chalk
+
+Chalk increases alkalinity. Because Chalk does not dissolve easily in plain water, chalk should only be added to the mash. Most acids in the mash are weak and only a small portion of the chalk will be dissolved. To fully dissolve chalk in water, it must be dissolved with an acid. In nature, CO~2~ forms carbonic acid in water which dissolves the chalk. Bubbling air or CO~2~ through a chalk water solution can be used to dissolve the chalk, but that requires time and effort.
+
+Evidence has shown that even in the mash, chalk does not dissolve in significant quantity and the chalk's theoretical amount of alkalinity is not produced in the mash. That evidence shows that the mash pH can only be increased by 0.1 to 0.2 units, no matter how high the chalk dosage is. Other brewing water references and software may assume either all or half of the theoretical alkalinity is added with chalk addition. A brewer should verify the assumption made by those resources for the amount of alkalinity added to the water from a chalk addition. A more comprehensive discussion on the time and pH dependent behavior of chalk is presented by AJ DeLange in the following link: http://wetnewf.org/pdfs/chalk.html (the website is currently non-functioning)
+
+While chalk produces calcium and carbonate ions, the carbonate ions will eventually form bicarbonate ions in water with moderate to low pH. For a chalk addition of 1 gram per gallon, the effective bicarbonate concentration is increased by about 322 ppm assuming the chalk is fully dissolved. Undissolved chalk precipitates from the water and is not an active component of the water chemistry. In general, **brewers should avoid using chalk** for mashing water alkalinity adjustment since chalk is an **unreliable alkalinity contributor**. Other more reliable sources of alkalinity are presented below.
+
+### Pickling Lime
+
+Pickling Lime (calcium hydroxide) increases alkalinity and is readily soluble in water, but must be handled with care since it can burn skin and eyes and significantly raise the mash pH if not dosed properly. Pickling Lime can often be found where home canning supplies are sold. It is also available at salt-water aquarium shops and may be found under the names: Kalkwasser, Lime, or Slaked Lime. Although pickling lime supplies hydroxyl ions to water, the hydroxyl content can be represented as a corresponding bicarbonate concentration for use in brewing calculations. For a pickling lime addition of 1 gram in a gallon of water, the corresponding increase in "effective" bicarbonate content is about 435 ppm and the calcium increase is about 143 ppm.
+
+A problem with pickling lime is its purity. Pickling lime will degrade into chalk when exposed to moisture in the air. Therefore, pickling lime may not always produce the intended degree of alkalinity. The purity of pickling lime can be easily assessed by placing a drop of acid on a small amount of the dry powder. If the powder bubbles or fizzes, that is a sign that chalk is present in the sample. Pure pickling lime will react with the acid without bubbling or fizzing.
+
+### Baking Soda
+
+Baking Soda increases alkalinity and is readily soluble in water, but its usage should be limited if the sodium content of the brewing water is a concern. Sodium at a concentration of 100 ppm or more may produce harshness in the beer flavor. Baking soda is relatively inert and does not degrade. Therefore, its strength (alkalinity) can typically be assumed to be consistent. A baking soda addition of 1 gram per gallon of water, increases the bicarbonate content of the water by about 192 ppm and the sodium content by about 72 ppm. Another way to look at baking soda's contribution is that when added to produce a moderate sodium increase of 40 ppm, the alkalinity of the water increases by over 85 ppm (as CaCO~3~). That alkalinity increase is often sufficient for brewing many dark beers.
+
+### Liquid Organic Acids
+
+Liquid Organic Acids such as Lactic and Acetic Acid can be used for alkalinity reduction and acidification. Soured wort (sauergut) is a traditional German brewing method of producing dilute lactic acid for alkalinity reduction and acidification.
+
+**Lactic Acid** is readily available for brewing use in many countries, but it can produce a distinctive "tang" in the flavor profile at high concentration. Lactic acid flavor is typically characterized as smooth. It is a weak acid that can be somewhat safer to handle than other stronger acids. Lactic acid is reported to have a flavor threshold of about 400 ppm in beer (Briggs et al., 1981). The flavor threshold can vary between tasters. Therefore, the 400 ppm threshold may not hold for all individuals. In addition, typical beers (especially German beers) naturally have a low concentration of lactic acid (typically 50 to 300 ppm) from malting, fermentation, sauergut usage, and production by-products (Briggs et al., 1981). Therefore, it may not be possible to use lactic acid to treat highly alkaline water without flavor impact. Lactic acid is a monoprotic acid and it consumes 1 part bicarbonate per one part lactic acid. For these reasons, it appears that the maximum alkalinity neutralization that lactic acid could provide for brewing is about 100 to 350 ppm reduction in bicarbonate (82 to 287 ppm alkalinity reduction, as CaCO3) in the water. In general, 1 ml of 88% lactic acid per gallon of water (0.37ml per liter) should avoid incurring lactic taste effects in brewing.
+
+Lactic acid is quite stable and does not degrade appreciably when stored at room temperature in sealed containers. The shelf life of lactic acid stored at 80°C (176°F) is reported at over 80 years. However, lactic acid is hygroscopic and will absorb moisture from the air which decreases the acid's concentration. Keep lactic acid in a sealed container to reduce air contact and loss of strength.
+
+**Acetic Acid** produces a very strong, pungent, and distinctive flavor and aroma (vinegar) and it is not typically used in brewing. However, there are some beer styles that display acetic notes that can benefit from minor acetic acid additions instead of relying on natural processes to create those flavors. In addition, controlled addition of acetic acid can be more reliable and repeatable than culturing acetic bacteria in beer. Allowing acetic bacteria into the brewery environment may introduce a potential beer spoiler into the brewery.
+
+**Sauergut** is produced in the brewery by inoculating fresh wort with lactic bacteria and fermenting it without oxygen contact (anaerobic) at around 118°F (48°C). It generally has to be used fresh and must be recently produced to be effective. The resulting saurergut is added directly to the mash tun and to the kettle to reduce alkalinity and pH. The lactic acid concentration of the sauergut typically varies between 0.5 and 1.5 percent. An additional resource on sauergut production is provided [here](https://www.brunwater.com/s/Natural_Lactic_Acid.pdf).
+
+### Phosphoric Acid
+
+Phosphoric Acid can be used for alkalinity reduction in brewing water and it has little flavor effect since this acid is similar to the malt acids produced during mashing. Malt adds about 1 percent phosphatic compounds to wort, although many of them are bound in organic molecules such as phytin. Phosphoric acid can complex with high calcium concentration in water and precipitate from solution. However when water's calcium concentration is less than about 300 ppm, adding phosphoric acid for alkalinity neutralization (typically added at well under 0.1 percent) **should not cause excessive precipitation** of calcium in the mash and can be used freely in brewing. Phosphoric acid has less tendency to create acidic vapors than hydrochloric and sulfuric acids, but it is a strong acid that must be handled carefully when used at high strength.
+
+### Hydrochloric and Sulfuric Acids
+
+Hydrochloric and Sulfuric acids are strong acids that reduce alkalinity and also contribute chloride or sulfate ions, respectively. These acids do not produce strong flavor impacts, but the limitations for either chloride or sulfate concentration mentioned above should be observed. Even at low strength, these acids may create hazardous acidic vapors that will corrode metal and damage lungs, eyes, and skin. For typical brewing usage, diluting these acids to lower strength or concentration is recommended for safety.
+
+CRS is a proprietary blend of hydrochloric and sulfuric acids, most commonly available in the United Kingdom. When dosed at 1 ml per liter, it adds a fixed ratio of 64 ppm chloride and 87 ppm sulfate while neutralizing 221 ppm bicarbonate (181 ppm alkalinity reduction, as CaCO~3~).
+
+### Solid Organic Acids
+
+Solid Organic Acids such as **Citric**, **Malic**, and **Tartaric** acids can also be utilized for alkalinity reduction and acidification. These acids may impart distinctive flavor into the water and beer if used at elevated concentration. In some cases, those flavors may be welcome in beer. These organic acids can add fruity or estery perceptions to the beer that may benefit certain styles.
+
+**Citric Acid** is reported to have a flavor threshold of about 150 ppm in beer (Briggs et al., 1981). The flavor threshold can vary between tasters. Therefore, the 150 ppm threshold may not hold for all individuals. In addition, typical beers naturally have a low concentration of citric acid (typically 50 to 250 ppm) from malting and fermentation by-products (Briggs et al., 1981). Therefore, it may not be possible to exceed 150 ppm of citric acid in water, without flavor impact.
+
+### Acid Safety
+
+A concern with acids is that they can be hazardous to handle and they require knowledge or experience to determine how much is needed. Accurate measurement for acid addition is also needed. Graduated pipettes, graduated cylinders, and graduated medicine droppers are suitable for measuring liquid acids. Accurate scales are required for measuring solid acids.
+
+### Acid Malt
+
+Acid Malt can also be used to reduce alkalinity. Acid malt is similar to an acid addition since the malt has been infused with lactic acid or been acidified by bacterial action. The typical acid content of acid malt can vary from maltster to maltster. A range of 2 to 3 percent by weight lactic acid to acidulated grain weight is typical. Brewers should monitor their mashing pH results to assess if the strength of their acid malt supply has varied from typical and adjust the dosage for future uses.
+
+Since the primary acid is lactic, the acid flavor is relatively smooth, but other components from the acidification process may provide more complex flavor than refined lactic acid. Since acid malt is typically added as a low percentage of the overall grist, lighter and less flavored beers should benefit more from the complex flavor offered by acid malt. Stronger and bolder flavored beers are less likely to benefit from the acid malt's flavor contribution.
+
+### Harden Water to Increase Malt Acid
+
+Hardening the brewing water to increase malt acid (phytin) production is a common alternative for alkalinity reduction. The brewing water is hardened with calcium and/or magnesium salts to create more malt acids through the malt phosphate reaction with the calcium or magnesium (hardness) ions. This approach is directly from the concept of Residual Alkalinity presented above.
+
+**Hardening an alkaline water does not make the water suitable for sparging use**. The malt phytin content is depleted during sparging and that malt acid production is limited during sparging. A**lkaline sparging water should be neutralized with an acid addition**.
+
+### Decarbonation by Boiling
+
+Water with high Temporary Hardness is suited for hardness and alkalinity reduction by boiling. An extended discussion of this method is presented in the Hardness Adjustment section above.
+
+### Lime Softening
+
+Lime Softening is another decarbonation practice where the water is chemically reacted with a strong base to force the less soluble calcium carbonate and magnesium hydroxide to precipitate out of the water due to high pH. When conducted properly, lime softening reduces alkalinity. Lime softening is presented with more detail in the **Hardness Adjustment** section.
+
+### Delaying Hardness Mineral Additions to the Mash
+
+Delaying hardness mineral additions to the mash may be an alternative to adding alkalinity when mashing an acidic grist. When the brewing water has lower than desired alkalinity and calcium and/or magnesium additions are planned for the water, delaying the addition of those hardness-producing minerals to the mash can be employed to avoid decreasing RA and mashing pH any further. An overly low mashing pH can increase the proteolysis of proteins in the wort and the body of the resulting wort can have less body (be thinner) than desired. Proper mashing pH avoids excessive proteolysis which should retain more of the medium-length proteins that contribute to beer body.
+
+Although calcium and magnesium minerals can be important additions to brewing water, they are not absolutely needed in the mash when the alkalinity is too low for the mash. As long as those minerals are added to the wort prior to fermentation, they will still serve their purpose as if originally added to the mash without the detriment of decreasing mash pH too far. The calcium and/or magnesium additions intended for the mash can be added directly the kettle prior to the boil to provide the desired water profile to the wort. Be aware that the pH reducing effect of hardness mineral addition is not avoided, it is only delayed past the mash and it occurs in the kettle. If the resulting kettle wort pH will be too low, it is better to use the proper alkalinity level in the mash to avoid this effect.
+
+### Altering Mash Thickness
+
+Since mash pH hinges on the relative amounts of acidity from the grist and alkalinity from the water, altering the relative amount of water in the mash does affect mash pH. In the case of mashing with a water with higher than desired alkalinity, reducing the amount of water in the mash (water/grist ratio) can have the net effect of reducing the mash pH. If the mashing water has too little alkalinity, increasing the amount of water in the mash can have the effect of increasing the mash pH.
+
+Mashing trials have proven that mash thickness also has an effect on the variation of wort pH during the mash. Thin mashes tend to have a greater variation in pH during the course of the mash than thick mashes do. The popularity of Brew in a Bag (BIAB) methods has increased the use of thin mashes in brewing. Brewers should be aware that the pH does vary throughout the typical mashing period and pH tends to become relatively constant after about 45 minutes of mashing. The fineness of the grist milling is expected to have an influence in the speed at which the mashing pH becomes stable, (finer = quicker).
+
+### When to Add Acid to Mashing and Sparging Water
+
+If the raw water has significant alkalinity, it does make a difference if an acid dose is added to cold or hot water. The alkalinity value reported for raw water is typically measured near room temperature. As pointed out above, raising the temperature of water reduces the solubility of dissolved carbon dioxide in the water. Heating decarbonates the water and converts alkalinity in the water (mainly bicarbonate) to undissolved chalk in the water and the carbon dioxide bubbles out of the water. Therefore, the alkalinity of heated water is reduced in comparison to its room-temperature alkalinity.
+
+Since acid additions are calculated based on that reported room-temperature alkalinity value, it is important that any acid dose calculated for that water be added prior to heating the water. If the acid is added after the water is heated, the reduced alkalinity of the heated water can mean that too much acid will be added and the resulting brewing water alkalinity will be lower than targeted. **Add acid to brewing water prior to heating in order to achieve the alkalinity targeted by brewing water calculations**. If acid must be added after the water has been heated, test the alkalinity of the heated water and use that new alkalinity to calculate the acid addition.
+
+If the raw water has very low alkalinity (such as distilled or RO water), there is little difference in alkalinity caused by heating the water and acid doses can be added to hot or cold water with near equal effect.
+
+## Mineral Profile Adjustment
+
+Mineral additions are sometimes desirable for RA adjustment and for creating certain flavor contributions in the finished beer. Common mineral salts are typically used to provide the mineral additions. The following mineral salts are commonly used in brewing water adjustment. Only food-grade minerals should be used for water adjustment.
+
+**Gypsum** provides calcium and sulfate ions to brewing water. Although gypsum has limited solubility in water, it is readily soluble in water at the concentrations typically used for brewing. The solubility limit for gypsum in boiling water is about 1.6 grams per liter of water. That dosing rate would approach 400 ppm calcium and 900 ppm sulfate which is far higher than recommended for brewing water. Therefore, gypsum can be considered readily soluble at typical brewing water usage rates. Gypsum is more soluble in cool to warm water (maximum gypsum solubility occurs at around 40C or 100F) and should be added to water prior to boiling for quicker dissolution. Vigorous stirring is typically required to speed the gypsum dissolution. If gypsum does not dissolve in a timely manner when added to water at less than 1.6 grams per liter, test the gypsum for the presence of chalk by adding an acid such as vinegar or lactic to the dry powder. If the mixture 'fizzes', the gypsum is adulterated with chalk. Gypsum is also known by its chemical name: calcium sulfate dihydrate and its chemical formula is: CaSO~4~·2H~2~O. Gypsum does not readily pick up moisture from the air. Gypsum is typically available from brewing supply stores. A gypsum addition of 1 gram per gallon, increases the calcium content of the water by about 61 ppm and the sulfate content by about 147 ppm. An addition of 1 gram per liter, increases the calcium content of the water by about 232 ppm and the sulfate content by about 558 ppm.
+
+**Calcium Chloride** provides calcium and chloride ions and is readily soluble in water. Calcium chloride is highly hygroscopic and will rapidly draw moisture out of the air, changing its state of hydration. A common form of Calcium Chloride as a brewing mineral is calcium chloride dihydrate and its chemical formula is: CaCl~2~·2H~2~O. A brewer may also obtain this mineral in anhydrous, monohydrate, and tetrahydrate forms. Testing of typical solid calcium chloride sold by US homebrewing stores, shows that the mineral often has a hydration state between anhydrous and dihydrate. Assuming the mineral is in its anhydrous state helps avoid overdosing wort with chloride.
+
+If this mineral is not kept in a tightly sealed container, it will eventually become a saturated mass and the reliability of mineral addition calculations will be poor. In its dihydrate form, a calcium chloride addition of 1 gram per gallon, increases the calcium content of the water by about 72 ppm and the chloride content by about 127 ppm. An addition of 1 gram per liter, increases the calcium content of the water by about 272 ppm and the chloride content by about 483 ppm. Contrast those results with those for the anhydrous mineral where 1 gram per gallon adds 95 ppm calcium and 169 ppm chloride.
+
+An alternative to solid calcium chloride dosing is to utilize liquid calcium chloride solution. These solutions can be prepared in the brewery or purchased as food-grade solutions. Since the specific gravity of calcium chloride solutions vary directly with the percentage of calcium chloride in solution, the strength of the solutions can be assessed by hydrometer or volumetric measurement. Using liquid solutions does avoid the problem of hydration change noted above for solid calcium chloride.
+
+**Epsom Salt** provides magnesium and sulfate ions and is readily soluble in water. Epsom salt is also known by its chemical name: magnesium sulfate heptahydrate and its chemical formula is: MgSO~4~·7H~2~O. Epsom Salt does not readily pick up moisture from the air. Epsom salt is typically available from drug stores. Be sure to obtain pure, food-grade Epsom Salt. An Epsom salt addition of 1 gram per gallon, increases the magnesium content of the water by about 26 ppm and the sulfate content by about 103 ppm. An addition of 1 gram per liter, increases the magnesium content of the water by about 99 ppm and the sulfate content by about 389 ppm.
+
+**Magnesium Chloride** provides magnesium and chloride ions and is readily soluble in water. A common form of magnesium chloride as a brewing mineral is magnesium chloride hexahydrate and its chemical formula is: MgCl~2~·6H~2~O. Magnesium chloride is highly hygroscopic and will rapidly draw moisture out of the air, changing its state of hydration. It should be kept in a tightly sealed container. Magnesium chloride is typically used as a health supplement and may be found in health food or drug stores. A magnesium chloride addition of 1 gram per gallon, increases the magnesium content of the water by about 32 ppm and the chloride content by about 92 ppm. An addition of 1 gram per liter, increases the magnesium content of the water by about 120 ppm and the chloride content by about 349 ppm.
+
+**Table Salt** provides sodium and chloride ions and is readily soluble in water. **Non-iodized** salt is preferred since iodine is poisonous to yeast. Table salt is also known as sodium chloride and its chemical formula is: NaCl. Table salt does not readily pick up moisture from the air. Non-iodized table salt is available from grocery stores. A table salt addition of 1 gram per gallon, increases the sodium content of the water by about 104 ppm and the chloride content by about 160 ppm. An addition of 1 gram per liter, increases the sodium content of the water by about 393 ppm and the chloride content by about 607 ppm.
+
+**Baking Soda** provides sodium and bicarbonate ions and is readily soluble in water. Baking soda is also known as sodium bicarbonate and its chemical formula is: NaHCO~3~. Baking soda does not readily pick up moisture from the air. Baking soda is available from grocery stores. A baking soda addition of 1 gram per gallon, increases the sodium content of the water by about 72 ppm and the bicarbonate content by about 192 ppm. An addition of 1 gram per liter, increases the sodium content of the water by about 274 ppm and the bicarbonate content by about 726 ppm.
+
+**Chalk** provides calcium and carbonate ions. Chalk is also known as Limestone and calcium carbonate and its chemical formula is: CaCO~3~. Chalk does not readily pick up moisture from the air. Chalk is typically available from brewing supply stores.
+
+Chalk is not readily soluble in water and acidic conditions are required to fully dissolve chalk into water. In nature, carbon dioxide dissolves into water to form carbonic acid. Carbonic acid dissolves chalk into the water and converts all the carbonate into bicarbonate. Aerating (bubbling, splashing, spraying, etc) helps add carbon dioxide to water, but that process can take days. The process can be accelerated by pressurizing the water with carbon dioxide (carbonation) to dissolve chalk. The fully alkalinity of chalk can only be achieved when the chalk is fully dissolved in water. If chalk cannot be fully dissolved into the water prior to brewing, adding chalk to the mash can help partially dissolve the chalk. The mash contains only a small amount of acids strong enough to dissolve chalk quickly and the mashing pH will typically only drop by about 0.1 units, without regard to how much chalk is added. Therefore, **chalk use is not recommended in typical brewery usage**.
+
+A chalk addition of 1 gram per gallon, increases the calcium content of the water by about 106 ppm (53 ppm) and the bicarbonate content by about 322 ppm (161 ppm) if the chalk is fully dissolved (partially dissolved concentrations in parentheses). An addition of 1 gram per liter, increases the calcium content of the water by about 400 ppm (200 ppm) and the bicarbonate content by about 1220 ppm (610 ppm).
+
+**Pickling Lime** provides calcium and hydroxide ions. Pickling Lime is also known as Slaked Lime and calcium hydroxide. Its chemical formula is: Ca(OH)~2~. The hydroxide ions are strong consumers of acidity and can significantly increase pH if over dosed. Consuming acidity is the definition of Alkalinity. Therefore, an equivalent bicarbonate alkalinity contribution can be calculated. Pickling Lime is readily soluble in water and must be used with care.
+
+Pickling Lime will pick up moisture from the air which allows the mineral to revert to Chalk with enough time and CO~2~ contact. Pickling Lime should be kept in a tightly sealed container to avoid air contact. Pickling Lime can typically be found in stores selling home canning supplies which may include grocery stores. The purity of pickling lime can be assessed by dropping strong acid (acetic, lactic, phosphoric, etc) on a dry sample of the lime. If the sample bubbles, there is chalk impurity in the lime.
+
+A pure pickling lime addition of 1 gram per gallon, increases the calcium content of the water by about 143 ppm and the effective bicarbonate content by about 435 ppm. An addition of 1 gram per liter, increases the calcium content of the water by about 541 ppm and the effective bicarbonate content by about 1645 ppm.
+
+**Sulfate/Chloride Ratio** can be a helpful insight into how the combination of these ions may be perceived in beer taste. The ratio was presented in the Handbook of Brewing (Priest & Stewart) as Chloride/Sulfate Ratio. Since chloride is more typically preferred at lower concentrations than sulfate in English and American Ales, reversing the original ratio produces a value greater than one in those cases. The ratio is presented here in the Sulfate/Chloride format for that reason.
+
+At moderate concentrations, the Sulfate/Chloride Ratio provides a rough indicator of how the brewing water can shift the perception of Sweetness/Maltiness or Bitterness/Dryness in the finished beer. Briggs et. al. describes the ratio's effect as **Fullness** versus **Dryness** and those terms more accurately describe the effects better than the terms: **Maltiness** or **Bitterness**. Chloride accentuates fullness and sulfate accentuates dryness. The fullness presented by the chloride enhances the perception of sweetness and maltiness while the dryness from sulfate enhances the perception of bitterness. The ratio of these ions can shift flavor perceptions of the finished beer. Brewers should be aware that these ion effects can only improve perceptions. These ions or their perceptions will not alter the actual levels of bittering or sweetness in the finished beer.
+
+Since flavor contributions and perceptions from these ions disappear at very low concentrations, the ratio provides little indication when the chloride level is less than about 25 ppm. Conversely, at very high concentrations, the ions' impacts can overwhelm the beer and produce an excessively minerally flavor in the beer. Therefore, the ratio should be limited to chloride concentration of about 100 ppm or less. Within these limitations on the ratio, the following flavor perceptions are taken from the Handbook of Brewing.
+
+| Perception | SO4 / Cl Ratio |
+|------------|----------------|
+| Very Dry   | \>2            |
+| Dry        | 2              |
+| Balanced   | 1.3            |
+| Full       | 0.75           |
+| very Full  | 0.5            |
+
+: Sulfate / Chloride Ratio Effects (for chloride concentration between 25 and 100 mg/L) {#tbl-ratiotable}
+
+## Measuring Mineral Additions
+
+At the typical homebrewing batch size of around 5 gallons (19L), mineral additions are typically very small and they require relatively precise measurement and dosing. Volumetric measures (such as teaspoon or tablespoon) are inherently inaccurate due to the powdery or granular nature of many dry mineral forms. The density and packing of the mineral in a volumetric measure can vary significantly. Therefore it is difficult to be sure that the intended quantity of mineral is added to the water when measuring volumetrically. A more accurate method of mineral measurement is by weight. At the typical homebrewing batch size, a scale with an 0.1 gram accuracy should be sufficient for measuring mineral additions. At the craftbrewing batch size, a scale with 1 gram accuracy should be sufficient for this use since the mineral additions are larger.
+
+Pickling Lime is a very strong base and the amount typically added to mashing water is relatively small. Very accurate measurement of this mineral is highly recommended. High accuracy digital scales are relatively inexpensive and widely available. Brewers adjusting their brewing water chemistry should obtain a scale with sufficient accuracy to meet their brewing needs.
+
+Some minerals and acids used in brewing are in liquid form. Measurement and dosing of acids is especially critical in brewing. An accurate volumetric measure such as graduated cylinder, graduated pipette, or graduated medicine dropper is recommended. For the homebrewer, graduated medicine droppers are suitable and are readily available at many drug stores. When strong acids are used and the acid addition volume is small, knowing the volume delivered per drop may be useful. Fill the dropper with a known quantity of water (for instance, 1 mL) and count the number of drops produced by that volume. Calculate the volume per drop using that result. A weight measure can be used for liquids if the density of the liquid is known. Divide the calculated liquid volume by the liquid's density to determine the weight of liquid needed.
+
+For measuring small mineral quantities when accuracy is required, a dilute mineral solution may be a good approach. For instance when dealing with Pickling Lime additions, one approach would be to dissolve 10 grams of pickling lime in 1 liter of water. Since some scales may not have the precision to discern 0.1 grams, the larger lime quantity intended for the solution is more likely to be measured more accurately. A portion of that solution is added to deliver a prescribed amount of lime. Say 0.35 grams of pickling lime is needed for the mash. Since the mineral solution contains 1 gram of pickling lime per 100 milliliters of solution, a dose of 35 milliliters of the solution is added to the mash to deliver that 0.35 grams of pickling lime. **In the case of pickling lime solutions, the solution will have a very high pH and can cause severe burns if it contacts skin, eyes, or other sensitive membranes. Use extreme caution when handling or dosing this solution or acids**.
+
+## Extract Brewing Considerations
+
+Brewers using Malt Extract for their brewing can still benefit from Water Adjustments. Most particularly when using either highly mineralized or alkaline water or when using RO or Distilled Water.
+
+When using highly mineralized or alkaline water, the water can impart poor flavor to the beer. Highly mineralized water may impact flavor with excessive ion concentrations as noted in Section 2 above. Highly alkaline water is likely to increase the pH of the resulting wort and that creates a coarser and rougher flavored beer. If the tap water has high ion concentrations, dilution with RO or Distilled Water is appropriate. A brewer should know what their tap water contains before contemplating mineral additions. If the water has high alkalinity, the sparging water alkalinity should still be reduced to under 50 ppm to avoid tannin extraction from any steeped grains and to help keep kettle wort in a desirable pH range as shown in Section 2. Acidification of tap water may be suitable for reducing excessive alkalinity.
+
+When brewing with RO or Distilled Water and malt extracts, the extract should provide most of the minerals needed for proper fermentation performance. The ion content in the malt extract is typically low to moderate and that content is from the Maltster's local water. If the brewer desires a specific flavor profile, additional Sodium, Sulfate or Chloride containing minerals can be added to the RO or Distilled brewing water to create desired taste impacts in the finished beer.
+
+# References
+
+American Water Works Association, **Optimizing Chloramine Treatment, 2nd Ed.**, G. Kirkmeyer, Martel, K., Thompson, G., Radder, L., AWWA, 2004.
+
+American Water Works Association, **Water Quality and Treatment, 5th Ed.**, R. Letterman, Editor, McGraw-Hill, 1999.
+
+Briggs, D.E., J.S. Hough, R. Stevens, and T.W. Young, **Malting and Brewing Science, 2nd Ed.** London, Chapman & Hall, 1981.
+
+Briggs, J.C. and J.F. Ficke, **Quality of rivers of the United States, 1975 water year; based on the National Stream Quality Accounting Network (NASQAN)**, Series 78-200, U.S. Environmental Protection Agency, 1977.
+
+Brungard, M.A. **Brewing Water Series: Ireland**, Zymurgy, November/December 2013.
+
+Brungard, M.A. **Brewing Water Series: Burton on Trent**, Zymurgy, January/February 2014.
+
+Brungard, M.A. **Brewing Water Series: Bavaria**, Zymurgy, March/April 2014.
+
+Brungard, M.A. **Brewing Water Series: London**, Zymurgy, May/June 2014.
+
+Brungard, M.A. **Calcium and Magnesium in Brewing Water**, Zymurgy, March/April 2015.
+
+Clark, J.W., W. Viessman, and M.J. Hammer, **Water Supply and Pollution Control, 3rd Ed.** New York, Harper & Row, 1977.
+
+De Clerck, J., **A Textbook of Brewing**, Chapman & Hall, 1957.
+
+DeLange, A.J. **Understanding Alkalinity and Hardness - Part I**, Unpublished.
+
+DeLange, A.J. **Understanding Alkalinity and Hardness - Part II**, Unpublished.
+
+Etacude, **Solubility curve for calcium sulfate in water**, http://chemicals.etacude.com/c/more/caso4.html
+
+Fix, G.J. and L.A. Fix, **An Analysis of Brewing Techniques**, Brewers Publications, 1997.
+
+Kunze, W., **Technology Brewing and Malting, 4th Ed.**, VLB Berlin, 2010.
+
+Omernik, J.M. and C.F. Powers, **Total Alkalinity of Surface Waters, A National Map, Annals of the Association of American Geographers**, 1983.
+
+Palmer, J, **How to Brew**, website, 1999.
+
+Pearson, A., Environment Agency - Midlands Region - Central Area, **Burton Groundwater Quality**, personal communication, 2010.
+
+Priest, F. & G. Stewart, Editors, **Handbook of Brewing**, CRC Press, 2006.
+
+Snoeyink, V.L. and D. Jenkins, **Water Chemistry**, J. Wiley & Sons, 1980.
+
+Troester, K, The effect of brewing water and grist composition on the pH of the mash, 2009.

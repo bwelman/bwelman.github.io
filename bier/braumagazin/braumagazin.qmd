@@ -3,7 +3,7 @@ title: "brau!magazin"
 description: "Duitstalig online eMagazin voor hobbybrouwers."
 date: "2022-06-27"
 categories: [tijdschrift]
-lang: de
+lang: nl
 image: preview.png
 ---
 
