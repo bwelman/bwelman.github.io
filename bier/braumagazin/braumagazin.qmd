@@ -1,0 +1,12 @@
+---
+title: "brau!magazin"
+description: "Duitstalig online eMagazin voor hobbybrouwers."
+date: "2022-06-27"
+categories: [tijdschrift]
+lang: de
+image: preview.png
+---
+
+[brau!magazin](https://braumagazin.de/) was een (gratis) online Duitstalig magazine dat zich specifiek richtte op hobbybrouwers. Het verscheen 2-4 keer per jaar met de eerste uitgave in herfst 2014. De editie voorjaar 2022 is echter de laatste. Het gaat nu als blog verder met onregelmatig gepubliceerde artikelen van hobbybrouwers voor hobbybrouwers.
+
+Een gerubriceerd overzicht van alle in het magazine verschenen artikelen heb ik geplaatst in een Excel bestand: [braumagazin.xlsx](braumagazin.xlsx)
