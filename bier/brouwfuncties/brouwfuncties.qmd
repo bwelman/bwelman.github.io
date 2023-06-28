@@ -1,0 +1,51 @@
+---
+title: "Brouwfuncties"
+description: "Conversiefuncties voor R en Excel."
+date: "2020-01-04"
+image: "preview.png"
+categories: [rekenen, R, Excel]
+---
+
+De functies zijn voor gebruik in R als in Excel in de volgende bestanden beschikbaar:
+
+-   [brouwfuncties.R](brouwfuncties.R)
+
+-   [brouwfuncties.bas](brouwfuncties.bas)
+
+# Conversies
+
+Functies voor het converteren van de ene eenheid naar een andere eenheid.
+
+-   `Plato2Brix(plato)` : Zet Plato waarde om naar Brix waarde.
+
+    -   `plato` - Plato waarde
+
+-   `Brix2Plato(brix)` : Zet Brix waarde om naar Plato waarde.
+
+    -   `brix` - Brix waarde
+
+-   `SG2Plato(sg, methode = "simpel")` : Zet SG waarde om naar Plato waarde.
+
+    -   `sg` - SG waarde
+
+    -   `methode` - de gebruikte methode, "simpel" (default) of "clerck"
+
+-   `Plato2SG(plato, methode = "simpel")` : Zet Plato waarde om naar SG waarde.
+
+    -   `plato` - Plato waarde
+
+    -   `methode` - de gebruikte methode, "simpel" (default) of "clerck"
+
+# Digitaal Hop Rendement (DHR)
+
+-   `DHR_Simpel(kooktijd)` : Bepaalt decimaal hoprendement volgens eenvoudige methode.
+
+    -   `kooktijd` - kooktijd in minuten
+
+-   `DHR_Tinseth(kooktijd, sg)` : Bepaalt decimaal hoprendement volgens Tinseth methode.
+
+    -   `kooktijd` - kooktijd in minuten
+
+    -   `sg` - dichtheid
+
+    -   De argumenten mogen niet beide een vector zijn.
