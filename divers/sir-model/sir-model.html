@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2021-04-23">
+<meta name="description" content="Uitleg SIR model voor infectieziekten">
+
+<title>Archief Ben - SIR model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="../../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="../../site_libs/viz-1.8.2/viz.js"></script>
+<link href="../../site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="../../site_libs/grViz-binding-1.0.10/grViz.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Archief Ben</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Zoeken"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Schakel tussen navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../access.html" rel="" target="">
+ <span class="menu-text">Access</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../excel.html" rel="" target="">
+ <span class="menu-text">Excel</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../bier.html" rel="" target="">
+ <span class="menu-text">Bier</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../chemie.html" rel="" target="">
+ <span class="menu-text">Chemie</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../divers.html" rel="" target="">
+ <span class="menu-text">Divers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials.html" rel="" target="">
+ <span class="menu-text">Tutorials</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#inleiding" id="toc-inleiding" class="nav-link active" data-scroll-target="#inleiding">Inleiding</a></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">Model</a>
+  <ul class="collapse">
+  <li><a href="#wiskundig-model" id="toc-wiskundig-model" class="nav-link" data-scroll-target="#wiskundig-model">Wiskundig model</a>
+  <ul class="collapse">
+  <li><a href="#herstellen" id="toc-herstellen" class="nav-link" data-scroll-target="#herstellen">Herstellen</a></li>
+  <li><a href="#besmet-raken" id="toc-besmet-raken" class="nav-link" data-scroll-target="#besmet-raken">Besmet raken</a></li>
+  <li><a href="#samenvatting" id="toc-samenvatting" class="nav-link" data-scroll-target="#samenvatting">Samenvatting</a></li>
+  <li><a href="#numeriek-voorbeeld" id="toc-numeriek-voorbeeld" class="nav-link" data-scroll-target="#numeriek-voorbeeld">Numeriek voorbeeld</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#verspreiding-van-de-ziekte" id="toc-verspreiding-van-de-ziekte" class="nav-link" data-scroll-target="#verspreiding-van-de-ziekte">Verspreiding van de ziekte</a>
+  <ul class="collapse">
+  <li><a href="#basis-reproductiegetal-r_0" id="toc-basis-reproductiegetal-r_0" class="nav-link" data-scroll-target="#basis-reproductiegetal-r_0">Basis reproductiegetal <span class="math inline">\(R_0\)</span></a></li>
+  </ul></li>
+  <li><a href="#maximum-aantal-geïnfecteerden" id="toc-maximum-aantal-geïnfecteerden" class="nav-link" data-scroll-target="#maximum-aantal-geïnfecteerden">Maximum aantal geïnfecteerden</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">SIR model</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">wiskunde</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Uitleg SIR model voor infectieziekten
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">23 april 2021</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="inleiding" class="level1">
+<h1>Inleiding</h1>
+<p>Het SIR model is een wiskundig model dat beschrijft en voorspelt hoe snel de verspreiding van een infectieziekte verloopt door een groep mensen. Voor de eenvoudigste vorm van zo’n model zijn slechts drie getallen nodig.</p>
+<ol type="1">
+<li><p>Een getal dat aangeeft hoe lang duurt het voordat een besmettelijk persoon iemand anders besmet heeft. Een typische grieppatiënt besmet bijvoorbeeld na één of twee dagen alweer de volgende, bij corona wordt dat geschat op zes dagen, maar mogelijk korter.</p></li>
+<li><p>Een getal dat aangeeft hoe lang deze besmettelijke fase duurt.</p></li>
+<li><p>Een getal dat aangeeft op hoeveel mensen één besmet persoon het virus gemiddeld overdraagt, ervan uitgaande dat iedereen in de populatie het nog kan krijgen. Dat is uit te drukken met het <strong>basis reproductiegetal</strong> <span class="math inline">\(\mathrm{R_0}\)</span>.</p></li>
+</ol>
+<p>Het SIR model is een van de eenvoudigste modellen om de verspreiding van een virus door een populatie te verklaren.</p>
+</section>
+<section id="model" class="level1">
+<h1>Model</h1>
+<p>Het model is een <a href="https://nl.wikipedia.org/wiki/Ziektecompartimentenmodel">Ziektecompartimentenmodel</a> dat veronderstelt dat elk persoon in de populatie tot een van de volgende groepen (compartimenten) behoort:</p>
+<ul>
+<li><strong>S(usceptible</strong> (Vatbaar): een persoon die de ziekte nog niet heeft gehad, niet immuun is voor de ziekte en dus besmet kan worden bij contact met een geïnfecteerd persoon.</li>
+<li><strong>I(nfectious)</strong> (Besmettelijk): een persoon die momenteel door de ziekte getroffen is en de ziekte op anderen kan overdragen.</li>
+<li><strong>R(ecovered)</strong> (Hersteld): een eerder besmette persoon die niet meer door de ziekte wordt aangetast en de ziekte niet meer kan overdragen.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-df5f88c8639848bd7b8c" style="width:100%;height:58px;" class="grViz html-widget "></div>
+<script type="application/json" data-for="htmlwidget-df5f88c8639848bd7b8c">{"x":{"diagram":"digraph sir {\n\t    graph [bgcolor=transparent, rankdir=LR]\n\t    node [shape= rectangle, style = filled]\n\t    S [label= \"S(usceptible)\", fillcolor=yellow]; I [label=\"I(nfectious)\", fillcolor=red]; R [label=\"R(ecovered)\", fillcolor=green]\n\t    S -> I ->R}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>SIR model</p>
+</div>
+</div>
+<p>Uitgangspunten bij het model:</p>
+<ul>
+<li>Op tijdstip nul is iedereen vatbaar en zit dus in groep <strong>S</strong>, behalve die personen die op dit tijdstip al besmettelijk zijn.</li>
+<li>Iedere persoon in groep <strong>S</strong> loopt de kans om besmet te raken en in groep <strong>I</strong> terecht te komen.</li>
+<li>Iedere persoon in groep <strong>I</strong>, dus iedere geïnfecteerd persoon, herstelt na zekere tijd en gaat over naar groep <strong>R</strong>.</li>
+<li>Iedere persoon die in groep <strong>R</strong> terecht komt is immuun en kan geen anderen meer besmetten. Er kan dus geen herinfectie plaatsvinden.</li>
+</ul>
+<section id="wiskundig-model" class="level2">
+<h2 class="anchored" data-anchor-id="wiskundig-model">Wiskundig model</h2>
+<p>Tom Rock, een wiskundige van de Universiteit Oxford, heeft in een youtube video <span class="citation" data-cites="rockOxfordMathematicianExplains2020">(<a href="#ref-rockOxfordMathematicianExplains2020" role="doc-biblioref">Rock 2020</a>)</span> een zeer goede uitleg van het mathematisch model gegeven.</p>
+<p>In het wiskundige model worden met <span class="math inline">\(S(t)\)</span>, <span class="math inline">\(I(t)\)</span> en <span class="math inline">\(R(t)\)</span> het aantal personen in elke groep op tijdstip <span class="math inline">\(t\)</span> aangegeven. Verder wordt aangenomen dat de populatie bestaat uit een constant aantal van <span class="math inline">\(N\)</span> personen welke constant blijft. Steeds geldt dus</p>
+<p><span class="math inline">\(S(t) + I(t) + R(t) = N\)</span></p>
+<p>Met <span class="math inline">\(S' = \frac{dS}{dt}\)</span>, <span class="math inline">\(I'= \frac{dI}{dt}\)</span> en <span class="math inline">\(R'= \frac{dR}{dt}\)</span> wordt de snelheid aangegeven waarmee <span class="math inline">\(S\)</span>, <span class="math inline">\(I\)</span> en <span class="math inline">\(R\)</span> veranderen. Verder wordt een dag als tijdseenheid genomen.</p>
+<p>De processen die plaatsvinden zijn <em>besmet raken</em> en <em>herstellen</em>.</p>
+<section id="herstellen" class="level3">
+<h3 class="anchored" data-anchor-id="herstellen">Herstellen</h3>
+<p>Door het herstelproces gaan personen over van groep <strong>I</strong> naar groep <strong>R</strong>. Dagelijks herstelt een fractie van het aantal personen. Deze fractie wordt aangegeven met de <strong>herstelcoëfficiënt</strong> <span class="math inline">\(\gamma\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opmerking
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bij mazelen is <span class="math inline">\(\gamma \approx \frac{1}{14}\)</span>.</p>
+</div>
+</div>
+<p>De verandering in de <strong>R</strong>-groep kan dan weergeven worden met de volgende differentiaalvergelijking:</p>
+<p><span class="math inline">\(R' = \gamma I\)</span></p>
+</section>
+<section id="besmet-raken" class="level3">
+<h3 class="anchored" data-anchor-id="besmet-raken">Besmet raken</h3>
+<p>Het infecteren van een persoon onstaat door contact tussen een S-persoon en een I-persoon. Bij zo’n contact is er een bepaalde kans dat de S-persoon geïnfecteerd wordt. <span class="math inline">\(S'\)</span> is dus evenredig met het aantal vatbare personen <span class="math inline">\(S\)</span> en ook evenredig met het aantal geïnfecteerde personen <span class="math inline">\(I\)</span>. En <span class="math inline">\(S\)</span> neemt af in de tijd, dus <span class="math inline">\(S'\)</span> is negatief.</p>
+<p>De verandering in de <strong>S</strong>-groep kan dan weergegeven worden met de volgende differentiaalvergelijking:</p>
+<p><span class="math inline">\(S' = -\beta SI\)</span></p>
+<p>Hierbij is <span class="math inline">\(\beta\)</span> de <strong>overdrachtscoefficient</strong>, welke de kans op besmetting aangeeft.</p>
+<p>De verandering in de <strong>I</strong>-groep bestaat uit twee componenten: de toename vanuit S-groep en de afname door overgang naar de I-groep. De verandering in deze groep wordt dan weergegeven met de volgende differentiaalvergelijking:</p>
+<p><span class="math inline">\(I'= \beta SI - \gamma I\)</span></p>
+</section>
+<section id="samenvatting" class="level3">
+<h3 class="anchored" data-anchor-id="samenvatting">Samenvatting</h3>
+<p>Het model bestaat nu uit drie differentiaalvergelijkingen met twee parameters (<span class="math inline">\(\beta\)</span> en <span class="math inline">\(\gamma\)</span>).</p>
+<span class="math display">\[\begin{eqnarray*}
+S' &amp;=&amp; - \beta SI \\
+I' &amp;=&amp; \beta SI - \gamma I \\
+R' &amp;=&amp; \gamma I
+\end{eqnarray*}\]</span>
+</section>
+<section id="numeriek-voorbeeld" class="level3">
+<h3 class="anchored" data-anchor-id="numeriek-voorbeeld">Numeriek voorbeeld</h3>
+<p>Als voorbeeld een groep van 50.000 personen, waarvan er 2000 besmet zijn op tijdstip 0, er nog niemand hersteld is, <span class="math inline">\(\beta = 0,00001\)</span> en <span class="math inline">\(\gamma = 0,0714 \approx \frac{1}{14}\)</span>.</p>
+<ul>
+<li><span class="math inline">\(S(0) = 48000\)</span></li>
+<li><span class="math inline">\(I(0) = 2000\)</span></li>
+<li><span class="math inline">\(R(0) = 0\)</span></li>
+<li><span class="math inline">\(\beta = 0,00001\)</span> en <span class="math inline">\(\gamma = 0,0714 \approx \frac{1}{14}\)</span></li>
+</ul>
+<p><strong>Vandaag (t=0)</strong></p>
+<ul>
+<li><span class="math inline">\(S(0) = 48000\)</span></li>
+<li><span class="math inline">\(I(0) = 2000\)</span></li>
+<li><span class="math inline">\(R(0) = 0\)</span></li>
+<li><span class="math inline">\(\beta = 0,00001\)</span> en <span class="math inline">\(\gamma = 0,0714\)</span></li>
+</ul>
+<p>en veranderingen:</p>
+<ul>
+<li><span class="math inline">\(S'(0) = - 0,00001*48000*2000 = -960\)</span></li>
+<li><span class="math inline">\(I'(0) = 0,00001*48000*2000 - 0,0714*2000 = 817,2\)</span></li>
+<li><span class="math inline">\(R'(0) = 0,0714*2000 = 142,8\)</span></li>
+</ul>
+<p><strong>Morgen (t=1)</strong></p>
+<ul>
+<li><span class="math inline">\(S(1) = S(0) + S'(0)*1dag = 48000 - 960 = 47040\)</span></li>
+<li><span class="math inline">\(I(1) = I(0) + I'(0)*1dag = 2000 + 817,2 = 2817,2\)</span></li>
+<li><span class="math inline">\(R(1) = R(0) + R'(0)*1dag = 0 + 142,8 = 142,8\)</span></li>
+</ul>
+<p>en veranderingen:</p>
+<ul>
+<li><span class="math inline">\(S'(1) = - 0,00001*47040*2817,2 = -1325,2\)</span></li>
+<li><span class="math inline">\(I'(1) = 0,00001*47040*2817,2 - 0,0714*2000 = 1124,1\)</span></li>
+<li><span class="math inline">\(R'(1) = 0,0714*2817,2 = 201,1\)</span></li>
+</ul>
+<p><strong>Overmorgen (t=2)</strong></p>
+<ul>
+<li><span class="math inline">\(S(2) = S(1) + S'(1)*1dag = 47040 - 1325,2 = 45714,8\)</span></li>
+<li><span class="math inline">\(I(2) = I(1) + I'(1)*1dag = 2817,2 + 1124,1 = 3941,3\)</span></li>
+<li><span class="math inline">\(R(2) = R(1) + R'(1)*1dag = 142,8 + 201,1 = 343,9\)</span></li>
+</ul>
+<p>enz.</p>
+<p>Grafisch ziet dit er als volgt uit.</p>
+<div id="fig-sirvoorbeeld" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="sirvoorbeeld.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figuur&nbsp;1: Voorbeeld ontwikkeling groepen (SIR model).</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Fracties</strong></p>
+<p>Je kunt ook met fracties van de totale populatie werken. Sommige berekeningen werken dan iets gemakkelijker.</p>
+<p><span class="math inline">\(s(t) = \frac{S(t)}{N}\)</span>, <span class="math inline">\(i(t) = \frac{I(t)}{N}\)</span> en <span class="math inline">\(r(t) = \frac{R(t)}{N}\)</span></p>
+<p>In dat geval is <span class="math inline">\(s(t) + i(t) + r(t) = 1\)</span></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="verspreiding-van-de-ziekte" class="level1">
+<h1>Verspreiding van de ziekte</h1>
+<p>Je wilt natuurlijk het liefst dat de verspreiding afneemt. Daarvoor is de ontwikkeling van het aantal geïnfecteerden van belang.</p>
+<p><span class="math inline">\(I' = \beta SI - \gamma I = (\beta S - \gamma)I\)</span></p>
+<p>Je wilt dat de epidemie afneemt, dus dat <span class="math inline">\(I'\)</span> negatief wordt. Hiervoor moet de factor <span class="math inline">\((\beta S - \gamma)\)</span> negatief zijn.</p>
+<p><span class="math inline">\(\beta S - \gamma &lt; 0 \Rightarrow \beta S &lt; \gamma \Rightarrow \frac{\beta S}{\gamma} &lt; 1\)</span></p>
+<p>De begincondities (voor <span class="math inline">\(t=0\)</span>) zijn:</p>
+<ul>
+<li><span class="math inline">\(S = S_0\)</span></li>
+<li><span class="math inline">\(I = I_0\)</span></li>
+<li><span class="math inline">\(R = 0\)</span></li>
+</ul>
+<p><span class="math inline">\(S\)</span> neemt altijd af, dus voor andere waarden van <span class="math inline">\(t\)</span> geldt altijd <span class="math inline">\(S &lt; S_0\)</span></p>
+<section id="basis-reproductiegetal-r_0" class="level2">
+<h2 class="anchored" data-anchor-id="basis-reproductiegetal-r_0">Basis reproductiegetal <span class="math inline">\(R_0\)</span></h2>
+<p><span class="math inline">\(R_0 = \frac{\beta S_0}{\gamma}\)</span> en met <span class="math inline">\(S_0 \approx N\)</span> wordt dit <span class="math inline">\(R_0 \approx \frac{\beta}{\gamma}N\)</span></p>
+<p><span class="math inline">\(R_0\)</span> (uitspreken als “R naught”) is het gemiddeld aantal besmettingen dat een geïnfecteerd persoon veroorzaakt. Wetenschappers van het Imperial College London schatten de waarde ergens tussen 1,5 en 3,5.</p>
+<p>Een <a href="https://www.ncbi.nlm.nih.gov/pubmed/32007643">eerste schatting</a> van <span class="math inline">\(R_0\)</span> kwam neer op het gebied 2,24-3,58. Een <a href="https://www.ncbi.nlm.nih.gov/pubmed/32024089">onderzoek een maand later</a> publiceerde een bereik van 2,49-2,63.</p>
+<p>Voor het afnemen van de epidemie is dan nodig: <span class="math inline">\(R_0 &lt; 1\)</span></p>
+<p>Mogelijkheden om dit voor elkaar te krijgen:</p>
+<ol type="1">
+<li>Maak <span class="math inline">\(\beta\)</span> kleiner. Dat kan via: was handen, nies in elleboog, sluit scholen, …</li>
+<li>Maak <span class="math inline">\(S_0\)</span> kleiner. De groep die vatbaar is zou je kleiner kunnen maken door personen te vaccineren.</li>
+<li>Maak <span class="math inline">\(\gamma\)</span> groter. Dit is zelden effectief bij een epidemie. Soms zijn er mogelijkheden, bijv. via antibiotica.</li>
+<li>Wacht af, doe niets. De epidemie stopt op een gegeven moment omdat de S-groep klein geworden is.</li>
+</ol>
+</section>
+</section>
+<section id="maximum-aantal-geïnfecteerden" class="level1">
+<h1>Maximum aantal geïnfecteerden</h1>
+<p><span class="math inline">\(\frac{dI}{dS} = \frac{I'}{S'} = \frac{\beta SI - \gamma I}{-\beta SI} = -1 + \frac{\gamma}{\beta S}\)</span></p>
+<p>Vaak wordt ook gebruikt contact ratio <span class="math inline">\(q = \frac{\beta}{\gamma}\)</span>. Substitueren geeft dan</p>
+<p><span class="math inline">\(\frac{dI}{dS} = -1 + \frac{1}{qS}\)</span> welke direct geïntegreerd kan worden en geeft</p>
+<p><span class="math inline">\(I + S - \frac{1}{q}ln(S) = I_0 + S_0 - \frac{1}{q}ln(S_0)\)</span></p>
+<p>Voor het bepalen van het maximum moet gelden dat de afgeleide <span class="math inline">\(\frac{dI}{dS} = 0\)</span>, dus <span class="math inline">\(-1 + \frac{1}{qS} = 0\)</span>, ofwel <span class="math inline">\(S = \frac{1}{q}\)</span>.</p>
+<p>Substitueren in de vergelijking geeft dan</p>
+<p><span class="math inline">\(I_{max} = I_0 + S_0 - \frac{1}{q}(1 + ln(q S_0))\)</span>.</p>
+<p>Hierbij is <span class="math inline">\(I_0 + S_0\)</span> de gehele populatie <span class="math inline">\(N\)</span>.</p>
+<p>Je kunt dit ook zien als dat <span class="math inline">\(I_{max}\)</span> gelijk is aan de gehele populatie verminderd met een waarde die van een functie van <span class="math inline">\(q\)</span> afhangt.</p>
+<p><span class="math inline">\(I_{max} = N - f(q)\)</span></p>
+<p><span class="math inline">\(q\)</span> is de contact ratio, de fractie van de populatie die in contact komt met een geinfecteerde. Op dit moment is voor de COVID-19 de waarde van <span class="math inline">\(q\)</span> erg groot, dus <span class="math inline">\(f(q)\)</span> klein, dus het maximum aantal geinfecteerden weer groot. En dat is slecht nieuws.</p>
+<!-- # Totaal aantal geïnfecteerden -->
+<!-- ?? (moet nog uitgewerkt worden via youtube filmpje) -->
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-churchesCOVID19Epidemiology2020" class="csl-entry" role="listitem">
+Churches, Tim. 2020a. <span>‘COVID-19 epidemiology with R’</span>. <a href="https://rviews.rstudio.com/2020/03/05/covid-19-epidemiology-with-r/">https://rviews.rstudio.com/2020/03/05/covid-19-epidemiology-with-r/</a>.
+</div>
+<div id="ref-churchesSimulatingCOVID19Interventions2020" class="csl-entry" role="listitem">
+———. 2020b. <span>‘Simulating COVID-19 interventions with R’</span>. <a href="https://rviews.rstudio.com/2020/03/19/simulating-covid-19-interventions-with-r/">https://rviews.rstudio.com/2020/03/19/simulating-covid-19-interventions-with-r/</a>.
+</div>
+<div id="ref-eisenbergHowScientistsQuantify2020" class="csl-entry" role="listitem">
+Eisenberg, Joseph. 2020. <span>‘How Scientists Quantify the Intensity of an Outbreak Like COVID-19’</span>. <a href="https://labblog.uofmhealth.org/rounds/how-scientists-quantify-intensity-of-an-outbreak-like-covid-19">https://labblog.uofmhealth.org/rounds/how-scientists-quantify-intensity-of-an-outbreak-like-covid-19</a>.
+</div>
+<div id="ref-hohleFlattenCOVID19Curve2020" class="csl-entry" role="listitem">
+Höhle, Michael. 2020. <span>‘Flatten the COVID-19 curve’</span>. <a href="https://staff.math.su.se/hoehle/blog/2020/03/16/flatteningthecurve.html">https://staff.math.su.se/hoehle/blog/2020/03/16/flatteningthecurve.html</a>.
+</div>
+<div id="ref-laneseHowFarCould2020" class="csl-entry" role="listitem">
+Lanese, Nicoletta. 2020. <span>‘How far could the new coronavirus spread?’</span> <a href="https://www.livescience.com/how-far-will-coronavirus-spread.html">https://www.livescience.com/how-far-will-coronavirus-spread.html</a>.
+</div>
+<div id="ref-FittingSIRModel2020" class="csl-entry" role="listitem">
+<span>‘R - Fitting SIR Model with 2019-nCoV data doesn’t conververge’</span>. 2020. <a href="https://stats.stackexchange.com/questions/446712/fitting-sir-model-with-2019-ncov-data-doesnt-conververge">https://stats.stackexchange.com/questions/446712/fitting-sir-model-with-2019-ncov-data-doesnt-conververge</a>.
+</div>
+<div id="ref-rockOxfordMathematicianExplains2020" class="csl-entry" role="listitem">
+Rock, Tom. 2020. <span>‘Oxford Mathematician explains SIR Disease Model for COVID-19 (Coronavirus).’</span> <a href="https://www.youtube.com/watch?v=NKMHhm2Zbkw">https://www.youtube.com/watch?v=NKMHhm2Zbkw</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
