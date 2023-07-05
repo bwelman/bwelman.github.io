@@ -206,7 +206,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 <p>One of the most challenging aspects of “brewing to style” for home brewers is trying to achieve a color within the specified range for the particular class. Home brewers have usually been left to rely on experience or trial and error to design recipes that will fit the style.</p>
 <p>Color ranges for the recognized beer styles defined by the AHA and BJCP are given in terms of SRM (Standard Reference Method). Measurement of actual SRM is not practical for the amateur brewer. Thus, Malt Color Units (MCU) have been used to quantify color often. MCU is the Lovibond rating of the ingredient multiplied by its weight in pounds divided by the beer’s volume in US gallons. The dilemma is that apparent color in terms of SRM diverges from MCU.</p>
-<p><span class="math display">\[MCU = \frac{^o L(ovibond)}{gallons}\]</span></p>
+<p><span class="math display">\[MCU = \frac{^o L * pounds}{gallons}\]</span></p>
 <p>Many factors impact beer color; therefore, making an exact prediction is impossible. Some factors that effect beer color are: Recipe (grains/malts), quality of crush, mash procedure (temperature(s)), mash time, mash pH, boil time, yeast, and many more. Of all the factors, the malt/grain bill has the greatest impact on color thus we can ignore the other contributors and still make a good approximation. Several individuals have studied beer color and developed models to help predict it.</p>
 <section id="linear-models" class="level2">
 <h2 class="anchored" data-anchor-id="linear-models">LINEAR MODELS</h2>
@@ -221,7 +221,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </section>
 <section id="power-model" class="level2">
 <h2 class="anchored" data-anchor-id="power-model">POWER MODEL</h2>
-<p>Inspired by Ray Daniels’ three part series printed Brewing Techniques in the SEP/OCT and NOV/DEC 1995 issues, I set out to develop a single model that could apply for the complete brewing spectrum and account for the non-linear behavior observed by so many.</p>
+<p>Inspired by Ray Daniels’ three part series printed <em>Brewing Techniques</em> in the SEP/OCT and NOV/DEC 1995 issues, I set out to develop a single model that could apply for the complete brewing spectrum and account for the non-linear behavior observed by so many.</p>
 <p>Since I did not have raw data to work with, I based my work on five assumptions:</p>
 <ol type="1">
 <li><p>SRM is approximately equal to MCU for values from 0 to 10.</p></li>
@@ -233,7 +233,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Using these assumptions, data was created for my analysis. I tried various curve fitting techniques to find the best approximation to the assumed relationship. In the end, the power model was found best to represent the assumed curve. The resulting model was:</p>
 <p><span class="math display">\[SRM = 1.49*MCU^{0.69}\]</span></p>
 <p>This model eliminates the two major limitations of linear models in my opinion. The minimum color is zero, so the model can be used for lighter color beers. The model accounts for decreased color contribution from malt as the beer gets darker or the “law of diminishing returns.”</p>
-<p>A graphical representation of my model along with Daniels’ and Mosher’s linear approximations can be found in <a href="#fig-mcu-srm">figure&nbsp;1</a>. Also plotted is tabular data that can be found in Ray Daniels’ <em>Designing Great Beers</em> <span class="citation" data-cites="danielsDesigningGreatBeers1998">(<a href="#ref-danielsDesigningGreatBeers1998" role="doc-biblioref">Daniels 1998</a>, pg 61)</span>, and Greg Noonan’s <em>New Brewing Lager Beer</em> <span class="citation" data-cites="noonanNewBrewingLager2003">(<a href="#ref-noonanNewBrewingLager2003" role="doc-biblioref">Noonan 2003</a>, pg 206)</span>.</p>
+<p>A graphical representation of my model along with Daniels’ and Mosher’s linear approximations can be found in <a href="#fig-mcu-srm">figure&nbsp;1</a>. Also plotted is tabular data that can be found in Ray Daniels’ <em>Designing Great Beers</em> <span class="citation" data-cites="danielsDesigningGreatBeers1998">(<a href="#ref-danielsDesigningGreatBeers1998" role="doc-biblioref">Daniels 1998</a> pg 61)</span>, and Greg Noonan’s <em>New Brewing Lager Beer</em> <span class="citation" data-cites="noonanNewBrewingLager2003">(<a href="#ref-noonanNewBrewingLager2003" role="doc-biblioref">Noonan 2003</a> pg 206)</span>.</p>
 <div id="fig-mcu-srm" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="mcu-srm.png" class="img-fluid figure-img"></p>
@@ -251,7 +251,7 @@ SRM = 15.03*MCU^{0.27} -15.53 \text{ (Noonan)}
 </section>
 <section id="malt-extracts" class="level2">
 <h2 class="anchored" data-anchor-id="malt-extracts">MALT EXTRACTS</h2>
-<p>Predicting color for extract recipes provides an additional challenge. Where do you find Lovibond ratings for extracts? While this information is not always available, you may use the following as approximations in the <a href="#tbl-extractcolor">table&nbsp;1</a> below. The data was originally printed in Ray Daniels’ article in the NOV/DEC 1995 issue of Brewing Techniques:</p>
+<p>Predicting color for extract recipes provides an additional challenge. Where do you find Lovibond ratings for extracts? While this information is not always available, you may use the following as approximations in the <a href="#tbl-extractcolor">table&nbsp;1</a> below. The data was originally printed in Ray Daniels’ article in the NOV/DEC 1995 issue of <em>Brewing Techniques</em>:</p>
 <div id="tbl-extractcolor" class="anchored">
 <table class="table">
 <caption>Table&nbsp;1: Extract color</caption>
