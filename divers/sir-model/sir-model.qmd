@@ -5,9 +5,7 @@ date: "2021-04-23"
 bibliography: referenties.bib
 nocite: |
   @*
-# image: "preview.png"
 categories: [wiskunde]
-draft: true
 ---
 
 # Inleiding
@@ -164,7 +162,7 @@ $I' = \beta SI - \gamma I = (\beta S - \gamma)I$
 
 Je wilt dat de epidemie afneemt, dus dat $I'$ negatief wordt. Hiervoor moet de factor $(\beta S - \gamma)$ negatief zijn.
 
-$\beta S - \gamma < 0 \Rightarrow  \beta S < \gamma \Rightarrow \frac{\beta S}{\gamma} < 1$
+$\beta S - \gamma < 0 \Rightarrow \beta S < \gamma \Rightarrow \frac{\beta S}{\gamma} < 1$
 
 De begincondities (voor $t=0$) zijn:
 
