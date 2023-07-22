@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,6 +48,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -83,7 +88,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
     </a>
@@ -92,7 +97,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     </a>
   </div>
             <div id="quarto-search" class="" title="Zoeken"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Schakel tussen navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -126,9 +131,9 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
  <span class="menu-text">Tutorials</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -167,10 +172,11 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Samenvatting</div>
+    <div class="block-title">Samenvatting</div>
     <p>Uitleg van de Machine Learning methode KNN aan de hand van een paar kleine voorbeelden in Excel.</p>
   </div>
 </div>
+
 
 </header>
 
@@ -184,14 +190,14 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <figcaption class="figure-caption">Figuur&nbsp;1: Lengte van 8 personen.</figcaption>
 </figure>
 </div>
-<p>Voor een vergelijking zijn in figuur <a href="#fig-knn-1dim-grafiek">Figuur&nbsp;2</a> de lengtes van alle personen op een denkbeeldige meetlat afgebeeld.</p>
+<p>Voor een vergelijking zijn in figuur <a href="#fig-knn-1dim-grafiek" class="quarto-xref">Figuur&nbsp;2</a> de lengtes van alle personen op een denkbeeldige meetlat afgebeeld.</p>
 <div id="fig-knn-1dim-grafiek" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-1dim-grafiek.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figuur&nbsp;2: Afbeelding van de lengte van de personen op een denkbeeldige meetlat.</figcaption>
 </figure>
 </div>
-<p>Het KNN algoritme berekent nu de afstanden van de nieuwe persoon tot alle gecategoriseerde personen, waarvan het geslacht dus bekend is. Onder afstand wordt hier dan het verschil in lengte verstaan. Deze afstanden zijn te zien in <a href="#fig-knn-1dim-data">Figuur&nbsp;1</a>.</p>
+<p>Het KNN algoritme berekent nu de afstanden van de nieuwe persoon tot alle gecategoriseerde personen, waarvan het geslacht dus bekend is. Onder afstand wordt hier dan het verschil in lengte verstaan. Deze afstanden zijn te zien in <a href="#fig-knn-1dim-data" class="quarto-xref">Figuur&nbsp;1</a>.</p>
 <p>Vervolgens worden deze afstanden gerangschikt van de dichtstbijzijnde (meest vergelijkbare) tot de verste (de minst vergelijkbare).</p>
 <p>De waarde voor <span class="math inline">\(k\)</span> in het algoritme staat voor het aantal buren waarmee je gaat vergelijken. Elk van deze <span class="math inline">\(k\)</span> buren brengt als het ware een stem uit voor de desbetreffende categorie. De conclusie of de nieuwe persoon een man of een vrouw is wordt dan getrokken op basis van de meeste stemmen.</p>
 <ul>
@@ -220,7 +226,7 @@ Tip
 <figcaption class="figure-caption">Figuur&nbsp;3: Lengte en gewicht van de personen.</figcaption>
 </figure>
 </div>
-<p>In <a href="#fig-knn-2dim-grafiek">Figuur&nbsp;4</a> is een spreidingsdiagram van gewicht tegen lengte te zien.</p>
+<p>In <a href="#fig-knn-2dim-grafiek" class="quarto-xref">Figuur&nbsp;4</a> is een spreidingsdiagram van gewicht tegen lengte te zien.</p>
 <div id="fig-knn-2dim-grafiek" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-2dim-grafiek.png" class="img-fluid figure-img"></p>
@@ -229,7 +235,7 @@ Tip
 </div>
 <p>Ook nu wordt weer de afstand bepaald van de nieuwe persoon tot de andere personen. Bij twee variabelen wordt de Euclidische afstand bepaald. Voor twee punten <span class="math inline">\((x_1,y_1)\)</span> en <span class="math inline">\((x_2,y_2)\)</span> kun je deze via Pythagoras uitrekenen:</p>
 <p><span class="math display">\[\text{afstand } = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}\]</span></p>
-<p>In <a href="#fig-knn-2dim-data">Figuur&nbsp;3</a> is de berekende afstand te zien. Daarna wordt weer gekeken welke de dichtstbijzijnde buren zijn.</p>
+<p>In <a href="#fig-knn-2dim-data" class="quarto-xref">Figuur&nbsp;3</a> is de berekende afstand te zien. Daarna wordt weer gekeken welke de dichtstbijzijnde buren zijn.</p>
 <ul>
 <li><span class="math inline">\(k=1\)</span>: De dichtstbijzijnde persoon is M1. Conclusie: nieuwe persoon = <strong>man</strong></li>
 <li><span class="math inline">\(k=2\)</span>: De dichtstbijzijnde personen zijn M1 en V4. Conclusie: geen uitsluitsel, stemmen staken</li>
@@ -238,7 +244,7 @@ Tip
 <p><strong>Voorbeeld met 2 gestandaardiseerde kenmerken</strong></p>
 <p>Verschillende variabelen hebben verschillende schaaleenheden, zoals hier de lengte in cm en het gewicht in kg. Dat kan er voor zorgen dat variabelen die op een grotere schaal gemeten worden een groter aandeel hebben in de berekende afstand en daardoor belangrijker worden gemaakt dan variabelen die op een kleinere schaal gemeten worden. Om dit te voorkomen kun je de gegevens transformeren naar een nieuwe schaal. Een veel gebruikte techniek hiervoor is de <em>min-max normalisatie</em> waarbij de gegevens geschaald worden naar het bereik <code>[0,1]</code>. Hiervoor wordt de kleinste en de grootste waarde van de gegevens bepaald. Vervolgens worden de gegevens gewijzigd via</p>
 <p><span class="math inline">\(\text{genormaliseerde waarde } = \frac{x - min(x)}{max(x) - min(x)}\)</span></p>
-<p>In <a href="#fig-knn-2dim-norm-data">Figuur&nbsp;5</a> zijn de variabelen lengte en gewicht genormaliseerd en is de afstand voor de genormaliseerde gegevens berekend. En in <a href="#fig-knn-2dim-norm-grafiek">Figuur&nbsp;6</a> zie je de bijpassende grafiek.</p>
+<p>In <a href="#fig-knn-2dim-norm-data" class="quarto-xref">Figuur&nbsp;5</a> zijn de variabelen lengte en gewicht genormaliseerd en is de afstand voor de genormaliseerde gegevens berekend. En in <a href="#fig-knn-2dim-norm-grafiek" class="quarto-xref">Figuur&nbsp;6</a> zie je de bijpassende grafiek.</p>
 <div id="fig-knn-2dim-norm-data" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="knn-2dim-norm-data.png" class="img-fluid figure-img"></p>
@@ -346,10 +352,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -359,8 +364,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -373,6 +387,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -416,6 +505,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -517,7 +607,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-left">
+<p>Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -526,6 +618,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

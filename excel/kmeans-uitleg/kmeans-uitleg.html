@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,6 +47,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -82,7 +87,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
     </a>
@@ -91,7 +96,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     </a>
   </div>
             <div id="quarto-search" class="" title="Zoeken"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Schakel tussen navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -125,9 +130,9 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
  <span class="menu-text">Tutorials</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -179,10 +184,11 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Samenvatting</div>
+    <div class="block-title">Samenvatting</div>
     <p>Uitleg van het K-Means algoritme voor Machine Learning aan de hand van een klein voorbeeld in Excel.</p>
   </div>
 </div>
+
 
 </header>
 
@@ -218,7 +224,7 @@ Opmerking
 </section>
 <section id="excel-model" class="level1">
 <h1>Excel model</h1>
-<p>Het te downloaden bestand <a href="kmeans.xlsx">kmeans.xlsx</a> bevat een werkblad <em>data</em> met 10 waarnemingen van twee variabelen x1 en x2, zie <a href="#fig-kmeans-data">Figuur&nbsp;1</a>.</p>
+<p>Het te downloaden bestand <a href="kmeans.xlsx">kmeans.xlsx</a> bevat een werkblad <em>data</em> met 10 waarnemingen van twee variabelen x1 en x2, zie <a href="#fig-kmeans-data" class="quarto-xref">Figuur&nbsp;1</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -238,7 +244,7 @@ Opmerking
 <figcaption class="figure-caption">Figuur&nbsp;1: Dataset met 10 waarnemingen van twee variabelen</figcaption>
 </figure>
 </div>
-<p>Wanneer je de waarnemingen uitzet in een spreidingsdiagram, zie <a href="#fig-kmeans-data-diagram">Figuur&nbsp;2</a>, dan kun je visueel de waarnemingen al in 2 clusters indelen, een groep linksboven en een groep rechtsonder.</p>
+<p>Wanneer je de waarnemingen uitzet in een spreidingsdiagram, zie <a href="#fig-kmeans-data-diagram" class="quarto-xref">Figuur&nbsp;2</a>, dan kun je visueel de waarnemingen al in 2 clusters indelen, een groep linksboven en een groep rechtsonder.</p>
 <div id="fig-kmeans-data-diagram" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="kmeans-data-diagram.png" class="img-fluid figure-img"></p>
@@ -250,7 +256,7 @@ Opmerking
 <section id="model-met-3-clusters-k3" class="level2">
 <h2 class="anchored" data-anchor-id="model-met-3-clusters-k3">Model met 3 clusters (k=3)</h2>
 <p>Om de oorspronkelijke dataset intact te houden wordt een kopie van het werkblad <em>data</em> gemaakt en hernoemd als <em>model-k3</em>.</p>
-<p>In <a href="#fig-kmeans-model-k3-start">Figuur&nbsp;3</a> zie je het gemaakte k-means model.</p>
+<p>In <a href="#fig-kmeans-model-k3-start" class="quarto-xref">Figuur&nbsp;3</a> zie je het gemaakte k-means model.</p>
 <div id="fig-kmeans-model-k3-start" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="kmeans-model-k3-start.png" class="img-fluid figure-img"></p>
@@ -258,7 +264,7 @@ Opmerking
 </figure>
 </div>
 <p>In de cellen B16:B18 zie je de willekeurig gekozen waarden voor het centrum van de drie clusters.</p>
-<p>Om inzichtelijk te maken waar elk centrum ligt ten opzichte van de waarnemingen zijn deze ook aan het spreidingsdiagram toegevoegd, zie <a href="#fig-kmeans-model-k3-diagram-start">Figuur&nbsp;4</a>. Wanneer je naar het spreidingsdiagram kijkt, dan zijn er betere beginwaarden te kiezen.</p>
+<p>Om inzichtelijk te maken waar elk centrum ligt ten opzichte van de waarnemingen zijn deze ook aan het spreidingsdiagram toegevoegd, zie <a href="#fig-kmeans-model-k3-diagram-start" class="quarto-xref">Figuur&nbsp;4</a>. Wanneer je naar het spreidingsdiagram kijkt, dan zijn er betere beginwaarden te kiezen.</p>
 <div id="fig-kmeans-model-k3-diagram-start" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="kmeans-model-k3-diagram-start.png" class="img-fluid figure-img"></p>
@@ -284,14 +290,14 @@ Belangrijk
 <p>Let er op dat je de waarden kopieert (via Plakken Speciaal) en niet de formules.</p>
 </div>
 </div>
-<p>Er worden nu weer nieuwe centrumwaarden berekend en ook neemt de som van de minimum afstanden af. In de grafiek kun je ook zien dat de drie centra verschuiven in de richting van de cluster. Herhaal dit proces totdat er nauwelijks meer wijzigingen optreden. Dat is bij dit voorbeeld na de 4e iteratiestap. In <a href="#fig-kmeans-model-k3-eind">Figuur&nbsp;5</a> zie je de gevonden waarden voor de drie centra en de clusterindeling voor de waarnemingen.</p>
+<p>Er worden nu weer nieuwe centrumwaarden berekend en ook neemt de som van de minimum afstanden af. In de grafiek kun je ook zien dat de drie centra verschuiven in de richting van de cluster. Herhaal dit proces totdat er nauwelijks meer wijzigingen optreden. Dat is bij dit voorbeeld na de 4e iteratiestap. In <a href="#fig-kmeans-model-k3-eind" class="quarto-xref">Figuur&nbsp;5</a> zie je de gevonden waarden voor de drie centra en de clusterindeling voor de waarnemingen.</p>
 <div id="fig-kmeans-model-k3-eind" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="kmeans-model-k3-eind.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figuur&nbsp;5: Eindresultaat met de waarden voor de centra en de clusterindelingen.</figcaption>
 </figure>
 </div>
-<p>En in <a href="#fig-kmeans-model-k3-diagram-eind">Figuur&nbsp;6</a> kun je de lokaties van de clusters waarnemen die waarschijnlijk wel overeenkomen met de eerste gedachte.</p>
+<p>En in <a href="#fig-kmeans-model-k3-diagram-eind" class="quarto-xref">Figuur&nbsp;6</a> kun je de lokaties van de clusters waarnemen die waarschijnlijk wel overeenkomen met de eerste gedachte.</p>
 <div id="fig-kmeans-model-k3-diagram-eind" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="kmeans-model-k3-diagram-eind.png" class="img-fluid figure-img"></p>
@@ -304,7 +310,7 @@ Belangrijk
 <p>Het handigste om een model met 2 clusters te maken is door te beginnen met het maken van een kopie van werkblad <em>model-k3</em> en deze te hernoemen naar <em>model-k2</em>. Vervolgens verwijder je de kolom D3 en de rijen voor cluster 3.</p>
 <p>Je kunt ook nu weer starten met willekeurig gekozen beginwaarden voor de clustercentra, maar om te laten zien dat de iteratie wat sneller verloopt wanneer de beginwaarden gunstiger zijn worden de volgende beginwaarden gebruikt:</p>
 <p>Centrum cluster 1 = (5,15) en Centrum cluster 2 = (15, 5)</p>
-<p>Al na de tweede iteratiestap treden geen wijzigingen meer op. De eindresultaten zijn te zien in <a href="#fig-kmeans-model-k2-eind">Figuur&nbsp;7</a> en <a href="#fig-kmeans-model-k2-diagram-eind">Figuur&nbsp;8</a>.</p>
+<p>Al na de tweede iteratiestap treden geen wijzigingen meer op. De eindresultaten zijn te zien in <a href="#fig-kmeans-model-k2-eind" class="quarto-xref">Figuur&nbsp;7</a> en <a href="#fig-kmeans-model-k2-diagram-eind" class="quarto-xref">Figuur&nbsp;8</a>.</p>
 <div id="fig-kmeans-model-k2-eind" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="kmeans-model-k2-eind.png" class="img-fluid figure-img"></p>
@@ -329,7 +335,7 @@ Belangrijk
 <figcaption class="figure-caption">Figuur&nbsp;9: Som van de minimale afstanden voor de verschillende waarden van k.</figcaption>
 </figure>
 </div>
-<p>In <a href="#fig-kmeans-elleboog">Figuur&nbsp;9</a> is te zien dat de totale afstand flink afneemt van k=1 naar k=2 en dat de afname klein is van k=2 naar k=3. De elleboogmethode bestaat uit het vinden van de waarde van k, van waaruit de afname van de totale afstand marginaal wordt. Je zou dus kunnen concluderen dat k=3 niet nodig is.</p>
+<p>In <a href="#fig-kmeans-elleboog" class="quarto-xref">Figuur&nbsp;9</a> is te zien dat de totale afstand flink afneemt van k=1 naar k=2 en dat de afname klein is van k=2 naar k=3. De elleboogmethode bestaat uit het vinden van de waarde van k, van waaruit de afname van de totale afstand marginaal wordt. Je zou dus kunnen concluderen dat k=3 niet nodig is.</p>
 <p>Van belang bij deze afweging is ook wat de variabelen in werkelijkheid voorstellen. Zou x1 de gemiddelde uitgaven voor voedsel voorstellen en x2 die voor kleding, dan heb je bij k=2 een cluster 1 die veel uitgeeft aan voedsel en weinig aan kleding en een cluster 2 bij wie dat precies andersom is. Maar bij k=3 wordt cluster 1 verder opgesplitst en het is maar de vraag of je de verschillen zinvol kunt duiden.</p>
 </section>
 </section>
@@ -424,10 +430,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -437,8 +442,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -451,6 +465,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -494,6 +583,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -595,7 +685,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.</div>   
+    <div class="nav-footer-left">
+<p>Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -604,6 +696,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
