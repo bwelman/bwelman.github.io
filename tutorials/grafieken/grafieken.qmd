@@ -53,7 +53,7 @@ De volgende afbeelding toont het percentage rokers per leeftijdscategorie in 200
 ::: callout
 **Toepassing**
 
-Weergave bij meerdere gegevensgroepen van de onderlinge verdeling en het totaal van de waarden weer te geven.
+Weergave bij meerdere gegevensgroepen van de onderlinge verdeling en de relatie tot het totaal van de waarden.
 :::
 
 Bij meerdere gegevensreeksen kun je de kolommen en staven naast elkaar zetten, maar je kunt er ook voor kiezen om ze boven op elkaar te zetten. Dit wordt een gestapeld kolomdiagram of gestapeld staafdiagram genoemd. Dit is vooral handig wanneer de onderlinge verdeling de waarden en het totaal hiervan gevisualiseerd moet worden.
@@ -91,7 +91,7 @@ Om ook de onderverdeling in de categorie Overig zichtbaar te maken kan deze bijv
 ::: callout
 **Toepassing**
 
-Weergave van tijdreeksen.
+Weergave van de trend in gegevens met gelijke intervals (vooral van tijdreeksen).
 :::
 
 Bij lijndiagrammen wordt de tijdeenheid langs de horizontale as (categorieas) uitgezet en de gemeten variabele langs de verticale as. Tussen de punten in de grafiek kan desgewenst een lijn getrokken worden om het verloop van de variabele in de tijd goed zichtbaar te maken.
