@@ -80,6 +80,10 @@ Deze JavaScript bibliotheek bevat tevens de [mhchem extensie voor Mathjax](http:
 
 2.  `\pu{...}` gebruik je voor de opmaak van getallen met eenheden / dimensies.
 
+::: callout-important
+De physical unit opdracht `\pu` wordt NIET ondersteund in de Latex implementatie van mhchem. Deze opdracht kun je dus beter niet gebruiken wanneer er ook pdf uitvoer gemaakt moet worden. Een alternatief hiervoor is de siunitx package.
+:::
+
 Deze twee opdrachten moet je plaatsen binnen een Mathjax expressie, dus binnen `$...$` of `$$...$$`. De inhoud tussen de accolades wordt automatisch door package `mhchem` verwerkt.
 
 ::: callout-note
@@ -93,7 +97,7 @@ Deze twee opdrachten moet je plaatsen binnen een Mathjax expressie, dus binnen `
 **Formules en vergelijkingen**
 
 | Formule                                     | Code                                          |
-|-----------------------------------|-------------------------------------|
+|---------------------------------------------|-----------------------------------------------|
 | $\ce{C6H12O6}$                              | `$\ce{C6H12O6}$`                              |
 | $\ce{SO4^{2-}}$                             | `$\ce{SO4^{2-}}$`                             |
 | $\ce{CuSO4*5H2O}$                           | `$\ce{CuSO4*5H2O}$`                           |
@@ -127,7 +131,7 @@ met `$\pu{1^o dH = 10 mg CaO per liter}$`
 **Divers**
 
 | Formule                             | Code                                |
-|------------------------------------|------------------------------------|
+|-------------------------------------|-------------------------------------|
 | $K_\mathrm{eq}$                     | `$K_\mathrm{eq}$`                   |
 | $\mathrm{p}K_\mathrm{a}$            | `$\mathrm{p}K_\mathrm{a}$`          |
 | $\Delta_\mathrm{r} G^\circ$         | `$\Delta_\mathrm{r} G^\circ$`       |
