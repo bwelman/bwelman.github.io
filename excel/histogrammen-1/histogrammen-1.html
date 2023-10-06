@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -178,6 +179,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>Bracht het maken van een histogram in oudere versies van Excel veel handwerk met zich mee, in de nieuwere versies (Excel 365, Excel 2016) is dit een stuk gemakkelijker gemaakt. Een probleem is wel dat het histogram er vaak nooit zo uitziet als je graag zou willen. En dat het maken van bepaalde aanpassingen soms moeilijk tot zelfs onmogelijk is, waardoor je toch weer op het handwerk met formules terug moet grijpen.</p>
 <p>In een aantal artikelen wordt aandacht besteed aan wat je allemaal tegen kunt komen. In dit eerste deel gaat het over de basis voor een histogram, de frequentieverdeling.</p>
 <p><strong>Frequentieverdelingen</strong></p>
@@ -201,8 +203,12 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p><strong>Voorbeeld testscores</strong></p>
 <p>Aan een test wordt door 100 personen deelgenomen. De volgende tabel geeft een overzicht van de frequenties, relatieve frequenties en cumulatieve relatieve frequenties. De laatste twee als fracties. Alle klassen hebben hier dezelfde breedte 10.</p>
 <div id="tbl-testscores" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-testscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;1: Testscores
+</figcaption>
+<div aria-describedby="tbl-testscores-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Tabel&nbsp;1: Testscores</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">score</th>
@@ -239,17 +245,27 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <div id="fig-testscores-histogram-grof" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="testscores-histogram-grof.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Histogram met klassebreedte 10</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-testscores-histogram-grof-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="testscores-histogram-grof.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-testscores-histogram-grof-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Histogram met klassebreedte 10
+</figcaption>
 </figure>
 </div>
 <p>In dit voorbeeld werd uitgegaan van een bestaande frequentieverdeling. De gegevens zelf zijn door het classificeren niet meer bekend, waardoor er veel informatie verdwenen is. Wanneer je wat dieper op de verdeling zou willen inzoomen, moet je de klassebreedte verkleinen naar bijvoorbeeld 5, zoals in de volgende afbeelding te zien is.</p>
 <div id="fig-testscores-histogram-fijn" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="testscores-histogram-fijn.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Histogram met klassebreedte 5</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-testscores-histogram-fijn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="testscores-histogram-fijn.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-testscores-histogram-fijn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Histogram met klassebreedte 5
+</figcaption>
 </figure>
 </div>
 <p>Beide diagrammen zijn tot stand gekomen door een kolomdiagram in Excel te maken. Wie dit zelf na wil maken in Excel kan het bestand <a href="../..\download/testscores.xlsx">testscores.xlsx</a> downloaden. Hierin zijn ook de benodigde aanwijzingen voor het maken van dit diagram te vinden. Zoals in het begin van dit artikel is aangegeven heeft Excel specifieke hulpmiddelen voor het maken van histogrammen. Deze zullen nog aan bod komen.</p>
@@ -386,15 +402,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -403,6 +442,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -445,6 +485,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -520,7 +583,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -601,12 +663,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

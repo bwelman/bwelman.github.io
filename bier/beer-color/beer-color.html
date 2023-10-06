@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -26,6 +26,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -67,12 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -210,6 +212,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>One of the most challenging aspects of “brewing to style” for home brewers is trying to achieve a color within the specified range for the particular class. Home brewers have usually been left to rely on experience or trial and error to design recipes that will fit the style.</p>
 <p>Color ranges for the recognized beer styles defined by the AHA and BJCP are given in terms of SRM (Standard Reference Method). Measurement of actual SRM is not practical for the amateur brewer. Thus, Malt Color Units (MCU) have been used to quantify color often. MCU is the Lovibond rating of the ingredient multiplied by its weight in pounds divided by the beer’s volume in US gallons. The dilemma is that apparent color in terms of SRM diverges from MCU.</p>
 <p><span class="math display">\[MCU = \frac{^o L * pounds}{gallons}\]</span></p>
@@ -241,9 +244,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>This model eliminates the two major limitations of linear models in my opinion. The minimum color is zero, so the model can be used for lighter color beers. The model accounts for decreased color contribution from malt as the beer gets darker or the “law of diminishing returns.”</p>
 <p>A graphical representation of my model along with Daniels’ and Mosher’s linear approximations can be found in <a href="#fig-mcu-srm" class="quarto-xref">figure&nbsp;1</a>. Also plotted is tabular data that can be found in Ray Daniels’ <em>Designing Great Beers</em> <span class="citation" data-cites="danielsDesigningGreatBeers1998">(<a href="#ref-danielsDesigningGreatBeers1998" role="doc-biblioref">Daniels 1998</a> pg 61)</span>, and Greg Noonan’s <em>New Brewing Lager Beer</em> <span class="citation" data-cites="noonanNewBrewingLager2003">(<a href="#ref-noonanNewBrewingLager2003" role="doc-biblioref">Noonan 2003</a> pg 206)</span>.</p>
 <div id="fig-mcu-srm" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="mcu-srm.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Color Estimates Based on Recipe MCU.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mcu-srm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mcu-srm.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-mcu-srm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Color Estimates Based on Recipe MCU.
+</figcaption>
 </figure>
 </div>
 <p>Some interesting observations from the Home Brew Digest (HBD) based on work by Kyle Druey. Kyle fitted power curves to Daniels’ and Noonan’s data. These power curves along with my model all predict beer color of 40 SRM around 126 MCUs (Morey at 117 MCUs; Daniels at 136 MCUs; Noonan at 126 MCUs).</p>
@@ -259,8 +266,12 @@ SRM = 15.03*MCU^{0.27} -15.53 \text{ (Noonan)}
 <h2 class="anchored" data-anchor-id="malt-extracts">MALT EXTRACTS</h2>
 <p>Predicting color for extract recipes provides an additional challenge. Where do you find Lovibond ratings for extracts? While this information is not always available, you may use the following as approximations in the <a href="#tbl-extractcolor" class="quarto-xref">table&nbsp;1</a> below. The data was originally printed in Ray Daniels’ article in the NOV/DEC 1995 issue of <em>Brewing Techniques</em>:</p>
 <div id="tbl-extractcolor" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-extractcolor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Extract color
+</figcaption>
+<div aria-describedby="tbl-extractcolor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;1: Extract color</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Color</th>
@@ -312,6 +323,8 @@ SRM = 15.03*MCU^{0.27} -15.53 \text{ (Noonan)}
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">CONCLUSION</h2>
@@ -323,7 +336,7 @@ SRM = 15.03*MCU^{0.27} -15.53 \text{ (Noonan)}
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-danielsDesigningGreatBeers1998" class="csl-entry" role="listitem">
 Daniels, Ray. 1998. <em>Designing <span>Great Beers</span>: <span>The Ultimate Guide</span> to <span>Brewing Classic Beer Styles</span></em>. <span>Boulder, CO</span>: <span>Brewers Publications</span>.
 </div>
@@ -459,15 +472,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -476,6 +512,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -518,6 +555,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -593,7 +653,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -674,12 +733,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

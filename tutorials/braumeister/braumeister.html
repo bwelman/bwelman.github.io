@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,12 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -227,6 +228,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <section id="kennismaking-met-de-braumeister" class="level1">
 <h1>Kennismaking met de Braumeister</h1>
 <p>De Braumeister 20L is een apparaat voor het brouwen van ca. 20 liter bier. Het proces is in principe eenvoudig.</p>
@@ -260,9 +262,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="componenten-en-onderdelen">Componenten en onderdelen</h2>
 <p>Het apparaat bestaat uit een brouwketel en een wat kleinere moutcilinder waarvan de bodem tegelijk voor het filteren gebruikt wordt. De componenten en de bijgeleverde onderdelen zijn te vinden in <a href="#fig-bm_afbeelding" class="quarto-xref">Figuur&nbsp;1</a>.</p>
 <div id="fig-bm_afbeelding" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="bm_afbeelding.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Afbeelding Braumeister 20L</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bm_afbeelding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="bm_afbeelding.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-bm_afbeelding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Afbeelding Braumeister 20L
+</figcaption>
 </figure>
 </div>
 <p>Het principe van de werking is dat de moutcilinder in het midden gefixeerd wordt en naar onderen afgedicht wordt via een rubberring en een draadstang met vleugelmoer. De pomp zuigt de vloeistof buiten de moutcilinder aan en drukt deze van onderen door de moutcilinder naar boven tot de vloeistof over de rand van de moutcilinder stroomt. De filterbodems en de filterdoeken boven en onder zorgen ervoor dat de mout niet in de vloeistof buiten de moutcilinder komt. Binnen en buiten de moutcilinder bevinden zich verwarmingsspiralen op de bodem.</p>
@@ -292,9 +298,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Horizontaal moet de Braumeister waterpas gezet worden anders werkt de pomp niet goed. En om een goed maischproces te krijgen moeten alle delen van de moutcilinder goed doorstroomt worden. Wanneer het apparaat een paar graden uit het lood staat is dat al niet meer het geval.</p>
 <p>Het is ook handig wanneer de Braumeister zo hoog van de grond staat dat het gistvat onder de aftapkraan geschoven kan worden.</p>
 <div id="fig-bm_opstelling" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="bm_opstelling.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Opstelling Braumeister</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bm_opstelling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="bm_opstelling.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-bm_opstelling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Opstelling Braumeister
+</figcaption>
 </figure>
 </div>
 <p>Tijdens het brouwen mag de Braumeister niet bewogen en verplaatst worden. De handgrepen dienen enkel voor transport en hantering in lege toestand. Houd kinderen absoluut buiten het bereik van het toestel terwijl het werkt.</p>
@@ -335,9 +345,13 @@ Waarschuwing
 <section id="besturing" class="level2">
 <h2 class="anchored" data-anchor-id="besturing">Besturing</h2>
 <div id="fig-bm_besturing" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="bm_besturing.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Besturingseenheid</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bm_besturing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="bm_besturing.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-bm_besturing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Besturingseenheid
+</figcaption>
 </figure>
 </div>
 <section id="led" class="level3">
@@ -753,15 +767,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -770,6 +807,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -812,6 +850,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -887,7 +948,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -968,12 +1028,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

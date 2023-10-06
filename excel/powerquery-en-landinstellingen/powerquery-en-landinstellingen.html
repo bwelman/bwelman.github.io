@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -187,6 +188,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>Veel gegevensbestanden zijn platte bestanden ( .txt, .csv, …). Dit soort bestanden heeft geen metalaag of schema waarin beschreven staat hoe de gegevens geïnterpreteerd moeten worden. Wanneer deze gegevens in Excel geïmporteerd worden doet Power Query wel een poging hiertoe. Dat gaat vaak goed, maar vooral bij numerieke- en datumgegevens uit Engelstalige bronnen gaat het vaak fout.</p>
 <ul>
 <li><em>Numerieke gegevens</em>: Engelstalige landen gebruiken een punt als decimaalteken en een komma als scheidingdteken voor duizendtallen. In Nederland (en veel andere Europese landen) is dit precies andersom, een komma als decimaal teken en een punt voor de duizendtallen.</li>
@@ -202,9 +204,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="query-opties">Query Opties</h2>
 <p>Via de Queryopties van Power Query kun je ook de te gebruiken landinstellingen specificeren. Vanuit een Excel werkblad kies je <strong>tab Gegevens &gt; Gegevens ophalen &gt; Query opties</strong>.</p>
 <div id="fig-query-opties-werkmap" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="query-opties-werkmap.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Regionale instellingen huidige werkmap</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-query-opties-werkmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="query-opties-werkmap.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-query-opties-werkmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Regionale instellingen huidige werkmap
+</figcaption>
 </figure>
 </div>
 <p>Kies <strong>Regionale instellingen</strong> onder <strong>Huidige werkmap</strong>. Bij een nieuwe werkmap staat bij landinstellingen de standaardinstelling van het besturingssysteem. Je kunt hier een andere instelling opgeven en deze wordt met de query bewaard. De hier gespecificeerde landinstellingen worden alleen bij de query’s gebruikt en niet op andere plekken in Excel.</p>
@@ -228,16 +234,24 @@ LET OP
 <p>Tot slot kun je ook nog in de Power Query Editor de landinstellingen voor een of meerdere kolommen wijzigen. Deze route is handig wanneer je met verschillende landinstellingen voor meerdere query’s binnen dezelfde werkmap moet werken. Is goed bruikbaar wanneer je voor enkele kolommen de landinstellingen wilt wijzigen en voor de andere kolommen met de standaardinstelling wilt werken.</p>
 <p>In de in Power Query Editor geopende query klik je met de rechtermuisknop op een kolomkop en kies je vervolgens <strong>Type wijzigen &gt; Op basis van landinstellingen-id</strong>.</p>
 <div id="fig-gegevenstype-wijzigen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="gegevenstype-wijzigen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Menukeuzes voor het wijzigen van het gegevenstype op basis van de landinstellingen.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gegevenstype-wijzigen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="gegevenstype-wijzigen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-gegevenstype-wijzigen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Menukeuzes voor het wijzigen van het gegevenstype op basis van de landinstellingen.
+</figcaption>
 </figure>
 </div>
 <p>In het dan verschijnende dialoogvenster selecteer je de gewenste landinstellingen.</p>
 <div id="fig-gegevenstype-landinstellingen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="gegevenstype-landinstellingen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Dialoogscherm landinstellingen voor gegevenstype.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gegevenstype-landinstellingen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="gegevenstype-landinstellingen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-gegevenstype-landinstellingen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Dialoogscherm landinstellingen voor gegevenstype.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -389,15 +403,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -406,6 +443,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -448,6 +486,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -523,7 +584,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -604,12 +664,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

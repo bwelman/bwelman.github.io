@@ -55,11 +55,9 @@
   {
     "listing": "/excel.html",
     "items": [
-      "/excel/kmeans-uitleg/kmeans-uitleg.html",
       "/excel/stapeldata-2/stapeldata-2.html",
       "/excel/stapeldata-1/stapeldata-1.html",
       "/excel/is-functies/isfuncties.html",
-      "/excel/knn-uitleg/knn-uitleg.html",
       "/excel/reeks-getallen-genereren/reeks-getallen-genereren.html",
       "/excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html",
       "/excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html",

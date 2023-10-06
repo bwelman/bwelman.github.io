@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,12 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -188,6 +189,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>Source: ZYMURGY SPECIAL 1990, 53-54.</p>
 <p>Has confusion over the use of AAU, BU, HBU and IBU left you with a bitter taste in your mouth? Was that bitter taste left by your latest homebrew that should have emphasized the malt? If so, this article may be your ticket to better-balanced brews.</p>
 <p>First, let’s familiarize ourselves with the four terms for the two calculation methods used to determine the bitterness in beer. They are BU (Bittering Units), HBU (Homebrew Bittering Units), AAU (Alpha Acid Units), and IBU (International Bittering Units). Why we need two names for each calculation is beyond me. That’s an issue best left up to the HSC (Homebrewing Standards Committee), if one exists. If I understand what I’ve read, AAU and HBU are calculated by multiplying the weight of hops (in ounces) by their alpha acid. IBU and BU include boiling time in the calculation.</p>
@@ -195,8 +197,12 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>What homebrewers need is a formula for determining how much bitterness will be derived from a hop addition or how to determine how much hops to add to get the desired bitterness. The following utilization chart (<a href="#tbl-ibuchart" class="quarto-xref">Table&nbsp;2</a>) and formulas have been developed to satisfy that need. I must give credit to Fred Eckhardt, Dave Miller and Byron Burch because information gleaned from their books forms the basis for this chart and formula. My contribution was to experiment with their data, fill in some of the gaps and develop the formula to cover any batch size and wort density.</p>
 <p>Keep in mind that <a href="#tbl-ibuchart" class="quarto-xref">Table&nbsp;2</a> and the calculations are for bitterness only. Your aroma, flavoring and bittering hop rates should be determined based on the style of beer being brewed. Hops boiled five minutes or less contribute more to aroma than to bitterness. Hops boiled six to 25 minutes contribute greatly to the flavor of the beer. Bitterness is extracted in greater amounts by longer active boiling.</p>
 <div id="tbl-abbreviations" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-abbreviations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Abbreviations used in the following formulas
+</figcaption>
+<div aria-describedby="tbl-abbreviations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;1: Abbreviations used in the following formulas</caption>
 <tbody>
 <tr class="odd">
 <td><span class="math inline">\(\%U\)</span></td>
@@ -237,6 +243,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>A gravity adjustment calculation is used for high-gravity beers or wort if the brew kettle is too small to boil a full batch. It is calculated by taking the larger of gravity of boil (GB) minus 1.050, divided by 0.2. If neither gravity is greater than 1.050, then GA equals 0.</p>
 <p><span class="math display">\[
 \frac{GB - 1.050}{0.2} = GA
@@ -276,8 +284,12 @@ GA = \frac{1.096 - 1.050}{0.2} = 0.24
 W_{oz} = \frac{V_{gal} \times (1 + GA) \times IBU}{\%U \times \%A \times 7462} = \frac{5 \times (1 + 0.24) \times 32}{0.228 \times 0.048 \times 7462} = 2.4 oz
 \]</span></p>
 <div id="tbl-ibuchart" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-ibuchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: IBU chart.
+</figcaption>
+<div aria-describedby="tbl-ibuchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;2: IBU chart.</caption>
 <thead>
 <tr class="header">
 <th>Boiling Time</th>
@@ -332,12 +344,18 @@ W_{oz} = \frac{V_{gal} \times (1 + GA) \times IBU}{\%U \times \%A \times 7462} =
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>In formulas, percent utilization must be expressed as a decimal.</p>
 </div></div><div id="tbl-beerstyle" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-beerstyle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Beer Style.
+</figcaption>
+<div aria-describedby="tbl-beerstyle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Table&nbsp;3: Beer Style.</caption>
 <tbody>
 <tr class="odd">
 <td><strong>LIGHT BEERS</strong></td>
@@ -453,6 +471,8 @@ W_{oz} = \frac{V_{gal} \times (1 + GA) \times IBU}{\%U \times \%A \times 7462} =
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
 </div>
 
 
@@ -595,15 +615,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -612,6 +655,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -654,6 +698,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -729,7 +796,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -810,12 +876,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

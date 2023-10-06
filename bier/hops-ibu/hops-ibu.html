@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,12 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -199,6 +200,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>By Petr Novotny, Zymurgy, March/April 2018</p>
 <p>We all want to make great beer, even on the first attempt. To achieve such a goal we must carefully develop and execute every recipe. Even with limited tools, often nothing more than kitchen scales, a hydrometer or refractometer, and a timer, we still want to able to predict our results.</p>
 <p>Our success depends on many calculations and experience with our equipment. Estimating beer bitterness is one of those calculations. The final bitterness of a beer, expressed in International Bittering Units (IBU), depends on many factors: the quantity of hops added, hop varieties used, boil duration, wort temperature, wort density, wort composition, and many others. Even losses to cold break and fermentation play a role.</p>
@@ -333,31 +335,31 @@ k_2(T) =0,00952 \cdot e^{-12994(\frac{1}{T}-\frac{1}{373,15})}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="tabel1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Table 1: Sample Temperature Profile with Hop Additions</figcaption>
+<figcaption>Table 1: Sample Temperature Profile with Hop Additions</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="tabel2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Table 2: Whirlpool at 95<sup>o</sup>C</figcaption>
+<figcaption>Table 2: Whirlpool at 95<sup>o</sup>C</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 1: The Self-Limiting Nature of Isomerization. Data calculated by Tinseth equation (red curve) and the new model presented in this article (blue curve). Results contain correction for losses.</figcaption>
+<figcaption>Figure 1: The Self-Limiting Nature of Isomerization. Data calculated by Tinseth equation (red curve) and the new model presented in this article (blue curve). Results contain correction for losses.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 2: IBU and Temperature Profiles for Original Scenario Using the New Model and Tinseth’s Formula.</figcaption>
+<figcaption>Figure 2: IBU and Temperature Profiles for Original Scenario Using the New Model and Tinseth’s Formula.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure 3: Whirlpool Hopping at Different Temperatures.</figcaption>
+<figcaption>Figure 3: Whirlpool Hopping at Different Temperatures.</figcaption>
 </figure>
 </div>
 </section>
@@ -505,15 +507,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -522,6 +547,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -564,6 +590,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -639,7 +688,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -720,12 +768,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

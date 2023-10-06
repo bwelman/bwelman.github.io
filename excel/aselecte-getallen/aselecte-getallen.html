@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -185,6 +186,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>Voor onderwijskundige doeleinden is het soms nodig om zelf data te genereren omdat je bijvoorbeeld een specifiek patroon in de data wilt behandelen en daar geen goede data voor hebt.</p>
 <p>Aselecte getallen, ook wel willekeurige getallen of toevalsgetallen genoemd, worden gemaakt met een zogenaamde <em>toevalsgenerator (random generator)</em>. Deze trekt willeurig (aselect) een getal uit een verzameling getallen. Zo haalt de ballenmachine bij Lotto een willekeurig getaL uit de verzameling getallen 1 t/m 45. Computerprogramma’s gebruiken meestal een algoritme waarin via wiskundige formules een getal geproduceerd wordt. Excel maakt net als veel andere programma’s gebruikt van het zogenaamde Mersenne Twister algoritme. Dit zijn in werkelijkheid geen echte willekeurige getallen, maar pseudo-willekeurige getallen omdat ze op een voorspelbare manier geproduceerd zijn. Voor de meeste doeleinden is dit geen probleem.</p>
 <p>Bij het genereren van een getal wordt altijd aangeven binnen welke grenzen (ondergrens, bovengrens) het getal moet liggen. Dit interval wordt aangeduid met een combinatie van ronde haken <code>()</code> en blokhaken <code>[]</code>. Een ronde haak betekent dat de grenswaarde niet tot de klasse behoort. Een blokhaak betekent dat de grenswaarde wel tot de klasse behoort. Zo hoort bij het interval <code>[25,40)</code> de waarde 25 er wel bij en de waarde 40 niet.</p>
@@ -198,9 +200,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p><code>=ondergrens + ASELECT()*(bovengrens-ondergrens)</code></p>
 <p>In de volgende afbeelding zie je hoe willekeurige getallen in het interval <code>[10,50)</code> zijn gegenereerd.</p>
 <div id="fig-aselect" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselect.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Willekeurige getallen in het interval <code>[10,50)</code> met functie ASELECT</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselect-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselect.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselect-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Willekeurige getallen in het interval <code>[10,50)</code> met functie ASELECT
+</figcaption>
 </figure>
 </div>
 <p>Wanneer je gehele getallen wilt moet je voorgaande formule binnnen de functie <code>INTEGER()</code> plaatsen, die een getal naar beneden afrondt op het dichtstbijzijnde gehele getal.</p>
@@ -212,31 +218,47 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </ul>
 <p>Deze functie produceert een willekeurig geheel getal uit het interval <code>[laagst,hoogst]</code>. In tegenstelling tot <em>ASELECT()</em> doen hier beide grenswaarden mee.</p>
 <div id="fig-aselecttussen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselecttussen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Willekeurige getallen uit het interval 10 t/m 50 met functie ASELECTTUSSEN</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselecttussen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselecttussen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselecttussen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Willekeurige getallen uit het interval 10 t/m 50 met functie ASELECTTUSSEN
+</figcaption>
 </figure>
 </div>
 <p>Met wat trucs kun je ook andere getallen dan gehele getallen genereren. Zo zou je voor prijzen van artikelen die tussen €10,00 en €90,00 liggen gebruik kunnen maken van de formule in de volgende afbeelding:</p>
 <div id="fig-aselecttussen-euro" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselecttussen-euro.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Willekeurige getallen uit het interval 10,00 t/m 90,00</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselecttussen-euro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselecttussen-euro.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselecttussen-euro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Willekeurige getallen uit het interval 10,00 t/m 90,00
+</figcaption>
 </figure>
 </div>
 <p>Om twee decimalen te krijgen worden de grenswaarden 10 en 90 eerst met 100 vermenigvuldigd. Dan wordt er een getal gegenereerd uit het interval <code>[1000, 9000]</code> waarna dit getal door 100 gedeeld wordt en je precies twee decimalen krijgt. De cellen kun je vooraf of achteraf opmaken als geldbedragen.</p>
 <p>En door creatief gebruik te maken van afrondfuncties zijn er verrassende mogelijkheden. Het volgende voorbeeld genereert 5-vouden uit het interval <code>[0, 100]</code>.</p>
 <div id="fig-aselecttussen-5voud" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselecttussen-5voud.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: Willekeurige vijfvouden</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselecttussen-5voud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselecttussen-5voud.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselecttussen-5voud-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: Willekeurige vijfvouden
+</figcaption>
 </figure>
 </div>
 <p>Ook het genereren van datums (alsmede tijdstippen) is hiermee mogelijk, omdat intern in Excel een datum en tijd als een getal wordt opgeslagen. Zo staat het getal 1 voor “1-1-1900 00:00:00”. In het volgende voorbeeld worden willekeurige datums uit het jaar 2019 gegenereerd. Ook hier moet je de cellen waarin het resultaat komt, opmaken in het gewenste datumformaat.</p>
 <div id="fig-aselecttussen-datums" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselecttussen-datums.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Willekeurige datums in 2019</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselecttussen-datums-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselecttussen-datums.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselecttussen-datums-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Willekeurige datums in 2019
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -279,9 +301,13 @@ Opmerking
 <p>Als voorbeeld weer het genereren van gehele getallen tussen 10 en 50. De formule is <code>=ASELECT.MATRIX(3;4;10;50;WAAR)</code>.</p>
 <p>In tegenstelling tot de vorige functies selecteer je hier maar één cel waar je de formule invoert. Het resultaat is een array, een nieuwe gegevensstructuur in Excel. De waarden van de array komen niet alleen in de geselecteerde cel, maar <em>lopen over</em> naar de naburige cellen. Excel maakt dynamisch de benodigde ruimte voor de array wanneer de formule ingevoerd wordt. Wanneer een van die benodigde cellen bezet is krijg je een foutmelding.</p>
 <div id="fig-aselectmatrix" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselectmatrix.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;6: Een array van 3 rijen en 4 kolommen met willekeurige getallen van 10 t/m 50</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselectmatrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselectmatrix.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselectmatrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;6: Een array van 3 rijen en 4 kolommen met willekeurige getallen van 10 t/m 50
+</figcaption>
 </figure>
 </div>
 <p>Dit ziet er bij de eerste aanblik hetzelfde uit als bij <code>ASELECTTUSSEN()</code>, maar er zijn verschillen omdat het een array is. Allereerst zie je een lichtblauw kader om de array. En wanneer je een andere cel selecteert dan die waar de formule is ingevoerd, zie je in de formulebalk dat de formule grijs geworden is. Ook kun je in de andere cellen geen wijzigingen aanbrengen.</p>
@@ -293,9 +319,13 @@ Opmerking
 <p><em>tabblad Gegevens -&gt; Gegevensanalyse (groep Analyse) -&gt; Aselecte getallen</em></p>
 <p>Het dialoogscherm dat je krijgt kan wat van het volgende afwijken, maar ziet er grotendeels hetzelfde uit.</p>
 <div id="fig-atp-discreet" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="atp-discreet.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;7: Dialoogscherm Aselecte getallen</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-atp-discreet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="atp-discreet.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-atp-discreet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;7: Dialoogscherm Aselecte getallen
+</figcaption>
 </figure>
 </div>
 <ul>
@@ -313,16 +343,24 @@ Opmerking
 </ul>
 <p>Als voorbeeld worden weer getallen gegenereerd tussen 10 en 50.</p>
 <div id="fig-aselect-toolpak-uniform" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselect-toolpak-uniform.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;8: Invulling dialoogscherm voor het genereren van willekeurige getallen tussen 10 en 50</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselect-toolpak-uniform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselect-toolpak-uniform.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselect-toolpak-uniform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;8: Invulling dialoogscherm voor het genereren van willekeurige getallen tussen 10 en 50
+</figcaption>
 </figure>
 </div>
 <p>Het resultaat ziet er ongeveer uit als volgt:</p>
 <div id="fig-aselect-toolpak-result" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="aselect-toolpak-result.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;9: Resultaat gegevensanalyse</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aselect-toolpak-result-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aselect-toolpak-result.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-aselect-toolpak-result-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;9: Resultaat gegevensanalyse
+</figcaption>
 </figure>
 </div>
 <p>Er staat geen formule in een van de cellen. De getallen veranderen dan ook niet wanneer er een wijziging in het werkblad komt.</p>
@@ -468,15 +506,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -485,6 +546,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -527,6 +589,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -602,7 +687,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -683,12 +767,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

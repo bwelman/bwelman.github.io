@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -178,12 +179,17 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>Het is niet moeilijk om de gegevens in een Excel tabel naar een XML bestand om te zetten.</p>
 <p>Download het bestand <a href="verkopen-data.xlsx">verkopen-data.xlsx</a> en open het vervolgens in Excel. In een Excel tabel staan de volgende gegevens:</p>
 <div id="fig-xml-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Tabel met verkoopgegevens.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xml-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="xml-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-xml-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Tabel met verkoopgegevens.
+</figcaption>
 </figure>
 </div>
 <p>Om deze naar XML te exporteren moet er eerst een XML schema gemaakt worden dat gebaseerd is op deze gegevens. In plaats van een officieel schema of DTD te maken kun je ook een eenvoudig XML bestand maken met daarin de eerste twee records. Open een kladblok programma en plaats daarin het de volgende tekst.</p>
@@ -207,31 +213,47 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Sla het bestand in dezelfde map als het Excel bestand op onder de naam <em>verkopen-schema.xml</em> en sluit het kladblok programma.</p>
 <p>Ga nu terug naar het geopende Excelbestand. Kies <em>tab Ontwikkelaars &gt; Bron (groep XML)</em>. Het XML taak paneel wordt nu geopend.</p>
 <div id="fig-xml-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: XML taak paneel.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xml-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="xml-2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-xml-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: XML taak paneel.
+</figcaption>
 </figure>
 </div>
 <p>Klik op <em>XML-toewijzingen</em> om een XML bestand toe te voegen. Een dialoogvenster wordt nu geopend. Klik hierin op <em>Toevoegen</em> en selecteer daarna <em>verkopen-schema.xml</em>.</p>
 <p>Je krijgt nu een waarschuwing dat de opgegeven XML-bron niet naar een schema verwijst en dat Excel op basis van dit bestand een schema maakt. Klik op <em>OK</em>.</p>
 <div id="fig-xml-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: XML toewijzingen.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xml-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="xml-3.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-xml-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: XML toewijzingen.
+</figcaption>
 </figure>
 </div>
 <p>Klik op <em>OK</em>.</p>
 <div id="fig-xml-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-4.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: XML taak paneel met daarin de velden uit het XML schema.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xml-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="xml-4.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-xml-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: XML taak paneel met daarin de velden uit het XML schema.
+</figcaption>
 </figure>
 </div>
 <p>Sleep nu een voor een de vijf elementen (Voornaam, Achternaam, Verkopen, Land, Kwartaal) uit de XML-boom naar de juiste kolom in het werkblad.</p>
 <div id="fig-xml-5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="xml-5.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Alle velden uit het schema zijn nu aan een kolom gekoppeld.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xml-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="xml-5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-xml-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Alle velden uit het schema zijn nu aan een kolom gekoppeld.
+</figcaption>
 </figure>
 </div>
 <p>Je kunt controleren of de toewijzing goed uitgevoerd is, door de elementen in de XML-bron een voor een aan te klikken. De bijbehorende kolom uit de tabel moet dan geselecteerd worden.</p>
@@ -368,15 +390,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -385,6 +430,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -427,6 +473,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -502,7 +571,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -583,12 +651,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

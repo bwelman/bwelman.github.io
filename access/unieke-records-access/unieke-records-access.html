@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -186,6 +187,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <section id="inleiding" class="level1">
 <h1>Inleiding</h1>
 <p>In het eigenschappen venster van een query zijn twee opties, <em>Unieke Waarden</em> en <em>Unieke Records</em>. Standaard staat de waarde voor beiden op <em>Nee</em>. Deze leveren soms dezelfde waarden op, maar er zijn significante verschillen wanneer je een van beide op <em>Ja</em> zet. Verder kun je niet beide waarden op <em>Ja</em> zetten.</p>
@@ -210,26 +212,38 @@ Opmerking
 </ul>
 <p>Verdere uitleg via een voorbeeld met een eenvoudige database <code>Voorbeeld_Uniek.accdb</code>. Deze bevat twee tabellen:</p>
 <div id="fig-tabellen" class="quarto-layout-panel">
-<figure class="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabellen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tabellen" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-klanten" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="tabel-klanten.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen"></p>
-<figcaption class="figure-caption">(a) Tabel Klanten</figcaption>
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-klanten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="tabel-klanten.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen">
+</div>
+<figcaption class="figure quarto-subfloat-caption quarto-subfloat-fig" id="fig-klanten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Tabel Klanten
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tabellen" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-orders" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="tabel-orders.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen"></p>
-<figcaption class="figure-caption">(b) Tabel Orders</figcaption>
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-orders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="tabel-orders.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen">
+</div>
+<figcaption class="figure quarto-subfloat-caption quarto-subfloat-fig" id="fig-orders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Tabel Orders
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figuur&nbsp;1: Tabellen in de database</figcaption><p></p>
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-tabellen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Tabellen in de database
+</figcaption>
 </figure>
 </div>
 <p>Tussen de tabellen is een een-op-veel relatie van Klanten.Klantnr &gt; Orders.Klantnr.</p>
@@ -240,15 +254,23 @@ Opmerking
 <p><strong>Ontwerp</strong></p>
 <p>Onder deze naam is een query gemaakt waar beide tabellen aan zijn toegevoegd. Het ontwerpvenster ziet er als volgt uit:</p>
 <div id="fig-qry-standaard-ontwerp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-standaard-ontwerp.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Standaard ontwerp query Klanten</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qry-standaard-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="qry-standaard-ontwerp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-standaard-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Standaard ontwerp query Klanten
+</figcaption>
 </figure>
 </div>
 <div id="fig-qry-standaard-eigenschappen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-standaard-eigenschappen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Standaard eigenschappen query Klanten</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qry-standaard-eigenschappen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="qry-standaard-eigenschappen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-standaard-eigenschappen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Standaard eigenschappen query Klanten
+</figcaption>
 </figure>
 </div>
 <p>Wanneer je met SQL werkt, dan is de opdracht:</p>
@@ -257,9 +279,13 @@ FROM Klanten
 INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <p><strong>RESULTAAT</strong></p>
 <div id="fig-qry-standaard-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-standaard-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: Vier rijen, voor elke klantorder is er een rij, alle records worden getoond.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qry-standaard-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="qry-standaard-resultaat.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-standaard-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: Vier rijen, voor elke klantorder is er een rij, alle records worden getoond.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -268,9 +294,13 @@ INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <p><strong>Ontwerp</strong></p>
 <p>In het Eigenschappenvenster wordt <code>Unieke waarden = Ja</code>.</p>
 <div id="fig-qry-uniekewaarden-ontwerp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekewaarden-ontwerp.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Ontwerp qry Klanten unieke waarden.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qry-uniekewaarden-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="qry-uniekewaarden-ontwerp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekewaarden-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Ontwerp qry Klanten unieke waarden.
+</figcaption>
 </figure>
 </div>
 <p>Wanneer je met SQL werkt, dan is de opdracht:</p>
@@ -279,9 +309,13 @@ FROM Klanten
 INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <p><strong>Resultaat</strong></p>
 <div id="fig-qry-uniekewaarden-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekewaarden-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;6: Twee unieke rijen, de resultaten worden beperkt tot unieke waarden in het uitvoerveld.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qry-uniekewaarden-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="qry-uniekewaarden-resultaat.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekewaarden-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;6: Twee unieke rijen, de resultaten worden beperkt tot unieke waarden in het uitvoerveld.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -290,9 +324,13 @@ INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <p><strong>Ontwerp</strong></p>
 <p>In het Eigenschappenvenster wordt <code>Unieke records = Ja</code>.</p>
 <div id="fig-qry-uniekerecords-ontwerp" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekerecords-ontwerp.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;7: Ontwerp qry Klanten unieke records.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qry-uniekerecords-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="qry-uniekerecords-ontwerp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekerecords-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;7: Ontwerp qry Klanten unieke records.
+</figcaption>
 </figure>
 </div>
 <p>Wanneer je met SQL werkt, dan is de opdracht:</p>
@@ -301,9 +339,13 @@ FROM Klanten
 INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <p><strong>Resultaat</strong></p>
 <div id="fig-qry-uniekerecords-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="qry-uniekerecords-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;8: Drie rijen, want de resultaten in alle onderliggende tabellen moeten uniek zijn, dus niet de uitvoervelden.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qry-uniekerecords-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="qry-uniekerecords-resultaat.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekerecords-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;8: Drie rijen, want de resultaten in alle onderliggende tabellen moeten uniek zijn, dus niet de uitvoervelden.
+</figcaption>
 </figure>
 </div>
 <p>Je ziet hier twee keer “Jansen BV”. Weliswaar is dat niet uniek in het uitvoerveld, maar ze zijn uniek omdat de ene in Amsterdam zit en de andere in Londen.</p>
@@ -441,15 +483,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -458,6 +523,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -500,6 +566,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -575,7 +664,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -656,12 +744,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

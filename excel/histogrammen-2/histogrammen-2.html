@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -187,6 +188,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>In het eerste artikel over histogrammen werd van een gegeven frequentieverdeling gebruik gemaakt. Normaliter moet je van de gegevens eerst een frequentieverdeling maken. Er zijn meerdere manieren om een freqentieverdeling te maken, al dan niet met ook een histogram.</p>
 <ul>
 <li>Met de formule <code>INTERVAL</code></li>
@@ -209,9 +211,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p><strong>Excel 365</strong></p>
 <p>In Excel 365 kun je deze matrixformule gewoon in de begincel D2 invoeren en vervolgens op Enter drukken. Het resultaat is een kolommetje getallen, een matrix. En Excel weet welke cellen nodig zijn voor de uitvoer en plaatst het resultaat van deze <em>dynamische matrix</em> in deze cellen. Deze cellen moeten wel leeg zijn anders krijg je een foutmelding.</p>
 <div id="fig-freq-interval" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-interval.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Frequenties bepaald met functie INTERVAL</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-interval-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-interval.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-interval-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Frequenties bepaald met functie INTERVAL
+</figcaption>
 </figure>
 </div>
 <p><strong>Andere Excel versies</strong></p>
@@ -219,9 +225,13 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p><strong>Histogram maken</strong></p>
 <p>Wanneer je eenmaal de frequentieverdeling gemaakt hebt kun je een histogram maken op basis van een kolomdiagram. In <a href="../2020-05-13-histogrammen-1/histogrammen-1.html">deel 1</a> zie je daarvan een voorbeeld en in het bijbehorende bestand testscores wordt uitgelegd hoe je dat moet doen.</p>
 <div id="fig-freq-interval-histogram" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-interval-histogram.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Histogram</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-interval-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-interval-histogram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-interval-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Histogram
+</figcaption>
 </figure>
 </div>
 </section>
@@ -229,23 +239,35 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <h2 class="anchored" data-anchor-id="draaitabel">Draaitabel</h2>
 <p>Ook met een draaitabel kun je een frequentieverdeling maken. Selecteer het gegevensgebied A1:A26 en dan tab <em>Invoegen &gt; Draaitabel</em>. Plaats het veld <code>getal</code> in zowel het rijengebied als het waardengebied. Wijzig de waardeveldinstellingen zodat het aantal bepaald wordt en niet de som.</p>
 <div id="fig-freq-draaitabel-velden" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-draaitabel-velden.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Velden voor de draaitabel</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-draaitabel-velden-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-draaitabel-velden.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-draaitabel-velden-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Velden voor de draaitabel
+</figcaption>
 </figure>
 </div>
 <p>Nu moet je nog groeperen voor de intervals. Selecteer een willekeurig veld in de draaitabel, rechter muisklik en kies dan <em>Groeperen</em>. Specificeer in het dialoogscherm dat wordt begonnen bij 1, geëindigd bij 10 en dat de stapgrootte 2 is. Zie de volgende afbeelding.</p>
 <div id="fig-freq-draaitabel-groeperen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-draaitabel-groeperen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: Instelling voor het groeperen</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-draaitabel-groeperen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-draaitabel-groeperen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-draaitabel-groeperen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: Instelling voor het groeperen
+</figcaption>
 </figure>
 </div>
 <p>Na het groeperen verschijnt de frequentieverdeling.</p>
 <div id="fig-freq-draaitabel-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-draaitabel-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Frequentieverdeling</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-draaitabel-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-draaitabel-resultaat.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-draaitabel-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Frequentieverdeling
+</figcaption>
 </figure>
 </div>
 </section>
@@ -255,16 +277,24 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Kies <em>tab Ggegevens &gt; Gegevensanalyse &gt; Histogram</em>.</p>
 <p>Specificeer het invoerbereik en het verzamelbereik, alsmede een cel voor het begin van de uitvoer. Wanneer je een histogram wilt kun je in dit scherm ook aangeven dat er een grafiek gemaakt moet worden</p>
 <div id="fig-freq-gegevensanalyse-instelling" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-gegevensanalyse-instelling.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;6: Dialoogscherm Histogram.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-gegevensanalyse-instelling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-gegevensanalyse-instelling.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-gegevensanalyse-instelling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;6: Dialoogscherm Histogram.
+</figcaption>
 </figure>
 </div>
 <p>De grafiek is een gegroepeerde kolomdiagram die je desgewenst nog kunt aanpassen. Voor een echt histogram moeten de kolommen aansluitend zijn zonder lege ruimte ertussen. En de labels op de X-as geven hier alleen de bovengrens en niet het interval.</p>
 <div id="fig-freq-gegevensanalyse-resultaat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-gegevensanalyse-resultaat.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;7: Het standaard histogram.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-gegevensanalyse-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-gegevensanalyse-resultaat.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-gegevensanalyse-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;7: Het standaard histogram.
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -286,9 +316,13 @@ Waarschuwing
 <p>De nieuwere Excelversies hebben de mogelijkheid tot het invoegen van een <em>grafiektype Histogram</em>. Hiervoor heb je in principe alleen maar de brondata nodig. Bij de verdeling in intervallen (bins) bepaalt Excel zelf automatisch deze bins. Maar je kunt via het eigenschappenvenster ook de binbreedte of het aantal bins opgeven. De bijbehorende intervalgrenzen worden dan door Excel berekend. Wanneer je ook nog de grenswaarden zelf wilt bepalen, dan moet je daarvoor een aparte kolom in het werkblad opnemen.</p>
 <p>De werkwijze is als volgt. Selecteer een getal in het gegevensgebied. Kies dan <em>tab Invoegen &gt; Aanbevolen grafieken &gt; Alle grafieken &gt; Histogram</em>.</p>
 <div id="fig-freq-grafiektype-histogram" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="freq-grafiektype-histogram.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;8: Grafiektype histogram</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-freq-grafiektype-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="freq-grafiektype-histogram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-freq-grafiektype-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;8: Grafiektype histogram
+</figcaption>
 </figure>
 </div>
 <p>In Excel wordt een histogram gewoonlijk als een kolomdiagram weergegeven met labels onder het midden van de kolom. En de kolommen worden standaard aaneensluitend getekend.</p>
@@ -438,15 +472,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -455,6 +512,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -497,6 +555,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -572,7 +653,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -653,12 +733,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -178,6 +179,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>De meeste Excel gebruikers kennen wel de truc om een reeks getallen te produceren door een beginlijstje met een patroon te maken en deze vervolgens uit te breiden door de vulgreep te verslepen. Wanneer je niet meer weet hoe dit werkt, lees dan <a href="https://leerexcel.netlify.app/data.html#data-autofill">Automatisch doorvoeren</a>.</p>
 <p>Om een lijst met (opeenvolgende) getallen in een matrix te genereren kun je de functie <strong>REEKS</strong> gebruiken.</p>
 <p>Syntax: <code>REEKS(rijen;[kolommen];[beginnen];[stap])</code></p>
@@ -189,23 +191,35 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </ul>
 <p>Zo kun je een kolom met de getallen 1 t/m 10 genereren met de formule <code>=REEKS(10)</code></p>
 <div id="fig-reeks-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="reeks-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Reeks met opeenvolgende getallen van 1 t/m 10.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reeks-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Reeks met opeenvolgende getallen van 1 t/m 10.
+</figcaption>
 </figure>
 </div>
 <p>En met de formule <code>=REEKS(5;4;5;10</code>) krijg je een matrix van 5 rijen en 4 kolommen, beginnend met getal 5 en de volgende steeds 10 meer.</p>
 <div id="fig-reeks-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="reeks-2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Een matrix met getallen volgens een patroon.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reeks-2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Een matrix met getallen volgens een patroon.
+</figcaption>
 </figure>
 </div>
 <p>Je kunt de functie <code>REEKS</code> ook opnemen binnen andere functies. Zo kun je eenvoudig een matrix met Romeinse cijfers maken. De formule in het volgende voorbeeld is <code>=ROMEINS(REEKS(9,10))</code>. Eerst wordt met <code>REEKS</code> een lijst getallen van 9 rijen en 10 kolommen gemaakt, beginnend met 1 en steeds 1 meer. Daarna zet de functie <code>ROMEINS</code> deze om naar Romeinse cijfers, als tekst.</p>
 <div id="fig-reeks-romeins" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="reeks-romeins.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Reeks Romeinse cijfers.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="reeks-romeins.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Reeks Romeinse cijfers.
+</figcaption>
 </figure>
 </div>
 <p>Tot slot een wat complexer voorbeeld. Stel je hebt een persoonlijke lening van €10.000 afgesloten tegen een jaarlijkse rente van 6% die je in 24 maandelijkse termijnen aflost. Wat is dan het totaal aan rente betaalde bedrag? <!--Inspiratiebron: "Excel Dynamic Arrays, 2ed, Bill Jelen, Hfst 7) --></p>
@@ -213,18 +227,26 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <p>Je zou dan een lijstje met de termijnen 1 t/m 24 kunnen maken en voor elke termijn het rentebedrag kunnen uitrekenen. Om de formules leesbaarder te maken zijn de cellen voor de argumenten van functie van namen voorzien: Lening, Termijnen en Jaarrente.</p>
 <p>De matrixformule wordt dan <code>=IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening)</code>.</p>
 <div id="fig-maandrentes" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="maandrentes.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: Maandelijkse rentebedragen.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="maandrentes.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: Maandelijkse rentebedragen.
+</figcaption>
 </figure>
 </div>
 <p>Voor de totaal betaalde rente moet je dan deze bedragen nog optellen.</p>
 <p>Je kunt dit bedrag ook vinden zonder eerst de afzonderlijke rentebedragen te bepalen. De formule voor het totale rentebedrag wordt dan</p>
 <p><code>=SOM(IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening))</code></p>
 <div id="fig-rente-totaal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rente-totaal.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Totaal betaalde rente.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rente-totaal.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Totaal betaalde rente.
+</figcaption>
 </figure>
 </div>
 <p>Alle voorbeelden uit dit artikel kun je vinden in het bestand <a href="reeks.xlsx">reeks.xlsx</a>.</p>
@@ -360,15 +382,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -377,6 +422,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -419,6 +465,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -494,7 +563,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -575,12 +643,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

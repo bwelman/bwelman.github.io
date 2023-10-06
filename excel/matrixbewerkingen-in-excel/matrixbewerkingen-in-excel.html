@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.315">
+<meta name="generator" content="quarto-1.4.398">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,12 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Geen resultaten",
     "search-matching-documents-text": "Gevonden documenten",
@@ -196,38 +197,55 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 </header>
 
+
 <section id="wat-is-een-matrix-in-excel" class="level1">
 <h1>Wat is een matrix in Excel?</h1>
 <p>Een vector is een lijstje met getallen die of in een rij of in een kolom staan. Je hebt dan respectievelijke een rijvector of een kolomvector. Excel gebruikt niet de term vector, maar matrix (Engelstalig: Array). Een matrix in Excel kan zijn:</p>
 <p><strong>1-dimensionaal horizontaal</strong></p>
 <p>Een rij met waarden (eigenlijk een rijvector).</p>
 <div id="fig-array-h" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="array-h.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;1: Horizontale matrix</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-array-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="array-h.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-array-h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Horizontale matrix
+</figcaption>
 </figure>
 </div>
 <p><strong>1-dimensionaal verticaal</strong></p>
 <p>Een kolom met waarden (eigenlijk een kolomvector).</p>
 <div id="fig-array-v" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="array-v.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;2: Verticale matrix</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-array-v-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="array-v.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-array-v-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Verticale matrix
+</figcaption>
 </figure>
 </div>
 <p><strong>2-dimensionaal</strong></p>
 <p>Een rechthoek van rijen en kolommen met waarden, een gebied dus.</p>
 <div id="fig-array-hv" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="array-hv.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;3: Rechhoekige matrix</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-array-hv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="array-hv.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-array-hv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Rechhoekige matrix
+</figcaption>
 </figure>
 </div>
 <p><strong>Invoeren van een matrix</strong></p>
 <p>Een matrix met constante waarden zoals in de getoonde drie voorbeelden maak je door in een cel te beginnen met het <code>=</code> symbool en dan een rijtje waarden tussen accolades <code>{ }</code> te plaatsen. De waarden moeten van elkaar gescheiden worden door een speciaal symbool. Welke symbolen je moet gebruiken als scheidingssymbool hangt af van de taal- en landinstellingen op de computer.</p>
 <div id="tbl-symbolen" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-symbolen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;1: Symbolen voor scheiding van rijen en kolommen.
+</figcaption>
+<div aria-describedby="tbl-symbolen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Tabel&nbsp;1: Symbolen voor scheiding van rijen en kolommen.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Taalinstelling</th>
@@ -248,6 +266,8 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
 </div>
 <p>Verder moet een matrix invoeren in volgorde van rijen (dus rij voor rij) en alle rijen moeten evenveel kolommen hebben.</p>
 <p>De drie voorbeelden hiervoor zijn als volgt in Excel ingevoerd.</p>
@@ -283,9 +303,13 @@ Belangrijk
 <h2 class="anchored" data-anchor-id="scalaire-bewerkingen">Scalaire bewerkingen</h2>
 <p>Bij een matrix kan een <em>scalair</em> (dit is één getal) opgeteld of afgetrokken worden. En ook kun je een matrix met een scalair vermenigvuldigen of daardoor delen. In alle gevallen wordt de bewerking op de afzonderlijke elementen van de matrix toegepast. Het resultaat is een matrix van dezelfde afmetingen.</p>
 <div id="fig-scalair" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="scalair.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;4: Scalaire bewerkingen uitgevoerd op een matrix. Het scalaire getal staat steeds in kolom E.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scalair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="scalair.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-scalair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: Scalaire bewerkingen uitgevoerd op een matrix. Het scalaire getal staat steeds in kolom E.
+</figcaption>
 </figure>
 </div>
 
@@ -301,9 +325,13 @@ Belangrijk
 <h2 class="anchored" data-anchor-id="optellen-en-aftrekken-van-matrices">Optellen en aftrekken van matrices</h2>
 <p>Matrices met dezelfde afmetingen kunnen opgeteld of afgetrokken worden. De overeenkomstige elementen worden dan opgeteld of afgetrokken. Het resultaat is een matrix van dezelfde afmetingen.</p>
 <div id="fig-opt-aftr" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="opt-aftr.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;5: Optellen en aftrekken van Twee matrices.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-opt-aftr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="opt-aftr.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-opt-aftr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Optellen en aftrekken van Twee matrices.
+</figcaption>
 </figure>
 </div>
 
@@ -340,9 +368,13 @@ Belangrijk
 \]</span></p>
 <p>Formule Excel: <code>PRODUCTMAT(matrix1;matrix2)</code></p>
 <div id="fig-vermenigvuldiging" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="vermenigvuldiging.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;6: Vermenigvuldiging van twee matrices.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vermenigvuldiging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="vermenigvuldiging.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-vermenigvuldiging-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;6: Vermenigvuldiging van twee matrices.
+</figcaption>
 </figure>
 </div>
 
@@ -358,9 +390,13 @@ Belangrijk
 <p>Als <span class="math inline">\(A = \left[ \begin{matrix} 1 &amp; 2 \\ 3 &amp; 4 \\ 5 &amp; 6 \end{matrix} \right]\)</span>, dan is <span class="math inline">\(A^T = \left[ \begin{matrix} 1 &amp; 3 &amp; 5 \\ 2 &amp; 4 &amp; 6 \end{matrix} \right]\)</span></p>
 <p>Formule Excel: <code>TRANSPONEREN()</code></p>
 <div id="fig-transponeren" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="transponeren.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;7: Transponeren van een matrix.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-transponeren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="transponeren.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-transponeren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;7: Transponeren van een matrix.
+</figcaption>
 </figure>
 </div>
 
@@ -373,9 +409,13 @@ Belangrijk
 <p>Een eenheidsmatrix, ook wel identiteitsmatrix genoemd, is een <em>vierkante</em> matrix, waarvan de hoofddiagonaal (van linksboven naar rechtsonder) uitsluitend uit enen bestaat en alle andere elementen nul zijn. Een eenheidsmatrix wordt meestal aangeduid met <span class="math inline">\(I\)</span>.</p>
 <p>Een eenheidsmatrix kun je in Excel genereren met de functie <code>EENHEIDMAT(n)</code> waarbij n de afmeting (dimensie) is.</p>
 <div id="fig-eenheidsmatrix" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="eenheidsmatrix.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;8: Voorbeeld van een eenheidsmatrix 5x5.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eenheidsmatrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="eenheidsmatrix.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-eenheidsmatrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;8: Voorbeeld van een eenheidsmatrix 5x5.
+</figcaption>
 </figure>
 </div>
 
@@ -410,9 +450,13 @@ Belangrijk
 <p><em>Alleen vierkante matrices, maar niet alle, kunnen geinverteerd worden</em>. Een vierkante matrix kan alleen geinverteerd worden wanneer de determinant ongelijk aan nul is. Als de inverse bestaat heet de matrix <em>inverteerbaar</em>. Het inverteren van een matrix is vaak zeer bewerkelijk. Net als de determinant wordt de inverse gebruikt bij het oplossen van stelsels vergelijkingen met meerdere variabelen.</p>
 <p><strong>Formule Excel</strong>: <code>INVERSEMAT()</code></p>
 <div id="fig-inverse" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="inverse.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;9: Het inverteren van een matrix.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="inverse.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-inverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;9: Het inverteren van een matrix.
+</figcaption>
 </figure>
 </div>
 
@@ -438,9 +482,13 @@ Belangrijk
 <p>Omdat <span class="math inline">\(A^{-1}A\)</span> gelijk is aan de eenheidsmatrix kan dit herschreven worden als <span class="math inline">\(X = A^{-1}B\)</span>. Je kunt dus <span class="math inline">\(X\)</span> bepalen door het matrix product van <span class="math inline">\(A^{-1}\)</span> en <span class="math inline">\(B\)</span> te berekenen.</p>
 <p><strong>Uitvoering in Excel</strong></p>
 <div id="fig-vergelijkingen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="vergelijkingen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figuur&nbsp;10: Het oplossen van een stelsel van drie vergelijkingen met drie onbekende variabelen.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vergelijkingen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="vergelijkingen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-vergelijkingen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;10: Het oplossen van een stelsel van drie vergelijkingen met drie onbekende variabelen.
+</figcaption>
 </figure>
 </div>
 
@@ -585,15 +633,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
         for (let i = 0; i < 2; i++) {
           container.appendChild(note.children[i].cloneNode(true));
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -602,6 +673,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -644,6 +716,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -719,7 +814,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -800,12 +894,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
     var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
