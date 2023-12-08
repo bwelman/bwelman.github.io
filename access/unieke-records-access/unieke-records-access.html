@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.398">
+<meta name="generator" content="quarto-1.4.523">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -61,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "meer overeenkomst in dit document",
     "search-more-matches-text": "meer overeenkomsten in dit document",
     "search-clear-button-title": "Wissen",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Annuleren",
     "search-submit-button-title": "Verzenden",
     "search-label": "Zoeken"
@@ -84,7 +85,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
@@ -119,6 +120,10 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
   <li class="nav-item">
     <a class="nav-link" href="../../chemie.html"> 
 <span class="menu-text">Chemie</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../r.html"> 
+<span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../divers.html"> 
@@ -221,7 +226,7 @@ Opmerking
 <div aria-describedby="fig-klanten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="tabel-klanten.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen">
 </div>
-<figcaption class="figure quarto-subfloat-caption quarto-subfloat-fig" id="fig-klanten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-klanten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Tabel Klanten
 </figcaption>
 </figure>
@@ -233,7 +238,7 @@ Opmerking
 <div aria-describedby="fig-orders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="tabel-orders.png" class="img-fluid figure-img" data-ref-parent="fig-tabellen">
 </div>
-<figcaption class="figure quarto-subfloat-caption quarto-subfloat-fig" id="fig-orders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-orders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Tabel Orders
 </figcaption>
 </figure>
@@ -241,7 +246,7 @@ Opmerking
 </div>
 </div>
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-tabellen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabellen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;1: Tabellen in de database
 </figcaption>
 </figure>
@@ -258,7 +263,7 @@ Figuur&nbsp;1: Tabellen in de database
 <div aria-describedby="fig-qry-standaard-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="qry-standaard-ontwerp.png" class="img-fluid figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-standaard-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qry-standaard-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;2: Standaard ontwerp query Klanten
 </figcaption>
 </figure>
@@ -268,7 +273,7 @@ Figuur&nbsp;2: Standaard ontwerp query Klanten
 <div aria-describedby="fig-qry-standaard-eigenschappen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="qry-standaard-eigenschappen.png" class="img-fluid figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-standaard-eigenschappen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qry-standaard-eigenschappen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;3: Standaard eigenschappen query Klanten
 </figcaption>
 </figure>
@@ -283,7 +288,7 @@ INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <div aria-describedby="fig-qry-standaard-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="qry-standaard-resultaat.png" class="img-fluid figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-standaard-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qry-standaard-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;4: Vier rijen, voor elke klantorder is er een rij, alle records worden getoond.
 </figcaption>
 </figure>
@@ -298,7 +303,7 @@ Figuur&nbsp;4: Vier rijen, voor elke klantorder is er een rij, alle records word
 <div aria-describedby="fig-qry-uniekewaarden-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="qry-uniekewaarden-ontwerp.png" class="img-fluid figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekewaarden-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qry-uniekewaarden-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;5: Ontwerp qry Klanten unieke waarden.
 </figcaption>
 </figure>
@@ -313,7 +318,7 @@ INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <div aria-describedby="fig-qry-uniekewaarden-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="qry-uniekewaarden-resultaat.png" class="img-fluid figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekewaarden-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qry-uniekewaarden-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;6: Twee unieke rijen, de resultaten worden beperkt tot unieke waarden in het uitvoerveld.
 </figcaption>
 </figure>
@@ -328,7 +333,7 @@ Figuur&nbsp;6: Twee unieke rijen, de resultaten worden beperkt tot unieke waarde
 <div aria-describedby="fig-qry-uniekerecords-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="qry-uniekerecords-ontwerp.png" class="img-fluid figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekerecords-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qry-uniekerecords-ontwerp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;7: Ontwerp qry Klanten unieke records.
 </figcaption>
 </figure>
@@ -343,7 +348,7 @@ INNER JOIN Orders ON Klanten.Klantnr = Orders.Klantnr;</code></pre>
 <div aria-describedby="fig-qry-uniekerecords-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="qry-uniekerecords-resultaat.png" class="img-fluid figure-img">
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-qry-uniekerecords-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qry-uniekerecords-resultaat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;8: Drie rijen, want de resultaten in alle onderliggende tabellen moeten uniek zijn, dus niet de uitvoervelden.
 </figcaption>
 </figure>
@@ -434,6 +439,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -508,8 +531,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
         typesetMath(container);
         return container.innerHTML
@@ -743,21 +773,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
