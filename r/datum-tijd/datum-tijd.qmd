@@ -1,0 +1,575 @@
+---
+title: "Datum en Tijd objecten in R"
+abstract: |
+  Het gebruik van datum/tijd objecten in standaard R en met lubridate.
+date: "2024-11-01"
+image: "logo.png"
+categories: [r]
+---
+
+# Inleiding
+
+Met name voor tijdreeksen zijn datum/tijd objecten van belang. Het belangrijkste kenmerk van tijdreeksgegevens is de tijdstempel, die een datumobject, tijdobject of ander indexformaat kan zijn, afhankelijk van de reeksfrequentie. Normaal gesproken is het niet eenvoudig om het datum- of tijdobject geformatteerd en klaar voor gebruik te hebben tijdens het laden van ruwe gegevens. Daarom is het waarschijnlijk dat de ruwe data wat herformattering nodig heeft voordat je de data kunt transformeren naar een time series-formaat.
+
+## De datum- en tijdformaten
+
+Een van de grootste uitdagingen bij het werken met datum- en tijdobjecten is de verscheidenheid aan formaten die kunnen worden gebruikt voor het weergeven van datum en tijd. De meeste gangbare kalendersystemen gebruiken bijvoorbeeld een alfabetische vorm om de drie datumcomponenten weer te geven:
+
+-   `Y`: Verwijst naar het jaar, dat kan worden weergegeven in de notatie `yy` (tweecijferig jaartal, bijvoorbeeld 23) of `yyyy` (viercijferig jaartal, bijvoorbeeld 2023).
+
+-   `M`: Verwijst naar de maand. Hier zijn er vier methoden om de maand weer te geven:
+
+    -   `m`: Eencijferige maand (1, 2, ...,9))
+
+    -   `mm`: Tweecijferige maand (01, 02, ...)
+
+    -   `mmm`: Drieletterige afkorting voor een maand (Jan, Feb,...)
+
+    -   `mmmm`: Volledige naam van de maand(January, February, ...)
+
+-   `D`: Verwijst naar de dag. Op een vergelijkbare manier als de maand, zijn er vier methoden om het weer te geven
+
+    -   `d`: Eencijferige dag (1, 2, ..., 9)
+
+    -   `dd`: Tweecijferige dag (01, 02, ...)
+
+    -   `ddd`: Drieletterige afkoring voor de naam van de dag (Mon, Tue, ...
+
+    -   `dddd`: Volledige naam van de dag (Monday, Tuesday, ...)
+
+Bovendien gebruikt elk land of elke regio een andere volgorde om de datumcomponenten weer te geven. Dit maakt het allemaal wat lastig om met datum en tijdobjecten te werken. Hierna worden zowel de standaard hulpmiddelen in R besproken als de mogelijkheden die package lubridate biedt.
+
+# Standaard (base) objecten
+
+Package `base`, een van de kernpakketten van R, biedt twee typen datum- en tijdklassen:
+
+1.  `Date`: Dit is een eenvoudige weergave van een kalenderdatum volgens de ISO 8601 internationale standaardindeling (of de Gregoriaanse kalenderindeling) met de `YYYY-m-d` datumindeling. Elk datumobject heeft een numerieke waarde van het aantal dagen sinds het oorsprongspunt (de standaardinstelling is 1970-01-01). Het is zinvol om deze indeling te gebruiken wanneer de frequentie van de gegevens dagelijks of lager is (bijvoorbeeld, maandelijks, per kwartaal, enzovoort) en het tijdstip van de dag er niet toe doet.
+
+2.  `POSIXct/POSIXlt`: Ook bekend als de `DateTime` classes (dat wil zeggen, ze vertegenwoordigen zowel datum als tijd), dit zijn twee POSIX date/time classes die de kalenderdatum, de tijd van de dag en de tijdzone vertegenwoordigen met behulp van de ISO 8601 internationale standaardindeling van `YYYY-m-d H:M:S`. Het belangrijkste verschil tussen de twee is de vorm waarin de waarden intern worden opgeslagen.
+
+    -   De `POSIXct` class, vergelijkbaar met de `Date` class, vertegenwoordigt het aantal seconden sinds het oorsprongspunt (1970-01-01, UTC-tijdzone) als een numerieke vector.
+
+    -   De `POSIXlt` class slaat elk van de datum- en tijdelementen op als een llist.
+
+::: callout-note
+Voor het gemak zal in dit document een datumobject naar de `Date` class verwijzen en een tijdobject naar de `POSIXct/POSIXlt` class (tenzij anders vermeld).
+
+Het is zinvol om een tijdsobject (`POSIXct` of `POSXlt`) alleen te gebruiken als de frequentie in de tijdreeks hoger is dan dagelijks (zoals elk uur, elk half uur, per minuut of per seconde). Anders wordt het omwille van de eenvoud aanbevolen om het datumobject te gebruiken.
+:::
+
+Met de functies `Sys.Date()` en `Sys.time()` zullen nu de verschillen tussen datum- en tijdobjecten vergeleken worden.
+
+```{r}
+datum <- Sys.Date()
+datum
+
+tijd_ct <- Sys.time()
+tijd_ct
+```
+
+En de classes van de twee objecten:
+
+```{r}
+class(datum)
+class(tijd_ct)
+```
+
+Standaard retourneert de Sys.time() functie een object van de classes POSIXct, POSIXt. Je kunt de functie `as.POSIXlt()` functie gebruiken om het object naar een POSIXlt obtect te converteren.
+
+```{r}
+tijd_lt <- as.POSIXlt(tijd_ct)
+tijd_lt
+
+class(tijd_lt)
+```
+
+Hoewel zowel de POSIXct- als POSIXlt- objecten dezelfde representatie hebben, zit het belangrijkste verschil tussen de twee in de methode waarmee elk object intern wordt opgeslagen in de tijdsdetails. Met de opdracht `unclass()` kun je het object strippen tot het formaat waarin het intern is opgeslagen:
+
+```{r}
+unclass(tijd_ct)
+```
+
+Het POSIXct object slaat de numerieke waarde
+
+```{r}
+unclass(tijd_lt)
+```
+
+Toelichting
+
+-   `sec`: De seconden van het tijdobject.
+
+-   `min`: De minuten van het tijdobject.
+
+-   `hour`: De uren van het tijdobject (24-uur aanduiding).
+
+-   `mday`: De dag van de maand.
+
+-   `month`: De maand van het jaar.
+
+-   `year`: Het aantal jaren sinds 1900 (bijvoorbeeld, 124 voor 2024).
+
+-   `wday`: De dag van de week weergegeven door een geheel getal tussen 0 en 6 (met 0 voor zondag).
+
+-   `isdst`: Zomertijdvlag..
+
+-   `yday`: De dag van het jaar, een geheel getal tussen 0 en 365.
+
+-   `zone`: De tijdzone. Merk op dat de tijdzone wordt gedefinieerd door de gedefinieerde tijdzone van de computer.
+
+-   `gmtoff`: De afwijking in seconden ten opzichte van GMT.
+
+## Datum- en tijdobjecten maken
+
+R heeft een structurele methode om waarden toe te wijzen aan een specifieke class of object, wat meestal een combinatie is van `as.class-naam`. Bijvoorbeeld `as.character()`, `as.Date()`, `as.POSIXlt()`, `as.POSIXct()`.
+
+Zo kun je de tekst "2024-10-31" omzetten in een `Date` object met
+
+```{r}
+mijndatum <- as.Date("2024-10-31")
+mijndatum
+```
+
+De functies `as.POSIXct()` en `as.POSIXlt()` werken op een vergelijkbare manier.
+
+```{r}
+mijntijdstip <- as.POSIXct("2024-10-31 18:25:14", tz="CET")
+mijntijdstip
+```
+
+## Datumobjecten importeren
+
+Het importeren van datum- en tijdobjecten naar een programmeertaal kan om verschillende redenen een lastig proces zijn:
+
+-   Eer is geen duidelijke standaard voor datum- of tijdobjecten. Hoewel R het ISO 8601-formaat heeft overgenomen, hoeft dat bij andere software niet zo te zijn.
+
+-   De instelling van het oorsprongspunt (of het referentiepunt) varieert tussen de software:
+
+    -   R: 1 januari 197
+
+    -   SAS: 1 januari 1960
+
+    -   Excel: 1 januari 1900
+
+::: callout-note
+Als in R het argument `stringsAsFactors` is ingesteld op `TRUE`, dan worden de waarden als categorieen geclassificeerd.
+:::
+
+Je kunt de functie `as.Date()` gebruiken om een datum te importeren welke afwijkt van de ISO 8601 norm. Echter wanneer je daarbij niet aangeeft in welk formaat deze datum staat, dan kan dat onjuiste resultaten opleveren. Zie het volgende voorbeeld:
+
+```{r}
+as.Date("31-12-2023")
+```
+
+Je kunt dit oplossen door in de functie het argument `format` toe te voegen om de verschillende componenten in het invoerobject te definieren.
+
+```{r}
+as.Date("31-12-2023", format = "%d-%m-%Y")
+```
+
+De volgende tabel geeft een samenvatting van de belangrijkste componenten voor datumobjecten. De volledige lijst kun je inzien via `?strptime`.
+
+| Symbool | Betekenis                        | Voorbeeld |
+|---------|----------------------------------|-----------|
+| %a      | Afgekorte naam van de weekdag.   | Sun       |
+| %A      | Volledige naam weekdag.          | Sunday    |
+| %b      | Afgekorte naam van de maand.     | Jan       |
+| %B      | Volledige naam van de maand.     | January   |
+| %d      | Dag van de maand als getal.      | 01, 31    |
+| %m      | Maand als getal                  | 01, 12    |
+| %y      | Jaar zonder eeuw (2 cijfers)     | 23        |
+| %Y      | Jaar met eeuw (4 cijfers)        | 2023      |
+| %r      | 12 / 24 uurs klok                | AM, PM    |
+| %H      | Uren als getal                   | 00, 23    |
+| %M      | Minuten als getal                | 00, 59    |
+| %S      | Seconden als getal               | 00, 59    |
+| %Z      | Tijzone afkorting als tekenreeks | CET, GMT  |
+
+::: callout-note
+Hierbij worden de huidige landinstellingen gebruikt. De scheidingstekens tussen de argumenten moeten overeenkomen met die in het invoerobject.
+:::
+
+### Functie format
+
+De componenten in voorgaande tabel kun je ook gebruiken om een datum op te maken met de functie `format()`.
+
+```{r}
+format(mijndatum, "%A, %d %B %Y")
+```
+
+### Numerieke datumobjecten verwerken
+
+Datumobjecten worden intern in R opgeslagen als numerieke waarden die het aantal dagen vanaf het beginpunt (1 januari 1970) weergeven.
+
+```{r}
+datum1 <- as.Date("1970-01-01")
+datum2 <- Sys.Date()
+datum2 - datum1
+```
+
+Je kunt de numerieke waarde van het object eenvoudig ophalen met de functie `as.numeric()`.
+
+```{r}
+as.numeric(datum1)
+as.numeric(datum2)
+```
+
+## Tijdobjecten importeren
+
+Zoals je `as.Date()` gebruikt voor datumobjecten, kun je `as.POSIXct()` of `as.POSIXlt()` gebruiken voor tijdobjecten. De `POSIX` classes zijn een uitbreiding van de `Date` class, met de toevoeging van vier elementen (naast de datumelementen): uren, minuten, seconden en tijdzone. Dit maakt het herformatteringsproces iets omslachtiger, omdat de toewijzing nu zeven elementen bevat in plaats van vier elementen, zoals voorheen het geval was.
+
+De numerieke waarde van het tijdobject vertegenwoordigt het aantal seconden sinds het oorsprongspunt (1 januari 1970).
+
+De actuele tijzone kun je opvragen:
+
+```{r}
+Sys.timezone()
+```
+
+## Datum- of tijdindex maken
+
+Voor tijdreeksen is het belangrijkste kenmerk de tijdindex (tijdstempel), een gelijkmatig verdeeld tijdsinterval. Voor het genereren van een reeks biedt R standaard twee functies:
+
+-   `seq.Date()`: Voor `Date` objectenmet frequenties dag, week, maand, jaar
+
+-   `seq.POSIXt()`: Voor `POSIX` objecten met frequenties uur, half uur, minuut, ...
+
+Het gebruik van deze functies is eenvoudig.
+
+```{r}
+dagindex <- seq.Date(from = as.Date("2023-01-01"), 
+                     to = as.Date("2023-03-31"),
+                     by = "day")
+head(dagindex)
+tail(dagindex)
+```
+
+Met de argumenten `from` en `to` stel je respectievelijk de begin- en einddatum in. In plaats van `to` kun je ook het argument `length.out` voor het aantal waarden.
+
+Met het argument `by` kun je de grootte van het interval instellen, bijvoorbeeld day, week, month, year. Bovendien kun je dit mengen met gehele getallen om nieuwe tijdsintervallen te maken.
+
+```{r}
+dag3index <- seq.Date(from = as.Date("2023-01-01"), 
+                      length.out = 10,
+                      by = "3 days")
+dag3index
+```
+
+Een tijdvoorbeeld met een uurlijkse sequentiee n een lengte van 24 uur:
+
+```{r}
+uurindex <-seq.POSIXt(from = as.POSIXct("2023-01-01"),
+                      length.out = 24,
+                      by = "hours")
+uurindex
+```
+
+Mogelijke intervalwaarden:
+
+`seq.Date()`: "day", "week", "month", "quarter", "year"
+
+`seq.POXIXt()`: "sec", "min", "hour", "day", "DSTday", "week", "month", "quarter", "year
+
+# Lubridate
+
+Package `lubridate` maakt het werken met datum- en tijdobjecten eenvoudiger en effectiever. Nuttige info over het gebruik hiervan kun je o.a. vinden in de [lubridate website](https://lubridate.tidyverse.org/) en het boek [R for Data Science](https://r4ds.hadley.nz/datetimes.html).
+
+Een van de sterke punten van `lubridate` is de mogelijkheid om het parsen van datum- en tijdgegevens van verschillende formaten te vereenvoudigen. Functies zoals `ymd()`, `mdy()`, `dmy()` en hun tegenhangers voor datum en tijd (`ymd_hms()`, `mdy_hms()`, etc.) maken het eenvoudig om strings te converteren naar R's `Date` of `POSIXct` objecten.
+
+Functies: `ymd()`, `mdy()`, `dmy()`, `ymd_hms()`, `mdy_hms()`, `dmy_hms()`
+
+-   `ymd()` parseert een tekenreeks waarbij de datumcomponenten in de volgorde jaar-maand-dag staan.
+
+-   `mdy()` parseert een tekenreeks opgemaakt als maand-dag-jaar.
+
+-   `dmy()` parseert een tekenreeks in de volgorde dag-maand-jaar.
+
+```{r}
+#| message: false
+#| warning: false
+library(lubridate)
+mijndatum <- dmy("18-6-1948")
+mijndatum
+class(mijndatum)
+```
+
+Door specifieke functies te gebruiken voor verschillende formaten (`ymd()`, `mdy()`, `dmy()`), hoef je je geen zorgen te maken over de volgorde van datumcomponenten. Dit zorgt voor flexibiliteit en vermindert fouten bij het werken met verschillende gegevensbronnen.
+
+## Huidige datum en tijd
+
+```{r}
+today() # huidige datum
+now()   # huidige datum en tijd
+```
+
+## Schrikkeljaar
+
+Met de functie `leap_year()` kun je controleren of een jaar een schrikkeljaar is.
+
+```{r}
+leap_year(2023)
+leap_year(2024)
+```
+
+## Dagen per maand
+
+De functie `days_in_month` retourneert het aantal dagen in de maand. De input moet een datumobject zijn.
+
+```{r}
+datums <- seq(ymd("2023-01-01"), ymd("2023-12-01"), by = "months")
+days_in_month(datums)
+```
+
+Met schrikkeljaren wordt rekening gehouden.
+
+```{r}
+datums <- seq(ymd("2024-01-01"), ymd("2024-12-01"), by = "months")
+days_in_month(datums)
+```
+
+## Extraheer datumonderdelen
+
+Nadat je een datum-tijdobject hebt geparseerd met `lubridate`, moet je vaak specifieke componenten extraheren of wijzigen, zoals het jaar, de maand, de dag of de tijd. Dit is essentieel bij het analyseren van gegevens op basis van tijdsperioden, het samenvatten per jaar of het maken van tijdgebaseerde kenmerken voor modellen.
+
+Hierbij een overzicht van de meest gebruikte functies.
+
+-   `year()`: Extraheert of stelt het jaar in.
+
+-   `month()`: Extraheert of stelt de maand in. Deze functie kan ook de naam van de maand teruggeven als `label = TRUE` wordt gebruikt.
+
+-   `day()`: Extraheert of stelt de dag van de maand in.
+
+-   `hour()`: Extraheert of stelt het uur in (voor tijdgebaseerde objecten).
+
+-   `minute()`: Extraheert of stelt de minuut in.
+
+-   `second()`: Extraheert of stelt de seconde in.
+
+-   `wday()`: Extraheert de dag van de week (kan de naam van de weekdag retourneren als `label = TRUE`).
+
+-   `yday()`: Extraheert de dag van het jaar (1-365 of 366 voor schrikkeljaren).
+
+-   `mday()`: Extraheert de dag van de maand.
+
+-   `week()`: Extraheert de week van het jaar (1-52/53)
+
+-   `quarter()`: Extraheert het kwartaal van het jaar (1-4)
+
+```{r}
+moment <- ymd_hms("2023-09-30 14:45:30 CEST")
+moment
+day(moment)    # dag
+month(moment)  # maandnummer
+month(moment, label = TRUE)
+year(moment)   # jaar
+hour(moment)   # uur
+minute(moment) # minuut
+second(moment) # seconde
+wday(moment)   # dag van de week
+wday(moment, label = TRUE)
+yday(moment)   # dag van het jaar
+mday(moment)   # dag van de maand
+week(moment)   # weeknummer
+quarter(moment)# kwartaal
+```
+
+Naast extraheren kunt u met `lubridate` specifieke componenten van een datum of tijd aanpassen zonder handmatig de hele string te manipuleren. Dit is vooral handig als je datums of tijden in je gegevens moet aanpassen voor analyse of uitlijning.
+
+```{r}
+year(moment) <- 2024
+month(moment) <- 10
+day(moment) <- 3
+hour(moment) <- 11
+moment
+```
+
+## Tijdzones
+
+Een ander belangrijk voordeel van `lubridate` is dat het effectief omgaat met tijdzones bij het extraheren van datum-tijd componenten. Als je met wereldwijde datasets werkt, is het van cruciaal belang om nauwkeurig rekening te kunnen houden met tijdzones.
+
+Met het argument `tz="..."` of `timezone =` kun je een tijdzone specificeren, default is Universal Coordinated Time Zone (UTC).
+
+```{r}
+ymd_hms("2019-06-04 12:00:00", tz = "Europe/Amsterdam")
+ymd_hms("2019-06-04 12:00:00", tz = "Europe/Amsterdam", locale = Sys.getlocale("LC_TIME"))
+```
+
+`with_tz()` retourneert een datum-tijd zoals deze in een andere tijdzone zou verschijnen. Het feitelijk gemeten tijdstip verandert niet, alleen de tijdzone waarin het wordt gemeten. `with_tz()` wordt standaard ingesteld op de Universal Coordinated Time Zone (UTC) wanneer een niet-herkende tijdzone wordt ingevoerd.
+
+```{r}
+moment
+with_tz(moment, tz = "America/New_York")
+```
+
+## Tijdsduur, perioden en intervallen
+
+In data-analyse moet je vaak tijdspannes meten, of het nu is om het verschil tussen twee datums te berekenen, terugkerende gebeurtenissen te plannen of op tijd gebaseerde fenomenen te modelleren. `lubridate` biedt drie krachtige tijdgerelateerde concepten om met deze scenario's om te gaan: **tijdsduur**, **periode** en **interval**. Hoewel ze op elkaar lijken, dienen ze elk een ander doel en gedragen ze zich anders, afhankelijk van de gebruikssituatie.
+
+### Tijdsduren
+
+Een **duration** is een exacte tijdmeting, uitgedrukt in seconden. Durations zijn handig als je precieze, ondubbelzinnige tijdsverschillen nodig hebt, ongeacht kalendervariaties (zoals schrikkeljaren, variërende maandlengtes of zomertijd).
+
+je kunt een tijdsduur maken met de functie `duration(num =, units="...")`.
+
+```{r}
+duration(120, "seconds")
+duration(2, "days")
+```
+
+Handige functies waarmee je ook een duration kunt maken beginnen met een `d`: `dseconds()`, `dminutes()`, `dhours()`, `ddays()`, `dweeks()`, `dyears()`
+
+```{r}
+# een tijdsduur van 1 dag
+een_dag <- ddays(1) 
+een_dag
+
+# een tijdsduur van twee en een half uur
+tijdsduur <- dhours(2) + dminutes(30)
+tijdsduur
+```
+
+Je kunt ook een tijdduur aan een datum toevoegen:
+
+```{r}
+begin <- ymd("2024-10-08")
+eind <- begin + ddays(7)
+eind
+```
+
+Door een duur aan een datum toe te voegen, wordt de datum met het exacte aantal seconden vooruitgezet, ongeacht eventuele onregelmatigheden in de kalender.
+
+### Periodes
+
+In tegenstelling tot tijdsduren zijn perioden tijdsduren gemeten in menselijke kalendertermen: jaren, maanden, dagen, uren, enz. Perioden houden rekening met kalendervariaties, zoals schrikkeljaren en zomertijd. Dit maakt perioden intuïtiever voor gebruik in de echte wereld, maar minder precies in termen van exacte seconden.
+
+Een periode kun je maken met de functie `period(num=, units="...")`.
+
+```{r}
+period(7, "days")
+period(c(2, 1, 30), c("hour", "minute", "second"))
+```
+
+Andere functies waarmee je een periode kunt maken zijn: `years()`, `months()`, `weeks()`, `days()`, `hours()`, `minutes()`, `seconds()`
+
+```{r}
+mijnperiode <- years(2) + months(3) + days(4)
+mijnperiode
+```
+
+De periode houdt rekening met verschillen in kalenderlengte (zoals verschillende dagen in maanden.
+
+```{r}
+begin
+begin + mijnperiode
+```
+
+### Intervallen
+
+Een interval vertegenwoordigt de tijdsbestek tussen twee specifieke datums of tijdstippen. Het is handig wanneer je tijdspannes tussen begin- en eindpunten wilt meten of vergelijken. Intervallen houden rekening met de exacte lengte van de tijd tussen twee datums, waardoor je tijdsduren of perioden over het tijdsbestek kunt berekenen.
+
+Een interval maak je met de functie `interval(begin, eind)`.
+
+```{r}
+startdatum <- ymd("2020-01-03")
+einddatum <- ymd("2022-09-14")
+mijninterval <- interval(startdatum, einddatum)
+mijninterval
+```
+
+Je kunt het interval omrekenen naar jaren, maanden, weken en dagen door het interval respectievelijk te delen door `years(1)`, `months(1)`, `weeks(1)` en `days(1)`.
+
+```{r}
+mijninterval/years(1)   # aantal jaren in het interval
+mijninterval/months(1)  # aantal maanden in het interval
+mijninterval/weeks(1)   # aantal weken in het interval
+mijninterval/days(1)    # aantal dagen in het interval
+```
+
+Een praktisch voorbeeld hiervan is het berekenen van de leeftijd.
+
+```{r}
+gebdatum <- dmy("18-06-1948")
+leeftijd <- interval(gebdatum, today()) / years(1)
+leeftijd
+trunc(leeftijd)
+```
+
+## Rekenen met datums
+
+Rekenen met datums is een veel voorkomend aspect van het werken met datum-tijdgegevens, vooral in gegevensanalyse en tijdreeksvoorspellingen. `lubridate` maakt het eenvoudig om rekenkundige bewerkingen uit te voeren op datum-tijd objecten, waardoor gebruikers datums effectief kunnen manipuleren.
+
+Basisbewerkingen als optellen en aftrekken kun je direct uitvoeren op datum-tijd objecten.
+
+### optellen
+
+```{r}
+startdatum <- ymd("2022-03-01")
+# startdatum begint 1 maand later
+startdatum <- startdatum + months(1)
+startdatum
+```
+
+### aftrekken
+
+```{r}
+startdatum - days(15)
+```
+
+Datumrekenen wordt vaak gebruikt in verschillende praktische toepassingen, zoals:
+
+-   Analyseren van trends over specifieke perioden (bijv. maandelijkse omzetgroei).
+
+-   De duur tussen gebeurtenissen berekenen (bijv. projectdeadlines).
+
+-   Tijdslots voor vergaderingen of taken bepalen op basis van kalendergebeurtenissen.
+
+Als voorbeeld wordt een taakduur van 3 uur gedefinieerd en drie taken gepland op basis van de starttijd.
+
+```{r}
+taakduur <- hours(3) # Elke taak duur 3 uur
+starttijd <- ymd_hms("2024-05-01 09:00:00")
+# Plan 3 taken
+schedule <- starttijd + taakduur * 0:2
+schedule
+```
+
+### vergelijken
+
+```{r}
+dmy("01-08-1947") < dmy("18-06-1948")
+```
+
+### afronden
+
+De functie `round_date()` rondt een datum af op de opgegeven tijdseenheid ("second", "minute", "hour", "day", “month”, “year”, ...)
+
+```{r}
+round_date(now(), unit = "month")
+```
+
+## Datum-Tijd problemen
+
+Bij het werken met datasets hebben datum-tijdwaarden niet altijd een standaardindeling. Je kunt bijvoorbeeld datums tegenkomen als strings in verschillende formaten zoals `"YYYY-MM-DD"`, `"MM/DD/YYYY"` of zelfs `"Month DD, YYYY"`. Om een nauwkeurige analyse uit te voeren, is het cruciaal om deze tekenreeksen te converteren naar de juiste datum-tijd objecten.
+
+De functie `parse_date_time()` is een van de meest veelzijdige functies in het lubridate pakket. Het stelt je in staat om meerdere mogelijke formaten op te geven voor het parsen van een datum-tijd string. Deze flexibiliteit is vooral handig als je te maken hebt met datasets van verschillende bronnen of met inconsistente datumformaten.
+
+Syntax: `parse_date_time(x, orders, tz = "UTC", quiet = FALSE, ...)`
+
+-   `x`: Een tekenvector van datum-tijdreeksen die moeten worden ontleed.
+
+-   `orders`: Een vector van mogelijke formaten voor de datum-tijd strings (bijv. `"ymd"`, `"mdy"`, ...)
+
+-   `tz`: De te gebruiken tijdzone(default is `"UTC"`)
+
+-   `quiet`: Onderdrukt waarschuwingen indien `TRUE`.
+
+Een voorbeeld met datum-tijd strings in verschillende formaten.
+
+```{r}
+datums <- c("2024-01-15", "01/16/2024", "March 17, 2024", "18-04-2024")
+
+# Ontleed de datums
+mijndatums <- parse_date_time(datums, 
+					orders = c("ymd", "mdy", "dmy", "B d, Y"))
+mijndatums
+```
