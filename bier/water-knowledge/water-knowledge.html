@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.523">
+<meta name="generator" content="quarto-1.6.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Martin Brungard">
 <meta name="dcterms.date" content="2020-04-16">
 
-<title>Archief Ben - Water Knowledge</title>
+<title>Water Knowledge – Archief Ben</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-79df8e4e098e2d7cf1eff8b3ff991a8e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,8 +80,35 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -100,7 +127,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -139,7 +166,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -277,7 +304,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <section id="ph" class="level2">
 <h2 class="anchored" data-anchor-id="ph">pH</h2>
 <p><strong>pH</strong> is a measure of the acidity or basicity of an aqueous solution and is related to the concentration of hydrogen (H<sup>+</sup>) ions in a solution. A very small percentage of water molecules (H<sub>2</sub>O) naturally split into hydrogen (H<sup>+</sup>) protons and hydroxyl (OH<sup>-</sup>) ions. A neutral pH of 7.0 indicates a balanced population of those ions in pure water (at 25°C). Acidic solutions have a pH of between 0 and 7 while Basic solutions have a pH between 7 and 14. The pH of typical municipal water supplies generally lies between 6.5 and 8.5, but may exceed those bounds since pH is not regulated by the Safe Drinking Water Act that governs drinking water quality in the U.S. The graphic below (<a href="#fig-ph-scale" class="quarto-xref">Figure&nbsp;1</a>) illustrates typical water supply and mashing pH ranges.</p>
-<div id="fig-ph-scale" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-ph-scale" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ph-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="ph-scale.jpg" class="img-fluid figure-img">
@@ -304,7 +331,7 @@ Figure&nbsp;1: pH scale
 <p><strong>Alkalinity is Bad</strong></p>
 <p>The hardness or softness of water does not indicate its suitability for brewing. As illustrated in the sections below, both very soft water and very hard water can be utilized for brewing as long as the appropriate alkalinity is provided for mashing. Since there is often a minimum calcium content desired in brewing water, <strong>moderately hard to hard water may be desirable for brewing</strong>. In some cases, soft water may be desirable for brewing some beer styles. Although the statement above indicates alkalinity is bad, an <strong>appropriate level of alkalinity</strong> is desirable in brewing water. The problem is that water supplies often have higher alkalinity than desirable for brewing. High alkalinity may lead to higher than desired mashing pH.</p>
 <p>Water hardness varies regionally and by source. The map below (<a href="#fig-hardness-map" class="quarto-xref">Figure&nbsp;2</a>) illustrates how hardness varies in surface waters across the United States (Briggs, 1977). Much of the Western and Midwestern U.S. often has high hardness while coastal or mountainous regions may have lower hardness. Groundwater hardness may or may not mimic the surface water hardness shown below, but drinking water aquifers tend to cover regional areas and can have more consistent water quality.</p>
-<div id="fig-hardness-map" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-hardness-map" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hardness-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="hardness_map.jpg" class="img-fluid figure-img">
@@ -324,7 +351,7 @@ Figure&nbsp;2: Hardness in surface waters across the United States
 <h2 class="anchored" data-anchor-id="alkalinity">Alkalinity</h2>
 <p>Alkalinity is a measure of the “buffering” capacity of a aqueous solution and its ability to neutralize strong acid and resist pH change. Alkalinity is defined as the amount of strong acid required to lower the pH of a sample of the water to a specified pH (typically 4.3 to 4.5). Alkalinity is generally due to the concentration of carbonate (CO<sub>3</sub>), bicarbonate (HCO<sub>3</sub>), and hydroxyl (OH<sup>-</sup>) ions in water. Higher alkalinity water requires more acid to change the water’s pH. In typical drinking water, alkalinity is directly related to the concentration of bicarbonate in the water. Alkalinity is often reported using terms such as “as CaCO<sub>3</sub>” and care must be used to avoid confusing it with similar hardness results.</p>
 <p>Like hardness, alkalinity tends to vary on a regional basis. The map below (<a href="#fig-alkalinity-map" class="quarto-xref">Figure&nbsp;3</a>) illustrates how alkalinity varies across the United States (Omernik &amp; Powers, 1983). As indicated by the map, much of the U.S. has relatively high alkalinity in surface waters. Of the regions with reduced alkalinity, many are mountainous or are regions without carbonate rock near surface. Carbonate rock and soils impart alkalinity to water.</p>
-<div id="fig-alkalinity-map" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-alkalinity-map" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-alkalinity-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="alkalinity-map.jpg" class="img-fluid figure-img">
@@ -346,7 +373,7 @@ Figure&nbsp;3: Alkalinity across the United States
 RA_{(ppm)} = Alkalinity_{(ppm)} - \left[  \frac{Calcium_{(ppm)} }{3.5}  + \frac{Magnesium_{(ppm)} }{7} \right]
 \]</span></p>
 <p>With RA, a brewer can better understand the interplay of alkalinity and water hardness and its effect on mashing chemistry and performance. A simplified chart depicting Alkalinity, Hardness, and RA is presented below. Lines of constant RA cross the chart diagonally. This chart is based on work by A.J. Delange.</p>
-<div id="fig-rachart" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-rachart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rachart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="rachart.jpg" class="img-fluid figure-img">
@@ -368,13 +395,13 @@ Figure&nbsp;4: Alkalinity, Hardness, and RA
 <li><p><strong>Acid malts</strong> are low color malts that are infused with 2 to 3 percent lactic acid for mash pH reduction purposes.</p></li>
 </ul>
 <p>The acid content for the Roast and Acid malts is somewhat consistent within those categories and their acid content does not vary significantly with malt color variation. However, the acidity of either Roast or Acid malts can vary due to manufacturer or production methods. For Base and Crystal malts, their acid content does tend to vary with their color rating (Lovibond or EBC). The table below describes the general variation of acid content for the grain categories. The grain acid content information was taken from research performed by Kai Troester, 2009. Be aware that there are grains and malts that do not conform well with the acid content relationships presented below. Predicting mashing pH with these relationships is still not precise for that reason.</p>
-<div id="tbl-grainacidity" class="anchored">
+<div id="tbl-grainacidity" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-grainacidity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Grain Acidity Relationships
 </figcaption>
 <div aria-describedby="tbl-grainacidity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Grain Category</th>
@@ -407,7 +434,7 @@ Table&nbsp;1: Grain Acidity Relationships
 <p>The success in brewing pale beer in Pilsen is due to the soft and low alkalinity water found there (RA is near 0). Likewise, the success of brewing pale beer in Burton-on-Trent is due to the very high hardness and high alkalinity that still produce low RA. Low RA waters are well-suited to brewing pale beers since the mash pH is more likely to fall into the desired pH range. Low RA waters are less suitable for brewing dark beers since the acidic dark grains can drive the wort pH lower than desirable, which reduces the effectiveness of mash enzymes and possibly produces a sharp, acidic, or tart beer.</p>
 <p>The success in brewing dark beers in places such as Dublin, Edinburgh, Munich, and London that have higher Residual Alkalinity water (RA greater than 50), is due to the more acidic dark grain used in their grist. The elevated water alkalinity and resulting RA, moderates the increased acid content of the dark grain to produce smoother dark beers brewed in those locations. That raised the reputation of those locations for brewing fine dark beer styles. Without the additional dark grain acid content to neutralize the high alkalinity, the mash pH of a pale grist would not drop into the desired range for good enzyme performance and the resulting beer might present a harsh character because of the leaching of silicates, tannins, and polyphenols into the wort during mashing. High quality, light-colored beers are more difficult to produce in these locations if the alkalinity of the brewing water is not reduced. To brew light-colored beers using water with elevated alkalinity, an external acid addition is required. Either an acid rest, acid malt, or liquid acid is required to neutralize elevated water alkalinity when brewing lighter-colored beers.</p>
 <p>Coordinating the acid content of the malt bill and the alkalinity of the water is important for conducting a mash that produces a pH in the optimum range between 5.2 and 5.8. The enzymatic processes in the mash are hindered when the mash pH falls outside that range. Enzymatic activity varies with pH and temperature as illustrated in the following graphic by Palmer (1999).</p>
-<div id="fig-mash-enzyme-chart" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-mash-enzyme-chart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mash-enzyme-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="mash-enzyme-chart.png" class="img-fluid figure-img">
@@ -418,13 +445,13 @@ Figure&nbsp;5: Variation of enzymatic activity with pH and temperature
 </figure>
 </div>
 <p>It’s notable from the graphic that the various enzymes work well across a range of pH. Therefore, targeting an exact mash pH is not critical to success. Achieving a mash pH that is within a tenth or two of the desired target can produce acceptable results. General suggestions for mashing pH targets are provided in the table below. As can be seen in the table, mashing pH has multiple impacts and the brewer can tailor the pH to enhance certain goals. Be aware that other factors beyond pH can affect character. The pH only helps achieve that character.</p>
-<div id="tbl-mashtemp" class="anchored">
+<div id="tbl-mashtemp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mashtemp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Suggested Mashing pH Targets (room-temperature measurement)
 </figcaption>
 <div aria-describedby="tbl-mashtemp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Beer Character</th>
@@ -483,13 +510,13 @@ Table&nbsp;2: Suggested Mashing pH Targets (room-temperature measurement)
 <section id="major-ions-in-brewing" class="level3">
 <h3 class="anchored" data-anchor-id="major-ions-in-brewing">Major Ions in brewing</h3>
 <p>The major ions of interest to brewers are shown in the table below (<a href="#tbl-majorions" class="quarto-xref">Table&nbsp;3</a>). These ions have the greatest effect on the quality and perception of finished beer.</p>
-<div id="tbl-majorions" class="anchored">
+<div id="tbl-majorions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-majorions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Major ions Affecting Brewing
 </figcaption>
 <div aria-describedby="tbl-majorions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Cations</th>
@@ -515,13 +542,13 @@ Table&nbsp;3: Major ions Affecting Brewing
 </figure>
 </div>
 <p>These ions can also be grouped in another way. Calcium, magnesium, and bicarbonate produce hardness and alkalinity that affect the mash pH. Sodium, chloride, sulfate, and magnesium ions affect flavor, which adds important nuances to beer perception.</p>
-<div id="tbl-ioneffects" class="anchored">
+<div id="tbl-ioneffects" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ioneffects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Ion Effects in Brewing
 </figcaption>
 <div aria-describedby="tbl-ioneffects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Affects Hardness or Alkalinity</th>
@@ -596,13 +623,13 @@ Reverse Osmosis water treatment reduces zinc content in RO water to extremely lo
 <p>The historic beer styles that have developed around the world were sometimes the result of the water conditions present in that area. Prior to the understanding, measurement, and ability to adjust water chemistry, beer styles evolved to suit the local water. Typically, dark-colored beer styles developed in areas with high RA water and light-colored beer styles developed in areas with low RA water.</p>
 <p>Additionally, ions affecting beer flavor perception in the local water also influenced beer styles. For instance, malty styles may be enhanced in areas with low sulfate concentrations while hoppy styles were enhanced in areas with elevated sulfate concentrations.</p>
 <p>Examples of the ionic concentrations of water from various major brewing centers are shown in the table below. There are a variety of literary sources that provide differing estimates of the appropriate ionic concentrations for these brewing waters. For some of those literary sources, the quoted ionic concentrations are known to be incorrect since the indicated ionic balance could not exist at reasonable pH levels and the water profiles are not supported with factual laboratory data. The concentrations shown in the table below have been researched and verified with historic and current references. The profiles are also corrected where necessary to provide an appropriate ionic balance. The RA calculated for each of water profile is provided in the table for reference.</p>
-<div id="tbl-brewingcenters" class="anchored">
+<div id="tbl-brewingcenters" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-brewingcenters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;5: Ion Profiles for Major Brewing Centers. Ion concentrations in mg/L.
 </figcaption>
 <div aria-describedby="tbl-brewingcenters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 12%">
@@ -809,13 +836,13 @@ Table&nbsp;5: Ion Profiles for Major Brewing Centers. Ion concentrations in mg/L
 <h3 class="anchored" data-anchor-id="dilution">Dilution</h3>
 <p>Dilution with distilled water or Reverse Osmosis (RO) water is a quick, yet more costly option. Distilled water is free of all ions while RO water is nearly free of ions. Both sources are very soft water that reduce the hardness and alkalinity of the brewing water in proportion to the amount of RO or distilled water added to tap water. The ion concentrations of these purified waters are typically lower than desired to promote good mashing, fermentation, and flavor results. Therefore, minerals should be added to these purified waters or the purified water should be blended with the original source water to provide an adequate ionic content for brewing use.</p>
 <p>RO water is not pure water and it still contains low concentrations of ions. The concentration of ions in the RO water vary based on the ions and concentrations in the raw water entering the RO unit and the type of membrane used in the unit. To provide an indication of typical RO water quality, the following profile from a RO unit is presented as an example. The raw water feeding this RO unit came from an ion-exchange softener and that raw water had little calcium or magnesium, but relatively high sodium content. The sodium concentration in the treated RO water is slightly higher than if the raw water had not been previously softened.</p>
-<div id="tbl-rochar" class="anchored">
+<div id="tbl-rochar" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rochar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;6: Typical RO Water Profile &amp; Membrane Passage
 </figcaption>
 <div aria-describedby="tbl-rochar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Ion</th>
@@ -874,13 +901,13 @@ Calcium_{end(ppm)} = Calcium_{start(ppm)} - \left[ \frac{HCO_{3start(ppm)} - HCO
 <p>The equation above assumes that the water has a high enough calcium concentration to execute the reaction to volatilize the CO<sub>2</sub> and precipitate the chalk. The practical lowest calcium concentration achievable through decarbonation is about 12 ppm. If the calculated calcium concentration is lower than 12 ppm when using the ending 80 ppm bicarbonate assumption, the ending bicarbonate concentration assumed in the equation must be increased until a 12 ppm calcium concentration is calculated. The Munich water profile is a case in point. Decarbonating that water to 80 ppm bicarbonate would leave only 7 ppm calcium in the water, which is below the practical limit. Therefore, the practical ending bicarbonate concentration must be increased to 95 ppm to leave the treated water with 12 ppm calcium.</p>
 <p>A technique to help encourage and speed the precipitation of chalk from the boiled water is to add powdered chalk to the water. The undissolved chalk provides nucleation sites for the precipitating chalk to agglomerate with and form larger flocs that settle faster. A teaspoon of powdered chalk per 5 gallons (19L) mixed into the water should be sufficient to improve the settling. The added chalk does not dissolve and add to the water’s calcium concentration since it is not soluble in water without CO<sub>2</sub>. Use of gypsum to provide nucleation sites is less effective than using chalk.</p>
 <p>Examples of the effect of <strong>Decarbonation by Boiling</strong> are presented in the water profiles below. The bicarbonate content was assumed to be reduced to 80 ppm for all the profiles (excepting Munich) and the precipitated calcium content was subtracted from the original calcium concentration. All other ion concentrations remain as for the original water. In the case of the Burton and Dortmund profiles, the low original RA and significant reduction in RA with boiling, indicates that those profiles do not need to be treated in this way for brewing. Typically, water profiles such as Dublin, Edinburgh, London, Munich, and Vienna are well suited to boiling treatment.</p>
-<div id="tbl-boiledprofiles" class="anchored">
+<div id="tbl-boiledprofiles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-boiledprofiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;7: Estimated ion Profiles for Major Brewing Centers after Boiling. Ion concentrations in mg/L.
 </figcaption>
 <div aria-describedby="tbl-boiledprofiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 12%">
@@ -1096,13 +1123,13 @@ Table&nbsp;7: Estimated ion Profiles for Major Brewing Centers after Boiling. Io
 <p><strong>Sulfate/Chloride Ratio</strong> can be a helpful insight into how the combination of these ions may be perceived in beer taste. The ratio was presented in the Handbook of Brewing (Priest &amp; Stewart) as Chloride/Sulfate Ratio. Since chloride is more typically preferred at lower concentrations than sulfate in English and American Ales, reversing the original ratio produces a value greater than one in those cases. The ratio is presented here in the Sulfate/Chloride format for that reason.</p>
 <p>At moderate concentrations, the Sulfate/Chloride Ratio provides a rough indicator of how the brewing water can shift the perception of Sweetness/Maltiness or Bitterness/Dryness in the finished beer. Briggs et. al.&nbsp;describes the ratio’s effect as <strong>Fullness</strong> versus <strong>Dryness</strong> and those terms more accurately describe the effects better than the terms: <strong>Maltiness</strong> or <strong>Bitterness</strong>. Chloride accentuates fullness and sulfate accentuates dryness. The fullness presented by the chloride enhances the perception of sweetness and maltiness while the dryness from sulfate enhances the perception of bitterness. The ratio of these ions can shift flavor perceptions of the finished beer. Brewers should be aware that these ion effects can only improve perceptions. These ions or their perceptions will not alter the actual levels of bittering or sweetness in the finished beer.</p>
 <p>Since flavor contributions and perceptions from these ions disappear at very low concentrations, the ratio provides little indication when the chloride level is less than about 25 ppm. Conversely, at very high concentrations, the ions’ impacts can overwhelm the beer and produce an excessively minerally flavor in the beer. Therefore, the ratio should be limited to chloride concentration of about 100 ppm or less. Within these limitations on the ratio, the following flavor perceptions are taken from the Handbook of Brewing.</p>
-<div id="tbl-ratiotable" class="anchored">
+<div id="tbl-ratiotable" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ratiotable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8: Sulfate / Chloride Ratio Effects (for chloride concentration between 25 and 100 mg/L)
 </figcaption>
 <div aria-describedby="tbl-ratiotable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Perception</th>
@@ -1214,18 +1241,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1257,7 +1273,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
@@ -1265,10 +1303,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -1310,7 +1353,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1325,27 +1372,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -1360,10 +1386,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1372,8 +1402,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
