@@ -36,12 +36,6 @@
     ]
   },
   {
-    "listing": "/chemie.html",
-    "items": [
-      "/chemie/waterevenwicht/waterevenwicht.html"
-    ]
-  },
-  {
     "listing": "/access.html",
     "items": [
       "/access/unieke-records-access/unieke-records-access.html"
@@ -66,8 +60,15 @@
     ]
   },
   {
+    "listing": "/chemie.html",
+    "items": [
+      "/chemie/waterevenwicht/waterevenwicht.html"
+    ]
+  },
+  {
     "listing": "/divers.html",
     "items": [
+      "/divers/css-scss/css-scss.html",
       "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
       "/divers/sir-model/sir-model.html",
       "/divers/workflow-studieboeken/workflow-studieboeken.html",

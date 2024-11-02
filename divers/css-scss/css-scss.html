@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ben Welman">
+
+<title>CSS en SCSS – Archief Ben</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-79df8e4e098e2d7cf1eff8b3ff991a8e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Archief Ben</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Zoeken"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../access.html"> 
+<span class="menu-text">Access</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../excel.html"> 
+<span class="menu-text">Excel</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../bier.html"> 
+<span class="menu-text">Bier</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../chemie.html"> 
+<span class="menu-text">Chemie</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../r.html"> 
+<span class="menu-text">R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../divers.html"> 
+<span class="menu-text">Divers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#css" id="toc-css" class="nav-link active" data-scroll-target="#css">CSS</a>
+  <ul class="collapse">
+  <li><a href="#selectors" id="toc-selectors" class="nav-link" data-scroll-target="#selectors">Selectors</a>
+  <ul class="collapse">
+  <li><a href="#universele-selector" id="toc-universele-selector" class="nav-link" data-scroll-target="#universele-selector">Universele selector</a></li>
+  <li><a href="#html-selector" id="toc-html-selector" class="nav-link" data-scroll-target="#html-selector">HTML selector</a></li>
+  <li><a href="#adjacent-selector" id="toc-adjacent-selector" class="nav-link" data-scroll-target="#adjacent-selector">Adjacent selector</a></li>
+  <li><a href="#class-selector" id="toc-class-selector" class="nav-link" data-scroll-target="#class-selector">Class selector</a></li>
+  <li><a href="#id-selector" id="toc-id-selector" class="nav-link" data-scroll-target="#id-selector">ID selector</a></li>
+  <li><a href="#pseudo-class" id="toc-pseudo-class" class="nav-link" data-scroll-target="#pseudo-class">Pseudo-class</a></li>
+  <li><a href="#pseudo-elementen" id="toc-pseudo-elementen" class="nav-link" data-scroll-target="#pseudo-elementen">Pseudo-elementen</a></li>
+  <li><a href="#attribuut-selectors" id="toc-attribuut-selectors" class="nav-link" data-scroll-target="#attribuut-selectors">Attribuut selectors</a></li>
+  </ul></li>
+  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips</a>
+  <ul class="collapse">
+  <li><a href="#herhaalde-code" id="toc-herhaalde-code" class="nav-link" data-scroll-target="#herhaalde-code">Herhaalde code</a></li>
+  <li><a href="#selector-voorrang" id="toc-selector-voorrang" class="nav-link" data-scroll-target="#selector-voorrang">Selector voorrang</a></li>
+  </ul></li>
+  <li><a href="#eenheden-voor-afmetingen" id="toc-eenheden-voor-afmetingen" class="nav-link" data-scroll-target="#eenheden-voor-afmetingen">Eenheden voor afmetingen</a></li>
+  <li><a href="#kleuren" id="toc-kleuren" class="nav-link" data-scroll-target="#kleuren">Kleuren</a>
+  <ul class="collapse">
+  <li><a href="#rgba" id="toc-rgba" class="nav-link" data-scroll-target="#rgba">RGBA</a></li>
+  <li><a href="#hexcode" id="toc-hexcode" class="nav-link" data-scroll-target="#hexcode">Hexcode</a></li>
+  <li><a href="#hsla" id="toc-hsla" class="nav-link" data-scroll-target="#hsla">hsla()</a></li>
+  </ul></li>
+  <li><a href="#css-in-actie" id="toc-css-in-actie" class="nav-link" data-scroll-target="#css-in-actie">CSS in actie</a>
+  <ul class="collapse">
+  <li><a href="#tekstopmaak" id="toc-tekstopmaak" class="nav-link" data-scroll-target="#tekstopmaak">Tekstopmaak</a></li>
+  <li><a href="#randen-en-schaduwen" id="toc-randen-en-schaduwen" class="nav-link" data-scroll-target="#randen-en-schaduwen">Randen en schaduwen</a></li>
+  </ul></li>
+  <li><a href="#variabelen" id="toc-variabelen" class="nav-link" data-scroll-target="#variabelen">Variabelen</a></li>
+  <li><a href="#w3-css" id="toc-w3-css" class="nav-link" data-scroll-target="#w3-css">W3 CSS</a>
+  <ul class="collapse">
+  <li><a href="#installatie" id="toc-installatie" class="nav-link" data-scroll-target="#installatie">Installatie</a></li>
+  </ul></li>
+  <li><a href="#containers" id="toc-containers" class="nav-link" data-scroll-target="#containers">Containers</a></li>
+  <li><a href="#css-minify" id="toc-css-minify" class="nav-link" data-scroll-target="#css-minify">CSS Minify</a></li>
+  </ul></li>
+  <li><a href="#scss" id="toc-scss" class="nav-link" data-scroll-target="#scss">SCSS</a>
+  <ul class="collapse">
+  <li><a href="#variabelen-1" id="toc-variabelen-1" class="nav-link" data-scroll-target="#variabelen-1">Variabelen</a></li>
+  <li><a href="#nesten" id="toc-nesten" class="nav-link" data-scroll-target="#nesten">Nesten</a></li>
+  <li><a href="#partials-en-modules" id="toc-partials-en-modules" class="nav-link" data-scroll-target="#partials-en-modules">Partials en Modules</a></li>
+  <li><a href="#mixins-en-functions" id="toc-mixins-en-functions" class="nav-link" data-scroll-target="#mixins-en-functions">Mixins en Functions</a></li>
+  <li><a href="#uitbreiding-vererving" id="toc-uitbreiding-vererving" class="nav-link" data-scroll-target="#uitbreiding-vererving">Uitbreiding / Vererving</a></li>
+  <li><a href="#controlestructuren" id="toc-controlestructuren" class="nav-link" data-scroll-target="#controlestructuren">Controlestructuren</a></li>
+  <li><a href="#scss-naar-css" id="toc-scss-naar-css" class="nav-link" data-scroll-target="#scss-naar-css">SCSS naar CSS</a></li>
+  <li><a href="#gebruik-in-quarto" id="toc-gebruik-in-quarto" class="nav-link" data-scroll-target="#gebruik-in-quarto">Gebruik in Quarto</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">CSS en SCSS</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">css</div>
+    <div class="quarto-category">scss</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ben Welman </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">21 oktober 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Samenvatting</div>
+    <p>Gebruik van CSS en SCSS</p>
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="css" class="level1">
+<h1>CSS</h1>
+<p>CSS wijzigt de stijl van HTML-tags door specifieke classes of id’s te gebruiken.</p>
+<p>CSS selectors definiëren op welke elementen CSS regels moeten worden toegepast.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>selector {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  property<span class="ch">:</span> <span class="dv">value</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  property<span class="ch">:</span> <span class="dv">value</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De declaratie bestaat uit één of meerdere paren van een property en een waarde. Tussen property en een waarde staat een dubbele punt. De paren worden van elkaar gescheiden door een puntkomma. De laatste puntkomma is optioneel.</p>
+<p>Voorbeeld</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">arial</span><span class="op">,</span> <span class="st">"times new roman"</span><span class="op">,</span> <span class="dv">helvetica</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Een waarde voor de propert <code>font-family</code> kan uit meerdere delen bestaan, van elkaar gescheiden door een komma. De browser probeert hieruit een beschikbaar font te kiezen, van links naar rechts. Komen er spaties in de fontnaam voor, dan moet de fontnaam door rechte quotes omgeven worden.</p>
+<section id="selectors" class="level2">
+<h2 class="anchored" data-anchor-id="selectors">Selectors</h2>
+<section id="universele-selector" class="level3">
+<h3 class="anchored" data-anchor-id="universele-selector">Universele selector</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">*</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dit is een stijl voor alle elementen. Niet erg zinvol.</p>
+</section>
+<section id="html-selector" class="level3">
+<h3 class="anchored" data-anchor-id="html-selector">HTML selector</h3>
+<p><strong>Selectors voor individuele elementen</strong></p>
+<p>Wanneer je een eigenschap op meerdere elementen toe wilt passen scheid je de tekst door komma’s. Dit is dan een <strong>groep</strong> selector.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3 {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">arial</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>body {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">11</span><span class="dt">px</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Selectors in context</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p b {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  colr<span class="ch">:</span> <span class="cn">red</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Deze regel wordt toegepast op alle <code>&lt;b&gt;</code> tags binnen een <code>p</code> tag, <code>b</code> is een child van <code>p.</code></p>
+<p><strong>Paren-Child selector</strong></p>
+<p>Een parent-child relatie wordt weergegeven met het symbool <code>&gt;</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>body <span class="op">&gt;</span> p {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Deze stijl wordt alleen aan paragrafen toegekend die directe children zijn van het body element.</p>
+</section>
+<section id="adjacent-selector" class="level3">
+<h3 class="anchored" data-anchor-id="adjacent-selector">Adjacent selector</h3>
+<p>Kan gebruikt worden voor direct aangrenzende elementen</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>h1 <span class="op">+</span> h2 {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">11</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Toegepast op</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Titel<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>Eerste onderdeel<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>Tweede onderdeel<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alleen het eerste <code>h2</code> element is aangrenzend aan het <code>h1</code> element en krijgt de opmaak.</p>
+</section>
+<section id="class-selector" class="level3">
+<h3 class="anchored" data-anchor-id="class-selector">Class selector</h3>
+<p>Een class selector begint met een punt.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.speciaal</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Je kan deze class op elk element toepassen:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">”speciaal”</span><span class="dt">&gt;</span>Zomaar een paragraaf.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wanneer je alleen bepaalde elementen met deze class wilt identificeren, dan kan de selector specifieker gemaakt worden, zoals in</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p<span class="fu">.speciaal</span> {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aan een HTML kunnen meerdere classes worden toegekend die dan door een spatie gescheiden moeten worden.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">”speciaal</span><span class="ot"> attentie</span><span class="er">”</span><span class="dt">&gt;</span>Een kadootje<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="id-selector" class="level3">
+<h3 class="anchored" data-anchor-id="id-selector">ID selector</h3>
+<p>Met een ID selector kunnen unieke onderdelen worden geselecteerd. Deze selector begint met een <code>#</code>. In een pagina moet het id uniek zijn.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#opvallend</span> {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Toegepast:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> id</span><span class="op">=</span><span class="st">”opvallend”</span><span class="dt">&gt;</span> … <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Je mag voor de <code>#</code> een elementnaam zetten, zoals <code>div#opvallend</code>, maar dit is eigenlijk onzin want het id is toch al uniek.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pseudo-class" class="level3">
+<h3 class="anchored" data-anchor-id="pseudo-class">Pseudo-class</h3>
+<p>Een pseudo-class start met het <code>:</code> symbool. Bijvoorbeeld met <code>a:active</code> wordt de stijl alleen toegepast op actieve links.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a<span class="in">:link</span> {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>a<span class="in">:visited</span> {</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>a<span class="in">:active</span> {</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>a<span class="in">:hover</span> {</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Er bestaan veel pseudo-classes, vooral de structurele. Deze zijn handig om specifieke childs te selecteren, zoals <code>element:first-child</code>.</p>
+<p>In het volgende voorbeeld wordt de stijl alleen toegepast op het eerste item van een <code>li</code> element.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>li<span class="in">:first-child</span> {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pseudo-elementen" class="level3">
+<h3 class="anchored" data-anchor-id="pseudo-elementen">Pseudo-elementen</h3>
+<p>In CSS3 worden pseudo elementen worden voorafgegaan door <code>::</code> (twee dubbele punten). De meest bekende zijn <code>::before</code> en <code>::after</code>, die respectievelijk van toepassing zijn voor en na het geselecteerde element.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opmerking
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In CSS2 is dit <code>:</code>, een enkele dubbele punt.</p>
+</div>
+</div>
+<ul>
+<li><p><code>::before</code> voegt inhoud toe vóór de inhoud van het opgegeven element. De inhoud zelf kun je specificeren met de <code>content</code> property.</p></li>
+<li><p><code>::after</code> analoog, maar dan na de inhoud van het opgegeven element.</p></li>
+</ul>
+<p>Zo kun je een tekst voor de inhoud van elk <code>&lt;p&gt;</code> toevoegen met</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p<span class="in">::before</span> {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">content</span><span class="ch">:</span> <span class="st">"Lees dit: "</span><span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En toegepast</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Start eerst Excel op.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dit levert de volgende uitvoer op</p>
+<p><code>Lees dit: Start eerst Excel op.</code></p>
+</section>
+<section id="attribuut-selectors" class="level3">
+<h3 class="anchored" data-anchor-id="attribuut-selectors">Attribuut selectors</h3>
+<p>Een attribuut selector definieert een regel welke toegepast wordt op elementen met dat specifieke attribuut.</p>
+<p>Bekijk de volgende HTML code:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="dt">&gt;</span>Website<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_parent"</span><span class="dt">&gt;</span>Website<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_self"</span><span class="dt">&gt;</span>Website<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wanneer je CSS code op alle a tags met een target attribuut wilt toepassen kan dat met</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a<span class="ex">[</span><span class="ss">target</span><span class="ex">]</span> {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wanneer je de CSS code alleen wilt toepassen bij een bepaalde waarde voor target dan kan dat met</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a<span class="ex">[</span><span class="ss">target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ex">]</span> {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="tips" class="level2">
+<h2 class="anchored" data-anchor-id="tips">Tips</h2>
+<section id="herhaalde-code" class="level3">
+<h3 class="anchored" data-anchor-id="herhaalde-code">Herhaalde code</h3>
+<p>Een goed gebruik is om geen code te herhalen. Hieronder staat een voorbeel van een slecht gebruik van CSS code. Zowel <code>.opmaak-1</code> en <code>.opmaak-2</code> hebben dezelfde <code>color</code> en <code>border-radius</code>. Alleen <code>padding</code> en <code>font-size</code> zijn verschillend.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.opmaak-1</span>{</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#33BEFF</span><span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">.opmaak-2</span>{</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#33BEFF</span><span class="op">;</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Een oplossing voor de herhaalde code is om de gemeenschappelijke eigenschappen te verzamelen in één generieke class:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.algemeen</span> {</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#33BEFF</span><span class="op">;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.opmaak-1</span> {</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">18</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.opmaak-2</span> {</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">12</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Aan de HTML-kant voeg je de classes toe van de meest algemene tot de meest specifieke, zoals:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"algemeen opmaak-1"</span><span class="dt">&gt;</span>Mijn element<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"algemeen opmaak-2"</span><span class="dt">&gt;</span>Mijn element<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="selector-voorrang" class="level3">
+<h3 class="anchored" data-anchor-id="selector-voorrang">Selector voorrang</h3>
+<p>Wat gebeurt er als meerdere verschillende selectors op hetzelfde element zijn gericht? Welke stijl wordt echt toegepast? Bekijk het volgende voorbeeld:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"myelement"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"myclass"</span><span class="dt">&gt;</span>Zomaar wat tekst.<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>met de volgende CSS code:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#myelement</span> {</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.myclass</span> {</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>div {</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wat zal de tekstkleur van het element zijn? Nou, dit is niet voor de hand liggend. Je moet weten dat webbrowsers regels toepassen om de meer specifieke regels te selecteren:</p>
+<ul>
+<li><p>Inline stijl is het meest specifiek. Dit is een stijl die rechtstreeks aan de HTML-tag is gekoppeld.</p></li>
+<li><p><code>id</code> is van toepassing op unieke objecten.</p></li>
+<li><p><code>class</code>, <code>pseudoclasses</code>, <code>attributes</code>.</p></li>
+<li><p>elementen en pseudo-elementen.</p></li>
+</ul>
+<p>In het voorbeeld is <code>#myelement</code> de meest specifieke selector, daarom zal de tekstkleur rood zijn.</p>
+<p>Bij gelijkheid wordt de laatst geschreven selector toegepast:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"class1 class2"</span><span class="dt">&gt;</span>Zomaar wat tekst.<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.class1</span> {</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.class2</span> {</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alleen de tweede selector wordt toegepast, de tekstkleur zal rood zijn. Om class1 toe te passen, moet je deze verplaatsen na de class2 stijldefinitie.</p>
+</section>
+</section>
+<section id="eenheden-voor-afmetingen" class="level2">
+<h2 class="anchored" data-anchor-id="eenheden-voor-afmetingen">Eenheden voor afmetingen</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 4%">
+<col style="width: 92%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>in</td>
+<td>inch</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cm</td>
+<td>centimeter</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mm</td>
+<td>millimeter</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>pt</td>
+<td>point</td>
+<td>1 pt is gelijk aan 1/72 inch</td>
+</tr>
+<tr class="odd">
+<td>pc</td>
+<td>pica</td>
+<td>1 pc is gelijk aan 12 points (1/6 inch)</td>
+</tr>
+<tr class="even">
+<td>px</td>
+<td>pixel</td>
+<td>1 pixel is een punt op een computer scherm (monitor). Is erg nuttig bij afmetingen en absolute positionering van objecten. Voor teksten wordt meer de em gebruikt.</td>
+</tr>
+<tr class="odd">
+<td>em</td>
+<td>em-height</td>
+<td><p>1em is gelijk aan de hoogte van de hoofdletter M in de huidige font, maar is in de praktijk gelijk aan de font-size.</p>
+<p>2em betekent 2 keer de grootte van hethuidige font. Bijvoorbeeld indien een element wordt afgebeeld met een font van12 pt, dan is ‘2em’ gelijk aan 24 pt.&nbsp;De ‘em’ is een erg nuttige eenheid in CSS, omdat deze zich automatisch aanpast aan het gebruikte font.</p></td>
+</tr>
+<tr class="even">
+<td>%</td>
+<td>percentage</td>
+<td>100 % is gelijk aan 1 em.</td>
+</tr>
+<tr class="odd">
+<td>ex</td>
+<td>x-height</td>
+<td>1 ex is de hoogte van de kleine letter x in het font. In de praktijk gewoonlijk ongeveer de helft van de font-size.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="kleuren" class="level2">
+<h2 class="anchored" data-anchor-id="kleuren">Kleuren</h2>
+<p>De drie meest gebruikte css systemen voor kleurcodes zijn Hexcodes, RGBA en HSLA.</p>
+<section id="rgba" class="level3">
+<h3 class="anchored" data-anchor-id="rgba">RGBA</h3>
+<p>RGB staat voor Rood, Groen en Blauw, de drie kleuren die schermen kunnen gebruiken om vrijwel elke andere kleur te produceren. Dit gebeurt met behulp van “additieve kleurmenging”.</p>
+<p>RGB(255, 0, 0) is rood omdat de R maximaal is. Als u de G of de B instelt op 255, krijgt u volledig groen of volledig blauw. Zet ze allemaal tegelijk op 255 en je krijgt wit (de som van alle kleuren), terwijl het op nul zetten zwart wordt. Als je een vierde waarde toevoegt (het alfakanaal, tussen 0 en 1), kun je ook transparantie krijgen: RGBA (0, 0, 0, .5) vertaalt zich naar een halftransparant zwart.</p>
+<p><img src="images/rgb.png" class="img-fluid" width="200"></p>
+<p>Het is eenvoudig, maar niet zo intuïtief. De RGB-balans kan behoorlijk veranderen, zelfs als je alleen de tint van een kleur verandert, waardoor het voor mensen erg moeilijk is om handmatige aanpassingen te maken zonder een soort RGB-generator.</p>
+</section>
+<section id="hexcode" class="level3">
+<h3 class="anchored" data-anchor-id="hexcode">Hexcode</h3>
+<p>Hexcodes zijn gewoon een andere manier om RGB-waarden te schrijven. Iets als #6A79F7 (korenbloemblauw) verwijst rechtstreeks naar RGB (106, 121, 247). Met R=6A , G=79 B=F7.</p>
+<p>Hexadecimale codes zijn nog lastiger voor mensen dan RGB, hoewel ze gemakkelijk te kopiëren en plakken zijn en gedenkwaardige letter-/cijfercombinaties kunnen hebben.</p>
+<p>Je kunt ook transparantie aan hexadecimale codes toevoegen door aan het begin een waarde te plaatsen dat de hexadecimale waarde is van een percentage van 255 te plaatsen. Wil je een transparantie van 0.5, dan moet je 50% nemen van 255 wat afgerond 126 is. En 126 omzetten in hexadecimaal wordt 80. De hexcode wordt dan #806A79F7.</p>
+</section>
+<section id="hsla" class="level3">
+<h3 class="anchored" data-anchor-id="hsla">hsla()</h3>
+<p>De <code>hsla()</code> functie definieert kleuren via het Hue-saturation-lightness-alpha (HSLA) model.</p>
+<p>Syntax: <code>hsla(hue, saturation, lightness, alpha)</code></p>
+<dl>
+<dt>hue</dt>
+<dd>
+<p>Definieert de kleur. De waarde hiervoor geeft het aantal graden op het kleurenwiel weer. Rood is 0 (of 360) graden, Groen is 120 graden en Blauw is 240 graden.</p>
+</dd>
+<dt>saturation</dt>
+<dd>
+<p>Definieert de verzadiging en is in wezen hoe kleurrijk de kleur is. 0% is een grijstint en 100% is de volledige kleur (volledige verzadiging). Als je je kleur wilt dempen of iets meer wilt laten opvallen, kun je deze waarde gewoon wijzigen.</p>
+</dd>
+<dt>lightness</dt>
+<dd>
+<p>Definieert de lichtheid en geeft aan hoe donker of helder de kleur is. 0% lichtheid betekent dat de kleur zwart is, ongeacht de instellingen voor tint of verzadiging, en 100% lichtheid zorgt voor wit. En 50% geeft de normale kleur.</p>
+</dd>
+<dt>alpha</dt>
+<dd>
+<p>Definieert de dekking als een getal tussen 0.0 (volledig transparant) en 1.0 (volledig ondoorzichtig)</p>
+</dd>
+</dl>
+<p>Voorbeelden:</p>
+<ul>
+<li>hsla(120, 100%, 50%, 0.3) - groen</li>
+<li>hsla(120, 100%, 75%, 0.3) - lichtgroen</li>
+<li>hsla(120, 100%, 25%, 0.3) - donkergroen</li>
+</ul>
+<p><strong>Kleurenwiel</strong></p>
+<p><img src="images/kleurwiel.png" class="img-fluid" width="200"></p>
+<p>Er zijn 12 hoofdkleuren op het kleurenwiel. In het RGB-kleurenwiel zijn deze tinten</p>
+<p><img src="images/hoofdkleuren.png" class="img-fluid" width="200"></p>
+<p>Het kleurenwiel kan worden onderverdeeld in primaire, secundaire en tertiaire kleuren.</p>
+<dl>
+<dt>Primaire kleuren</dt>
+<dd>
+<p>In het RGB-kleurenwiel zijn dit de kleuren die, bij elkaar opgeteld, puur wit licht creëren. Deze kleuren zijn rood, groen en blauw.</p>
+</dd>
+<dt>Secundaire kleuren</dt>
+<dd>
+<p>Dit zijn kleuren die ontstaan door het mengen van twee primaire kleuren. Er zijn drie secundaire kleuren. In het RGB-kleurenwiel zijn dit cyaan (groen + blauw), magenta (blauw + rood) en geel (rood + groen).</p>
+</dd>
+<dt>Tertiaire kleuren</dt>
+<dd>
+<p>Dit zijn kleuren die gemaakt worden door een secundaire kleur te combineren met een primaire kleur. Er zijn zes tertiaire kleuren. In het RGB-kleurenwiel zijn dit oranje, chartreusegroen, lentegroen, azuurblauw, violet en roze.</p>
+</dd>
+</dl>
+<p><strong>Kleurcombinaties</strong></p>
+<dl>
+<dt>Complementair</dt>
+<dd>
+<p>Twee kleuren die zich in het kleurenwiel tegenover elkaar bevinden. Deze combinatie zorgt voor een hoog contrast en een krachtige kleurencombinatie - samen zullen deze kleuren helderder en prominenter lijken.</p>
+</dd>
+</dl>
+<p>Bijvoorbeeld 0 (Rood) en 180 (Cyaan)</p>
+<dl>
+<dt>Monochromatisch</dt>
+<dd>
+<p>Verschillende tonen en tinten van één basiskleur bieden een subtiele en conservatieve kleurencombinatie. Dit is een veelzijdige kleurencombinatie welke zorgt voor een harmonieuze uitstraling.</p>
+</dd>
+</dl>
+<p>Bijvoorbeeld hsl(30, 100%, 50%) en hsl(30, 50%, 50%)</p>
+<dl>
+<dt>Analoog</dt>
+<dd>
+<p>Verschillende kleuren die naast elkaar op het kleurenwiel staan. Deze kleurencombinatie is veelzijdig, maar kan overweldigend zijn. Om een analoog kleurenschema in evenwicht te brengen, kies je één dominante kleur en gebruik je de andere als accenten.</p>
+</dd>
+</dl>
+<p>Bijvoorbeeld hsl(180, 100%, 50%), hsl(210, 100%, 50%) en hsl(240, 100%, 50%)</p>
+<dl>
+<dt>Triadic</dt>
+<dd>
+<p>Drie kleuren met gelijke onderlinge afstanden op het kleurenwiel. Dit biedt een kleurenschema met hoog contrast, maar minder dan de complementaire kleurencombinatie - waardoor het veelzijdiger is. Deze combinatie zorgt voor gedurfde, levendige kleurenpaletten.Bijvoorbeeld hsl(0, 100%, 50%), hsl(120, 100%, 50%) en hsl(240, 100%, 50%)</p>
+</dd>
+<dt>Tetradic</dt>
+<dd>
+<p>Vier kleuren met gelijke onderlinge afstanden op het kleurenwiel. Deze kleurenschema’s zijn gedurfd en werken het beste als je één kleur dominant laat zijn en de andere als accenten gebruikt. Hoe meer kleuren je in je palet hebt, hoe moeilijker het is om te balanceren.</p>
+</dd>
+</dl>
+<p>Lees verder:</p>
+<ul>
+<li><a href="https://www.w3schools.com/csSref/func_hsla.asp" class="uri">https://www.w3schools.com/csSref/func_hsla.asp</a></li>
+<li><a href="https://www.canva.com/colors/color-wheel/" class="uri">https://www.canva.com/colors/color-wheel/</a></li>
+</ul>
+</section>
+</section>
+<section id="css-in-actie" class="level2">
+<h2 class="anchored" data-anchor-id="css-in-actie">CSS in actie</h2>
+<p>We bespreken de meest gebruikte CSS-eigenschappen zoals tekstopmaak, schaduwen, kleur en achtergrondkleur, …</p>
+<section id="tekstopmaak" class="level3">
+<h3 class="anchored" data-anchor-id="tekstopmaak">Tekstopmaak</h3>
+<p>Lettertypes bepalen het uiterlijk van de tekst en kunnen als volgt worden gewijzigd:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tag {</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">,</span> <span class="st">"Source Sans Pro"</span><span class="op">,</span> ...<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In de praktijk voer je meerdere lettertypewaarden in, voor het geval de eindgebruiker niet hetzelfde lettertype heeft. De laatste waarden bestaan uit generieke regels zoals <code>serif</code> en <code>monospace</code>. Bootstrap 3 gebruikt bijvoorbeeld de standaard schreefloze <code>sans-serif</code>.</p>
+<p>Andere property’s:</p>
+<ul>
+<li><p><code>font-size</code> - tekstgrootte</p></li>
+<li><p><code>text-align</code> - uitlijning (<code>left</code>, <code>center</code>, <code>right</code>, <code>justify</code>)</p></li>
+<li><p><code>font-style: italic</code> - cursief</p></li>
+<li><p><code>font-weight: bold</code> - vet</p></li>
+<li><p><code>color</code> - tekstkleur</p></li>
+<li><p><code>background-color</code> - kleur achtergrond (niet alleen voor tekst)</p></li>
+</ul>
+</section>
+<section id="randen-en-schaduwen" class="level3">
+<h3 class="anchored" data-anchor-id="randen-en-schaduwen">Randen en schaduwen</h3>
+<p>Deze effecten kunnen worden toegepast op tekst en blokelementen. De eenvoudigste manier om een kader in te stellen is door gebruik te maken van de property <code>border</code> die drie parameters accepteert:</p>
+<ul>
+<li><p><code>width</code> - breedte in px</p></li>
+<li><p><code>color</code> - kleur</p></li>
+<li><p><code>type</code> - stijl (<code>none</code>, <code>solid</code>, <code>dotted</code>, <code>dashed</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>)</p></li>
+</ul>
+<p>Er bestaan nog andere eigenschappen zoals <code>border-radius</code>, die de vorm van de hoeken van linksboven naar linksonder bepaalt. Hoe hoger de waarde, hoe ronder de hoek.</p>
+<p>Als je om wat voor reden dan ook de positie van de rand nauwkeurig wilt afstellen, zijn er vier eigenschappen: <code>border-top</code>, <code>border-bottom</code>, <code>border-left</code> en <code>border-right</code>.</p>
+<p>Schaduwen geregeld door twee eigenschappen:</p>
+<ul>
+<li><p><code>text-shadow</code> - brengt een schaduw aan op een tekstelement (zelden gebruikt).</p></li>
+<li><p><code>box-shadow</code> - voor styling van blokken.</p></li>
+</ul>
+<p>De <code>box-shadow</code> property heeft vier parameters:</p>
+<ul>
+<li><p>horizontale verschuiving in px</p></li>
+<li><p>verticale verschuiving in px</p></li>
+<li><p>vervagingsradius in px. Hoe hoger, hoe waziger.</p></li>
+<li><p>kleur van de schauw</p></li>
+</ul>
+<p>Een voorbeeld:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.block</span> {</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-top</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#d2d6de</span><span class="op">;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="cn">black</span><span class="op">;</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="variabelen" class="level2">
+<h2 class="anchored" data-anchor-id="variabelen">Variabelen</h2>
+<p>CSS-variabelen kunnen een globaal of lokaal bereik (scope) hebben. Globale variabelen zijn toegankelijk/gebruikt door het hele document, terwijl lokale variabelen alleen kunnen worden gebruikt binnen de selector waar ze zijn gedeclareerd.</p>
+<p>Als je een globale variabele wilt maken, declareer je deze in de <code>:root</code> selector. De <code>:root</code> selector komt overeen met het root-element van het document.</p>
+<p>De naam van een variabele moet beginnen met <code>--</code> en is hoofdlettergevoelig.</p>
+<p>Met de functie <code>var()</code> kun je de waarde van een variabele invoegen.</p>
+<pre><code>:root {
+  --blauw: #1e90ff;
+  --korenbloem: #6A79F7;
+}
+
+body { background-color: var(--blauw); }
+
+h2 { border-bottom: 2px solid var(--korenbloem);</code></pre>
+</section>
+<section id="w3-css" class="level2">
+<h2 class="anchored" data-anchor-id="w3-css">W3 CSS</h2>
+<p>Bootstrap en W3.CSS zijn twee frameworks die moderne webpagina’s kunnen produceren. Ze zijn beide erg geschikt voor het maken van websites die op meerdere soorten devices (pc, tablet, telefoon) goed draaien. Belangrijke kenmerken hiervoor zijn:</p>
+<ul>
+<li>Flexibele grid. Beide frameworks kunnen een scherm in 12 verticale kolommen verdelen.</li>
+<li>Flexibele afbeeldingen</li>
+<li>CSS3 media queries</li>
+</ul>
+<p>Bootstrap is de oudste van de twee. Dit framework maakt gebruik van HTML, CSS. Javascript en JQuery. Van origine afkomstig van Twitter in 2010. De huidige versie is Bootstrap 4.</p>
+<p>W3.CSS gebruikt alleen HTML en CSS en geen Javascript. Ontwikkeld door w3schools.com en d eerste versie verscheen in 2015.</p>
+<section id="installatie" class="level3">
+<h3 class="anchored" data-anchor-id="installatie">Installatie</h3>
+<p><strong>Lokaal</strong></p>
+<p>Download de laatste versie van het bestand <code>w3.css</code> via <a href="https://www.w3schools.com/w3css/w3css_downloads.asp">W3.CSS Downloads</a></p>
+<p>Neem in het head gedeelte het volgend op</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"css/w3.css"</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>CDN gebaseerd</strong></p>
+<p>Neem in het head gedeelte het volgend op</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.w3schools.com/w3css/4/w3.css"</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Voorbeeld: vb01.html</strong></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>The W3.CSS Exam ple<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"viewport"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"width=device-width, initial-scale=1"</span><span class="dt">&gt;</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>         <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.w3schools.com/w3css/4/w3.css"</span><span class="dt">&gt;</span> </span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Hello World!<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="containers" class="level2">
+<h2 class="anchored" data-anchor-id="containers">Containers</h2>
+<p>HTML5 kent een aantal semantische tags om de inhoud van een pagina op te delen.</p>
+<ul>
+<li><strong>div</strong> - Algemene container voor html content.</li>
+<li><strong>header</strong> - Voor de header info.</li>
+<li><strong>footer</strong> - Voor voettekst onder aan de pagina.</li>
+<li><strong>article</strong> - Voor een artikel, een op zichzelf staand stukje content.</li>
+<li><strong>section</strong> - Voor een algemene container voor verschillende zaken.</li>
+<li><strong>aside</strong> - Voor een stukje content dat wat afzijdig van de hoofdtekst is, bijv. een tip.</li>
+</ul>
+<p>W3.CSS heeft als belangrijkste class <strong>w3-container</strong> waar alle andere stijlen onder vallen.</p>
+</section>
+<section id="css-minify" class="level2">
+<h2 class="anchored" data-anchor-id="css-minify">CSS Minify</h2>
+<p>Met minify kun je het CSS bestand verkleinen en worden spaties, inspringingen, nieuwe regels en opmerkingen verwijderd. Het inlezen van dit bestand gaat daardoor sneller.</p>
+<p><a href="https://www.cleancss.com/css-minify/" class="uri">https://www.cleancss.com/css-minify/</a> - online minifier</p>
+<p><a href="https://blog.logrocket.com/complete-best-practices-minifying-css/" class="uri">https://blog.logrocket.com/complete-best-practices-minifying-css/</a></p>
+</section>
+</section>
+<section id="scss" class="level1">
+<h1>SCSS</h1>
+<p>SCSS, ook bekend als Sassy CSS, is een populaire voorbewerkingstaal (preprocessor) om CSS-bestanden te genereren. Sass staat voor “Syntactically Awesome Style Sheets” welke toegang biedt tot variabelen, wiskundige operatoren, functies en lussen, waardoor de code minder complex wordt en de mogelijkheden worden uitgebreid.</p>
+<p>Naast vele handige functies heeft SCSS een brede acceptatie gekregen omdat <code>.scss</code>-bestanden ook met gewone CSS-stijlen werken. De SCSS syntax is een superset van CSS, dus een CSS bestand is al een geldig SCSS bestand.</p>
+<p>Browsers kunnen niet rechtstreeks met de SCSS kenmerken overweg en moeten omgezet worden in CSS bestanden. Quarto doet dat automatisch voor je.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opmerking
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>RStudio heeft package <a href="https://rstudio.github.io/sass/">sass</a> ontwikkeld om Sass te gebruiken in Shiny apps en Rmarkdown documenten.</p>
+</div>
+</div>
+<section id="variabelen-1" class="level2">
+<h2 class="anchored" data-anchor-id="variabelen-1">Variabelen</h2>
+<p>Een van de handigste kenmerken van SCSS is de mogelijkheid om variabelen te gebruiken. In plaats van bijvoorbeeld steeds te schrijven <code>color: #FF0000;</code> wanneer je de kleur rood wilt gebruiken, kun je een variabele definiëren zoals <code>$rood: #FF0000;</code> en gebruik de variabele vervolgens in de CSS opdrachten.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>$rood<span class="in">:</span> <span class="pp">#FF0000</span>;</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>body {<span class="kw">color</span><span class="ch">:</span>$<span class="dv">rood</span><span class="op">;</span> }</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hierdoor is het eenvoudig om de kleur van alle elementen die de variabele <code>$rood</code> gebruiken, te wijzigen door simpelweg de waarde van de variabele te wijzigen.</p>
+</section>
+<section id="nesten" class="level2">
+<h2 class="anchored" data-anchor-id="nesten">Nesten</h2>
+<p>Een andere handige functie van SCSS is nesten. Met nesten kun je stijlen groeperen op basis van hun relatie tot elkaar. Dit maakt de code overzichtelijker en gemakkelijker te lezen.</p>
+<p>Het voorbeeld hieronder is standaard CSS.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>nav {</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>nav ul {</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">list-style</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>nav ul li {</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Met SCSS nesting wordt de code overzichtelijker en maakt het gemakkelijker om de relaties tussen stijlen te begrijpen.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>nav {</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  ul {</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">list-style</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    li {</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">display</span><span class="ch">:</span> <span class="dv">inline-block</span><span class="op">;</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="partials-en-modules" class="level2">
+<h2 class="anchored" data-anchor-id="partials-en-modules">Partials en Modules</h2>
+<p>Het is een goede gewoonte om nuttige codefragmenten in één bestand op te slaan om ze te kunnen hergebruiken. Sass maakt het mogelijk om <strong>partials</strong> te definiëren, zoals <code>_partial.css</code>, met de voorafgaande underscore, waardoor conversie naar CSS wordt voorkomen. Partials worden vervolgens aangeroepen met <span class="citation" data-cites="import">@import</span><code>"partialnaam";</code>, waardoor duplicatie van code aanzienlijk wordt verminderd.</p>
+<p>Modules zijn stukjes Sass-bestanden die later worden omgezet in CSS, waardoor de bestandsgrootte tot een minimum wordt beperkt. Bij grotere projecten wordt vaak een hoofdbestand gemaakt, bijv. main.scss, welke veelal bestaat uit het importeren van partials. Dit hoofdbestand wordt dan gecompileerd naar een CSS bestand.</p>
+</section>
+<section id="mixins-en-functions" class="level2">
+<h2 class="anchored" data-anchor-id="mixins-en-functions">Mixins en Functions</h2>
+<p>Een ander groot voordeel van Sass is de mogelijkheid om herbruikbare code-eenheden te genereren, ook bekend als mixins of functions.</p>
+<p><strong>Mixins</strong></p>
+<p>Om een mixin te definieren begin je met <code>@mixin</code> gevolgd door de naam van de mixin en de parameters. De mixin wordt aangeroepen via <code>?include naam(parameters)</code>, wat erg lijkt op een functiedeclaratie, behalve dat het een CSS-regel moet teruggeven.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">@mixin</span> border-radius<span class="fu">(</span>$<span class="dv">radius</span><span class="fu">)</span> {</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  -webkit-border-radius<span class="in">:</span> $radius;</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  -moz-border-radius<span class="in">:</span> $radius;</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  border-radius<span class="in">:</span> $radius;</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.box</span> {</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> border-radius<span class="fu">(</span><span class="dv">10</span><span class="dt">px</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.button</span> {</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> border-radius<span class="fu">(</span><span class="dv">5</span><span class="dt">px</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Functions</strong></p>
+<p>Sass biedt veel ingebouwde modules met kant-en-klare functies voor kleuren, getallen, strings, lists, maps, … Een paar bruikbare functies:</p>
+<ul>
+<li><p><code>lighten()</code> en <code>darken()</code>: Deze functies passen de lichtheid van de kleur aan. Zo wordt door <code>lighten($kleur, 10%)</code> de kleur 10% lichter.</p></li>
+<li><p><code>rgba()</code>: Deze functie voegt een alfakanaal toe aan een kleur. <code>rgba($color, 0,5)</code> zou de kleur bijvoorbeeld semi-transparant maken.</p></li>
+<li><p><code>calc()</code>: Deze functie voert berekeningen uit. Zo stelt <code>width: calc(50% - 10px)</code> de breedte in op 50% minus 10 pixels.</p></li>
+</ul>
+<p>Een eigen functie kun je definieren via <code>@function</code> gevolgd door de naam van de functie met tussen haakjes de parameters. De body bestaat uit een aantal SCSS opdrachten. Aan het eind moet de functie een waarde retourneren via de opdracht <code>@return</code>.</p>
+<p>Syntax</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">@function</span> name<span class="fu">(</span>$<span class="dv">parm1</span><span class="op">,</span> $<span class="dv">parm2</span><span class="fu">)</span> {</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* logica */</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="im">@return</span> value<span class="op">;</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Een voorbeeld van een functie die px converteert naar em en het gebruik ervan voor element h1:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">@function</span> px2em<span class="fu">(</span>$<span class="dv">px</span><span class="op">,</span> $<span class="dv">base-font-size</span>: <span class="dv">16</span><span class="dt">px</span><span class="fu">)</span> {</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">@return</span> <span class="fu">(</span>$<span class="dv">px </span>/ $<span class="dv">base-font-size</span><span class="fu">)</span> * 1em<span class="op">;</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> px2em<span class="fu">(</span><span class="dv">32</span><span class="dt">px</span><span class="fu">)</span><span class="op">;</span> <span class="co">/* 2em */</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Je kunt gebruik maken van wiskundige operatoren zoals *, +, -, / en %, wat niet mogelijk is met CSS.</p>
+</section>
+<section id="uitbreiding-vererving" class="level2">
+<h2 class="anchored" data-anchor-id="uitbreiding-vererving">Uitbreiding / Vererving</h2>
+<p>Beschouw twee alerts met de kleur als enige verschil. Omdat je niet meerdere eigenschappen kunt vastleggen in een enkele Sass-variabele wordt het extend-concept geïntroduceerd waarmee je CSS-eigenschappen kunt importeren in meerdere rules. Eerst wordt een generieke <code>alerts-common</code> rule gedefinieerd, voorafgegaan door het <code>%</code> symbool. Deze bevat verschillende regels en variabelen.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>%alerts-common {</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> $<span class="dv">alert-padding-y </span>$<span class="dv">alert-padding-x</span><span class="op">;</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span><span class="ch">:</span> $<span class="dv">alert-margin-bottom</span><span class="op">;</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.alert-red</span> {</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="im">@extend</span> %alerts-common<span class="op">;</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a><span class="fu">.alert-green</span> {</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>  <span class="im">@extend</span> %alerts-common<span class="op">;</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="controlestructuren" class="level2">
+<h2 class="anchored" data-anchor-id="controlestructuren">Controlestructuren</h2>
+<p><strong>if en else</strong></p>
+<p>Je kunt <code>@if</code>, <code>@else</code> en <code>else if</code> gebruiken voor voorwaardelijke opdrachten.</p>
+<p>In het volgende voorbeeld krijgen de div-elementen een rode achtergrondkleur toegewezen , wanneer de variabele $bg gelijk is aan red, anders wordt een blauwe achtergrondkleur toegewezen.​</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>$bg<span class="in">:</span> red;</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>div {</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="im">@if</span> $bg == red {</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    background-color<span class="in">:</span> $bg;</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  } <span class="im">@else</span> {</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    background-color<span class="in">:</span> blue;</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>for</strong></p>
+<p>In het volgende voorbeeld worden vijf verschillende klassen gemaakt, .item-1, .item-2, .item-3, .item-4 en .item-5, elk met een breedte van 20px, 40px, 60px , 80px en 100px respectievelijk.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">@for</span> $i from 1 through 5 {</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.item-</span>#{$i} {</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span> * $<span class="dv">i</span><span class="op">;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>each</strong></p>
+<p>In het voorbeeldvoorbeeld wordt voor elke kleur in de lijst $colors een klasse gemaakt en wordt de achtergrondkleur op die kleur ingesteld. Er worden bijvoorbeeld klassen .color-div-red, .color-div-blue, .color-div-green, etc. gemaakt.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>$colors<span class="in">:</span> red<span class="op">,</span> blue<span class="op">,</span> green<span class="op">,</span> yellow<span class="op">,</span> orange;</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="im">@each</span> $color in $colors {</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.color-div-</span>#{$color} {</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> $<span class="dv">color</span><span class="op">;</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>while</strong></p>
+<p>In dit voorbeeld worden vijf CSS-regels gemaakt voor .box-1 tot en met .box-5, elk met verschillende breedtes, die in elke iteratie met 50 pixels toenemen.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>$counter<span class="in">:</span> 1;</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="im">@while</span> $counter &lt;= 5 {</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.box-</span>#{$counter} {</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">width</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">px</span> * $<span class="dv">counter</span><span class="op">;</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  $counter<span class="in">:</span> $counter <span class="op">+</span> 1;</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="scss-naar-css" class="level2">
+<h2 class="anchored" data-anchor-id="scss-naar-css">SCSS naar CSS</h2>
+<p>Er zijn meerdere mogelijkheden om een SCSSS bestand te converteren naar CSS.</p>
+<ul>
+<li><p>Via package <code>sasss</code> met<br>
+<code>sass(sass_file("mijnstijl.scss"), output = "mijnstijl.css")</code>Via het argument <code>options = sass_options(output_style="compressed")</code> kun je compressie van het bestand inschakelen.</p></li>
+<li><p>online compilers, o.a. <a href="https://www.cssportal.com/scss-to-css/">CSS Portal</a>.</p></li>
+<li><p>Lokale compiler installeren, zie <a href="https://sass-lang.com/install/">Install SASS</a>.</p></li>
+<li><p>In VSCode via [plugin Live Sass Compiler](<a href="https://onjsdev.com/article/how-to-install-and-configure-live-sass-compiler-in-vs-code" class="uri">https://onjsdev.com/article/how-to-install-and-configure-live-sass-compiler-in-vs-code</a>)</p>
+<ol type="1">
+<li><p>Maak een <code>.scss</code> bestand.</p></li>
+<li><p>Klik op de knop <code>Watch Sass</code> rechtsonder in het venster. Het bestand wordt gecompileerd naar een <code>.css</code> bestand in de map.</p></li>
+</ol></li>
+</ul>
+</section>
+<section id="gebruik-in-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="gebruik-in-quarto">Gebruik in Quarto</h2>
+<p>Je maakt een .scss bestand met de volgende indeling:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="er">//definieer hier je variabelen</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="er">//definieer hier je regels</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dit scss bestand neem je dan vervolgens in de yaml header op.</p>
+<pre class="rmd"><code>format:
+  html:
+    - theme: cosmo
+    - mystyles.scss</code></pre>
+<p><a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables" class="uri">https://quarto.org/docs/output-formats/html-themes.html#sass-variables</a></p>
+<p><a href="https://quarto.org/docs/output-formats/html-themes.html" class="uri">https://quarto.org/docs/output-formats/html-themes.html</a></p>
+<p><a href="https://quarto.org/docs/output-formats/html-themes-more.html" class="uri">https://quarto.org/docs/output-formats/html-themes-more.html</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
