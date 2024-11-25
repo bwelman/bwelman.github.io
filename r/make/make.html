@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reeks getallen genereren – Archief Ben</title>
+<title>Automatiseren met Make – Archief Ben</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -144,18 +178,30 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#inleiding" id="toc-inleiding" class="nav-link active" data-scroll-target="#inleiding">Inleiding</a></li>
+  <li><a href="#regels-rules" id="toc-regels-rules" class="nav-link" data-scroll-target="#regels-rules">Regels (Rules)</a>
+  <ul class="collapse">
+  <li><a href="#phony-targets" id="toc-phony-targets" class="nav-link" data-scroll-target="#phony-targets">Phony targets</a></li>
+  </ul></li>
+  <li><a href="#make-en-rstudio" id="toc-make-en-rstudio" class="nav-link" data-scroll-target="#make-en-rstudio">Make en R(Studio)</a></li>
+  <li><a href="#automatische-variabelen" id="toc-automatische-variabelen" class="nav-link" data-scroll-target="#automatische-variabelen">Automatische variabelen</a></li>
+  <li><a href="#referenties" id="toc-referenties" class="nav-link" data-scroll-target="#referenties">Referenties</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reeks getallen genereren</h1>
+<h1 class="title">Automatiseren met Make</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">getallen</div>
-    <div class="quarto-category">functies</div>
+    <div class="quarto-category">r</div>
   </div>
   </div>
 
@@ -167,7 +213,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Publicatiedatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">15 maart 2022</p>
+      <p class="date">2 oktober 2018</p>
     </div>
   </div>
   
@@ -177,7 +223,7 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div>
   <div class="abstract">
     <div class="block-title">Samenvatting</div>
-    <p>Een matrix met (opeenvolgende) getallen genereren met de functie REEKS.</p>
+    <p>Het gebruik van make voor het automatiseren van een workflow.</p>
   </div>
 </div>
 
@@ -185,78 +231,142 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </header>
 
 
-<p>De meeste Excel gebruikers kennen wel de truc om een reeks getallen te produceren door een beginlijstje met een patroon te maken en deze vervolgens uit te breiden door de vulgreep te verslepen. Wanneer je niet meer weet hoe dit werkt, lees dan <a href="https://leerexcel.netlify.app/data.html#data-autofill">Automatisch doorvoeren</a>.</p>
-<p>Om een lijst met (opeenvolgende) getallen in een matrix te genereren kun je de functie <strong>REEKS</strong> gebruiken.</p>
-<p>Syntax: <code>REEKS(rijen;[kolommen];[beginnen];[stap])</code></p>
+<section id="inleiding" class="level1">
+<h1>Inleiding</h1>
+<p>Wanneer je een (tamelijk groot) project hebt met bestanden in R, Rmd, Latex of BibTex dan is het erg handig om <a href="https://www.gnu.org/software/make/">Make</a> te gebruiken om het productieproces te automatiseren. Je kunt <code>make</code> het handigste installeren via <a href="https://chocolatey.org/">Chocolatey</a>, de package manager voor Windows.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opmerking
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wanneer je <code>rtools43</code> geïnstalleerd hebt, dan wordt ook een versie van <code>make</code> geïnstalleerd in het pad <code>c:\rtools43\usr\bin</code>.</p>
+<p>Ook Lazarus Pascal installeert een make versie: <code>C:\lazarus\fpc\3.2.2\bin\x86_64-win64\make.exe.</code></p>
+</div>
+</div>
+<p>Standaard zoekt make naar een opdrachtenbestand met de naam <code>Makefile</code> of <code>makefile</code>. Voor de uitvoering hievan hoef je dan alleen maar de opdracht <code>make</code> te geven.</p>
+<p>Desgewenst kun je een bestand met een andere naam gebruiken. Je moet deze dan wel in de opdracht specificeren via <code>make -f naam</code> of <code>make –file=naam</code>.</p>
+<p>In de <code>Makefile</code> wordt gespecificeerd welke bestanden (<em>targets</em>) in welke volgorde gegenereerd moeten worden. Het mooie hiervan is dat alleen de bestanden verwerkt worden die gewijzigd zijn.</p>
+</section>
+<section id="regels-rules" class="level1">
+<h1>Regels (Rules)</h1>
+<p>Een eenvoudige makefile bestaat uit <em>rules</em> met de volgende opbouw:</p>
+<pre><code>target: prerequisites
+    recipe
+    ...</code></pre>
+<p>met</p>
 <ul>
-<li><code>rijen</code>: Het aantal rijen dat moet worden geretourneerd (verplicht).</li>
-<li><code>kolommen</code>: Het aantal kolommen dat moet worden geretourneerd (optioneel, default 1).</li>
-<li><code>beginnen</code>: Het eerste getal in de reeks (optioneel, default 1).</li>
-<li><code>stap</code>: De stapgrootte (optioneel, default 1).</li>
+<li><em>target</em>
+<ul>
+<li>of de naam van een bestand dat door een programma gegenereerd moet worden, bijvoorbeeld <code>hello.exe</code> of <code>foo.html</code>.</li>
+<li>of een bedachte naam voor een actie die uitgevoerd moet worden, bijv. <code>clean</code>.</li>
+</ul></li>
+<li><em>prerequisites</em>
+<ul>
+<li>de naam van een bestand dat als input gebruikt wordt om de target te maken. Wanneer er meerdere bestanden voor input dienen dan moeten deze door een spatie gescheiden worden. Vaak is zo’n prerequisite zelf een target bij een andere rule.</li>
+</ul></li>
+<li><em>recipe</em>
+<ul>
+<li>een actie die uitgevoerd moet worden. Een recipe kan uit meerdere opdrachten bestaan, of allemaal op dezelfde regel of elk op zijn eigen regel.</li>
+</ul></li>
 </ul>
-<p>Zo kun je een kolom met de getallen 1 t/m 10 genereren met de formule <code>=REEKS(10)</code></p>
-<div id="fig-reeks-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-1.png" class="img-fluid figure-img">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;1: Reeks met opeenvolgende getallen van 1 t/m 10.
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Belangrijk
 </div>
-<p>En met de formule <code>=REEKS(5;4;5;10</code>) krijg je een matrix van 5 rijen en 4 kolommen, beginnend met getal 5 en de volgende steeds 10 meer.</p>
-<div id="fig-reeks-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-2.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;2: Een matrix met getallen volgens een patroon.
-</figcaption>
-</figure>
+<div class="callout-body-container callout-body">
+<p>De <strong>inspringing</strong> moet gebeuren met een <strong>tab</strong> en niet met spaties!</p>
 </div>
-<p>Je kunt de functie <code>REEKS</code> ook opnemen binnen andere functies. Zo kun je eenvoudig een matrix met Romeinse cijfers maken. De formule in het volgende voorbeeld is <code>=ROMEINS(REEKS(9,10))</code>. Eerst wordt met <code>REEKS</code> een lijst getallen van 9 rijen en 10 kolommen gemaakt, beginnend met 1 en steeds 1 meer. Daarna zet de functie <code>ROMEINS</code> deze om naar Romeinse cijfers, als tekst.</p>
-<div id="fig-reeks-romeins" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-romeins.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;3: Reeks Romeinse cijfers.
-</figcaption>
-</figure>
+<div id="exm-01" class="theorem example">
+<p><span class="theorem-title"><strong>Voorbeeld 1</strong></span> &nbsp;</p>
+<ul>
+<li>Maak een Markdown bestand <code>hallo.md</code> met de volgende inhoud:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown txt code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Hallo wereld! Hier ben ik.</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Maak een bestand <code>Makefile</code> met de volgende inhoud:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode makefile code-with-copy"><code class="sourceCode makefile"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">hallo.html :</span><span class="dt"> hallo.md</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>pandoc hallo.md -o hallo.html</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Open een command prompt (terminal, shell) en geef de opdracht <code>make</code>.</li>
+</ul>
+<p>Het bestand <code>hallo.md</code> wordt nu door Pandoc geconverteerd naar een nieuw bestand <code>hallo.html</code>.</p>
 </div>
-<p>Tot slot een wat complexer voorbeeld. Stel je hebt een persoonlijke lening van €10.000 afgesloten tegen een jaarlijkse rente van 6% die je in 24 maandelijkse termijnen aflost. Wat is dan het totaal aan rente betaalde bedrag? <!--Inspiratiebron: "Excel Dynamic Arrays, 2ed, Bill Jelen, Hfst 7) --></p>
-<p>Het rentedeel van een maandelijkse aflossing kun je berekenen met de functie <code>IBET(rente;termijn;aantal-termijnen;huidige-waarde)</code></p>
-<p>Je zou dan een lijstje met de termijnen 1 t/m 24 kunnen maken en voor elke termijn het rentebedrag kunnen uitrekenen. Om de formules leesbaarder te maken zijn de cellen voor de argumenten van functie van namen voorzien: Lening, Termijnen en Jaarrente.</p>
-<p>De matrixformule wordt dan <code>=IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening)</code>.</p>
-<div id="fig-maandrentes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="maandrentes.png" class="img-fluid figure-img">
+<section id="phony-targets" class="level2">
+<h2 class="anchored" data-anchor-id="phony-targets">Phony targets</h2>
+<p>Een makefile waarbij de targets geen bestanden aanmaken worden ook wel <strong>phony targets</strong> genoemd, zoals <code>all</code> en <code>clean</code> in onderstaand voorbeeld.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode makefile code-with-copy"><code class="sourceCode makefile"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">all:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="er">    </span><span class="ch">@</span><span class="fu">echo Build all</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dv">clean:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="er">    </span><span class="ch">@</span><span class="fu">echo Clean all</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De <code>all</code> en <code>clean</code>targets zijn een van de vele <a href="https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html#Standard-Targets">standaard targets</a>.</p>
+<p>De <code>all</code> target compileert het hele programma. Het is het beste om dit als eerste op te nemen zodat het default target wordt. De <code>all</code> target hangt meestal van meerdere bestanden af, <code>make</code> controleert daardoor of alle bestanden actueel zijn.</p>
+<p>De <code>clean</code> target wordt gebruikt om gegenereerde bestanden te verwijderen. Dit kan bij het testen erg nuttig zijn omdat je daardoor met een schone lei kunt beginnen.</p>
+</section>
+</section>
+<section id="make-en-rstudio" class="level1">
+<h1>Make en R(Studio)</h1>
+<p>Tips</p>
+<ul>
+<li>Het is handig om in RStudio de spaties, tabs en alineamarkeringen weer te laten geven. Dat kan ingesteld worden via <code>Tools &gt; Global Options &gt; Code &gt; tab Display &gt; Show whitespace characters</code>.</li>
+<li>Schakel in de code editing uit dat tabs door spaties vervangen worden.</li>
+<li>Laat RStudio de aanwezigheid van een Makefile herkennen. Dit is in te stellen via <code>Tools &gt; Project Options &gt; Build Tools &gt; Project Build Tools = Makefile</code>. Hierna is in het venster rechtsboven een tab Build te zien waarmee je de makefile kunt laten uitvoeren.</li>
+<li>Wanneer je <code>rscripts</code> via make wilt uitvoeren moet je pad <code>C:\Program Files\R\R-4.3.2\bin</code> in path opnemen!</li>
+</ul>
+<p><strong>RStudio menu</strong></p>
+<p>Wanneer je in RStudio de makefile als Build tool hebt gespecificeerd heb je de beschikking over de volgende opdrachten</p>
+<ul>
+<li><code>Build &gt; Build All</code></li>
+<li><code>Build &gt; More &gt; Clean and Rebuild</code></li>
+<li><code>Build &gt; More &gt; Clean All</code></li>
+<li><code>Build &gt; More &gt; Configure Build Tools</code></li>
+</ul>
+<p>Om deze menu-items te laten werken moet de makefile beschikken over de targets <code>all</code> en <code>clean</code>.</p>
+<p><strong>RStudio Shell</strong></p>
+<p>Via het RStudio menu kun je alleen de standaard <code>Makefile</code> uitvoeren. Het is soms belangrijk om daarnaast ook makefiles met een andere naam uit te kunnen voeren. Dat kan via de Shell.</p>
+<p><strong>Let op. Je moet in Windows in de commando’s de enkele en dubbele quotes verwisselen, anders werkt het niet vanuit een shell.</strong>.</p>
+<p>Het markdownbestand uit <a href="#exm-01" class="quarto-xref">Voorbeeld&nbsp;1</a> kun je ook via een rscript naar html omzetten. Dat kan door de functie <code>rmarkdown::render()</code> uit te voeren. De Makefile wordt dan</p>
+<div id="exm-r01" class="theorem example">
+<p><span class="theorem-title"><strong>Voorbeeld 2</strong></span> &nbsp;</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode makefile code-with-copy"><code class="sourceCode makefile"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">hallo.html :</span><span class="dt"> hallo.md</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>Rscript -e <span class="st">'rmarkdown::render("hallo.md", "html_document")'</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;4: Maandelijkse rentebedragen.
-</figcaption>
-</figure>
-</div>
-<p>Voor de totaal betaalde rente moet je dan deze bedragen nog optellen.</p>
-<p>Je kunt dit bedrag ook vinden zonder eerst de afzonderlijke rentebedragen te bepalen. De formule voor het totale rentebedrag wordt dan</p>
-<p><code>=SOM(IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening))</code></p>
-<div id="fig-rente-totaal" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="rente-totaal.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;5: Totaal betaalde rente.
-</figcaption>
-</figure>
-</div>
-<p>Alle voorbeelden uit dit artikel kun je vinden in het bestand <a href="reeks.xlsx">reeks.xlsx</a>.</p>
+</section>
+<section id="automatische-variabelen" class="level1">
+<h1>Automatische variabelen</h1>
+<p>Er zijn veel <a href="https://www.gnu.org/software/make/manual/make.html#Automatic-Variables">automatische variabelen</a> die je een hoop typewerk kunnen besparen. Een aantal veel gebruikte zijn</p>
+<ul>
+<li><code>$@</code> : de bestandsnaam van de target</li>
+<li><code>$&lt;</code> : de naam van de eerste prerequisite</li>
+<li><code>$^</code> : de namen van alle prerequisites</li>
+<li><code>$(@D)</code> : het directorygedeelte van de target</li>
+<li><code>$(@F)</code> : het bestandsnaamgedeelte van de target</li>
+<li><code>$(&lt;D)</code> : het directorygedeelte van de eerste prerequisite</li>
+<li><code>$(&lt;F)</code> : het bestandsnaamgedeelte van de eerste prerequisite</li>
+</ul>
+</section>
+<section id="referenties" class="level1">
+<h1>Referenties</h1>
+<p><a href="https://www.gnu.org/software/make/manual/make.html">GNU make manual</a></p>
+<p><a href="https://kbroman.org/minimal_make/">Minimal Make: a minimal tutorial on make (Karl Broman)</a></p>
+<p><a href="https://robjhyndman.com/hyndsight/makefiles/">Makefiles for R/LaTeX projects (Rob Hyndman, 2012)</a></p>
+<p><a href="https://monashbioinformaticsplatform.github.io/2017-11-16-open-science-training/topics/automation.html">Automation with makefiles (Rob Hyndman, 2017)</a></p>
+<p><a href="https://stat545.com/automation-overview.html">All the Automation Things (part of Stat545, Jenny Bryan)</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
