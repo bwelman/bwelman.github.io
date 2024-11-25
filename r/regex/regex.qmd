@@ -1,0 +1,164 @@
+---
+title: "Regular Expressions"
+abstract: |
+  Gebruik van regular expressions in R
+date: "2024-01-07"
+image: "logo.jpg"
+categories: [r]
+---
+
+Er zijn verschillende manieren om regular expressions (regex) in R te gebruiken om naar patronen in een tekstvector te zoeken.
+
+## stringr
+
+```{r}
+library(stringr)
+namen <- c("An Azuur", "Berend Blauw", "Chris Cyaan", "Gerrit Groen", 
+		   "Ivo Indigo", "Mari Magenta", "Otto Oranje", "Peter Paars",
+		   "Roger Rood", "Stan Sepia", "Trudy Turkoois", "Vicky Violet",
+		   "Willem Wit", "Zorro Zwart")
+
+```
+
+### str_view
+
+Deze functie heeft als twee argument `pattern` waarin je een regex patroon kunt specificeren. Gevonden overeenkomsten worden omgeven door `<>` en ongebruikelijke witruimten door `{}`.
+
+```{r}
+str_view(namen, "er")
+```
+
+Letters en cijfers komen exact overeen en worden letterlijke tekens (**Literal characters**) genoemd. Leestekens zoals `., +, *, [, ], ?` hebben een speciale betekenis en worden metatekens (**meta-characters**) genoemd. Bijvoorbeeld de punt `.` komt overeen met elk karakter, dus `"e.e"` komt overeen met elke string die een "e" bevat gevolgd door een ander teken en dan weer een "e".
+
+```{r}
+str_view(namen, "e.e")
+```
+
+**Quantifiers**
+
+Deze bepalen hoe vaak een patroon kan overeenkomen:
+
+-   `?` maakt een patroon optioneel (d.w.z. het komt 0 of 1 keer overeen)
+
+    -   `.?` = string met lengte 0 of 1
+
+-   `+` laat een patroon herhalen (d.w.z. het komt minstens één keer overeen)
+
+    -   `.+` = elke tekenreeks met een minimale lengte van 1 teken
+
+-   `*` laat een patroon optioneel of herhalend zijn (d.w.z. het komt een willekeurig aantal keren overeen, inclusief 0).
+
+    -   `.*` = elke tekenreeks
+
+```{r}
+# Een "e" optioneel gevolgd door een "r", dus "e" en "er"
+str_view(namen, "er?")
+
+# Een "a" gevolgd door tenminste één "r"
+str_view(namen, "ar+")
+```
+
+Om het aantal tekens tussen begin en einde te bepalen, kun je `{ }` gebruiken.
+
+-   `.{3`} = precies 3 tekens
+-   `.{3,}` = 3 of meer tekens
+-   `.{,3`} = maximaal 3 tekens
+-   `.{1,3}` = tussen 1 en 3 tekens
+
+**Character classes**
+
+Tekenklassen worden gedefinieerd door `[]` waarmee je overeenkmsten zoekt met een reeks tekens.
+
+-   \[abc\] = "a", "b" of "c"
+-   `[a-z]` = letter a tot z (kleine letters)
+-   `[A-Z]` = letter A tot Z (hoofdletters)
+-   `[ACES]` = letter A of C of E of S
+-   `[0-9]` = cijfer (0 tot 9)
+-   `[1234]` = cijfer 1 of 2 of 3 of 4
+-   `[A-z0-9]` = letter (A tot Z, a tot z) of cijfer (0 tot 9)
+-   `[ ]` = blanco (" ")
+
+Je kunt ook tekens uitsluiten met `^`.
+
+-   `[^0-9]` = niet-cijferig (alle tekens, maar geen 0 tot 9)
+-   `[^A-Z]` = alle karakters, maar geen hoofdletters (A tot Z)
+
+Je kunt deze mogelijkheid gebruiken om de namen met twee klinkers op een rij te vinden:
+
+```{r}
+str_view(namen, "[aeiou][aeiou]")
+```
+
+### Controle matchgedrag
+
+Je kunt met modifier functies controle uitoefenen op het matchgedrag en deze eventueel aanpassen. De meest gebruikte modifier functie is `regex` welke je in het `pattern` argument van de `stringr` functies kunt opnemen.
+
+`regex(pattern, ignore_case=FALSE, multiline=FALSE, comments=FALSE, dotall=FALSE, …)`
+
+Standaard zijn regex constructies hoofdlettergevoelig. Met `ignore_case` kun je dit wijzigen.
+
+```{r}
+str_view(namen, regex("ro", ignore_case=TRUE))
+```
+
+## grep
+
+`grep()` is een basis-R-functie en retourneert een vector die de indices van de overeenkomsten bevat.
+
+```{r}
+grep(pattern = "Wit", x = c("Rood", "Wit", "Blauw", "Violet"))
+```
+
+Om de waarde te retourneren in plaats van de index moet je parameter `value = TRUE` opnemen.
+
+```{r}
+grep(pattern = "Wit", x = c("Rood", "Wit", "Blauw", "Violet"), value = TRUE)
+```
+
+**Hoofdlettergevoeligheid**
+
+`grep()` is hoofdlettergevoelig. Deze kun je uitzetten met parameter `ignore.case=TRUE`.
+
+```{r}
+grep(pattern = "w", x = c("Rood", "Wit", "Blauw", "Violet"))
+
+grep(pattern = "w", x = c("Rood", "Wit", "Blauw", "Violet"), ignore.case = TRUE)
+```
+
+**Begin**
+
+Om een patroon aan het begin van een string te zoeken gebruik je `^`.
+
+```{r}
+grep(pattern = "^w", x = c("Rood", "Wit", "Blauw", "Violet"), ignore.case = TRUE)
+```
+
+**Einde**
+
+Om een patroon aan het einde van een string te zoeken gebruik je `$`.
+
+```{r}
+grep(pattern = "t$", x = c("Rood", "Wit", "Blauw", "Violet"))
+```
+
+**Begin en Einde**
+
+```{r}
+grep(pattern = "^W.*t$", x = c("Rood", "Wit", "Blauw", "Violet"))
+```
+
+**Aantal tekens**
+
+Om het aantal tekens tussen begin en einde te bepalen, kun je `*`, `+`, `?` en `{ }` gebruiken.
+
+```{r}
+grep(pattern = "^V.{2}l", x = c("Violet", "Viool", "Violist", "Vallei"))
+```
+
+## Referenties
+
+Als hulpmiddel om regular expressions te ontwikkelen gebruik ik de programma's [RegexMagic](https://www.regexmagic.com/) en [RegexBuddy](https://www.regexbuddy.com/) van [Just Great Software](https://www.just-great-software.com/). Ik heb hier veel aan gehad.
+
+In het online boek [R for Data Science (2e](https://r4ds.hadley.nz/)) is een [hoofdstuk](https://r4ds.hadley.nz/regexps) besteed aan het werken met Regular expressions in R.
+
+De Rstudio addin [RegExplain](https://www.garrickadenbuie.com/project/regexplain/) vergemakkelijkt het gebruik van regular expressions binnen Rstudio.

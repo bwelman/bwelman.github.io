@@ -6,7 +6,6 @@ abstract: |
 date: "2024-10-21"
 image: "images/css-scss.jpg"
 categories: [css, scss]
-draft: false
 ---
 
 # CSS

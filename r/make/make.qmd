@@ -1,0 +1,144 @@
+---
+title: "Automatiseren met Make"
+abstract: |
+  Het gebruik van make voor het automatiseren van een workflow.
+date: "2018-10-02"
+image: "logo.png"
+categories: [r]
+---
+
+# Inleiding
+
+Wanneer je een (tamelijk groot) project hebt met bestanden in R, Rmd, Latex of BibTex dan is het erg handig om [Make](https://www.gnu.org/software/make/) te gebruiken om het productieproces te automatiseren. Je kunt `make` het handigste installeren via [Chocolatey](https://chocolatey.org/), de package manager voor Windows.
+
+::: callout-note
+Wanneer je `rtools43` geïnstalleerd hebt, dan wordt ook een versie van `make` geïnstalleerd in het pad `c:\rtools43\usr\bin`.
+
+Ook Lazarus Pascal installeert een make versie: `C:\lazarus\fpc\3.2.2\bin\x86_64-win64\make.exe.`
+:::
+
+Standaard zoekt make naar een opdrachtenbestand met de naam `Makefile` of `makefile`. Voor de uitvoering hievan hoef je dan alleen maar de opdracht `make` te geven.
+
+Desgewenst kun je een bestand met een andere naam gebruiken. Je moet deze dan wel in de opdracht specificeren via `make -f naam` of `make –file=naam`.
+
+In de `Makefile` wordt gespecificeerd welke bestanden (*targets*) in welke volgorde gegenereerd moeten worden. Het mooie hiervan is dat alleen de bestanden verwerkt worden die gewijzigd zijn.
+
+# Regels (Rules)
+
+Een eenvoudige makefile bestaat uit *rules* met de volgende opbouw:
+
+```         
+target: prerequisites
+    recipe
+    ...
+```
+
+met
+
+-   *target*
+    -   of de naam van een bestand dat door een programma gegenereerd moet worden, bijvoorbeeld `hello.exe` of `foo.html`.
+    -   of een bedachte naam voor een actie die uitgevoerd moet worden, bijv. `clean`.
+-   *prerequisites*
+    -   de naam van een bestand dat als input gebruikt wordt om de target te maken. Wanneer er meerdere bestanden voor input dienen dan moeten deze door een spatie gescheiden worden. Vaak is zo'n prerequisite zelf een target bij een andere rule.
+-   *recipe*
+    -   een actie die uitgevoerd moet worden. Een recipe kan uit meerdere opdrachten bestaan, of allemaal op dezelfde regel of elk op zijn eigen regel.
+
+::: callout-important
+De **inspringing** moet gebeuren met een **tab** en niet met spaties!
+:::
+
+::: {#exm-01}
+-   Maak een Markdown bestand `hallo.md` met de volgende inhoud:
+
+``` {.markdown .txt}
+Hallo wereld! Hier ben ik.
+```
+
+-   Maak een bestand `Makefile` met de volgende inhoud:
+
+``` makefile
+hallo.html : hallo.md
+    pandoc hallo.md -o hallo.html
+```
+
+-   Open een command prompt (terminal, shell) en geef de opdracht `make`.
+
+Het bestand `hallo.md` wordt nu door Pandoc geconverteerd naar een nieuw bestand `hallo.html`.
+:::
+
+## Phony targets
+
+Een makefile waarbij de targets geen bestanden aanmaken worden ook wel **phony targets** genoemd, zoals `all` en `clean` in onderstaand voorbeeld.
+
+``` makefile
+all:
+    @echo Build all
+
+clean:
+    @echo Clean all
+```
+
+De `all` en `clean`targets zijn een van de vele [standaard targets](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html#Standard-Targets).
+
+De `all` target compileert het hele programma. Het is het beste om dit als eerste op te nemen zodat het default target wordt. De `all` target hangt meestal van meerdere bestanden af, `make` controleert daardoor of alle bestanden actueel zijn.
+
+De `clean` target wordt gebruikt om gegenereerde bestanden te verwijderen. Dit kan bij het testen erg nuttig zijn omdat je daardoor met een schone lei kunt beginnen.
+
+# Make en R(Studio)
+
+Tips
+
+-   Het is handig om in RStudio de spaties, tabs en alineamarkeringen weer te laten geven. Dat kan ingesteld worden via `Tools > Global Options > Code > tab Display > Show whitespace characters`.
+-   Schakel in de code editing uit dat tabs door spaties vervangen worden.
+-   Laat RStudio de aanwezigheid van een Makefile herkennen. Dit is in te stellen via `Tools > Project Options > Build Tools > Project Build Tools = Makefile`. Hierna is in het venster rechtsboven een tab Build te zien waarmee je de makefile kunt laten uitvoeren.
+-   Wanneer je `rscripts` via make wilt uitvoeren moet je pad `C:\Program Files\R\R-4.3.2\bin` in path opnemen!
+
+**RStudio menu**
+
+Wanneer je in RStudio de makefile als Build tool hebt gespecificeerd heb je de beschikking over de volgende opdrachten
+
+-   `Build > Build All`
+-   `Build > More > Clean and Rebuild`
+-   `Build > More > Clean All`
+-   `Build > More > Configure Build Tools`
+
+Om deze menu-items te laten werken moet de makefile beschikken over de targets `all` en `clean`.
+
+**RStudio Shell**
+
+Via het RStudio menu kun je alleen de standaard `Makefile` uitvoeren. Het is soms belangrijk om daarnaast ook makefiles met een andere naam uit te kunnen voeren. Dat kan via de Shell.
+
+**Let op. Je moet in Windows in de commando's de enkele en dubbele quotes verwisselen, anders werkt het niet vanuit een shell.**.
+
+Het markdownbestand uit @exm-01 kun je ook via een rscript naar html omzetten. Dat kan door de functie `rmarkdown::render()` uit te voeren. De Makefile wordt dan
+
+::: {#exm-r01}
+``` makefile
+hallo.html : hallo.md
+    Rscript -e 'rmarkdown::render("hallo.md", "html_document")'
+```
+:::
+
+# Automatische variabelen
+
+Er zijn veel [automatische variabelen](https://www.gnu.org/software/make/manual/make.html#Automatic-Variables) die je een hoop typewerk kunnen besparen. Een aantal veel gebruikte zijn
+
+-   `$@` : de bestandsnaam van de target
+-   `$<` : de naam van de eerste prerequisite
+-   `$^` : de namen van alle prerequisites
+-   `$(@D)` : het directorygedeelte van de target
+-   `$(@F)` : het bestandsnaamgedeelte van de target
+-   `$(<D)` : het directorygedeelte van de eerste prerequisite
+-   `$(<F)` : het bestandsnaamgedeelte van de eerste prerequisite
+
+# Referenties
+
+[GNU make manual](https://www.gnu.org/software/make/manual/make.html)
+
+[Minimal Make: a minimal tutorial on make (Karl Broman)](https://kbroman.org/minimal_make/)
+
+[Makefiles for R/LaTeX projects (Rob Hyndman, 2012)](https://robjhyndman.com/hyndsight/makefiles/)
+
+[Automation with makefiles (Rob Hyndman, 2017)](https://monashbioinformaticsplatform.github.io/2017-11-16-open-science-training/topics/automation.html)
+
+[All the Automation Things (part of Stat545, Jenny Bryan)](https://stat545.com/automation-overview.html)
