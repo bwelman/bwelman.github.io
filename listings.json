@@ -11,24 +11,30 @@
     "listing": "/r.html",
     "items": [
       "/r/datum-tijd/datum-tijd.html",
+      "/r/regex/regex.html",
       "/r/bbcstyle/bbcstyle.html",
       "/r/make/make.html"
     ]
   },
   {
-    "listing": "/divers.html",
+    "listing": "/excel.html",
     "items": [
-      "/divers/css-scss/css-scss.html",
-      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
-      "/divers/sir-model/sir-model.html",
-      "/divers/workflow-studieboeken/workflow-studieboeken.html",
-      "/divers/latex-werkomgeving/latex-werkomgeving.html",
-      "/divers/online-studieboeken/online-studieboeken.html",
-      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
-      "/divers/eboek/eboek.html",
-      "/divers/epub/epub.html",
-      "/divers/eboek-lezen/eboek-lezen.html",
-      "/divers/studieboek-formaat/studieboek-formaat.html"
+      "/excel/stapeldata-2/stapeldata-2.html",
+      "/excel/stapeldata-1/stapeldata-1.html",
+      "/excel/is-functies/isfuncties.html",
+      "/excel/reeks-getallen-genereren/reeks-getallen-genereren.html",
+      "/excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html",
+      "/excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html",
+      "/excel/converteren/converteren.html",
+      "/excel/kwartaal-uit-datum/kwartaal-uit-datum.html",
+      "/excel/matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html",
+      "/excel/aselecte-getallen/aselecte-getallen.html",
+      "/excel/histogrammen-1/histogrammen-1.html",
+      "/excel/histogrammen-2/histogrammen-2.html",
+      "/excel/excel-xml-export/excel-xml-export.html",
+      "/excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html",
+      "/excel/power-query-opties/power-query-opties.html",
+      "/excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html"
     ]
   },
   {
@@ -62,24 +68,20 @@
     ]
   },
   {
-    "listing": "/excel.html",
+    "listing": "/divers.html",
     "items": [
-      "/excel/stapeldata-2/stapeldata-2.html",
-      "/excel/stapeldata-1/stapeldata-1.html",
-      "/excel/is-functies/isfuncties.html",
-      "/excel/reeks-getallen-genereren/reeks-getallen-genereren.html",
-      "/excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html",
-      "/excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html",
-      "/excel/converteren/converteren.html",
-      "/excel/kwartaal-uit-datum/kwartaal-uit-datum.html",
-      "/excel/matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html",
-      "/excel/aselecte-getallen/aselecte-getallen.html",
-      "/excel/histogrammen-1/histogrammen-1.html",
-      "/excel/histogrammen-2/histogrammen-2.html",
-      "/excel/excel-xml-export/excel-xml-export.html",
-      "/excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html",
-      "/excel/power-query-opties/power-query-opties.html",
-      "/excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html"
+      "/divers/css-scss/css-scss.html",
+      "/divers/multimeter/multimeter.html",
+      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
+      "/divers/sir-model/sir-model.html",
+      "/divers/workflow-studieboeken/workflow-studieboeken.html",
+      "/divers/latex-werkomgeving/latex-werkomgeving.html",
+      "/divers/online-studieboeken/online-studieboeken.html",
+      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
+      "/divers/eboek/eboek.html",
+      "/divers/epub/epub.html",
+      "/divers/eboek-lezen/eboek-lezen.html",
+      "/divers/studieboek-formaat/studieboek-formaat.html"
     ]
   }
 ]
