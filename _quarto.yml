@@ -21,6 +21,8 @@ website:
         href: bier.qmd
       - text: Chemie
         href: chemie.qmd
+      - text: Wiskunde
+        href: wiskunde.qmd
       - text: R
         href: r.qmd
       - text: Divers

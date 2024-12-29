@@ -1,8 +1,8 @@
 ---
-title: "Chemie"
-subtitle: "Artikelen over Chemie"
+title: "Wiskunde"
+subtitle: "Artikelen over Wiskunde"
 listing:
-  contents: chemie
+  contents: wiskunde
   sort: "date desc"
   type: grid
   categories: true

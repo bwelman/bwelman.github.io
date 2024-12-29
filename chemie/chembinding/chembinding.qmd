@@ -3,7 +3,6 @@ title: "Chemische binding en water"
 date: "2022-11-07"
 image: lewis-structuur.jpg
 categories: [binding]
-draft: true
 ---
 
 <!-- Bron: Hfst 2 boek "Brewing", Michael J. Lewis -->
