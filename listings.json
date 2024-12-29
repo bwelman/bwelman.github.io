@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/wiskunde.html",
+    "items": [
+      "/wiskunde/veelhoek/veelhoek.html"
+    ]
+  },
+  {
     "listing": "/tutorials.html",
     "items": [
       "/tutorials/braumeister/braumeister.html",
@@ -40,6 +46,7 @@
   {
     "listing": "/chemie.html",
     "items": [
+      "/chemie/chembinding/chembinding.html",
       "/chemie/waterevenwicht/waterevenwicht.html"
     ]
   },

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reeks getallen genereren – Archief Ben</title>
+<title>Wiskunde – Archief Ben</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../images/logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ff4371ef257df69894857e99c6ad0d06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7ce59d8b56eeb0165609d59fd7b49e50.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ff4371ef257df69894857e99c6ad0d06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7ce59d8b56eeb0165609d59fd7b49e50.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Zoeken"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
 
 <script type="text/javascript">
@@ -78,6 +109,35 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -88,10 +148,10 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo-transparant.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Archief Ben</span>
     </a>
   </div>
@@ -102,39 +162,39 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../access.html"> 
+    <a class="nav-link" href="./access.html"> 
 <span class="menu-text">Access</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../excel.html"> 
+    <a class="nav-link" href="./excel.html"> 
 <span class="menu-text">Excel</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../bier.html"> 
+    <a class="nav-link" href="./bier.html"> 
 <span class="menu-text">Bier</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../chemie.html"> 
+    <a class="nav-link" href="./chemie.html"> 
 <span class="menu-text">Chemie</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../wiskunde.html"> 
+    <a class="nav-link active" href="./wiskunde.html" aria-current="page"> 
 <span class="menu-text">Wiskunde</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../r.html"> 
+    <a class="nav-link" href="./r.html"> 
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../divers.html"> 
+    <a class="nav-link" href="./divers.html"> 
 <span class="menu-text">Divers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../tutorials.html"> 
+    <a class="nav-link" href="./tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
 </ul>
@@ -148,121 +208,94 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categorieën</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Alle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGxhbmltZXRyaWU=">planimetrie <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reeks getallen genereren</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">getallen</div>
-    <div class="quarto-category">functies</div>
-  </div>
-  </div>
+<h1 class="title">Wiskunde</h1>
+<p class="subtitle lead">Artikelen over Wiskunde</p>
+</div>
 
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Publicatiedatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">15 maart 2022</p>
-    </div>
-  </div>
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="block-title">Samenvatting</div>
-    <p>Een matrix met (opeenvolgende) getallen genereren met de functie REEKS.</p>
-  </div>
-</div>
 
 
 </header>
 
 
-<p>De meeste Excel gebruikers kennen wel de truc om een reeks getallen te produceren door een beginlijstje met een patroon te maken en deze vervolgens uit te breiden door de vulgreep te verslepen. Wanneer je niet meer weet hoe dit werkt, lees dan <a href="https://leerexcel.netlify.app/data.html#data-autofill">Automatisch doorvoeren</a>.</p>
-<p>Om een lijst met (opeenvolgende) getallen in een matrix te genereren kun je de functie <strong>REEKS</strong> gebruiken.</p>
-<p>Syntax: <code>REEKS(rijen;[kolommen];[beginnen];[stap])</code></p>
-<ul>
-<li><code>rijen</code>: Het aantal rijen dat moet worden geretourneerd (verplicht).</li>
-<li><code>kolommen</code>: Het aantal kolommen dat moet worden geretourneerd (optioneel, default 1).</li>
-<li><code>beginnen</code>: Het eerste getal in de reeks (optioneel, default 1).</li>
-<li><code>stap</code>: De stapgrootte (optioneel, default 1).</li>
-</ul>
-<p>Zo kun je een kolom met de getallen 1 t/m 10 genereren met de formule <code>=REEKS(10)</code></p>
-<div id="fig-reeks-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-1.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;1: Reeks met opeenvolgende getallen van 1 t/m 10.
-</figcaption>
-</figure>
-</div>
-<p>En met de formule <code>=REEKS(5;4;5;10</code>) krijg je een matrix van 5 rijen en 4 kolommen, beginnend met getal 5 en de volgende steeds 10 meer.</p>
-<div id="fig-reeks-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-2.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;2: Een matrix met getallen volgens een patroon.
-</figcaption>
-</figure>
-</div>
-<p>Je kunt de functie <code>REEKS</code> ook opnemen binnen andere functies. Zo kun je eenvoudig een matrix met Romeinse cijfers maken. De formule in het volgende voorbeeld is <code>=ROMEINS(REEKS(9,10))</code>. Eerst wordt met <code>REEKS</code> een lijst getallen van 9 rijen en 10 kolommen gemaakt, beginnend met 1 en steeds 1 meer. Daarna zet de functie <code>ROMEINS</code> deze om naar Romeinse cijfers, als tekst.</p>
-<div id="fig-reeks-romeins" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-romeins.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;3: Reeks Romeinse cijfers.
-</figcaption>
-</figure>
-</div>
-<p>Tot slot een wat complexer voorbeeld. Stel je hebt een persoonlijke lening van €10.000 afgesloten tegen een jaarlijkse rente van 6% die je in 24 maandelijkse termijnen aflost. Wat is dan het totaal aan rente betaalde bedrag? <!--Inspiratiebron: "Excel Dynamic Arrays, 2ed, Bill Jelen, Hfst 7) --></p>
-<p>Het rentedeel van een maandelijkse aflossing kun je berekenen met de functie <code>IBET(rente;termijn;aantal-termijnen;huidige-waarde)</code></p>
-<p>Je zou dan een lijstje met de termijnen 1 t/m 24 kunnen maken en voor elke termijn het rentebedrag kunnen uitrekenen. Om de formules leesbaarder te maken zijn de cellen voor de argumenten van functie van namen voorzien: Lening, Termijnen en Jaarrente.</p>
-<p>De matrixformule wordt dan <code>=IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening)</code>.</p>
-<div id="fig-maandrentes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="maandrentes.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;4: Maandelijkse rentebedragen.
-</figcaption>
-</figure>
-</div>
-<p>Voor de totaal betaalde rente moet je dan deze bedragen nog optellen.</p>
-<p>Je kunt dit bedrag ook vinden zonder eerst de afzonderlijke rentebedragen te bepalen. De formule voor het totale rentebedrag wordt dan</p>
-<p><code>=SOM(IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening))</code></p>
-<div id="fig-rente-totaal" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="rente-totaal.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;5: Totaal betaalde rente.
-</figcaption>
-</figure>
-</div>
-<p>Alle voorbeelden uit dit artikel kun je vinden in het bestand <a href="reeks.xlsx">reeks.xlsx</a>.</p>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Sorteer op" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Sorteer op</option>
+       <option value="index" data-direction="asc">Standaard</option>
+         <option value="listing-title" data-direction="asc">
+          Titel
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Datum - Oudste
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Datum - Nieuwste
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list grid quarto-listing-cols-3">
+
+<div class="g-col-1" data-index="0" data-categories="cGxhbmltZXRyaWU=" data-listing-date-sort="1735340400000" data-listing-file-modified-sort="1735503339137" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="248">
+<a href="./wiskunde/veelhoek/veelhoek.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+
+<p class="card-img-top">
+<img loading="lazy" src="./wiskunde/veelhoek/zeshoek.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">Regelmatige veelhoek</h5>
+
+<div class="listing-categories">
+  
+<div class="listing-category" onclick="window.quartoListingCategory('cGxhbmltZXRyaWU='); return false;">planimetrie</div>
+  
+</div>
+
+<div class="card-text listing-description delink">Onlangs moest ik voor een programmeeropdracht de omtrek en oppervlakte bepalen voor een regelmatige <span class="math inline">\(n\)</span>-hoek die ingeschreven is in een cirkel met straal <span class="math inline">\(r\)</span>.</div>
+
+<div class="card-attribution card-text-small end">
+
+<div class="listing-date">28 dec 2024</div>
+</div>
+
+</div>
+
+</div></a></div>
+
+</div>
+<div class="listing-no-matching d-none">
+Geen overeenkomsten
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -703,5 +736,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

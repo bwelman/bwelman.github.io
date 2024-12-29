@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://bwelman.github.io/wiskunde.html</loc>
+    <lastmod>2024-12-29T19:23:52.575Z</lastmod>
+  </url>
+  <url>
     <loc>https://bwelman.github.io/tutorials.html</loc>
     <lastmod>2024-09-19T07:03:07.008Z</lastmod>
   </url>
@@ -82,7 +86,7 @@
   </url>
   <url>
     <loc>https://bwelman.github.io/chemie.html</loc>
-    <lastmod>2024-09-19T07:03:06.896Z</lastmod>
+    <lastmod>2024-12-29T19:24:12.170Z</lastmod>
   </url>
   <url>
     <loc>https://bwelman.github.io/bier.html</loc>
@@ -147,6 +151,10 @@
   <url>
     <loc>https://bwelman.github.io/bier/water-knowledge/water-knowledge.html</loc>
     <lastmod>2024-09-19T07:03:06.896Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bwelman.github.io/chemie/chembinding/chembinding.html</loc>
+    <lastmod>2024-12-29T20:04:29.074Z</lastmod>
   </url>
   <url>
     <loc>https://bwelman.github.io/chemie/waterevenwicht/waterevenwicht.html</loc>
@@ -231,5 +239,9 @@
   <url>
     <loc>https://bwelman.github.io/tutorials/power-bi-desktop/power-bi-desktop.html</loc>
     <lastmod>2024-09-19T07:03:07.049Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bwelman.github.io/wiskunde/veelhoek/veelhoek.html</loc>
+    <lastmod>2024-12-29T20:15:39.137Z</lastmod>
   </url>
 </urlset>

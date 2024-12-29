@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-12-28">
 
-<title>Reeks getallen genereren – Archief Ben</title>
+<title>Regelmatige veelhoek – Archief Ben</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,6 +79,35 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -156,10 +186,9 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reeks getallen genereren</h1>
+<h1 class="title">Regelmatige veelhoek</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">getallen</div>
-    <div class="quarto-category">functies</div>
+    <div class="quarto-category">planimetrie</div>
   </div>
   </div>
 
@@ -171,94 +200,66 @@ gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Publicatiedatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">15 maart 2022</p>
+      <p class="date">28 december 2024</p>
     </div>
   </div>
   
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="block-title">Samenvatting</div>
-    <p>Een matrix met (opeenvolgende) getallen genereren met de functie REEKS.</p>
-  </div>
-</div>
 
 
 </header>
 
 
-<p>De meeste Excel gebruikers kennen wel de truc om een reeks getallen te produceren door een beginlijstje met een patroon te maken en deze vervolgens uit te breiden door de vulgreep te verslepen. Wanneer je niet meer weet hoe dit werkt, lees dan <a href="https://leerexcel.netlify.app/data.html#data-autofill">Automatisch doorvoeren</a>.</p>
-<p>Om een lijst met (opeenvolgende) getallen in een matrix te genereren kun je de functie <strong>REEKS</strong> gebruiken.</p>
-<p>Syntax: <code>REEKS(rijen;[kolommen];[beginnen];[stap])</code></p>
-<ul>
-<li><code>rijen</code>: Het aantal rijen dat moet worden geretourneerd (verplicht).</li>
-<li><code>kolommen</code>: Het aantal kolommen dat moet worden geretourneerd (optioneel, default 1).</li>
-<li><code>beginnen</code>: Het eerste getal in de reeks (optioneel, default 1).</li>
-<li><code>stap</code>: De stapgrootte (optioneel, default 1).</li>
-</ul>
-<p>Zo kun je een kolom met de getallen 1 t/m 10 genereren met de formule <code>=REEKS(10)</code></p>
-<div id="fig-reeks-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Onlangs moest ik voor een programmeeropdracht de omtrek en oppervlakte bepalen voor een regelmatige <span class="math inline">\(n\)</span>-hoek die ingeschreven is in een cirkel met straal <span class="math inline">\(r\)</span>.</p>
+<p>In <a href="#fig-zeshoek" class="quarto-xref">Figuur&nbsp;1</a> is ter illustratie een regelmatige zeshoek afgebeeld. De cirkel wordt verdeeld in <span class="math inline">\(n\)</span> segmenten en door de hoekpunten op de cirkel met elkaar te verbinden krijg je <span class="math inline">\(n\)</span> gelijkbenige driehoeken. Rond het middelpunt heb je dan <span class="math inline">\(n\)</span> hoeken met sectorhoek <span class="math inline">\(\theta\)</span>. De veelhoek is een polygoon opgebouwd uit <span class="math inline">\(n\)</span> lijnstukken (koordes), elk met lengte <span class="math inline">\(z\)</span>.</p>
+<p>De omtrek van een regelmatige n-hoek is <span class="math inline">\(n\cdot z\)</span> en de oppervlakte is <span class="math inline">\(n\)</span> keer de oppervlakte van de driehoek. Voor beide berekeningen heb je de grootte van <span class="math inline">\(z\)</span> nodig.</p>
+<div id="fig-zeshoek" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-1.png" class="img-fluid figure-img">
+<div aria-describedby="fig-zeshoek-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="zeshoek.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;1: Reeks met opeenvolgende getallen van 1 t/m 10.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zeshoek-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Voorbeeld van een regelmatige 6-hoek aan de binnenkant van een cirkel
 </figcaption>
 </figure>
 </div>
-<p>En met de formule <code>=REEKS(5;4;5;10</code>) krijg je een matrix van 5 rijen en 4 kolommen, beginnend met getal 5 en de volgende steeds 10 meer.</p>
-<div id="fig-reeks-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Omdat de volledige middelpuntshoek gelijk is aan <span class="math inline">\(2\pi\)</span> radialen, is grootte van de sectorhoek</p>
+<p><span id="eq-theta"><span class="math display">\[
+\theta = \frac{2\pi}{n}
+\tag{1}\]</span></span></p>
+<p>De driehoek wordt nu gedetailleerder bekeken. Via de hoogtelijn <span class="math inline">\(h\)</span> kan deze verdeeld worden in twee gelijke rechthoekige driehoeken, zie <a href="#fig-driehoek" class="quarto-xref">Figuur&nbsp;2</a>.</p>
+<div id="fig-driehoek" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-2.png" class="img-fluid figure-img">
+<div aria-describedby="fig-driehoek-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="driehoek.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;2: Een matrix met getallen volgens een patroon.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-driehoek-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Een gelijkbenige driehoek welke de basis voor de regelmatige veelhoek vormt.
 </figcaption>
 </figure>
 </div>
-<p>Je kunt de functie <code>REEKS</code> ook opnemen binnen andere functies. Zo kun je eenvoudig een matrix met Romeinse cijfers maken. De formule in het volgende voorbeeld is <code>=ROMEINS(REEKS(9,10))</code>. Eerst wordt met <code>REEKS</code> een lijst getallen van 9 rijen en 10 kolommen gemaakt, beginnend met 1 en steeds 1 meer. Daarna zet de functie <code>ROMEINS</code> deze om naar Romeinse cijfers, als tekst.</p>
-<div id="fig-reeks-romeins" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="reeks-romeins.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reeks-romeins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;3: Reeks Romeinse cijfers.
-</figcaption>
-</figure>
-</div>
-<p>Tot slot een wat complexer voorbeeld. Stel je hebt een persoonlijke lening van €10.000 afgesloten tegen een jaarlijkse rente van 6% die je in 24 maandelijkse termijnen aflost. Wat is dan het totaal aan rente betaalde bedrag? <!--Inspiratiebron: "Excel Dynamic Arrays, 2ed, Bill Jelen, Hfst 7) --></p>
-<p>Het rentedeel van een maandelijkse aflossing kun je berekenen met de functie <code>IBET(rente;termijn;aantal-termijnen;huidige-waarde)</code></p>
-<p>Je zou dan een lijstje met de termijnen 1 t/m 24 kunnen maken en voor elke termijn het rentebedrag kunnen uitrekenen. Om de formules leesbaarder te maken zijn de cellen voor de argumenten van functie van namen voorzien: Lening, Termijnen en Jaarrente.</p>
-<p>De matrixformule wordt dan <code>=IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening)</code>.</p>
-<div id="fig-maandrentes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="maandrentes.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-maandrentes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;4: Maandelijkse rentebedragen.
-</figcaption>
-</figure>
-</div>
-<p>Voor de totaal betaalde rente moet je dan deze bedragen nog optellen.</p>
-<p>Je kunt dit bedrag ook vinden zonder eerst de afzonderlijke rentebedragen te bepalen. De formule voor het totale rentebedrag wordt dan</p>
-<p><code>=SOM(IBET(Jaarrente/12;REEKS(Termijnen);Termijnen;Lening))</code></p>
-<div id="fig-rente-totaal" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="rente-totaal.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rente-totaal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;5: Totaal betaalde rente.
-</figcaption>
-</figure>
-</div>
-<p>Alle voorbeelden uit dit artikel kun je vinden in het bestand <a href="reeks.xlsx">reeks.xlsx</a>.</p>
+<p>De zijde <span class="math inline">\(z\)</span> kan berekend worden via de formule voor de sinus in een rechthoekige driehoek.</p>
+<p><span id="eq-zijde"><span class="math display">\[
+sin(\frac{\theta}{2}) = \frac{z}{2r} =&gt; z = 2\cdot r\cdot sin(\frac{\theta}{2}) = 2\cdot r\cdot sin(\frac{\pi}{n})
+\tag{2}\]</span></span></p>
+<p>Dus <strong>omtrek regelmatige n-hoek</strong> is dan</p>
+<p><span id="eq-omtrek"><span class="math display">\[
+n\cdot z = 2\cdot n\cdot r\cdot sin(\frac{\pi}{n})
+\tag{3}\]</span></span></p>
+<p>En met de formule voor de cosinus kan de hoogte <span class="math inline">\(h\)</span> berekend worden.</p>
+<p><span id="eq-hoogte"><span class="math display">\[
+cos(\frac{\theta}{2}) = \frac{h}{r} =&gt; h = r\cdot cos(\frac{\theta}{2}) = r\cdot cos(\frac{\pi}{n})
+\tag{4}\]</span></span></p>
+<p>De oppervlakte van de driehoek is</p>
+<p><span id="eq-koord"><span class="math display">\[
+\frac{zh}{2} =\frac{2r sin(\frac{\pi}{n}) r cos(\frac{\pi}{n})}{2}= r2sin(\frac{\\pi}{n})cos(\frac{\pi}{n})=\frac{1}{2}r2 sin(\frac{2\\pi}{n})
+\tag{5}\]</span></span></p>
+<p>Dus <strong>oppervlakte regelmatige n-hoek</strong> is dan</p>
+<p><span id="eq-ooppervlak"><span class="math display">\[
+\frac{1}{2}n r^2 sin(\frac{2\pi}{n})
+\tag{6}\]</span></span></p>
 
 
 
