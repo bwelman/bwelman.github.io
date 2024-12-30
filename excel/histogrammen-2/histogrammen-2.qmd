@@ -25,7 +25,7 @@ Syntax: *INTERVAL(gegevensmatrix;interval_verw)*
 
 Als voorbeeld zijn 25 willekeurige gehele getallen gegenereerd uit het interval \[1,10\]. Hoe je dat moet doen kun je lezen in het artikel [Aselecte getallen](https://softwijs.nl/excel/asecte-getallen/).
 
-Het bestand met deze getallen, alsmede alle uitwerkingen in dit artikel kun je downloaden via de link [frequenties.xlsx](/download/frequenties.xlsx).
+Het bestand met deze getallen, alsmede alle uitwerkingen in dit artikel kun je downloaden via de link [frequenties.xlsx](frequenties.xlsx).
 
 Om hiervoor een frequentieverdeling te maken moet je eerst de intervallen vaststellen waarin je de waarden wilt laten vallen. Deze intervallen of groepen worden meestal **bins** genoemd. Hiervoor maak je een kolom met de bovengrenzen van de intervallen. In de afbeelding staan deze in de kolom "bin".
 

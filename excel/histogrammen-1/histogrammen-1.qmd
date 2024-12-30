@@ -55,6 +55,8 @@ In dit voorbeeld werd uitgegaan van een bestaande frequentieverdeling. De gegeve
 
 ![Histogram met klassebreedte 5](testscores-histogram-fijn.png){#fig-testscores-histogram-fijn}
 
-Beide diagrammen zijn tot stand gekomen door een kolomdiagram in Excel te maken. Wie dit zelf na wil maken in Excel kan het bestand [testscores.xlsx](/download/testscores.xlsx) downloaden. Hierin zijn ook de benodigde aanwijzingen voor het maken van dit diagram te vinden. Zoals in het begin van dit artikel is aangegeven heeft Excel specifieke hulpmiddelen voor het maken van histogrammen. Deze zullen nog aan bod komen.
+Beide diagrammen zijn tot stand gekomen door een kolomdiagram in Excel te maken. Zoals in het begin van dit artikel is aangegeven heeft Excel specifieke hulpmiddelen voor het maken van histogrammen. Deze zullen nog aan bod komen.
 
 In het volgende artikel zal het maken van een frequentieverdeling van een gegevensverzameling besproken worden.
+
+<!-- Wie dit zelf na wil maken in Excel kan het bestand [testscores.xlsx](/download/testscores.xlsx) downloaden. Hierin zijn ook de benodigde aanwijzingen voor het maken van dit diagram te vinden. -->

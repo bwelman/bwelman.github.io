@@ -238,7 +238,7 @@ Een afbeelding en een tekst kun je toevoegen via het menu *Startpagina -\> Afbee
 
 ![Invoegen van een afbeelding.](powerbi-menu-invoegen.png){#fig-powerbi-menu-invoegen}
 
-Het door mij gebruikte logo kun je [hier](https://softwijs.nl/download/icon-boeken.png) vinden.
+Een logo hiervoor is wel op internet te vinden.
 
 ![De afbeelding die voor het logo gebruikt wordt.](boekenverkoop-kopregel.png){#fig-boekenverkoop-kopregel}
 
