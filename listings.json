@@ -44,10 +44,9 @@
     ]
   },
   {
-    "listing": "/chemie.html",
+    "listing": "/access.html",
     "items": [
-      "/chemie/chembinding/chembinding.html",
-      "/chemie/waterevenwicht/waterevenwicht.html"
+      "/access/unieke-records-access/unieke-records-access.html"
     ]
   },
   {
@@ -69,14 +68,16 @@
     ]
   },
   {
-    "listing": "/access.html",
+    "listing": "/chemie.html",
     "items": [
-      "/access/unieke-records-access/unieke-records-access.html"
+      "/chemie/chembinding/chembinding.html",
+      "/chemie/waterevenwicht/waterevenwicht.html"
     ]
   },
   {
     "listing": "/divers.html",
     "items": [
+      "/divers/wetenschappelijke-naamgeving-planten/wetenschappelijke-naamgeving-planten.html",
       "/divers/css-scss/css-scss.html",
       "/divers/multimeter/multimeter.html",
       "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
