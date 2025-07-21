@@ -70,6 +70,7 @@
   {
     "listing": "/chemie.html",
     "items": [
+      "/chemie/nitreuze_damp/nitreuze_dampen.html",
       "/chemie/chembinding/chembinding.html",
       "/chemie/waterevenwicht/waterevenwicht.html"
     ]
