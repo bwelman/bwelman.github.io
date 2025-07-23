@@ -1,0 +1,404 @@
+---
+title: "Regular Expressions"
+subtitle: "Een handleiding voor beginners"
+date: "2025-07-22"
+author: "Ben Welman"
+image: regex.jpg
+lang: nl
+---
+
+# Wat zijn Regular Expressions?
+
+Regular Expressions (vaak afgekort als **regex** of **regexp**) zijn patronen die gebruikt worden om tekst te zoeken, te matchen en te manipuleren. Je kunt ze zien als een krachtige zoekfunctie die niet alleen naar exacte woorden zoekt, maar naar patronen in tekst.
+
+Stel je voor dat je in een document wilt zoeken naar alle Nederlandse telefoonnummers, e-mailadressen, of postcodes. In plaats van elk mogelijk nummer handmatig te typen, kun je een regex-patroon maken dat alle mogelijke varianten herkent.
+
+**Toepassingsgebieden**
+
+Regular expressions worden veel gebruikt voor:
+
+-   **Validatie**: Controleren of input correct is (e-mailadressen, telefoonnummers, wachtwoorden)
+-   **Zoeken en vervangen**: Complexe zoek- en vervangacties in tekst
+-   **Data extractie**: Specifieke informatie uit grote tekstbestanden halen
+-   **Tekstverwerking**: Opschonen en formatteren van data
+-   **Log-analyse**: Patronen zoeken in logbestanden
+-   **Web scraping**: Informatie uit HTML-pagina's extraheren
+
+# Basis syntax
+
+## Literals (letterlijke tekens)
+
+De eenvoudigste regex matcht exacte tekens.
+
+`hallo` matcht alleen het woord "hallo".
+
+## Metacharacters (speciale tekens)
+
+Regex heeft speciale tekens (metacharacters) met bijzondere betekenissen: `\^.|?*+(){}$`
+
+Wanneer je een van deze tekens als letterlijke tekst wilt opnemen moet je deze escapen met `\`.
+
+Punt (.)
+
+:   Matcht elk willekeurig teken (behalve newline).
+
+    `h.llo` matcht "hallo", "hello", "h3llo", "h\@llo"
+
+Asterisk (\*)
+
+:   Matcht het voorgaande teken 0 of meer keer.
+
+    `ha*llo` matcht "hllo", "hallo", "haallo", "haaallo"
+
+Plus (+)
+
+:   Matcht het voorgaande teken 1 of meer keer.
+
+    `ha+llo` matcht "hallo", "haallo", "haaallo" (maar niet "hllo")
+
+Vraagteken (?)
+
+:   Matcht het voorgaande teken 0 of 1 keer, maakt het dus in feite optioneel.
+
+    `ha?llo` matcht "hllo", "hallo" (maar niet "haallo")
+
+Pipe (\|)
+
+:   Betekent OF
+
+    `x|y` matcht zowel "x" als "y"
+
+## Character Classes
+
+Met blokhaken `[]` kun je een set van tekens definiëren:
+
+### Basis character class
+
+```         
+[abc]
+```
+
+Matcht één karakter uit de lijst: "a", "b", of "c"
+
+### Bereiken
+
+Een bereik van tekens definieer je met een `-` ertussen. Je kunt combinaties maken door de reeksen achter elkaar te plaatsen zonder scheidingssymbool.
+
+```         
+[a-z]    # een kleine letter
+[A-Z]    # een hoofdletter
+[0-9]    # een cijfer
+[1-49]   # een van de cijfers 1, 2, 3, 4, 9 (PAS OP niet 1 t/m 49)
+[a-zA-Z] # een kleine letter of een hoofdletter
+[a-z0-9] # een kleine letters of een cijfer
+[ ]      # blanco (" ")
+```
+
+### Negatie
+
+Ontkenning van reeksen kan door een caret `^` te plaatsen direct na de openende blokhaak. De caret betekent NIET.
+
+```         
+[^0-9]   # geen cijfer
+```
+
+Matcht alles BEHALVE cijfers
+
+### Voorgedefinieerde character classes
+
+```         
+\d    # een willekeurig cijfer, gelijk aan [0-9]
+\w    # alfanumeriek teken (a-z, A-Z, 0-9, _), geen newline
+\s    # een whitespace (spatie, tab, newline), gelijk aan [\t\n\r\f\v]
+\D    # GEEN cijfer, gelijk aan [^0-9]
+\W    # GEEN alfanumeriek teken, gelijk aan [^0-9a-zA-Z_]
+\S    # GEEN whitespace
+```
+
+::: {.callout-note appearance="minimal"}
+De betekenis kan verschillen in bepaalde applicaties.
+:::
+
+## Niet afdrukbare karakters
+
+```         
+\t      # tab
+\r      # carriage return
+\n      # line feed
+\r\n    # nieuwe regel in Windows
+\n      # nieuwe regel in linux/unix
+```
+
+## Begrenzingen (boundary)
+
+```         
+^      # aan het begin van een regel
+$      # aan het einde van een regel
+\<     # aan het begin van een woord (niet in alle context)
+\>     # aan het einde van een woord (niet in alle context)
+\b     # aan het begin of het einde van een woord (begrenzing van een woord)
+```
+
+## Kwantificatoren
+
+```         
+{n}     # exact n keer
+{n,}    # n of meer keer
+{n,m}   # tussen n en m keer
+```
+
+# Greedy - Non-greedy matching
+
+Regex-kwantificatoren zoals `*`, `+`, `{n,m}` zijn standaard **greedy** (hebzuchtig) - ze proberen zoveel mogelijk tekens te matchen. Een voorbeeld.
+
+```         
+Tekst: <div>Hello</div><div>World</div>
+Patroon: <.*>
+```
+
+Je zou verwachten dat dit `<div>` en `</div>` apart matcht, maar greedy matching geeft de hele tekst. Het matcht vanaf de eerste `<` tot de laatste `>` - zoveel mogelijk!
+
+Voor **Non-greedy** (Lui) matching voeg je een `?` toe na de kwantificator om zo weinig mogelijk te matchen.
+
+```         
+Patroon: <.*?>
+```
+
+Dit patroon zorgt voor vier matches in de tekst: `<div>`, `</div>`, `<div>` en `</div>` .
+
+::: callout-important
+Testen van je regex is daarom erg belangrijk omdat het greedy gedrag voor onverwachte resultaten kan zorgen.
+:::
+
+## Praktische voorbeelden
+
+### HTML tags extraheren
+
+```         
+Tekst: <b>vet</b> en <i>cursief</i>
+
+Greedy <.*>     : <b>vet</b> en <i>cursief</i>  (alles!)
+Non-greedy <.*?>: <b>, </b>, <i>, </i>          (elke tag apart)
+```
+
+### Tekst Tussen Aanhalingstekens
+
+```         
+Tekst: "eerste" en "tweede" string
+
+Greedy ".*"     : "eerste" en "tweede"  (van eerste " tot laatste ")
+Non-greedy ".*?": "eerste", "tweede"    (elke string apart)
+```
+
+### Getallen Extraheren
+
+```         
+Tekst: abc123def456ghi
+
+Greedy \d+.*\d+     : 123def456   (van eerste cijfer tot laatste cijfer)
+Non-greedy \d+.*?\d+: 123def456   (kortste pad tussen cijfergroepen)
+```
+
+## Wanneer gebruik je welke?
+
+**Greedy gebruiken voor:**
+
+-   Hele zinnen of regels matchen
+
+-   Wanneer je echt alles tussen twee punten wilt
+
+**Non-greedy gebruiken voor:**
+
+-   HTML/XML tags parsen
+
+-   Strings tussen aanhalingstekens
+
+-   Wanneer je specifieke, korte matches wilt
+
+# Voorbeelden
+
+## Nederlandse Postcode
+
+```         
+[1-9][0-9]{3}\s?[A-Z]{2}
+```
+
+De `\s?` betekent dat er optioneel (0 of 1 keer) een whitespace-teken (spatie, tab, ...) mag voorkomen tussen de vier cijfers en de twee letters. Beide varianten worden veel gebruikt.
+
+Matcht: "1234AB", "1234 AB"
+
+## E-mailadres (eenvoudig)
+
+```         
+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+```
+
+Matcht: "jan\@example.com", "test.email+tag\@domain.co.uk"
+
+## Nederlandse Telefoonnummer
+
+```         
+0[1-9][0-9]{8}
+```
+
+Matcht: "0612345678", "0201234567"
+
+## Datum (dd-mm-yyyy)
+
+```         
+[0-3][0-9]-[0-1][0-9]-[0-9]{4}
+```
+
+Matcht: "15-03-2024", "01-12-2023"
+
+## URL
+
+```         
+https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+```
+
+Matcht: "http://google.com", "https://www.example.org"
+
+# Zoeken en Vervangen
+
+De meeste programmeertalen en teksteditors ondersteunen regex voor zoeken en vervangen.
+
+Door delen van je regex tussen haakjes `()` te zetten wordt dit deel als een **groep** gekarakteriseerd. Regex "onthoudt" wat er in die groep gematcht is. Elke groep krijgt automatisch een backreference nummer (1, 2, 3, etc.).
+
+```         
+Tekst: 18-06-2025
+
+Zoekpatroon: (\d{2})-(\d{2})-(\d{4})
+```
+
+Dit matcht een datum en onthoudt dag, maand en jaar als aparte groepen:
+
+-   groep 1: "18"
+-   groep 2: "06"
+-   groep 3: "2025"
+
+Na het matchen kun je de opgeslagen groepen gebruiken in je vervangpatroon. Zo zal het vervangpatroon `$3/$2/$1` opleveren: `2025/06/18`
+
+::: {.callout-note appearance="minimal"}
+Welk symbool (`$`, `\`, ...) gebruikt wordt om naar het groepsnummer te verwijzen hangt van de gebruikte applicatie.
+:::
+
+::: {#exm-datum}
+Vervang de datum "18-06-2025" door "2025/06/18".
+
+Zoekpatroon: `(\d{2})-(\d{2})-(\d{4})`
+
+Vervangpatroon: `$3/$2/$1` of in sommige programma's `\3/\2/\1`
+:::
+
+## Voorbeelden in verschillende tools
+
+### In JavaScript
+
+``` javascript
+let tekst = "Mijn telefoonnummer is 0612345678";
+let nieuweTekst = tekst.replace(/(\d{2})(\d{8})/, "($1) $2");
+// Resultaat: "Mijn telefoonnummer is (06) 12345678"
+```
+
+### In Python
+
+``` python
+import re
+tekst = "E-mail: jan@example.com"
+nieuweTekst = re.sub(r'([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)', r'\1 [AT] \2', tekst)
+# Resultaat: "E-mail: jan [AT] example.com"
+```
+
+### In teksteditors (VS Code)
+
+-   Zoeken: `(\w+)\s+(\w+)` (voornaam achternaam)
+-   Vervangen: `$2, $1` (wordt: achternaam, voornaam)
+
+# Online testen en debuggen
+
+Er zijn veel online tools om regex te testen en te oefenen. Hier zijn enkele populaire:
+
+-   [regex101.com](https://regex101.com/)
+
+-   [regexr.com](https://regexr.com/)
+
+-   [regexpal.com](https://www.regexpal.com/)
+
+-   [Regular Expression Tester](https://www.freeformatter.com/regex-tester.html)
+
+-   [Debuggex](https://www.debuggex.com/)
+
+-   [RegEx Testing](https://www.regextester.com/)
+
+-   [RegEx Pal](https://www.regexpal.com/)
+
+-   [pythex](https://pythex.org/) - voor het testen van Python regular expressions
+
+-   [Rubylar](https://rubular.com/)
+
+# Applicaties en Tools
+
+## RStudio
+
+Er zijn verschillende manieren om via regex in R naar patronen in een tekstvector te zoeken.
+
+RStudio gebruikt "POSIX Basic Regular Expressions" bij het gebruik van `Find in files` omdat deze functionaliteit gebruik maakt van `grep`.
+
+Zie ook: [R 4 data science](https://r4ds.hadley.nz/regexps.html) en [RegExplain](https://www.garrickadenbuie.com/project/regexplain/) (Rstudio addinn voor regular expressions)
+
+### stringr
+
+Handig is het gebruik van package [stringr](https://stringr.tidyverse.org/articles/regular-expressions.html) dat met functie `regex()` ondersteuning voor regular expressions biedt.
+
+### grep
+
+`grep()` is een basis-R-functie en retourneert een vector die de indices van de overeenkomsten bevat.
+
+```{r}
+grep(pattern = "Wit", x = c("Rood", "Wit", "Blauw", "Violet"))
+```
+
+Om de waarde te retourneren in plaats van de index moet je parameter `value = TRUE` opnemen.
+
+```{r}
+grep(pattern = "Wit", x = c("Rood", "Wit", "Blauw", "Violet"), value = TRUE)
+```
+
+`grep()` is hoofdlettergevoelig. Deze kun je uitzetten met argument `ignore.case=TRUE`.
+
+## Notepad++
+
+Bij zoek (en vervang) acties krijg je een dialoogvenster met daarin de keuze voor de Zoekmodus: Normaal (default), Uitgebreid, Reguliere expressie. Deze laatste gebruikt de Boost-engine voor reguliere expressies om zoek- en vervangacties uit te voeren, zie [uitleg](https://npp-user-manual.org/docs/searching/#regular-expressions).
+
+Enkele voorbeelden bij het werken met Quarto en Markdown documenten.
+
+::: {#exm-term-vet}
+Vervang `[mijntekst]{.term}` door `**mijntekst**`
+
+Zoekpatroon: `(\[)([\w\s]+)(\]){\.term}`
+
+Vervangpatroon: `**$2**`
+:::
+
+## Python
+
+-   <https://www.python-course.eu/re.php>
+
+-   <https://docs.python.org/2/howto/regex.html>
+
+-   <https://docs.python.org/2/library/re.html>
+
+-   <https://developers.google.com/edu/python/regular-expressions>
+
+# Software
+
+## [RegexBuddy](https://www.regexbuddy.com/)
+
+RegexBuddy is een krachtige tool voor het ontwikkelen, testen en gebruiken van regex. Het biedt een gebruikersvriendelijke interface en uitgebreide documentatie.
+
+Zie ook [Regular-Expressions.info](https://www.regular-expressions.info/)
+
+## [RegexMagic](https://www.regexmagic.com/)
+
+RegexMagic helpt bij het automatisch genereren van regex-patronen op basis van voorbeelden. Je geeft voorbeelden van de tekst die je wilt matchen en RegexMagic genereert het patroon voor je.
