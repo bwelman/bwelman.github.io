@@ -10,16 +10,58 @@
     "items": [
       "/tutorials/braumeister/braumeister.html",
       "/tutorials/grafieken/grafieken.html",
-      "/tutorials/power-bi-desktop/power-bi-desktop.html"
+      "/tutorials/power-bi-desktop/power-bi-desktop.html",
+      "/tutorials/regex/regex.html"
     ]
   },
   {
-    "listing": "/r.html",
+    "listing": "/divers.html",
     "items": [
-      "/r/datum-tijd/datum-tijd.html",
-      "/r/regex/regex.html",
-      "/r/bbcstyle/bbcstyle.html",
-      "/r/make/make.html"
+      "/divers/wetenschappelijke-naamgeving-planten/wetenschappelijke-naamgeving-planten.html",
+      "/divers/css-scss/css-scss.html",
+      "/divers/multimeter/multimeter.html",
+      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
+      "/divers/sir-model/sir-model.html",
+      "/divers/workflow-studieboeken/workflow-studieboeken.html",
+      "/divers/latex-werkomgeving/latex-werkomgeving.html",
+      "/divers/online-studieboeken/online-studieboeken.html",
+      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
+      "/divers/eboek/eboek.html",
+      "/divers/epub/epub.html",
+      "/divers/eboek-lezen/eboek-lezen.html",
+      "/divers/studieboek-formaat/studieboek-formaat.html"
+    ]
+  },
+  {
+    "listing": "/chemie.html",
+    "items": [
+      "/chemie/nitreuze_damp/nitreuze_dampen.html",
+      "/chemie/chembinding/chembinding.html",
+      "/chemie/waterevenwicht/waterevenwicht.html"
+    ]
+  },
+  {
+    "listing": "/bier.html",
+    "items": [
+      "/bier/braumagazin/braumagazin.html",
+      "/bier/hoprendement-kooktijd/hoprendement-kooktijd.html",
+      "/bier/hopbitterheid/hopbitterheid.html",
+      "/bier/water-knowledge/water-knowledge.html",
+      "/bier/brouwfuncties/brouwfuncties.html",
+      "/bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html",
+      "/bier/invertsuiker/invertsuiker.html",
+      "/bier/sg-brix-plato/sg-brix-plato.html",
+      "/bier/bkg-biertypenlijst/bkg-biertypenlijst.html",
+      "/bier/hops-ibu/hops-ibu.html",
+      "/bier/beer-color/beer-color.html",
+      "/bier/specific-gravity/specific-gravity.html",
+      "/bier/calculating-hop-bitterness/hop-bitterness.html"
+    ]
+  },
+  {
+    "listing": "/access.html",
+    "items": [
+      "/access/unieke-records-access/unieke-records-access.html"
     ]
   },
   {
@@ -44,53 +86,12 @@
     ]
   },
   {
-    "listing": "/access.html",
+    "listing": "/r.html",
     "items": [
-      "/access/unieke-records-access/unieke-records-access.html"
-    ]
-  },
-  {
-    "listing": "/bier.html",
-    "items": [
-      "/bier/braumagazin/braumagazin.html",
-      "/bier/hoprendement-kooktijd/hoprendement-kooktijd.html",
-      "/bier/hopbitterheid/hopbitterheid.html",
-      "/bier/water-knowledge/water-knowledge.html",
-      "/bier/brouwfuncties/brouwfuncties.html",
-      "/bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html",
-      "/bier/invertsuiker/invertsuiker.html",
-      "/bier/sg-brix-plato/sg-brix-plato.html",
-      "/bier/bkg-biertypenlijst/bkg-biertypenlijst.html",
-      "/bier/hops-ibu/hops-ibu.html",
-      "/bier/beer-color/beer-color.html",
-      "/bier/specific-gravity/specific-gravity.html",
-      "/bier/calculating-hop-bitterness/hop-bitterness.html"
-    ]
-  },
-  {
-    "listing": "/chemie.html",
-    "items": [
-      "/chemie/nitreuze_damp/nitreuze_dampen.html",
-      "/chemie/chembinding/chembinding.html",
-      "/chemie/waterevenwicht/waterevenwicht.html"
-    ]
-  },
-  {
-    "listing": "/divers.html",
-    "items": [
-      "/divers/wetenschappelijke-naamgeving-planten/wetenschappelijke-naamgeving-planten.html",
-      "/divers/css-scss/css-scss.html",
-      "/divers/multimeter/multimeter.html",
-      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
-      "/divers/sir-model/sir-model.html",
-      "/divers/workflow-studieboeken/workflow-studieboeken.html",
-      "/divers/latex-werkomgeving/latex-werkomgeving.html",
-      "/divers/online-studieboeken/online-studieboeken.html",
-      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
-      "/divers/eboek/eboek.html",
-      "/divers/epub/epub.html",
-      "/divers/eboek-lezen/eboek-lezen.html",
-      "/divers/studieboek-formaat/studieboek-formaat.html"
+      "/r/datum-tijd/datum-tijd.html",
+      "/r/regex/regex.html",
+      "/r/bbcstyle/bbcstyle.html",
+      "/r/make/make.html"
     ]
   }
 ]
