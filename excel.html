@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,14 +35,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-32ab9aa980918ad0499db9b0351ac2ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-47af14f2f860fd866dbdfd4dfb06626b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -124,7 +125,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -150,7 +151,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo-transparant.png" alt="" class="navbar-logo">
+    <img src="./images/logo-transparant.png" alt="" class="navbar-logo light-content">
+    <img src="./images/logo-transparant.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Archief Ben</span>
@@ -211,7 +213,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorieën</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Alle <span class="quarto-category-count">(16)</span></div><div class="category" data-category="ZXhwb3J0">export <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnVuY3RpZXM=">functies <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Z2V0YWxsZW4=">getallen <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Z3JhZmlla2Vu">grafieken <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cG93ZXJxdWVyeQ==">powerquery <span class="quarto-category-count">(4)</span></div><div class="category" data-category="c3RhdGlzdGllaw==">statistiek <span class="quarto-category-count">(4)</span></div><div class="category" data-category="eG1s">xml <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorieën</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Alle <span class="quarto-category-count">(17)</span></div><div class="category" data-category="ZGF0YWJhc2Vz">databases <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZXhjZWw=">excel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZXhwb3J0">export <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnVuY3RpZXM=">functies <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Z2V0YWxsZW4=">getallen <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Z3JhZmlla2Vu">grafieken <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cG93ZXJxdWVyeQ==">powerquery <span class="quarto-category-count">(4)</span></div><div class="category" data-category="c3RhdGlzdGllaw==">statistiek <span class="quarto-category-count">(4)</span></div><div class="category" data-category="eG1s">xml <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -239,7 +241,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
@@ -262,95 +264,127 @@ window.Quarto = {
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1666216800000" data-listing-file-modified-sort="1707905330319" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="261">
-<a href="./excel/stapeldata-2/stapeldata-2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/stapeldata-2/stapeldata-2.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Gestapelde data structureren - deel 2
-</h5>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="ZXhjZWwlMkNkYXRhYmFzZXM=" data-listing-date-sort="1718056800000" data-listing-file-modified-sort="1763913090003" data-listing-date-modified-sort="1763852400000" data-listing-reading-time-sort="4" data-listing-word-count-sort="678">
+<div class="thumbnail"><a href="./excel/datamodel/datamodel.html" class="no-external">
+
+<img loading="lazy" src="./excel/datamodel/images/datamodel.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/datamodel/datamodel.html" class="no-external">Datamodel maken in Excel</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZXhjZWw='); return false;">excel</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YWJhc2Vz'); return false;">databases</div>
+
+</div>
+<div class="delink listing-description"><a href="./excel/datamodel/datamodel.html" class="no-external">
+<p>Drie manieren om een datamodel in Excel te maken.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./excel/datamodel/datamodel.html" class="no-external">
+<div class="listing-date">
+11 jun 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1666216800000" data-listing-file-modified-sort="1707905330319" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="261">
+<div class="thumbnail"><a href="./excel/stapeldata-2/stapeldata-2.html" class="no-external">
+
+<img loading="lazy" src="./excel/stapeldata-2/stapeldata-2.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/stapeldata-2/stapeldata-2.html" class="no-external">Gestapelde data structureren - deel 2</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cG93ZXJxdWVyeQ=='); return false;">powerquery</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/stapeldata-2/stapeldata-2.html" class="no-external">
 <p>Vervolg op het transformeren van gestapelde data in één kolom naar tabelvorm.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/stapeldata-2/stapeldata-2.html" class="no-external">
 <div class="listing-date">
 20 okt 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1666044000000" data-listing-file-modified-sort="1707905330304" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="549">
-<a href="./excel/stapeldata-1/stapeldata-1.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/stapeldata-1/stapeldata-1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Gestapelde data structureren - deel 1
-</h5>
+<div class="quarto-post image-right" data-index="2" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1666044000000" data-listing-file-modified-sort="1707905330304" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="549">
+<div class="thumbnail"><a href="./excel/stapeldata-1/stapeldata-1.html" class="no-external">
+
+<img loading="lazy" src="./excel/stapeldata-1/stapeldata-1.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/stapeldata-1/stapeldata-1.html" class="no-external">Gestapelde data structureren - deel 1</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cG93ZXJxdWVyeQ=='); return false;">powerquery</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/stapeldata-1/stapeldata-1.html" class="no-external">
 <p>Gestapelde data in één kolom transformeren naar tabelvorm.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/stapeldata-1/stapeldata-1.html" class="no-external">
 <div class="listing-date">
 18 okt 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1659564000000" data-listing-file-modified-sort="1707905330265" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="190">
-<a href="./excel/is-functies/isfuncties.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/is-functies/isfout.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-IS functies
-</h5>
+<div class="quarto-post image-right" data-index="3" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1659564000000" data-listing-file-modified-sort="1707905330265" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="190">
+<div class="thumbnail"><a href="./excel/is-functies/isfuncties.html" class="no-external">
+
+<img loading="lazy" src="./excel/is-functies/isfout.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/is-functies/isfuncties.html" class="no-external">IS functies</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('ZnVuY3RpZXM='); return false;">functies</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/is-functies/isfuncties.html" class="no-external">
 <p>Met IS functies de waarde in een cel controleren.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/is-functies/isfuncties.html" class="no-external">
 <div class="listing-date">
 4 aug 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Z2V0YWxsZW4lMkNmdW5jdGllcw==" data-listing-date-sort="1647298800000" data-listing-file-modified-sort="1707905330289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="368">
-<a href="./excel/reeks-getallen-genereren/reeks-getallen-genereren.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/reeks-getallen-genereren/reeks-2.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Reeks getallen genereren
-</h5>
+<div class="quarto-post image-right" data-index="4" data-categories="Z2V0YWxsZW4lMkNmdW5jdGllcw==" data-listing-date-sort="1647298800000" data-listing-file-modified-sort="1707905330289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="368">
+<div class="thumbnail"><a href="./excel/reeks-getallen-genereren/reeks-getallen-genereren.html" class="no-external">
+
+<img loading="lazy" src="./excel/reeks-getallen-genereren/reeks-2.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/reeks-getallen-genereren/reeks-getallen-genereren.html" class="no-external">Reeks getallen genereren</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('Z2V0YWxsZW4='); return false;">getallen</div>
@@ -358,183 +392,190 @@ Reeks getallen genereren
 <div class="listing-category" onclick="window.quartoListingCategory('ZnVuY3RpZXM='); return false;">functies</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/reeks-getallen-genereren/reeks-getallen-genereren.html" class="no-external">
 <p>Een matrix met (opeenvolgende) getallen genereren met de functie REEKS.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/reeks-getallen-genereren/reeks-getallen-genereren.html" class="no-external">
 <div class="listing-date">
 15 mrt 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1647212400000" data-listing-file-modified-sort="1707905330285" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="631">
-<a href="./excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/powerquery-en-landinstellingen/query-opties-werkmap.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Powerquery en Landinstellingen
-</h5>
+<div class="quarto-post image-right" data-index="5" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1647212400000" data-listing-file-modified-sort="1707905330285" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="631">
+<div class="thumbnail"><a href="./excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html" class="no-external">
+
+<img loading="lazy" src="./excel/powerquery-en-landinstellingen/query-opties-werkmap.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html" class="no-external">Powerquery en Landinstellingen</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cG93ZXJxdWVyeQ=='); return false;">powerquery</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html" class="no-external">
 <p>Het gebruik van landinstellingen bij het importeren van platte bestanden (.csv).</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/powerquery-en-landinstellingen/powerquery-en-landinstellingen.html" class="no-external">
 <div class="listing-date">
 14 mrt 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="Z2V0YWxsZW4=" data-listing-date-sort="1646089200000" data-listing-file-modified-sort="1707905330237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="546">
-<a href="./excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/complexe-getallen-in-excel/complex-getal.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Complexe getallen in Excel
-</h5>
+<div class="quarto-post image-right" data-index="6" data-categories="Z2V0YWxsZW4=" data-listing-date-sort="1646089200000" data-listing-file-modified-sort="1707905330237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="546">
+<div class="thumbnail"><a href="./excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html" class="no-external">
+
+<img loading="lazy" src="./excel/complexe-getallen-in-excel/complex-getal.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html" class="no-external">Complexe getallen in Excel</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('Z2V0YWxsZW4='); return false;">getallen</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html" class="no-external">
 <p>Excel functies voor het werken met complexe getallen.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/complexe-getallen-in-excel/complexe-getallen-in-excel.html" class="no-external">
 <div class="listing-date">
 1 mrt 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1645484400000" data-listing-file-modified-sort="1707905330238" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="555">
-<a href="./excel/converteren/converteren.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/converteren/logo.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Converteren van eenheden
-</h5>
+<div class="quarto-post image-right" data-index="7" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1645484400000" data-listing-file-modified-sort="1707905330238" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="555">
+<div class="thumbnail"><a href="./excel/converteren/converteren.html" class="no-external">
+
+<img loading="lazy" src="./excel/converteren/logo.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/converteren/converteren.html" class="no-external">Converteren van eenheden</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('ZnVuY3RpZXM='); return false;">functies</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/converteren/converteren.html" class="no-external">
 <p>Met de Excel formule CONVERTEREN kun je eenvoudig Engelstalige eenheden omrekenen naar andere eenheden.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/converteren/converteren.html" class="no-external">
 <div class="listing-date">
 22 feb 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1643324400000" data-listing-file-modified-sort="1707905330266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="189">
-<a href="./excel/kwartaal-uit-datum/kwartaal-uit-datum.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/kwartaal-uit-datum/kwartalen.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Kwartaal uit datum
-</h5>
+<div class="quarto-post image-right" data-index="8" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1643324400000" data-listing-file-modified-sort="1707905330266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="189">
+<div class="thumbnail"><a href="./excel/kwartaal-uit-datum/kwartaal-uit-datum.html" class="no-external">
+
+<img loading="lazy" src="./excel/kwartaal-uit-datum/kwartalen.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/kwartaal-uit-datum/kwartaal-uit-datum.html" class="no-external">Kwartaal uit datum</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('ZnVuY3RpZXM='); return false;">functies</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/kwartaal-uit-datum/kwartaal-uit-datum.html" class="no-external">
 <p>Formules om het kwartaalnummer uit een datum te halen.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/kwartaal-uit-datum/kwartaal-uit-datum.html" class="no-external">
 <div class="listing-date">
 28 jan 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="Z2V0YWxsZW4=" data-listing-date-sort="1621548000000" data-listing-file-modified-sort="1707905330274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1634">
-<a href="./excel/matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/matrixbewerkingen-in-excel/vergelijkingen.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Matrixbewerkingen in Excel
-</h5>
+<div class="quarto-post image-right" data-index="9" data-categories="Z2V0YWxsZW4=" data-listing-date-sort="1621548000000" data-listing-file-modified-sort="1707905330274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1634">
+<div class="thumbnail"><a href="./excel/matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html" class="no-external">
+
+<img loading="lazy" src="./excel/matrixbewerkingen-in-excel/vergelijkingen.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html" class="no-external">Matrixbewerkingen in Excel</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('Z2V0YWxsZW4='); return false;">getallen</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html" class="no-external">
 <p>Het werken met matrices (arrays) in Excel.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/matrixbewerkingen-in-excel/matrixbewerkingen-in-excel.html" class="no-external">
 <div class="listing-date">
 21 mei 2021
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="c3RhdGlzdGllaw==" data-listing-date-sort="1589666400000" data-listing-file-modified-sort="1707905330230" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1287">
-<a href="./excel/aselecte-getallen/aselecte-getallen.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/aselecte-getallen/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Aselecte getallen
-</h5>
+<div class="quarto-post image-right" data-index="10" data-categories="c3RhdGlzdGllaw==" data-listing-date-sort="1589666400000" data-listing-file-modified-sort="1707905330230" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1287">
+<div class="thumbnail"><a href="./excel/aselecte-getallen/aselecte-getallen.html" class="no-external">
+
+<img loading="lazy" src="./excel/aselecte-getallen/preview.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/aselecte-getallen/aselecte-getallen.html" class="no-external">Aselecte getallen</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGllaw=='); return false;">statistiek</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/aselecte-getallen/aselecte-getallen.html" class="no-external">
 <p>Over hoe willekeurige getallen kunt genereren in Excel.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/aselecte-getallen/aselecte-getallen.html" class="no-external">
 <div class="listing-date">
 17 mei 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="10" data-categories="Z3JhZmlla2VuJTJDc3RhdGlzdGllaw==" data-listing-date-sort="1589320800000" data-listing-file-modified-sort="1736331861309" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="931">
-<a href="./excel/histogrammen-1/histogrammen-1.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/histogrammen-1/testscores-histogram-fijn.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Histogrammen (deel 1)
-</h5>
+<div class="quarto-post image-right" data-index="11" data-categories="Z3JhZmlla2VuJTJDc3RhdGlzdGllaw==" data-listing-date-sort="1589320800000" data-listing-file-modified-sort="1736331861309" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="931">
+<div class="thumbnail"><a href="./excel/histogrammen-1/histogrammen-1.html" class="no-external">
+
+<img loading="lazy" src="./excel/histogrammen-1/testscores-histogram-fijn.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/histogrammen-1/histogrammen-1.html" class="no-external">Histogrammen (deel 1)</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('Z3JhZmlla2Vu'); return false;">grafieken</div>
@@ -542,27 +583,28 @@ Histogrammen (deel 1)
 <div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGllaw=='); return false;">statistiek</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/histogrammen-1/histogrammen-1.html" class="no-external">
 <p>Hoe je frequentieverdelingen in Excel maakt.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/histogrammen-1/histogrammen-1.html" class="no-external">
 <div class="listing-date">
 13 mei 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="11" data-categories="Z3JhZmlla2VuJTJDc3RhdGlzdGllaw==" data-listing-date-sort="1589320800000" data-listing-file-modified-sort="1736331861311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="770">
-<a href="./excel/histogrammen-2/histogrammen-2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/histogrammen-2/freq-gegevensanalyse-resultaat.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Histogrammen (deel 2)
-</h5>
+<div class="quarto-post image-right" data-index="12" data-categories="Z3JhZmlla2VuJTJDc3RhdGlzdGllaw==" data-listing-date-sort="1589320800000" data-listing-file-modified-sort="1736331861311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="770">
+<div class="thumbnail"><a href="./excel/histogrammen-2/histogrammen-2.html" class="no-external">
+
+<img loading="lazy" src="./excel/histogrammen-2/freq-gegevensanalyse-resultaat.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/histogrammen-2/histogrammen-2.html" class="no-external">Histogrammen (deel 2)</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('Z3JhZmlla2Vu'); return false;">grafieken</div>
@@ -570,27 +612,28 @@ Histogrammen (deel 2)
 <div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGllaw=='); return false;">statistiek</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/histogrammen-2/histogrammen-2.html" class="no-external">
 <p>Hoe je frequentieverdelingen en histogrammen in Excel maakt.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/histogrammen-2/histogrammen-2.html" class="no-external">
 <div class="listing-date">
 13 mei 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="12" data-categories="ZXhwb3J0JTJDeG1s" data-listing-date-sort="1583017200000" data-listing-file-modified-sort="1707905330246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="370">
-<a href="./excel/excel-xml-export/excel-xml-export.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/excel-xml-export/xml-5.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Exceldata naar xml exporteren
-</h5>
+<div class="quarto-post image-right" data-index="13" data-categories="ZXhwb3J0JTJDeG1s" data-listing-date-sort="1583017200000" data-listing-file-modified-sort="1707905330246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="370">
+<div class="thumbnail"><a href="./excel/excel-xml-export/excel-xml-export.html" class="no-external">
+
+<img loading="lazy" src="./excel/excel-xml-export/xml-5.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/excel-xml-export/excel-xml-export.html" class="no-external">Exceldata naar xml exporteren</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('ZXhwb3J0'); return false;">export</div>
@@ -598,94 +641,98 @@ Exceldata naar xml exporteren
 <div class="listing-category" onclick="window.quartoListingCategory('eG1s'); return false;">xml</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/excel-xml-export/excel-xml-export.html" class="no-external">
 <p>Gegevens in een Excel tabel exporteren naar een XML bestand.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/excel-xml-export/excel-xml-export.html" class="no-external">
 <div class="listing-date">
 1 mrt 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="13" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1564524000000" data-listing-file-modified-sort="1707905330241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
-<a href="./excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/excel-functienamen-vertalen/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Functienamen van Excel vertalen
-</h5>
+<div class="quarto-post image-right" data-index="14" data-categories="ZnVuY3RpZXM=" data-listing-date-sort="1564524000000" data-listing-file-modified-sort="1707905330241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
+<div class="thumbnail"><a href="./excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html" class="no-external">
+
+<img loading="lazy" src="./excel/excel-functienamen-vertalen/preview.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html" class="no-external">Functienamen van Excel vertalen</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('ZnVuY3RpZXM='); return false;">functies</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html" class="no-external">
 <p>Addin voor Excel om functienamen te vertalen.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/excel-functienamen-vertalen/excel-functienamen-vertalen.html" class="no-external">
 <div class="listing-date">
 31 jul 2019
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="14" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1542495600000" data-listing-file-modified-sort="1707905330280" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185">
-<a href="./excel/power-query-opties/power-query-opties.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/power-query-opties/power-query-opties.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Power Query Opties
-</h5>
+<div class="quarto-post image-right" data-index="15" data-categories="cG93ZXJxdWVyeQ==" data-listing-date-sort="1542495600000" data-listing-file-modified-sort="1707905330280" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185">
+<div class="thumbnail"><a href="./excel/power-query-opties/power-query-opties.html" class="no-external">
+
+<img loading="lazy" src="./excel/power-query-opties/power-query-opties.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/power-query-opties/power-query-opties.html" class="no-external">Power Query Opties</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cG93ZXJxdWVyeQ=='); return false;">powerquery</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/power-query-opties/power-query-opties.html" class="no-external">
 <p>Opties voor Power Query in Excel.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/power-query-opties/power-query-opties.html" class="no-external">
 <div class="listing-date">
 18 nov 2018
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="15" data-categories="c3RhdGlzdGllaw==" data-listing-date-sort="1356303600000" data-listing-file-modified-sort="1707905330244" data-listing-date-modified-sort="1675897200000" data-listing-reading-time-sort="3" data-listing-word-count-sort="502">
-<a href="./excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./excel/excel-statistiek-beperkingen/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Beperkingen Excel voor statistisch gebruik
-</h5>
+<div class="quarto-post image-right" data-index="16" data-categories="c3RhdGlzdGllaw==" data-listing-date-sort="1356303600000" data-listing-file-modified-sort="1707905330244" data-listing-date-modified-sort="1675897200000" data-listing-reading-time-sort="3" data-listing-word-count-sort="502">
+<div class="thumbnail"><a href="./excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html" class="no-external">
+
+<img loading="lazy" src="./excel/excel-statistiek-beperkingen/preview.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html" class="no-external">Beperkingen Excel voor statistisch gebruik</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGllaw=='); return false;">statistiek</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html" class="no-external">
 <p>Statistische mogelijkheden in Excel en de beperkingen hierbij.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./excel/excel-statistiek-beperkingen/excel-statistiek-beperkingen.html" class="no-external">
 <div class="listing-date">
 24 dec 2012
 </div>
+</a>
 </div>
-</div>
-</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">Geen overeenkomsten</div>
@@ -741,13 +788,14 @@ Beperkingen Excel voor statistisch gebruik
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

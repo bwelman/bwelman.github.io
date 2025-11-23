@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,14 +35,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-32ab9aa980918ad0499db9b0351ac2ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-47af14f2f860fd866dbdfd4dfb06626b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -124,7 +125,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -150,7 +151,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo-transparant.png" alt="" class="navbar-logo">
+    <img src="./images/logo-transparant.png" alt="" class="navbar-logo light-content">
+    <img src="./images/logo-transparant.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Archief Ben</span>
@@ -239,7 +241,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
@@ -262,43 +264,44 @@ window.Quarto = {
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="dGlqZHNjaHJpZnQ=" data-listing-date-sort="1656280800000" data-listing-file-modified-sort="1707905330130" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
-<a href="./bier/braumagazin/braumagazin.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/braumagazin/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-brau!magazin
-</h5>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="dGlqZHNjaHJpZnQ=" data-listing-date-sort="1656280800000" data-listing-file-modified-sort="1707905330130" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
+<div class="thumbnail"><a href="./bier/braumagazin/braumagazin.html" class="no-external">
+
+<img loading="lazy" src="./bier/braumagazin/preview.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/braumagazin/braumagazin.html" class="no-external">brau!magazin</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('dGlqZHNjaHJpZnQ='); return false;">tijdschrift</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/braumagazin/braumagazin.html" class="no-external">
 <p>Duitstalig online eMagazin voor hobbybrouwers.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/braumagazin/braumagazin.html" class="no-external">
 <div class="listing-date">
 27 jun 2022
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="1596492000000" data-listing-file-modified-sort="1707905330145" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="158">
-<a href="./bier/hoprendement-kooktijd/hoprendement-kooktijd.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/hoprendement-kooktijd/grafiek.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Hoprendement - Kooktijd
-</h5>
+<div class="quarto-post image-right" data-index="1" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="1596492000000" data-listing-file-modified-sort="1707905330145" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="158">
+<div class="thumbnail"><a href="./bier/hoprendement-kooktijd/hoprendement-kooktijd.html" class="no-external">
+
+<img loading="lazy" src="./bier/hoprendement-kooktijd/grafiek.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/hoprendement-kooktijd/hoprendement-kooktijd.html" class="no-external">Hoprendement - Kooktijd</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
@@ -306,27 +309,28 @@ Hoprendement - Kooktijd
 <div class="listing-category" onclick="window.quartoListingCategory('aG9w'); return false;">hop</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/hoprendement-kooktijd/hoprendement-kooktijd.html" class="no-external">
 <p>Relatie tussen de hopbitterheid en de kooktijd.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/hoprendement-kooktijd/hoprendement-kooktijd.html" class="no-external">
 <div class="listing-date">
 4 aug 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="1591221600000" data-listing-file-modified-sort="1707905330143" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-word-count-sort="4476">
-<a href="./bier/hopbitterheid/hopbitterheid.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/hopbitterheid/hop.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Hopbitterheid en EBU (IBU)
-</h5>
+<div class="quarto-post image-right" data-index="2" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="1591221600000" data-listing-file-modified-sort="1707905330143" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-word-count-sort="4476">
+<div class="thumbnail"><a href="./bier/hopbitterheid/hopbitterheid.html" class="no-external">
+
+<img loading="lazy" src="./bier/hopbitterheid/hop.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/hopbitterheid/hopbitterheid.html" class="no-external">Hopbitterheid en EBU (IBU)</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
@@ -334,53 +338,55 @@ Hopbitterheid en EBU (IBU)
 <div class="listing-category" onclick="window.quartoListingCategory('aG9w'); return false;">hop</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/hopbitterheid/hopbitterheid.html" class="no-external">
 <p>Manieren om de bitterheid van hoptoevoegingen in bier te bepalen.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/hopbitterheid/hopbitterheid.html" class="no-external">
 <div class="listing-date">
 4 jun 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="d2F0ZXI=" data-listing-date-sort="1586988000000" data-listing-file-modified-sort="1707905330186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="99" data-listing-word-count-sort="19619">
-<a href="./bier/water-knowledge/water-knowledge.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/water-knowledge/rachart.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Water Knowledge
-</h5>
+<div class="quarto-post image-right" data-index="3" data-categories="d2F0ZXI=" data-listing-date-sort="1586988000000" data-listing-file-modified-sort="1707905330186" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="99" data-listing-word-count-sort="19619">
+<div class="thumbnail"><a href="./bier/water-knowledge/water-knowledge.html" class="no-external">
+
+<img loading="lazy" src="./bier/water-knowledge/rachart.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/water-knowledge/water-knowledge.html" class="no-external">Water Knowledge</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('d2F0ZXI='); return false;">water</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/water-knowledge/water-knowledge.html" class="no-external">
 <p>This document provides basic knowledge that is useful for understanding brewing water chemistry.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/water-knowledge/water-knowledge.html" class="no-external">
 <div class="listing-date">
 16 apr 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="cmVrZW5lbiUyQ1IlMkNFeGNlbA==" data-listing-date-sort="1578092400000" data-listing-file-modified-sort="1707905330136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="222">
-<a href="./bier/brouwfuncties/brouwfuncties.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/brouwfuncties/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Brouwfuncties
-</h5>
+<div class="quarto-post image-right" data-index="4" data-categories="cmVrZW5lbiUyQ1IlMkNFeGNlbA==" data-listing-date-sort="1578092400000" data-listing-file-modified-sort="1707905330136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="222">
+<div class="thumbnail"><a href="./bier/brouwfuncties/brouwfuncties.html" class="no-external">
+
+<img loading="lazy" src="./bier/brouwfuncties/preview.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/brouwfuncties/brouwfuncties.html" class="no-external">Brouwfuncties</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
@@ -390,27 +396,28 @@ Brouwfuncties
 <div class="listing-category" onclick="window.quartoListingCategory('RXhjZWw='); return false;">Excel</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/brouwfuncties/brouwfuncties.html" class="no-external">
 <p>Conversiefuncties voor R en Excel.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/brouwfuncties/brouwfuncties.html" class="no-external">
 <div class="listing-date">
 4 jan 2020
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="YmllcnR5cGUlMkNzdGlqbGVu" data-listing-date-sort="1574031600000" data-listing-file-modified-sort="1707905330122" data-listing-date-modified-sort="1651356000000" data-listing-reading-time-sort="4" data-listing-word-count-sort="793">
-<a href="./bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/bjcp-biertypenlijst/bjcp.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-BJCP Biertypenlijst
-</h5>
+<div class="quarto-post image-right" data-index="5" data-categories="YmllcnR5cGUlMkNzdGlqbGVu" data-listing-date-sort="1574031600000" data-listing-file-modified-sort="1707905330122" data-listing-date-modified-sort="1651356000000" data-listing-reading-time-sort="4" data-listing-word-count-sort="793">
+<div class="thumbnail"><a href="./bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html" class="no-external">
+
+<img loading="lazy" src="./bier/bjcp-biertypenlijst/bjcp.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html" class="no-external">BJCP Biertypenlijst</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('YmllcnR5cGU='); return false;">biertype</div>
@@ -418,79 +425,82 @@ BJCP Biertypenlijst
 <div class="listing-category" onclick="window.quartoListingCategory('c3Rpamxlbg=='); return false;">stijlen</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html" class="no-external">
 <p>De Amerikaanse BJCP biertypenlijst in een Excel bestand.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/bjcp-biertypenlijst/bjcp-biertypenlijst.html" class="no-external">
 <div class="listing-date">
 18 nov 2019
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="c3Vpa2Vycw==" data-listing-date-sort="1559340000000" data-listing-file-modified-sort="1707905330162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
-<a href="./bier/invertsuiker/invertsuiker.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/invertsuiker/invertsuiker.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-invertsuiker
-</h5>
+<div class="quarto-post image-right" data-index="6" data-categories="c3Vpa2Vycw==" data-listing-date-sort="1559340000000" data-listing-file-modified-sort="1707905330162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
+<div class="thumbnail"><a href="./bier/invertsuiker/invertsuiker.html" class="no-external">
+
+<img loading="lazy" src="./bier/invertsuiker/invertsuiker.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/invertsuiker/invertsuiker.html" class="no-external">invertsuiker</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('c3Vpa2Vycw=='); return false;">suikers</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/invertsuiker/invertsuiker.html" class="no-external">
 <p>Hoe je invertsuiker kunt maken.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/invertsuiker/invertsuiker.html" class="no-external">
 <div class="listing-date">
 1 jun 2019
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="cmVrZW5lbg==" data-listing-date-sort="1546038000000" data-listing-file-modified-sort="1707905330164" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1130">
-<a href="./bier/sg-brix-plato/sg-brix-plato.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/sg-brix-plato/hydrometer.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-SG-Brix-Plato
-</h5>
+<div class="quarto-post image-right" data-index="7" data-categories="cmVrZW5lbg==" data-listing-date-sort="1546038000000" data-listing-file-modified-sort="1707905330164" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1130">
+<div class="thumbnail"><a href="./bier/sg-brix-plato/sg-brix-plato.html" class="no-external">
+
+<img loading="lazy" src="./bier/sg-brix-plato/hydrometer.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/sg-brix-plato/sg-brix-plato.html" class="no-external">SG-Brix-Plato</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/sg-brix-plato/sg-brix-plato.html" class="no-external">
 <p>Meeteenheden voor het stamwortgehalte.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/sg-brix-plato/sg-brix-plato.html" class="no-external">
 <div class="listing-date">
 29 dec 2018
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="YmllcnR5cGUlMkNzdGlqbGVuJTJDZXhjZWw=" data-listing-date-sort="1543186800000" data-listing-file-modified-sort="1707905330127" data-listing-date-modified-sort="1651356000000" data-listing-reading-time-sort="5" data-listing-word-count-sort="990">
-<a href="./bier/bkg-biertypenlijst/bkg-biertypenlijst.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/bkg-biertypenlijst/bkg-biertypen.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-BKG Biertypenlijst
-</h5>
+<div class="quarto-post image-right" data-index="8" data-categories="YmllcnR5cGUlMkNzdGlqbGVuJTJDZXhjZWw=" data-listing-date-sort="1543186800000" data-listing-file-modified-sort="1707905330127" data-listing-date-modified-sort="1651356000000" data-listing-reading-time-sort="5" data-listing-word-count-sort="990">
+<div class="thumbnail"><a href="./bier/bkg-biertypenlijst/bkg-biertypenlijst.html" class="no-external">
+
+<img loading="lazy" src="./bier/bkg-biertypenlijst/bkg-biertypen.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/bkg-biertypenlijst/bkg-biertypenlijst.html" class="no-external">BKG Biertypenlijst</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('YmllcnR5cGU='); return false;">biertype</div>
@@ -500,25 +510,28 @@ BKG Biertypenlijst
 <div class="listing-category" onclick="window.quartoListingCategory('ZXhjZWw='); return false;">excel</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/bkg-biertypenlijst/bkg-biertypenlijst.html" class="no-external">
 <p>De BKG biertypenlijst in een Excel bestand.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/bkg-biertypenlijst/bkg-biertypenlijst.html" class="no-external">
 <div class="listing-date">
 26 nov 2018
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="1519858800000" data-listing-file-modified-sort="1707905330157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3375">
-<a href="./bier/hops-ibu/hops-ibu.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="bier\hops-ibu\tabel1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Hops - Revisiting the IBU
-</h5>
+<div class="quarto-post image-right" data-index="9" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="1519858800000" data-listing-file-modified-sort="1707905330157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3375">
+<div class="thumbnail"><a href="./bier/hops-ibu/hops-ibu.html" class="no-external">
+
+<p class="card-img-top"><img src="bier\hops-ibu\tabel1.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/hops-ibu/hops-ibu.html" class="no-external">Hops - Revisiting the IBU</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
@@ -526,27 +539,28 @@ Hops - Revisiting the IBU
 <div class="listing-category" onclick="window.quartoListingCategory('aG9w'); return false;">hop</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/hops-ibu/hops-ibu.html" class="no-external">
 By Petr Novotny, Zymurgy, March/April 2018
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/hops-ibu/hops-ibu.html" class="no-external">
 <div class="listing-date">
 1 mrt 2018
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="10" data-categories="a2xldXIlMkNyZWtlbmVu" data-listing-date-sort="1433109600000" data-listing-file-modified-sort="1707905330119" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1220">
-<a href="./bier/beer-color/beer-color.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/beer-color/mcu-srm.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Approximating SRM Beer Color of Homebrew Based on Recipe Formulation
-</h5>
+<div class="quarto-post image-right" data-index="10" data-categories="a2xldXIlMkNyZWtlbmVu" data-listing-date-sort="1433109600000" data-listing-file-modified-sort="1707905330119" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1220">
+<div class="thumbnail"><a href="./bier/beer-color/beer-color.html" class="no-external">
+
+<img loading="lazy" src="./bier/beer-color/mcu-srm.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/beer-color/beer-color.html" class="no-external">Approximating SRM Beer Color of Homebrew Based on Recipe Formulation</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('a2xldXI='); return false;">kleur</div>
@@ -554,51 +568,55 @@ Approximating SRM Beer Color of Homebrew Based on Recipe Formulation
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/beer-color/beer-color.html" class="no-external">
 One of the most challenging aspects of “brewing to style” for home brewers is trying to achieve a color within the specified range for the particular class. Home brewers…
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/beer-color/beer-color.html" class="no-external">
 <div class="listing-date">
 1 jun 2015
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="11" data-categories="cmVrZW5lbg==" data-listing-date-sort="746834400000" data-listing-file-modified-sort="1707905330169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2219">
-<a href="./bier/specific-gravity/specific-gravity.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="bier\specific-gravity\fig1a.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Understanding Specific Gravity and Extract
-</h5>
+<div class="quarto-post image-right" data-index="11" data-categories="cmVrZW5lbg==" data-listing-date-sort="746834400000" data-listing-file-modified-sort="1707905330169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2219">
+<div class="thumbnail"><a href="./bier/specific-gravity/specific-gravity.html" class="no-external">
+
+<p class="card-img-top"><img src="bier\specific-gravity\fig1a.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/specific-gravity/specific-gravity.html" class="no-external">Understanding Specific Gravity and Extract</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/specific-gravity/specific-gravity.html" class="no-external">
 <p>Het originele artikel van Manning. De grafieken zijn door mij zo goed mogelijk gereproduceerd.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/specific-gravity/specific-gravity.html" class="no-external">
 <div class="listing-date">
 1 sep 1993
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="12" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="631152000000" data-listing-file-modified-sort="1707905330138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1925">
-<a href="./bier/calculating-hop-bitterness/hop-bitterness.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./bier/calculating-hop-bitterness/preview.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Calculating Hop Bitterness in Beer
-</h5>
+<div class="quarto-post image-right" data-index="12" data-categories="cmVrZW5lbiUyQ2hvcA==" data-listing-date-sort="631152000000" data-listing-file-modified-sort="1707905330138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1925">
+<div class="thumbnail"><a href="./bier/calculating-hop-bitterness/hop-bitterness.html" class="no-external">
+
+<img loading="lazy" src="./bier/calculating-hop-bitterness/preview.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./bier/calculating-hop-bitterness/hop-bitterness.html" class="no-external">Calculating Hop Bitterness in Beer</a>
+</h3>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('cmVrZW5lbg=='); return false;">rekenen</div>
@@ -606,16 +624,17 @@ Calculating Hop Bitterness in Beer
 <div class="listing-category" onclick="window.quartoListingCategory('aG9w'); return false;">hop</div>
 
 </div>
-<div class="card-text listing-description delink">
+<div class="delink listing-description"><a href="./bier/calculating-hop-bitterness/hop-bitterness.html" class="no-external">
 <p>Het originele artikel van Jackie Rager.</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small end">
+<div class="metadata">
+<a href="./bier/calculating-hop-bitterness/hop-bitterness.html" class="no-external">
 <div class="listing-date">
 1 jan 1990
 </div>
+</a>
 </div>
-</div>
-</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">Geen overeenkomsten</div>
@@ -671,13 +690,14 @@ Calculating Hop Bitterness in Beer
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -15,29 +15,9 @@
     ]
   },
   {
-    "listing": "/divers.html",
+    "listing": "/access.html",
     "items": [
-      "/divers/wetenschappelijke-naamgeving-planten/wetenschappelijke-naamgeving-planten.html",
-      "/divers/css-scss/css-scss.html",
-      "/divers/multimeter/multimeter.html",
-      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
-      "/divers/sir-model/sir-model.html",
-      "/divers/workflow-studieboeken/workflow-studieboeken.html",
-      "/divers/latex-werkomgeving/latex-werkomgeving.html",
-      "/divers/online-studieboeken/online-studieboeken.html",
-      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
-      "/divers/eboek/eboek.html",
-      "/divers/epub/epub.html",
-      "/divers/eboek-lezen/eboek-lezen.html",
-      "/divers/studieboek-formaat/studieboek-formaat.html"
-    ]
-  },
-  {
-    "listing": "/chemie.html",
-    "items": [
-      "/chemie/nitreuze_damp/nitreuze_dampen.html",
-      "/chemie/chembinding/chembinding.html",
-      "/chemie/waterevenwicht/waterevenwicht.html"
+      "/access/unieke-records-access/unieke-records-access.html"
     ]
   },
   {
@@ -59,14 +39,35 @@
     ]
   },
   {
-    "listing": "/access.html",
+    "listing": "/chemie.html",
     "items": [
-      "/access/unieke-records-access/unieke-records-access.html"
+      "/chemie/nitreuze_damp/nitreuze_dampen.html",
+      "/chemie/chembinding/chembinding.html",
+      "/chemie/waterevenwicht/waterevenwicht.html"
+    ]
+  },
+  {
+    "listing": "/divers.html",
+    "items": [
+      "/divers/wetenschappelijke-naamgeving-planten/wetenschappelijke-naamgeving-planten.html",
+      "/divers/css-scss/css-scss.html",
+      "/divers/multimeter/multimeter.html",
+      "/divers/wetenschappelijke-symbolen/wetenschappelijke-symbolen.html",
+      "/divers/sir-model/sir-model.html",
+      "/divers/workflow-studieboeken/workflow-studieboeken.html",
+      "/divers/latex-werkomgeving/latex-werkomgeving.html",
+      "/divers/online-studieboeken/online-studieboeken.html",
+      "/divers/website-bouwstenen-1/website-bouwstenen-1.html",
+      "/divers/eboek/eboek.html",
+      "/divers/epub/epub.html",
+      "/divers/eboek-lezen/eboek-lezen.html",
+      "/divers/studieboek-formaat/studieboek-formaat.html"
     ]
   },
   {
     "listing": "/excel.html",
     "items": [
+      "/excel/datamodel/datamodel.html",
       "/excel/stapeldata-2/stapeldata-2.html",
       "/excel/stapeldata-1/stapeldata-1.html",
       "/excel/is-functies/isfuncties.html",

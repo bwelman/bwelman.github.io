@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Datamodel maken in Excel – Archief Ben</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-47af14f2f860fd866dbdfd4dfb06626b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DZG4072LJ3"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-DZG4072LJ3', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/logo-transparant.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Archief Ben</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Zoeken"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../access.html"> 
+<span class="menu-text">Access</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../excel.html"> 
+<span class="menu-text">Excel</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../bier.html"> 
+<span class="menu-text">Bier</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../chemie.html"> 
+<span class="menu-text">Chemie</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../wiskunde.html"> 
+<span class="menu-text">Wiskunde</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../r.html"> 
+<span class="menu-text">R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../divers.html"> 
+<span class="menu-text">Divers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#datamodel-maken-via-de-relaties-functie" id="toc-datamodel-maken-via-de-relaties-functie" class="nav-link active" data-scroll-target="#datamodel-maken-via-de-relaties-functie">Datamodel maken via de Relaties-functie</a></li>
+  <li><a href="#datamodel-maken-met-powerpivot" id="toc-datamodel-maken-met-powerpivot" class="nav-link" data-scroll-target="#datamodel-maken-met-powerpivot">Datamodel maken met PowerPivot</a></li>
+  <li><a href="#datamodel-maken-met-power-query" id="toc-datamodel-maken-met-power-query" class="nav-link" data-scroll-target="#datamodel-maken-met-power-query">Datamodel maken met Power Query</a></li>
+  <li><a href="#draaitabel-maken-uit-datamodel" id="toc-draaitabel-maken-uit-datamodel" class="nav-link" data-scroll-target="#draaitabel-maken-uit-datamodel">Draaitabel maken uit datamodel</a></li>
+  <li><a href="#overzicht" id="toc-overzicht" class="nav-link" data-scroll-target="#overzicht">Overzicht</a></li>
+  <li><a href="#conclusie" id="toc-conclusie" class="nav-link" data-scroll-target="#conclusie">Conclusie</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Datamodel maken in Excel</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">excel</div>
+    <div class="quarto-category">databases</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">11 juni 2024</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Gewijzigd</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">23 november 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Samenvatting</div>
+    Drie manieren om een datamodel in Excel te maken.
+  </div>
+</div>
+
+
+</header>
+
+
+<p>Een datamodel in Excel lijkt op een relationele database, waarin twee of meer tabellen met elkaar verbonden zijn via een gemeenschappelijk veld, het sleutelveld. Dit sleutelveld moet unieke waarden hebben, zoals bijvoorbeeld een persoonsnummer of ordernummer.</p>
+<p>Als eenvoudig voorbeeld het bestand <a href="studentdata.xlsx">studentdata.xlsx</a> dat twee Exceltabellen bevat met modulecijfers van studenten.</p>
+<ul>
+<li><p>Tabel <code>tblStudenten</code> bevat de persoonsgegevens van de studenten met veld <code>StudentNr</code> fungeert als sleutel van deze tabel.</p></li>
+<li><p>Tabel <code>tblCijfers</code> bevat de behaalde cijfers per module. De combinatie van <code>Module</code> en <code>StudentNr</code> is uniek en vormt samen de sleutel van deze tabel.</p></li>
+</ul>
+<p>Omdat beide tabellen het veld <code>StudentNr</code> bevatten, kunnen ze via dat veld met elkaar verbonden worden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/data.png" class="img-fluid figure-img"></p>
+<figcaption>De twee tabellen, links <code>tblStudenten</code> en rechts <code>tblCijfers</code>.</figcaption>
+</figure>
+</div>
+<p>Hierna worden drie verschillende manieren besproken om een datamodel voor deze gegevens te maken. Aan het eind wordt een draaitabel gemaakt om de werking van de relaties tussen de tabellen te demonstreren.</p>
+<section id="datamodel-maken-via-de-relaties-functie" class="level2">
+<h2 class="anchored" data-anchor-id="datamodel-maken-via-de-relaties-functie">Datamodel maken via de Relaties-functie</h2>
+<p>Selecteer een willekeurige cel in de tabel <code>tblStudenten</code> en kies <em>Tab Gegevens &gt; Datamodel (groep Hulpmiddelen voor gegevens) &gt; Relaties</em>. In het dialoogscherm “Relaties beheren” klik je op <em>Nieuw</em>. Vul het venster “Relaties maken” in zoals in <a href="#fig-relatiemaken" class="quarto-xref">Figuur&nbsp;1</a> is weergegeven.</p>
+<div id="fig-relatiemaken" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-relatiemaken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/relatiemaken1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-relatiemaken-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Relatie tussen de twee tabellen maken via het gemeenschappelijke veld <code>StudentNr</code>.
+</figcaption>
+</figure>
+</div>
+<p>Klik op <em>OK</em>. De relatie wordt nu toegevoegd in het dialoogscherm “Relaties beheren”, dat je nu kunt sluiten.</p>
+</section>
+<section id="datamodel-maken-met-powerpivot" class="level2">
+<h2 class="anchored" data-anchor-id="datamodel-maken-met-powerpivot">Datamodel maken met PowerPivot</h2>
+<p>Selecteer een willekeurige cel in tabel <code>tblStudenten</code> en kies <em>Tab Power Pivot &gt; Toevoegen aan gegevensmodel</em>. Sluit daarna PowerPivot.</p>
+<p>Selecteer nu een willekeurige cel in de tabel <code>tblCijfers</code> en kies opnieuw <em>Tab Power Pivot &gt; Toevoegen aan gegevensmodel</em>.</p>
+<p>Kies in het PowerPivot venster voor <em>Diagramweergave</em>. Selecteer het veld <code>StudentNr</code> in het diagram <code>tblStudenten</code> en sleep dit naar het veld <code>StudentNr</code> in <code>tblCijfers</code>. Er wordt nu <strong>één-op-veel</strong> relatie gemaakt.</p>
+<div id="fig-1opveel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1opveel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/powerpivot-diagram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1opveel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: 1 op veel verbinding tussen de twee tabellen via het veld <code>StudentNr</code>.
+</figcaption>
+</figure>
+</div>
+<p>Sluit daarna het PowerPivot venster.</p>
+</section>
+<section id="datamodel-maken-met-power-query" class="level2">
+<h2 class="anchored" data-anchor-id="datamodel-maken-met-power-query">Datamodel maken met Power Query</h2>
+<p>Selecteer een willekeurige cel in de tabel <code>tblStudenten</code> en kies <em>Tab Gegevens &gt; Van tabel/bereik</em>. De Power Query Editor wordt geopend.</p>
+<p>Kies vervolgens <em>Tab Start &gt; Sluiten en laden &gt; Sluiten en laden naar</em>. In het dialoogvenster “Gegevens importeren” selecteer je <em>Alleen verbinding maken</em> en vink je aan <em>Deze gegevens toevoegen aan het gegevensmodel</em> (zie <a href="#fig-importeren" class="quarto-xref">Figuur&nbsp;3</a>). Klik daarna op <em>OK</em>.</p>
+<div id="fig-importeren" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-importeren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/pg-import.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-importeren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Importeren van de twee tabellen in het datamodel.
+</figcaption>
+</figure>
+</div>
+<p>Herhaal deze procedure voor de andere tabel.</p>
+<p>Nu moet de relatie tussen de twee geïmporteerde tabellen nog worden gelegd. Kies hiervoor <em>Tab Powervivot&gt; Beheren &gt; Diagramweergave</em> en maak de relatie via het veld <code>StudentNr</code>, op dezelfde manier als bij de vorige methode.</p>
+</section>
+<section id="draaitabel-maken-uit-datamodel" class="level2">
+<h2 class="anchored" data-anchor-id="draaitabel-maken-uit-datamodel">Draaitabel maken uit datamodel</h2>
+<p>De twee tabellen zijn nu onderdeel van het datamodel en via <code>StudentNr</code> met elkaar verbonden. Om de werking te demonstreren wordt een draaitabel gemaakt waarmee onderzocht kan worden of het gemiddelde cijfer per module verschilt tussen mannen en vrouwen.</p>
+<p>Terug in het werkblad kies <em>Tab Invoegen &gt; Draaitabel &gt; vanuit Externe gegevensbron</em>.</p>
+<div id="fig-pivot-externebron" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pivot-externebron-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/draaitabelmaken.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pivot-externebron-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: Keuze voor het invoegen van een draaitabel vanuit een externe gegevensbron.
+</figcaption>
+</figure>
+</div>
+<p>In het dialoogvenster “Draaitabel vanuit een externe bron” klik je op <em>Verbinding kiezen</em>.</p>
+<div id="fig-pivot-verbinding-kiezen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pivot-verbinding-kiezen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/verbindingkiezen1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pivot-verbinding-kiezen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Verbinding kiezen voor de draaitabel.
+</figcaption>
+</figure>
+</div>
+<p>In het venster “Bestaande verbindingen” selecteer je de tab <code>Tabellen</code> en kies je <code>Tabellen in een werkmapgegevensmodel</code>.</p>
+<div id="fig-verbindingskeuze" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-verbindingskeuze-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/verbinding.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-verbindingskeuze-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;6: Selectie van de verbinding.
+</figcaption>
+</figure>
+</div>
+<p>Klik op <em>Openen</em>. In het dialoogvenster is nu de verbindingsnaam <code>ThisWorkbookDataModel</code> toegevoegd. Kies vervolgens om de draaitabel in een <em>Nieuw werkblad</em> te plaatsen en klik op <em>OK</em>.</p>
+<div id="fig-pivot-nieuw-werkblad" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pivot-nieuw-werkblad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/verbindingkiezen2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pivot-nieuw-werkblad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;7: Draaitabel op een nieuw werkblad plaatsen.
+</figcaption>
+</figure>
+</div>
+<p>In het nieuwe werkblad kun je nu de draaitabelvelden kiezen om bijvoorbeeld het gemiddelde cijferper module en per geslacht weer te geven. In <a href="#fig-draaitabel" class="quarto-xref">Figuur&nbsp;8</a> zie je een voorbeeldresultaat.</p>
+<div id="fig-draaitabel" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-draaitabel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/draaitabel.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-draaitabel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;8: Draaitabel voor de bepaling van het gemiddeld cijfer per geslacht voor de modules.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="overzicht" class="level1">
+<h1>Overzicht</h1>
+<p><strong>Drie manieren om een datamodel te maken</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Methode</th>
+<th>Kenmerken</th>
+<th>Geschikt voor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Relaties-functie</td>
+<td>Snel en eenvoudig, geen extra vensters.</td>
+<td>Kleine datasets en basisrelaties.</td>
+</tr>
+<tr class="even">
+<td>PowerPivot</td>
+<td>Geavanceerde modelleermogelijkheden, gebruik van DAX.</td>
+<td>Grotere modellen en berekeningen.</td>
+</tr>
+<tr class="odd">
+<td>Power Query</td>
+<td>Flexibele gegevensimport en -transformatie.</td>
+<td>Gegevensvoorbereiding en combineren van meerdere bronnen.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conclusie" class="level1">
+<h1>Conclusie</h1>
+<p>Met deze drie methoden kun je in Excel op verschillende manieren een datamodel opbouwen. Welke methode je kiest, hangt af van je voorkeur en de complexiteit van je gegevens. Door de relaties tussen tabellen goed te definiëren, kun je krachtige analyses maken met draaitabellen en PowerPivot.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Gekopieerd!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Gekopieerd!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/bwelman\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Deze website is gemaakt met <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
