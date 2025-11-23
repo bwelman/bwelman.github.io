@@ -4,7 +4,7 @@ subtitle: "Artikelen over Wiskunde"
 listing:
   contents: wiskunde
   sort: "date desc"
-  type: grid
+  type: default
   categories: true
   sort-ui: true
   filter-ui: true

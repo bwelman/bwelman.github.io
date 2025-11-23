@@ -4,7 +4,7 @@ subtitle: "Artikelen over bier en brouwen"
 listing:
   contents: bier
   sort: "date desc"
-  type: grid
+  type: default
   categories: true
   sort-ui: true
   filter-ui: true

@@ -4,7 +4,7 @@ subtitle: "Artikelen over Chemie"
 listing:
   contents: chemie
   sort: "date desc"
-  type: grid
+  type: default
   categories: true
   sort-ui: true
   filter-ui: true

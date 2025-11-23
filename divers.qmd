@@ -4,7 +4,7 @@ subtitle: "Moet nog gecategoriseerd worden."
 listing:
   contents: divers
   sort: "date desc"
-  type: grid
+  type: default
   categories: true
   sort-ui: true
   filter-ui: true
