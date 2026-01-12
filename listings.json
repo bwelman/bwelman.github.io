@@ -15,9 +15,11 @@
     ]
   },
   {
-    "listing": "/access.html",
+    "listing": "/chemie.html",
     "items": [
-      "/access/unieke-records-access/unieke-records-access.html"
+      "/chemie/nitreuze_damp/nitreuze_dampen.html",
+      "/chemie/chembinding/chembinding.html",
+      "/chemie/waterevenwicht/waterevenwicht.html"
     ]
   },
   {
@@ -39,16 +41,15 @@
     ]
   },
   {
-    "listing": "/chemie.html",
+    "listing": "/access.html",
     "items": [
-      "/chemie/nitreuze_damp/nitreuze_dampen.html",
-      "/chemie/chembinding/chembinding.html",
-      "/chemie/waterevenwicht/waterevenwicht.html"
+      "/access/unieke-records-access/unieke-records-access.html"
     ]
   },
   {
     "listing": "/divers.html",
     "items": [
+      "/divers/markdown/markdown.html",
       "/divers/wetenschappelijke-naamgeving-planten/wetenschappelijke-naamgeving-planten.html",
       "/divers/css-scss/css-scss.html",
       "/divers/multimeter/multimeter.html",
