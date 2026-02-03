@@ -802,7 +802,7 @@
     "href": "divers/markdown/markdown.html#koppen",
     "title": "Markdown Tutorial: Van WYSIWYG naar Platte Tekst",
     "section": "Koppen",
-    "text": "Koppen\n Hoofdkop (Heading 1)\n# Tweede niveau (Heading 2)\n## Derde niveau (Heading 3)\n### Vierde niveau (Heading 4)\n#### Vijfde niveau (Heading 5)\n##### Zesde niveau (Heading 6)\nLet op: Zet altijd een spatie na de # tekens."
+    "text": "Koppen\n# Hoofdkop (Heading 1)\n## Tweede niveau (Heading 2)\n### Derde niveau (Heading 3)\n#### Vierde niveau (Heading 4)\n##### Vijfde niveau (Heading 5)\n###### Zesde niveau (Heading 6)\nLet op: Zet altijd een spatie na de # tekens."
   },
   {
     "objectID": "divers/markdown/markdown.html#vet-en-cursief",
@@ -879,7 +879,7 @@
     "href": "divers/markdown/markdown.html#afbeeldingen-positioneren",
     "title": "Markdown Tutorial: Van WYSIWYG naar Platte Tekst",
     "section": "1. Afbeeldingen positioneren",
-    "text": "1. Afbeeldingen positioneren\nIn Word kun je een afbeelding precies plaatsen en tekst eromheen laten lopen. In Markdown is dit niet standaard mogelijk. Afbeeldingen staan op hun eigen regel.\nOplossing: Gebruik HTML als je meer controle nodig hebt, of accepteer de beperkingen."
+    "text": "1. Afbeeldingen positioneren\nIn Word kun je een afbeelding precies plaatsen en tekst eromheen laten lopen. In Markdown is dit standaard niet mogelijk. Afbeeldingen staan op hun eigen regel.\nOplossing: Gebruik HTML als je meer controle nodig hebt, of accepteer de beperkingen."
   },
   {
     "objectID": "divers/markdown/markdown.html#complexe-tabellen",
@@ -900,7 +900,7 @@
     "href": "divers/markdown/markdown.html#lege-regels-en-witruimte",
     "title": "Markdown Tutorial: Van WYSIWYG naar Platte Tekst",
     "section": "4. Lege regels en witruimte",
-    "text": "4. Lege regels en witruimte\nMarkdown is gevoelig voor lege regels. Twee enters tussen alinea’s, één enter binnen een alinea. Dit kan verwarrend zijn.\nVoorbeeld:\nDit is alinea 1.\nDit staat ook in alinea 1 (één enter).\n\nDit is alinea 2 (twee enters).\nOplossing: Wennen. Na een paar documenten wordt dit automatisme."
+    "text": "4. Lege regels en witruimte\nMarkdown is gevoelig voor lege regels. Twee enters tussen alinea’s, één enter binnen een alinea. Dit kan verwarrend zijn.\nVoorbeeld:\nDit is alinea 1.\nDit staat ook in alinea 1 (één enter).\n\nDit is alinea 2 (twee enters).\nOplossing: Dit went snel, na een paar documenten wordt dit automatisme."
   },
   {
     "objectID": "divers/markdown/markdown.html#speciale-tekens",
