@@ -230,12 +230,12 @@ Hier is een compleet overzicht van wat je het meest zult gebruiken:
 ## Koppen
 
 ``` markdown
- Hoofdkop (Heading 1)
-# Tweede niveau (Heading 2)
-## Derde niveau (Heading 3)
-### Vierde niveau (Heading 4)
-#### Vijfde niveau (Heading 5)
-##### Zesde niveau (Heading 6)
+# Hoofdkop (Heading 1)
+## Tweede niveau (Heading 2)
+### Derde niveau (Heading 3)
+#### Vierde niveau (Heading 4)
+##### Vijfde niveau (Heading 5)
+###### Zesde niveau (Heading 6)
 ```
 
 **Let op:** Zet altijd een spatie na de `#` tekens.
@@ -381,11 +381,51 @@ Hier is een zin met een voetnoot.[^1]
 [^1]: Dit is de voetnoot tekst.
 ```
 
+# Wiskundige notatie en formules
+
+::: callout-important
+Standaard Markdown heeft geen ingebouwde ondersteuning voor wiskundige formules. Voor wiskundige notatie moet je gebruikmaken van **LaTeX-syntax**, in combinatie met een rendering-engine zoals MathJax of KaTeX.
+
+**Goed nieuws:** Nagenoeg alle Markdown-editors en platforms ondersteunen LaTeX-wiskunde zoals Obsidian, Typora, Jupyter Notebooks, Quarto, GitHub, GitLab, Notion, VS Code, ...
+:::
+
+**Hoe werkt het?**
+
+Voor **symbolen** en **inline formules** in lopende tekst gebruik je **enkele dollar-tekens** met daartussen de uit drukking.
+
+`De beroemde formule van Einstein is $E = mc^2$`
+
+Wordt weergegeven als: De beroemde formule van Einstein is $E = mc^2$
+
+Voor **display formules** (op een aparte regel en gecentreerd) gebruik je **dubbele dollar-tekens** met daartussen de uitdrukking.
+
+Formule samengestelde interest
+
+``` latex
+$$
+K = B(1+r)^j
+$$
+```
+
+Wordt weergegeven als:
+
+$$
+K = B(1+r)^j
+$$
+
+Latex symbolen beginnen altijd met een `\`. Zo wordt `$\alpha$` weergegeven als $\alpha$, en wordt `$\sqrt{2}$` weergegeven als $\sqrt{2}$, en het sommatieteken `$\sum$` wordt $\sum$.
+
+Een deling kun je maken met `$\frac{teller}{noemer}$`. Bijvoorbeeld:
+
+`$\tan(\beta) = \frac{\sin(\beta)}{\cos(\beta)}$` wordt $\tan(\beta) = \frac{\sin(\beta)}{\cos(\beta)}$
+
+Er zijn talloze sites waarop je overzichten van Latex symbolen en formules vindt, bijvoorbeeld [wikibooks](https://nl.wikibooks.org/wiki/LaTeX/Wiskundige_formules).
+
 # Wat is lastig of moeilijk?
 
 ## **1.** Afbeeldingen positioneren
 
-In Word kun je een afbeelding precies plaatsen en tekst eromheen laten lopen. In Markdown is dit niet standaard mogelijk. Afbeeldingen staan op hun eigen regel.
+In Word kun je een afbeelding precies plaatsen en tekst eromheen laten lopen. In Markdown is dit standaard niet mogelijk. Afbeeldingen staan op hun eigen regel.
 
 **Oplossing:** Gebruik HTML als je meer controle nodig hebt, of accepteer de beperkingen.
 
@@ -414,7 +454,7 @@ Dit staat ook in alinea 1 (één enter).
 Dit is alinea 2 (twee enters).
 ```
 
-**Oplossing:** Wennen. Na een paar documenten wordt dit automatisme.
+**Oplossing:** Dit went snel, na een paar documenten wordt dit automatisme.
 
 ## **5.** Speciale tekens
 
@@ -444,7 +484,7 @@ Sommige tekens hebben een betekenis in Markdown (`*`, `_`, `#`, `[`, etc.). Als 
 
 # Conclusie: moet jij overstappen op Markdown?
 
-Markdown is niet de heilige graal voor alle tekstverwerkingsbehoeften, maar het is een waardevol gereedschap in je digitale toolbox.
+Markdown is niet de oplossing voor alle tekstverwerkingsbehoeften, maar het is een waardevol gereedschap in je digitale toolbox.
 
 **Je zult Markdown waarderen als je:**
 
@@ -471,4 +511,4 @@ De [Markdown Guide](https://www.markdownguide.org/) is een online **naslagwerk**
 
 ------------------------------------------------------------------------
 
-[Artikel in markdown formaat](_markdowngids.md)
+[Dit artikel in markdown formaat](_markdowngids.md)
