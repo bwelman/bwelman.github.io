@@ -330,12 +330,12 @@ Opmerking
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>datum <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>datum</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-08"</code></pre>
+<pre><code>[1] "2026-10-06"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tijd_ct <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tijd_ct</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-08 08:50:04 CEST"</code></pre>
+<pre><code>[1] "2026-10-06 22:38:20 CEST"</code></pre>
 </div>
 </div>
 <p>En de classes van de twee objecten:</p>
@@ -354,7 +354,7 @@ Opmerking
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tijd_lt <span class="ot">&lt;-</span> <span class="fu">as.POSIXlt</span>(tijd_ct)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tijd_lt</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-08 08:50:04 CEST"</code></pre>
+<pre><code>[1] "2026-10-06 22:38:20 CEST"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(tijd_lt)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -365,7 +365,7 @@ Opmerking
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>(tijd_ct)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1751957405</code></pre>
+<pre><code>[1] 1791319100</code></pre>
 </div>
 </div>
 <p>Het POSIXct object slaat de numerieke waarde</p>
@@ -373,28 +373,28 @@ Opmerking
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>(tijd_lt)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$sec
-[1] 4.503817
+[1] 20.48514
 
 $min
-[1] 50
+[1] 38
 
 $hour
-[1] 8
+[1] 22
 
 $mday
-[1] 8
-
-$mon
 [1] 6
 
+$mon
+[1] 9
+
 $year
-[1] 125
+[1] 126
 
 $wday
 [1] 2
 
 $yday
-[1] 188
+[1] 278
 
 $isdst
 [1] 1
@@ -592,7 +592,7 @@ Opmerking
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>datum2 <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>datum2 <span class="sc">-</span> datum1</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 20277 days</code></pre>
+<pre><code>Time difference of 20732 days</code></pre>
 </div>
 </div>
 <p>Je kunt de numerieke waarde van het object eenvoudig ophalen met de functie <code>as.numeric()</code>.</p>
@@ -603,7 +603,7 @@ Opmerking
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(datum2)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 20277</code></pre>
+<pre><code>[1] 20732</code></pre>
 </div>
 </div>
 </section>
@@ -709,11 +709,11 @@ Opmerking
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>() <span class="co"># huidige datum</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-08"</code></pre>
+<pre><code>[1] "2026-10-06"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">now</span>()   <span class="co"># huidige datum en tijd</span></span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-08 08:50:05 CEST"</code></pre>
+<pre><code>[1] "2026-10-06 22:38:21 CEST"</code></pre>
 </div>
 </div>
 </section>
@@ -983,11 +983,11 @@ Levels: zo &lt; ma &lt; di &lt; wo &lt; do &lt; vr &lt; za</code></pre>
 <span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>leeftijd <span class="ot">&lt;-</span> <span class="fu">interval</span>(gebdatum, <span class="fu">today</span>()) <span class="sc">/</span> <span class="fu">years</span>(<span class="dv">1</span>)</span>
 <span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>leeftijd</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 77.05479</code></pre>
+<pre><code>[1] 78.30137</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trunc</span>(leeftijd)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 77</code></pre>
+<pre><code>[1] 78</code></pre>
 </div>
 </div>
 </section>
@@ -1050,7 +1050,7 @@ Levels: zo &lt; ma &lt; di &lt; wo &lt; do &lt; vr &lt; za</code></pre>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round_date</span>(<span class="fu">now</span>(), <span class="at">unit =</span> <span class="st">"month"</span>)</span></code></pre></div><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-07-01 CEST"</code></pre>
+<pre><code>[1] "2026-10-01 CEST"</code></pre>
 </div>
 </div>
 </section>
